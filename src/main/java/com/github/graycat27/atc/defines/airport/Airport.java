@@ -22,6 +22,9 @@ public class Airport {
     /** 駐機位置（スポット） */
     private List<Spot> spots;
 
+    /** 管制塔 */
+    private Tower tower;
+
     //管制系
     /** 管制空域 */
     private List<ATCArea> areas;
