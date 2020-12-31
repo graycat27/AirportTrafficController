@@ -128,8 +128,55 @@ public abstract class Path implements IPath {
 
     @Override
     public boolean levelEquals(Object another){
-        //TODO implement this
-        throw new UnsupportedOperationException("not implemented");
+        if(!(another instanceof IPath)){
+            return false;
+        }
+        final IPath anotherPath = (IPath) another;
+        boolean isEqual;
+        //順方向検査
+        {
+            isEqual = (
+                    this.start.levelEqual(anotherPath.getStart()) &&
+                            this.end.levelEqual(anotherPath.getEnd()) &&
+                            this.getWayCount() == anotherPath.getWayCount()
+            );
+            if(isEqual){
+                for(int thisIdx = 0, otherIdx = 0; thisIdx < this.way.size();/* nil */){
+                    //way整合
+                    if(this.way.get(thisIdx).levelEqual(anotherPath.getWayPoint(otherIdx))){
+                        thisIdx++;
+                        otherIdx++;
+                        continue;
+                    }
+                    isEqual = false;
+                    break;
+                }
+            }
+            if(isEqual){
+                return true;
+            }
+        }
+        //逆方向検査
+        {
+            isEqual = (
+                    this.start.levelEqual(anotherPath.getEnd()) &&
+                            this.end.levelEqual(anotherPath.getStart()) &&
+                            this.getWayCount() == anotherPath.getWayCount()
+            );
+            if(isEqual){
+                for(int thisIdx = 0, otherIdx = anotherPath.getWayCount()-1; thisIdx < this.way.size();/* nil */){
+                    //way整合
+                    if(this.way.get(thisIdx).levelEqual(anotherPath.getWayPoint(otherIdx))){
+                        thisIdx++;
+                        otherIdx--;
+                        continue;
+                    }
+                    isEqual = false;
+                    break;
+                }
+            }
+        }
+        return isEqual;
     }
 
     /* override from Object */

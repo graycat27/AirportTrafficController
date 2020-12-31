@@ -15,4 +15,7 @@ public interface IPoint {
     double distance(final IPoint another);
     /** 水平面での直線距離を返します */
     double levelDistance(final IPoint another);
+
+    /** このPointを水平面に投射したときに同じであるか否かを返します */
+    boolean levelEqual(Object another);
 }

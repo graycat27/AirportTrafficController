@@ -64,6 +64,16 @@ public abstract class Point implements IPoint {
         return Math.hypot((this.posX - another.getX()), (this.posZ - another.getZ()));
     }
 
+    @Override
+    public boolean levelEqual(Object another) {
+        if(!(another instanceof IPoint)){
+            return false;
+        }
+        final IPoint anotherPoint = (IPoint) another;
+        return (anotherPoint.getX() == this.posX &&
+                anotherPoint.getZ() == this.posZ);
+    }
+
     /* override from Object */
     @Override
     public boolean equals(Object another){
