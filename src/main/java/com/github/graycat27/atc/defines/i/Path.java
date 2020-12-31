@@ -144,45 +144,21 @@ public abstract class Path implements IPath {
         {
             isEqual = (
                     this.start.equals(anotherPath.getStart()) &&
-                    this.end.equals(anotherPath.getEnd())
+                    this.end.equals(anotherPath.getEnd()) &&
+                    this.getWayCount() == anotherPath.getWayCount()
                     );
             if(isEqual){
                 for(int thisIdx = 0, otherIdx = 0; thisIdx < this.way.size();/* nil */){
                     //way整合
-                    if(this.way.get(thisIdx).equals(anotherPath.getWayPoint(otherIdx))){
+                    IPoint thisWayPoint = this.way.get(thisIdx);
+                    IPoint anotherWayPoint = anotherPath.getWayPoint(otherIdx);
+                    if(thisWayPoint.equals(anotherWayPoint)) {
                         thisIdx++;
                         otherIdx++;
                         continue;
                     }
-                    //path上のpointか？
-                    IPoint cur = (thisIdx == 0)? start : this.way.get(thisIdx -1);
-                    IPoint next = this.way.get(thisIdx);
-                    IPoint mayOn = anotherPath.getWayPoint(otherIdx);
-                    //x-z面, x-y面でthisとanotherのpointが同直線上であることを検証する
-                    {
-                        //X-Z
-                        int deltaThisX = cur.getX() - next.getX();
-                        int deltaThisZ = cur.getZ() - next.getZ();
-                        int deltaOtherX = cur.getX() - mayOn.getX();
-                        int deltaOtherZ = cur.getZ() - mayOn.getZ();
-                        double thisXperZ = (double) deltaThisX / (double) deltaThisZ;
-                        double otherXperZ = (double) deltaOtherX / (double) deltaOtherZ;
-                        if(thisXperZ != otherXperZ) {
-                            isEqual = false;
-                            break;  //逆順走査へ
-                        }
-                        //X-Y
-                        int deltaThisY = cur.getY() - next.getY();
-                        int deltaOtherY = cur.getY() - mayOn.getY();
-                        double thisXperY = (double) deltaThisX / (double) deltaThisY;
-                        double otherXperY = (double) deltaOtherX / (double) deltaOtherY;
-                        if(thisXperY != otherXperY) {
-                            isEqual = false;
-                            break;  //逆順走査へ
-                        }
-                        otherIdx++;
-                        continue;
-                    }
+                    isEqual = false;
+                    break;
                 }
             }
             if(isEqual){
@@ -193,7 +169,8 @@ public abstract class Path implements IPath {
         {
             isEqual = (
                     this.start.equals(anotherPath.getEnd()) &&
-                    this.end.equals(anotherPath.getStart())
+                    this.end.equals(anotherPath.getStart()) &&
+                    this.getWayCount() == anotherPath.getWayCount()
             );
             if(isEqual){
                 for(int thisIdx = 0, otherIdx = anotherPath.getWayCount()-1; thisIdx < this.way.size();/* nil */){
@@ -203,36 +180,8 @@ public abstract class Path implements IPath {
                         otherIdx--;
                         continue;
                     }
-                    //path上のpointか？
-                    IPoint cur = (thisIdx == 0)? start : this.way.get(thisIdx -1);
-                    IPoint next = this.way.get(thisIdx);
-                    IPoint mayOn = anotherPath.getWayPoint(otherIdx);
-                    //x-z面, x-y面でthisとanotherのpointが同直線上であることを検証する
-                    {
-                        //X-Z
-                        int deltaThisX = cur.getX() - next.getX();
-                        int deltaThisZ = cur.getZ() - next.getZ();
-                        int deltaOtherX = cur.getX() - mayOn.getX();
-                        int deltaOtherZ = cur.getZ() - mayOn.getZ();
-                        double thisXperZ = (double) deltaThisX / (double) deltaThisZ;
-                        double otherXperZ = (double) deltaOtherX / (double) deltaOtherZ;
-                        if(thisXperZ != otherXperZ) {
-                            isEqual = false;
-                            break;  //逆順走査へ
-                        }
-                        //X-Y
-                        int deltaThisY = cur.getY() - next.getY();
-                        int deltaOtherY = cur.getY() - mayOn.getY();
-                        double thisXperY = (double) deltaThisX / (double) deltaThisY;
-                        double otherXperY = (double) deltaOtherX / (double) deltaOtherY;
-                        if(thisXperY != otherXperY) {
-                            isEqual = false;
-                            break;  //逆順走査へ
-                        }
-                        otherIdx--;
-                        continue;
-                    }
-
+                    isEqual = false;
+                    break;
                 }
             }
         }

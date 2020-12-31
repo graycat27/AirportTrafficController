@@ -28,8 +28,9 @@ public interface IPath {
 
     /** このPathを水平面に投射したときに同じであるか否かを返します */
     boolean levelEquals(Object another);
-    /** 同じ線形を表わしているかを返します。
-     * 始終点が逆の線形は<code>true</code>と評価します */
+    /** 始終点と経由点が合致した同一の線形を表わしているかを返します。<br>
+     * 始終点が逆の線形は<code>true</code>と評価します<br>
+     * 経由地点の指定が異なる場合は<code>false</code>と評価します */
     @Override
     boolean equals(Object another);
 

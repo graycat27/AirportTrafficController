@@ -278,55 +278,55 @@ class PathTest {
         assertTrue(path2.equals(path1));
     }
 
-    /**
-     * 正常系 * 同じ線形で、経由点数が異なるパターン
-     * 経由点数、[0,1] */
-    @Test
-    void equals_7() {
-        IPoint ps = new ConcretePoint(P1n64.x, P1n64.y, P1n64.z);
-        IPoint pw1 = new ConcretePoint(Po_64.x, Po_64.y, Po_64.z);
-        IPoint pe = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
-
-        List<IPoint> plist1 = new ArrayList<>();
-        List<IPoint> plist2 = new ArrayList<>();
-        plist1.add(ps);
-        //plist1.add(pw1);
-        plist1.add(pe);
-        plist2.add(ps);
-        plist2.add(pw1);
-        plist2.add(pe);
-
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
-
-        assertTrue(path1.equals(path2));
-        assertTrue(path2.equals(path1));
-    }
-
-    /**
-     * 準正常系 * 異なる線形で、経由点数が同じパターン
-     * 経由点数、[1,1] */
-    @Test
-    void equals_8() {
-        IPoint ps = new ConcretePoint(P1n64.x, P1n64.y, P1n64.z);
-        IPoint pw1 = new ConcretePoint(Po_64.x, Po_64.y, Po_64.z);
-        IPoint pw2 = new ConcretePoint(P2_64.x, P2_64.y, P2_64.z);
-        IPoint pe = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
-
-        List<IPoint> plist1 = new ArrayList<>();
-        List<IPoint> plist2 = new ArrayList<>();
-        plist1.add(ps);
-        plist1.add(pw1);
-        plist1.add(pe);
-        plist2.add(ps);
-        plist2.add(pw2);    //経由地点が異なる
-        plist2.add(pe);
-
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
-
-        assertFalse(path1.equals(path2));
-        assertFalse(path2.equals(path1));
-    }
+//    /**
+//     * 正常系 * 同じ線形で、経由点数が異なるパターン
+//     * 経由点数、[0,1] */
+//    @Test
+//    void equals_7() {
+//        IPoint ps = new ConcretePoint(P1n64.x, P1n64.y, P1n64.z);
+//        IPoint pw1 = new ConcretePoint(Po_64.x, Po_64.y, Po_64.z);
+//        IPoint pe = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+//
+//        List<IPoint> plist1 = new ArrayList<>();
+//        List<IPoint> plist2 = new ArrayList<>();
+//        plist1.add(ps);
+//        //plist1.add(pw1);
+//        plist1.add(pe);
+//        plist2.add(ps);
+//        plist2.add(pw1);
+//        plist2.add(pe);
+//
+//        Path path1 = new ConcretePath(plist1);
+//        Path path2 = new ConcretePath(plist2);
+//
+//        assertTrue(path1.equals(path2));
+//        assertTrue(path2.equals(path1));
+//    }
+//
+//    /**
+//     * 準正常系 * 異なる線形で、経由点数が同じパターン
+//     * 経由点数、[1,1] */
+//    @Test
+//    void equals_8() {
+//        IPoint ps = new ConcretePoint(P1n64.x, P1n64.y, P1n64.z);
+//        IPoint pw1 = new ConcretePoint(Po_64.x, Po_64.y, Po_64.z);
+//        IPoint pw2 = new ConcretePoint(P2_64.x, P2_64.y, P2_64.z);
+//        IPoint pe = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+//
+//        List<IPoint> plist1 = new ArrayList<>();
+//        List<IPoint> plist2 = new ArrayList<>();
+//        plist1.add(ps);
+//        plist1.add(pw1);
+//        plist1.add(pe);
+//        plist2.add(ps);
+//        plist2.add(pw2);    //経由地点が異なる
+//        plist2.add(pe);
+//
+//        Path path1 = new ConcretePath(plist1);
+//        Path path2 = new ConcretePath(plist2);
+//
+//        assertFalse(path1.equals(path2));
+//        assertFalse(path2.equals(path1));
+//    }
 
 }
