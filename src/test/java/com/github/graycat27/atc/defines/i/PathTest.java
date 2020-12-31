@@ -67,11 +67,226 @@ class PathTest {
         // 三次元true, 水平面true, false の3ケース
     }
 
+    /* levelEquals */
+    /** 正常系 始終点が完全一致（equals()でもtrueのもの） */
     @Test
-    void levelEquals() {
-        //TODO implement target class
+    void levelEquals_1() {
+        IPoint ps = new ConcretePoint(Po_0.x, Po_0.y, Po_0.z);
+        IPoint pe = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+
+        List<IPoint> plist1 = new ArrayList<>();
+        List<IPoint> plist2 = new ArrayList<>();
+        plist1.add(ps);
+        plist1.add(pe);
+        plist2.add(ps);
+        plist2.add(pe);
+
+        Path path1 = new ConcretePath(plist1);
+        Path path2 = new ConcretePath(plist2);
+
+        assertTrue(path1.levelEquals(path2));
+        assertTrue(path2.levelEquals(path1));
     }
 
+    /** 準正常系 始点が水平方向で不一致 */
+    @Test
+    void levelEquals_1_f1() {
+        IPoint ps = new ConcretePoint(P1n64.x, P1n64.y, P1n64.z);
+        IPoint psd = new ConcretePoint(Po_64.x, Po_64.y, Po_64.z);
+        IPoint pe = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+
+        List<IPoint> plist1 = new ArrayList<>();
+        List<IPoint> plist2 = new ArrayList<>();
+        plist1.add(ps);
+        plist1.add(pe);
+        plist2.add(psd);    //不一致ポイント
+        plist2.add(pe);
+
+        Path path1 = new ConcretePath(plist1);
+        Path path2 = new ConcretePath(plist2);
+
+        assertFalse(path1.levelEquals(path2));
+        assertFalse(path2.levelEquals(path1));
+    }
+
+    /** 準正常系 終点が水平面で不一致 */
+    @Test
+    void levelEquals_1_f2() {
+        IPoint ps = new ConcretePoint(Po_0.x, Po_0.y, Po_0.z);
+        IPoint pe = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+        IPoint ped = new ConcretePoint(Po_64.x, Po_64.y, Po_64.z);
+
+        List<IPoint> plist1 = new ArrayList<>();
+        List<IPoint> plist2 = new ArrayList<>();
+        plist1.add(ps);
+        plist1.add(pe);
+        plist2.add(ps);
+        plist2.add(ped);    //不一致ポイント
+
+        Path path1 = new ConcretePath(plist1);
+        Path path2 = new ConcretePath(plist2);
+
+        assertFalse(path1.levelEquals(path2));
+        assertFalse(path2.levelEquals(path1));
+    }
+
+    /** 正常系 始終点が高度違いで完全一致（equals()ではfalseのもの） */
+    @Test
+    void levelEquals_2() {
+        IPoint ps = new ConcretePoint(Po_0.x, Po_0.y, Po_0.z);
+        IPoint pe = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+        IPoint pe2 = new ConcretePoint(P1_64.x, 0, P1_64.z);
+
+        List<IPoint> plist1 = new ArrayList<>();
+        List<IPoint> plist2 = new ArrayList<>();
+        plist1.add(ps);
+        plist1.add(pe);
+        plist2.add(ps);
+        plist2.add(pe2);
+
+        Path path1 = new ConcretePath(plist1);
+        Path path2 = new ConcretePath(plist2);
+
+        assertTrue(path1.levelEquals(path2));
+        assertTrue(path2.levelEquals(path1));
+    }
+
+    /** 正常系 始終点が完全一致、経由点(1つ)が高度違い */
+    @Test
+    void levelEquals_3() {
+        IPoint ps = new ConcretePoint(Po_0.x, Po_0.y, Po_0.z);
+        IPoint pw1 = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+        IPoint pw2 = new ConcretePoint(P1_64.x, 0, P1_64.z);
+        IPoint pe = new ConcretePoint(P2_64.x, P2_64.y, P2_64.z);
+
+        List<IPoint> plist1 = new ArrayList<>();
+        List<IPoint> plist2 = new ArrayList<>();
+        plist1.add(ps);
+        plist1.add(pw1);
+        plist1.add(pe);
+        plist2.add(ps);
+        plist2.add(pw2);
+        plist2.add(pe);
+
+        Path path1 = new ConcretePath(plist1);
+        Path path2 = new ConcretePath(plist2);
+
+        assertTrue(path1.levelEquals(path2));
+        assertTrue(path2.levelEquals(path1));
+    }
+
+    /** 準正常系 始終点が一致、経由点(1つ)は不一致 */
+    @Test
+    void levelEquals_3_f1() {
+        IPoint ps = new ConcretePoint(Po_0.x, Po_0.y, Po_0.z);
+        IPoint pw1 = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+        IPoint pw2 = new ConcretePoint(Po_64.x, Po_64.y, Po_64.z);
+        IPoint pe = new ConcretePoint(P2_64.x, P2_64.y, P2_64.z);
+
+        List<IPoint> plist1 = new ArrayList<>();
+        List<IPoint> plist2 = new ArrayList<>();
+        plist1.add(ps);
+        plist1.add(pw1);
+        plist1.add(pe);
+        plist2.add(ps);
+        plist2.add(pw2);    //不一致
+        plist2.add(pe);
+
+        Path path1 = new ConcretePath(plist1);
+        Path path2 = new ConcretePath(plist2);
+
+        assertFalse(path1.levelEquals(path2));
+        assertFalse(path2.levelEquals(path1));
+    }
+
+    /** 正常系 始終点が逆順一致、経由点(1つ)が一致 */
+    @Test
+    void levelEquals_4() {
+        IPoint ps = new ConcretePoint(Po_64.x, Po_64.y, Po_64.z);
+        IPoint pw1 = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+        IPoint pe = new ConcretePoint(P2_64.x, P2_64.y, P2_64.z);
+
+        IPoint pe0 = new ConcretePoint(P2_64.x, 0, P2_64.z);
+        IPoint pw10 = new ConcretePoint(P1_64.x, 0, P1_64.z);
+        IPoint ps0 = new ConcretePoint(Po_64.x, 0, Po_64.z);
+
+        List<IPoint> plist1 = new ArrayList<>();
+        List<IPoint> plist2 = new ArrayList<>();
+        plist1.add(ps);
+        plist1.add(pw1);
+        plist1.add(pe);
+        plist2.add(pe0);     //逆順 y=0
+        plist2.add(pw10);
+        plist2.add(ps0);
+
+        Path path1 = new ConcretePath(plist1);
+        Path path2 = new ConcretePath(plist2);
+
+        assertTrue(path1.levelEquals(path2));
+        assertTrue(path2.levelEquals(path1));
+    }
+
+    /** 正常系 始終点、経由点(複数) 高度違い */
+    @Test
+    void levelEquals_5() {
+        IPoint ps = new ConcretePoint(Po_0.x, Po_0.y, Po_0.z);
+        IPoint pw1 = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+        IPoint pw2 = new ConcretePoint(P3_120.x, P3_120.y, P3_120.z);
+        IPoint pe = new ConcretePoint(P2_64.x, P2_64.y, P2_64.z);
+        IPoint ps_2 = new ConcretePoint(Po_0.x, 27, Po_0.z);
+        IPoint pw1_2 = new ConcretePoint(P1_64.x, 27, P1_64.z);
+        IPoint pw2_2 = new ConcretePoint(P3_120.x, 27, P3_120.z);
+        IPoint pe_2 = new ConcretePoint(P2_64.x, 27, P2_64.z);
+
+        List<IPoint> plist1 = new ArrayList<>();
+        List<IPoint> plist2 = new ArrayList<>();
+        plist1.add(ps);
+        plist1.add(pw1);
+        plist1.add(pw2);
+        plist1.add(pe);
+        plist2.add(ps_2);
+        plist2.add(pw1_2);
+        plist2.add(pw2_2);
+        plist2.add(pe_2);
+
+        Path path1 = new ConcretePath(plist1);
+        Path path2 = new ConcretePath(plist2);
+
+        assertTrue(path1.levelEquals(path2));
+        assertTrue(path2.levelEquals(path1));
+    }
+
+    /** 正常系 始終点、経由点(複数) 逆順一致 高度違い */
+    @Test
+    void levelEquals_6() {
+        IPoint ps = new ConcretePoint(Po_0.x, Po_0.y, Po_0.z);
+        IPoint pw1 = new ConcretePoint(P1_64.x, P1_64.y, P1_64.z);
+        IPoint pw2 = new ConcretePoint(P3_120.x, P3_120.y, P3_120.z);
+        IPoint pe = new ConcretePoint(P2_64.x, P2_64.y, P2_64.z);
+        IPoint ps_2 = new ConcretePoint(Po_0.x, 27, Po_0.z);
+        IPoint pw1_2 = new ConcretePoint(P1_64.x, 27, P1_64.z);
+        IPoint pw2_2 = new ConcretePoint(P3_120.x, 27, P3_120.z);
+        IPoint pe_2 = new ConcretePoint(P2_64.x, 27, P2_64.z);
+
+        List<IPoint> plist1 = new ArrayList<>();
+        List<IPoint> plist2 = new ArrayList<>();
+        plist1.add(ps);
+        plist1.add(pw1);
+        plist1.add(pw2);
+        plist1.add(pe);
+        plist2.add(pe_2);     //逆順
+        plist2.add(pw2_2);
+        plist2.add(pw1_2);
+        plist2.add(ps_2);
+
+        Path path1 = new ConcretePath(plist1);
+        Path path2 = new ConcretePath(plist2);
+
+        assertTrue(path1.levelEquals(path2));
+        assertTrue(path2.levelEquals(path1));
+    }
+
+    /* equals */
     /** 正常系 始終点が完全一致 */
     @Test
     void equals_1() {
