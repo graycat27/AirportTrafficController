@@ -5,7 +5,7 @@ import org.bukkit.Location;
 import org.bukkit.World;
 
 /** 特定のx-y-z座標 */
-public class Point implements IPoint {
+public abstract class Point implements IPoint {
 
     /* フィールド */
     //地点情報
