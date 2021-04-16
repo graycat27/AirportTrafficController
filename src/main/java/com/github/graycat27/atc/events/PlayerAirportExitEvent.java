@@ -4,6 +4,7 @@ import com.github.graycat27.atc.defines.airport.Airport;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
+@Deprecated
 public class PlayerAirportExitEvent {
     private static final HandlerList handlers = new HandlerList();
     private Player player;
