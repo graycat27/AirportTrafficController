@@ -11,7 +11,7 @@ public class Runway extends Path {
 
 
     /* コンストラクタ */
-    Runway(){
+    Runway(){   //FIXME
         super(null);
         //cause IllegalArgumentException
         //FIXME
@@ -20,7 +20,10 @@ public class Runway extends Path {
 
 
     /* メソッド */
-
+    @Override
+    public Runway clone(){
+        return new Runway();    //FIXME
+    }
 
 
 }

@@ -18,6 +18,11 @@ public class Spot extends Point {
     }
 
     /* メソッド */
+    @Override
+    public Spot clone(){
+        return new Spot(getSpotNumber(), getX(), getY(), getZ());
+    }
+
     /** スポット番号(文字あり) */
     public String getSpotNumber(){
         return this.spotNumber;

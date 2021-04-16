@@ -14,4 +14,8 @@ public class Tower extends Point {
     }
 
     /* メソッド */
+    @Override
+    public Tower clone(){
+        return new Tower(getX(), getY(), getZ());
+    }
 }
