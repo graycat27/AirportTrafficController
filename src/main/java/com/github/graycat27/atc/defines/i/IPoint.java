@@ -1,11 +1,12 @@
 package com.github.graycat27.atc.defines.i;
 
+import com.github.graycat27.atc.utils.ICloneable;
 import org.bukkit.Location;
 
 /**
  * 地点情報
  */
-public interface IPoint {
+public interface IPoint extends ICloneable {
 
     Location getLocation();
     int getX();
@@ -18,4 +19,7 @@ public interface IPoint {
 
     /** このPointを水平面に投射したときに同じであるか否かを返します */
     boolean levelEqual(Object another);
+
+    @Override
+    IPoint clone();
 }

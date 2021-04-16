@@ -1,7 +1,9 @@
 package com.github.graycat27.atc.defines.i;
 
+import com.github.graycat27.atc.utils.ICloneable;
+
 /** 周波数インターフェース */
-public interface IFrequency {
+public interface IFrequency extends ICloneable {
 
     //定数値
     /* 周波数値 100.0～999.9の範囲を許容する */
@@ -13,5 +15,8 @@ public interface IFrequency {
 
     //メソッド定義
     String getFreq();
+
+    @Override
+    IFrequency clone();
 
 }

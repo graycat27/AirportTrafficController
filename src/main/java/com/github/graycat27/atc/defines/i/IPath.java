@@ -1,6 +1,8 @@
 package com.github.graycat27.atc.defines.i;
 
-public interface IPath {
+import com.github.graycat27.atc.utils.ICloneable;
+
+public interface IPath extends ICloneable {
 
     IPoint getStart();
     int getWayCount();
@@ -34,5 +36,7 @@ public interface IPath {
     @Override
     boolean equals(Object another);
 
+    @Override
+    IPath clone();
 
 }
