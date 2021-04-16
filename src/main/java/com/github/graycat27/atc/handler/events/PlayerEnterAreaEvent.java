@@ -1,4 +1,4 @@
-package com.github.graycat27.atc.events;
+package com.github.graycat27.atc.handler.events;
 
 import com.github.graycat27.atc.defines.i.IArea;
 import org.bukkit.entity.Player;
@@ -6,7 +6,7 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-public class PlayerExitAreaEvent extends Event {
+public class PlayerEnterAreaEvent extends Event{
     private static final HandlerList handlers = new HandlerList();
     public static HandlerList getHandlerList(){
         return handlers;
@@ -15,7 +15,7 @@ public class PlayerExitAreaEvent extends Event {
     private final Player player;
     private final IArea area;
 
-    public PlayerExitAreaEvent(Player p, IArea a){
+    public PlayerEnterAreaEvent(Player p, IArea a){
         this.player = p;
         this.area = a;
     }
