@@ -1,6 +1,10 @@
 package com.github.graycat27.atc.defines.airport;
 
+import com.github.graycat27.atc.defines.i.IPoint;
 import com.github.graycat27.atc.defines.i.Path;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Runway extends Path {
 
@@ -11,18 +15,25 @@ public class Runway extends Path {
 
 
     /* コンストラクタ */
-    Runway(){   //FIXME
-        super(null);
-        //cause IllegalArgumentException
-        //FIXME
-        rwyNumber = "18-36";
-    }
+    Runway(String rwyNum, List<IPoint> startEndPoint){
+        super(startEndPoint);
+        if(startEndPoint.size() != 2 || startEndPoint.get(0).equals(startEndPoint.get(1))){
+            throw new IllegalArgumentException("Runway must be a single line");
+        }
 
+        if(rwyNum == null || rwyNum.length() == 0){
+            throw new IllegalArgumentException("Runway Number can not be null or empty");
+        }
+        rwyNumber = rwyNum;
+    }
 
     /* メソッド */
     @Override
     public Runway clone(){
-        return new Runway();    //FIXME
+        List<IPoint> startEndPoint = new ArrayList<>();
+        startEndPoint.add(this.getStart());
+        startEndPoint.add(this.getEnd());
+        return new Runway(this.rwyNumber, startEndPoint);
     }
 
 
