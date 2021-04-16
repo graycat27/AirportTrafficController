@@ -74,6 +74,9 @@ public abstract class Point implements IPoint {
                 anotherPoint.getZ() == this.posZ);
     }
 
+    @Override
+    abstract public Point clone();
+
     /* override from Object */
     @Override
     public boolean equals(Object another){

@@ -87,6 +87,9 @@ public abstract class Frequency implements IFrequency {
         setFreq(n, d);
     }
 
+    @Override
+    abstract public Frequency clone();
+
     //private ...
 
 }

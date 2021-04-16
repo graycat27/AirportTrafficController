@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /** 線形の範囲情報 */
+@SuppressWarnings("ForLoopReplaceableByForEach")
 public abstract class Path implements IPath {
 
     /* フィールド */
@@ -178,6 +179,9 @@ public abstract class Path implements IPath {
         }
         return isEqual;
     }
+
+    @Override
+    abstract public Path clone();
 
     /* override from Object */
     @Override

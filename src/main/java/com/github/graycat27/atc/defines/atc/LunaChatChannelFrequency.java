@@ -22,5 +22,9 @@ public class LunaChatChannelFrequency extends Frequency {
 
 
     /* メソッド */
+    @Override
+    public LunaChatChannelFrequency clone(){
+        return new LunaChatChannelFrequency(getFreq());
+    }
 
 }
