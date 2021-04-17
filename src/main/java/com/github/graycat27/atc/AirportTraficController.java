@@ -10,6 +10,7 @@ public final class AirportTraficController extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         this.getCommand(CommandWord.ATC).setExecutor(new AtcCommandHandler(this));
+        this.getCommand(CommandWord.ATC).setTabCompleter(new AtcCommandHandler(this));
     }
 
     @Override
