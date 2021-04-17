@@ -4,7 +4,7 @@ import com.github.graycat27.atc.consts.CommandWord;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class AirportTraficController extends JavaPlugin {
+public final class AirportTrafficController extends JavaPlugin {
 
     /** Plugin startup logic */
     @Override
