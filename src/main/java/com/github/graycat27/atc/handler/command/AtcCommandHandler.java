@@ -5,11 +5,22 @@ import com.github.graycat27.atc.handler.command.action.CommandHelp;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.Plugin;
 
 /**
  * コマンドの受理部品
  */
 public class AtcCommandHandler implements CommandExecutor {
+
+    // フィールド
+    Plugin plugin;
+
+    // コンストラクタ
+    public AtcCommandHandler(Plugin plugin){
+        this.plugin = plugin;
+    }
+
+    // メソッド
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
