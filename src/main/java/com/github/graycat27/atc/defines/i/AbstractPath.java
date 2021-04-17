@@ -5,7 +5,7 @@ import java.util.List;
 
 /** 線形の範囲情報 */
 @SuppressWarnings("ForLoopReplaceableByForEach")
-public abstract class Path implements IPath {
+public abstract class AbstractPath implements IPath {
 
     /* フィールド */
     /** 始点 */
@@ -20,7 +20,7 @@ public abstract class Path implements IPath {
      * Listで渡された経由点を結ぶPathを生成します
      * @param wayPoints 経由点(始終点含む) null不可
      */
-    public Path(List<IPoint> wayPoints){
+    public AbstractPath(List<IPoint> wayPoints){
         if(wayPoints == null || wayPoints.size() == 0){
             throw new IllegalArgumentException("way of Path can not be null or empty");
         }
@@ -181,7 +181,7 @@ public abstract class Path implements IPath {
     }
 
     @Override
-    abstract public Path clone();
+    abstract public AbstractPath clone();
 
     /* override from Object */
     @Override

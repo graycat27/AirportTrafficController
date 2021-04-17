@@ -1,9 +1,9 @@
 package com.github.graycat27.atc.defines.atc;
 
-import com.github.graycat27.atc.defines.i.Frequency;
+import com.github.graycat27.atc.defines.i.AbstractFrequency;
 
 /** LunaChatのチャンネルと連携する情報を保持する */
-public class LunaChatChannelFrequency extends Frequency {
+public class LunaChatChannelFrequency extends AbstractFrequency {
 
     /* フィールド */
 

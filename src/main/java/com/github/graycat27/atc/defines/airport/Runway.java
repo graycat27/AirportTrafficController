@@ -1,12 +1,12 @@
 package com.github.graycat27.atc.defines.airport;
 
 import com.github.graycat27.atc.defines.i.IPoint;
-import com.github.graycat27.atc.defines.i.Path;
+import com.github.graycat27.atc.defines.i.AbstractPath;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Runway extends Path {
+public class Runway extends AbstractPath {
 
     /* フィールド */
     /** 滑走路番号

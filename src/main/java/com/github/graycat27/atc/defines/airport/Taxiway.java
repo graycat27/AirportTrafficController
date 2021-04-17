@@ -1,7 +1,7 @@
 package com.github.graycat27.atc.defines.airport;
 
 import com.github.graycat27.atc.defines.i.IPoint;
-import com.github.graycat27.atc.defines.i.Path;
+import com.github.graycat27.atc.defines.i.AbstractPath;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  * 誘導路<br>
  * 屈曲している可能性がある
  */
-public class Taxiway extends Path {
+public class Taxiway extends AbstractPath {
 
     // フィールド
     private String name;

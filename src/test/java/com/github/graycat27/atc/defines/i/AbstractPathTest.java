@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PathTest {
+class AbstractPathTest {
 
     /*
      * class ConcretePath extends Path{ }
@@ -19,7 +19,7 @@ class PathTest {
     static class P3_120 { static int x = 270; static int y = 120; static int z = 270; }
     static class P1n64 { static int x = -100; static int y = 64; static int z = -100; }
 
-    class ConcretePoint extends Point {
+    class ConcretePoint extends AbstractPoint {
         public ConcretePoint(int posX, int posY, int posZ) {
             super(posX, posY, posZ);
         }
@@ -29,7 +29,7 @@ class PathTest {
         }
     }
 
-    class ConcretePath extends Path{
+    class ConcretePath extends AbstractPath {
         public ConcretePath(List<IPoint> wayPoints) {
             super(wayPoints);
         }
@@ -89,8 +89,8 @@ class PathTest {
         plist2.add(ps);
         plist2.add(pe);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.levelEquals(path2));
         assertTrue(path2.levelEquals(path1));
@@ -110,8 +110,8 @@ class PathTest {
         plist2.add(psd);    //不一致ポイント
         plist2.add(pe);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertFalse(path1.levelEquals(path2));
         assertFalse(path2.levelEquals(path1));
@@ -131,8 +131,8 @@ class PathTest {
         plist2.add(ps);
         plist2.add(ped);    //不一致ポイント
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertFalse(path1.levelEquals(path2));
         assertFalse(path2.levelEquals(path1));
@@ -152,8 +152,8 @@ class PathTest {
         plist2.add(ps);
         plist2.add(pe2);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.levelEquals(path2));
         assertTrue(path2.levelEquals(path1));
@@ -176,8 +176,8 @@ class PathTest {
         plist2.add(pw2);
         plist2.add(pe);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.levelEquals(path2));
         assertTrue(path2.levelEquals(path1));
@@ -200,8 +200,8 @@ class PathTest {
         plist2.add(pw2);    //不一致
         plist2.add(pe);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertFalse(path1.levelEquals(path2));
         assertFalse(path2.levelEquals(path1));
@@ -227,8 +227,8 @@ class PathTest {
         plist2.add(pw10);
         plist2.add(ps0);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.levelEquals(path2));
         assertTrue(path2.levelEquals(path1));
@@ -257,8 +257,8 @@ class PathTest {
         plist2.add(pw2_2);
         plist2.add(pe_2);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.levelEquals(path2));
         assertTrue(path2.levelEquals(path1));
@@ -287,8 +287,8 @@ class PathTest {
         plist2.add(pw1_2);
         plist2.add(ps_2);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.levelEquals(path2));
         assertTrue(path2.levelEquals(path1));
@@ -308,8 +308,8 @@ class PathTest {
         plist2.add(ps);
         plist2.add(pe);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.equals(path2));
         assertTrue(path2.equals(path1));
@@ -330,8 +330,8 @@ class PathTest {
         plist2.add(psd);    //不一致ポイント
         plist2.add(pe);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertFalse(path1.equals(path2));
         assertFalse(path2.equals(path1));
@@ -351,8 +351,8 @@ class PathTest {
         plist2.add(ps);
         plist2.add(ped);    //不一致ポイント
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertFalse(path1.equals(path2));
         assertFalse(path2.equals(path1));
@@ -371,8 +371,8 @@ class PathTest {
         plist2.add(pe); //逆順
         plist2.add(ps);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.equals(path2));
         assertTrue(path2.equals(path1));
@@ -395,8 +395,8 @@ class PathTest {
         plist2.add(pw1);
         plist2.add(pe);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.equals(path2));
         assertTrue(path2.equals(path1));
@@ -419,8 +419,8 @@ class PathTest {
         plist2.add(pw2);    //不一致
         plist2.add(pe);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertFalse(path1.equals(path2));
         assertFalse(path2.equals(path1));
@@ -442,8 +442,8 @@ class PathTest {
         plist2.add(pw1);    //経由一致
         plist2.add(ps);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.equals(path2));
         assertTrue(path2.equals(path1));
@@ -468,8 +468,8 @@ class PathTest {
         plist2.add(pw2);
         plist2.add(pe);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.equals(path2));
         assertTrue(path2.equals(path1));
@@ -494,8 +494,8 @@ class PathTest {
         plist2.add(pw1);
         plist2.add(ps);
 
-        Path path1 = new ConcretePath(plist1);
-        Path path2 = new ConcretePath(plist2);
+        AbstractPath path1 = new ConcretePath(plist1);
+        AbstractPath path2 = new ConcretePath(plist2);
 
         assertTrue(path1.equals(path2));
         assertTrue(path2.equals(path1));

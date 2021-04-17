@@ -1,9 +1,9 @@
 package com.github.graycat27.atc.defines.airport;
 
-import com.github.graycat27.atc.defines.i.Point;
+import com.github.graycat27.atc.defines.i.AbstractPoint;
 import org.apache.commons.lang3.StringUtils;
 
-public class Spot extends Point {
+public class Spot extends AbstractPoint {
 
     /* フィールド */
     String spotNumber;

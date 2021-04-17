@@ -1,7 +1,5 @@
 package com.github.graycat27.atc.components;
 
-import com.github.graycat27.atc.defines.i.Frequency;
-
 /** 周波数に関する処理部品 */
 public class FrequencyUtil {
 

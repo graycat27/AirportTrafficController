@@ -1,12 +1,9 @@
 package com.github.graycat27.atc.defines.i;
 
-import com.github.graycat27.atc.components.FrequencyUtil;
-import com.github.graycat27.atc.defines.i.IFrequency;
-
 import java.util.Objects;
 
 /** 通信周波数 */
-public abstract class Frequency implements IFrequency {
+public abstract class AbstractFrequency implements IFrequency {
 
     //フィールド
     /* 周波数値 */
@@ -17,10 +14,10 @@ public abstract class Frequency implements IFrequency {
     }
 
     //コンストラクタ
-    protected Frequency(int n, int d){
+    protected AbstractFrequency(int n, int d){
         setFreq(n,d);
     }
-    protected Frequency(String freq){
+    protected AbstractFrequency(String freq){
         setFreq(freq);
     }
 
@@ -88,7 +85,7 @@ public abstract class Frequency implements IFrequency {
     }
 
     @Override
-    abstract public Frequency clone();
+    abstract public AbstractFrequency clone();
 
     //private ...
 

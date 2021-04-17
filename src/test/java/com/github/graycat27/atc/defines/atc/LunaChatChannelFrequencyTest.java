@@ -1,6 +1,6 @@
 package com.github.graycat27.atc.defines.atc;
 
-import com.github.graycat27.atc.defines.i.Frequency;
+import com.github.graycat27.atc.defines.i.AbstractFrequency;
 import com.github.graycat27.atc.defines.i.IFrequency;
 import org.junit.jupiter.api.Test;
 
@@ -11,17 +11,17 @@ class LunaChatChannelFrequencyTest {
     /* abstract class Frequency */
     @Test
     void getFreq_normal() {
-        Frequency f = new LunaChatChannelFrequency(123, 4);
+        IFrequency f = new LunaChatChannelFrequency(123, 4);
         assertEquals("123.4", f.getFreq());
     }
     @Test
     void getFreq_min() {
-        Frequency f = new LunaChatChannelFrequency(100, 0);
+        IFrequency f = new LunaChatChannelFrequency(100, 0);
         assertEquals("100.0", f.getFreq());
     }
     @Test
     void getFreq_max() {
-        Frequency f = new LunaChatChannelFrequency(999,9);
+        IFrequency f = new LunaChatChannelFrequency(999,9);
         assertEquals("999.9", f.getFreq());
     }
 
@@ -92,26 +92,26 @@ class LunaChatChannelFrequencyTest {
     @Test
     void setFreqStr_OK1_min() {
         String val = "100.0";
-        Frequency f = new LunaChatChannelFrequency(val);
+        IFrequency f = new LunaChatChannelFrequency(val);
         assertEquals(val, f.getFreq());
     }
     @Test
     void setFreqStr_OK2_max() {
         String val = "999.9";
-        Frequency f = new LunaChatChannelFrequency(val);
+        IFrequency f = new LunaChatChannelFrequency(val);
         assertEquals(val, f.getFreq());
     }
     @Test
     void setFreqStr_OK3() {
 
         String val = "123.4";
-        Frequency f = new LunaChatChannelFrequency(val);
+        IFrequency f = new LunaChatChannelFrequency(val);
         assertEquals(val, f.getFreq());
     }
     @Test
     void setFreqStr_OK4() {
         String val = "123";
-        Frequency f = new LunaChatChannelFrequency(val);
+        IFrequency f = new LunaChatChannelFrequency(val);
         assertEquals("123.0", f.getFreq());
     }
 

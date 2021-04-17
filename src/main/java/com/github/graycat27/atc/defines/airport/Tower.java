@@ -1,9 +1,9 @@
 package com.github.graycat27.atc.defines.airport;
 
-import com.github.graycat27.atc.defines.i.Point;
+import com.github.graycat27.atc.defines.i.AbstractPoint;
 
 /** 管制塔 */
-public class Tower extends Point {
+public class Tower extends AbstractPoint {
 
     /* フィールド */
 

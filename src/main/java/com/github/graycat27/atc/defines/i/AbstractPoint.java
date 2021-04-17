@@ -2,10 +2,9 @@ package com.github.graycat27.atc.defines.i;
 
 import com.github.graycat27.atc.components.PropertyUtil;
 import org.bukkit.Location;
-import org.bukkit.World;
 
 /** 特定のx-y-z座標 */
-public abstract class Point implements IPoint {
+public abstract class AbstractPoint implements IPoint {
 
     /* フィールド */
     //地点情報
@@ -14,13 +13,13 @@ public abstract class Point implements IPoint {
     private final int posZ;
 
     /* コンストラクタ */
-    public Point(int posX, int posZ){
+    public AbstractPoint(int posX, int posZ){
         this.posX = posX;
         this.posY = 64; //水面高度を既定値とする
         this.posZ = posZ;
     }
 
-    public Point(int posX, int posY, int posZ){
+    public AbstractPoint(int posX, int posY, int posZ){
         this.posX = posX;
         this.posY = posY;
         this.posZ = posZ;
@@ -75,7 +74,7 @@ public abstract class Point implements IPoint {
     }
 
     @Override
-    abstract public Point clone();
+    abstract public AbstractPoint clone();
 
     /* override from Object */
     @Override
