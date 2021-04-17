@@ -72,15 +72,16 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
     /**
      * メッセージを表示させる。
      * コンソールとゲーム内プレイヤーの違いを意識しないで処理するために作成
-     * @param sender
-     * @param message 表示させるメッセージ文。本処理内で冒頭に [ATC] を付与する
+     * @param sender コマンドの発行者
+     * @param message 表示させるメッセージ文。本処理内で冒頭に<code>[ATC] </code>を付与する
      */
-    public void sendMessage(CommandSender sender, String message){
+    public void sendMessage(final CommandSender sender, String message){
+        String msg = "[ATC] " + message;
         if(sender instanceof Player){
             Player p = (Player) sender;
-            p.sendMessage("[ATC] " + message);
+            p.sendMessage(msg);
         }else{
-            plugin.getLogger().info("[ATC] " + message);
+            plugin.getLogger().info(msg);
         }
     }
 
