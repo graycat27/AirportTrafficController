@@ -14,10 +14,10 @@ public abstract class AbstractFrequency implements IFrequency {
     }
 
     //コンストラクタ
-    protected AbstractFrequency(int n, int d){
+    public AbstractFrequency(int n, int d){
         setFreq(n,d);
     }
-    protected AbstractFrequency(String freq){
+    public AbstractFrequency(String freq){
         setFreq(freq);
     }
 

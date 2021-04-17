@@ -1,6 +1,7 @@
 package com.github.graycat27.atc.components;
 
 import com.github.graycat27.atc.defines.Direction;
+import com.github.graycat27.atc.defines.i.ConcretePoint;
 import com.github.graycat27.atc.defines.i.IPoint;
 import com.github.graycat27.atc.defines.i.AbstractPoint;
 import org.junit.jupiter.api.Test;
@@ -11,15 +12,6 @@ class DirectionUtilTest {
 
 
     /* getDirectionBetweenPoints */
-    class ConcretePoint extends AbstractPoint {
-        public ConcretePoint(int posX, int posY, int posZ) {
-            super(posX, posY, posZ);
-        }
-        @Override
-        public ConcretePoint clone(){
-            return this;
-        }
-    }
     /** 北 */
     @Test
     void getDirectionBetweenPoints_North() {
