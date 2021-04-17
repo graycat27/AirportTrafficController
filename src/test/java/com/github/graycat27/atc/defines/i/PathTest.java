@@ -23,11 +23,19 @@ class PathTest {
         public ConcretePoint(int posX, int posY, int posZ) {
             super(posX, posY, posZ);
         }
+        @Override
+        public ConcretePoint clone(){
+            return this;
+        }
     }
 
     class ConcretePath extends Path{
         public ConcretePath(List<IPoint> wayPoints) {
             super(wayPoints);
+        }
+        @Override
+        public ConcretePath clone(){
+            return this;
         }
     }
 

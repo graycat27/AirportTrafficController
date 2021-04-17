@@ -15,6 +15,10 @@ class DirectionUtilTest {
         public ConcretePoint(int posX, int posY, int posZ) {
             super(posX, posY, posZ);
         }
+        @Override
+        public ConcretePoint clone(){
+            return this;
+        }
     }
     /** 北 */
     @Test
