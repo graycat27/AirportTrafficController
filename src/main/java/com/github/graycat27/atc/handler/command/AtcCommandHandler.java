@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
         if (!command.getName().equalsIgnoreCase(CommandWord.ATC)){
             return false;
         }
-        if(args.length == 0){
+        if(args.length == 0 || CommandWord.HELP.equalsIgnoreCase(args[0])){
             // /atc のみの場合
             CommandHelp.showHelp(sender);
             return true;
@@ -45,8 +46,12 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             //args[1] で処理分岐
         }
 
-
+        this.showMessageUnknownCommand(sender);
         return true;
+    }
+
+    private void showMessageUnknownCommand(CommandSender sender){
+        sendMessage(sender, "wrong command. use [/atc help]");
     }
 
     /**
@@ -62,6 +67,21 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
         //TODO make this
         return null;
+    }
+
+    /**
+     * メッセージを表示させる。
+     * コンソールとゲーム内プレイヤーの違いを意識しないで処理するために作成
+     * @param sender
+     * @param message 表示させるメッセージ文。本処理内で冒頭に [ATC] を付与する
+     */
+    public void sendMessage(CommandSender sender, String message){
+        if(sender instanceof Player){
+            Player p = (Player) sender;
+            p.sendMessage("[ATC] " + message);
+        }else{
+            plugin.getLogger().info("[ATC] " + message);
+        }
     }
 
 

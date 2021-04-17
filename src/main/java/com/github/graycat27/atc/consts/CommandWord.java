@@ -6,6 +6,9 @@ public final class CommandWord {
     /**  */
     public static final String ATC = "atc";
 
+    /** ヘルプ */
+    public static final String HELP = "help";
+
     /** 周波数管理コマンド群 */
     public static class Freq {
         public static final String FREQ = "freq";
