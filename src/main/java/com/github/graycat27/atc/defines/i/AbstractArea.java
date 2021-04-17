@@ -25,8 +25,18 @@ public abstract class AbstractArea implements IArea {
         int x2 = pos2.getX();
         int y2 = pos2.getY();
         int z2 = pos2.getZ();
-
-
+        IPoint minP = new ConcretePoint(
+                (x1<x2)?x1:x2,
+                (y1<y2)?y1:y2,
+                (z1<z2)?z1:z2
+        );
+        IPoint maxP = new ConcretePoint(
+                (x1<x2)?x2:x1,
+                (y1<y2)?y2:y1,
+                (z1<z2)?z2:z1
+        );
+        this.minPoint = minP;
+        this.maxPoint = maxP;
     }
 
     // メソッド
