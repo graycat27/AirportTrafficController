@@ -1,6 +1,9 @@
 package com.github.graycat27.atc.defines.atc;
 
 import com.github.graycat27.atc.consts.Control;
+import com.github.graycat27.atc.defines.i.IArea;
+import com.github.graycat27.atc.defines.i.IFrequency;
+import com.github.graycat27.atc.defines.sky.ATCArea;
 
 public class ATCControl {
 
@@ -10,6 +13,18 @@ public class ATCControl {
 
     /** 管制の役割 */
     private Control control;
+    public Control getControl(){
+        return control;
+    }
 
+    private IFrequency frequency;
+    public IFrequency getFrequency(){
+        return frequency;
+    }
+
+    private ATCArea area;
+    public IArea getArea(){
+        return area;
+    }
 
 }
