@@ -18,4 +18,49 @@ public final class CommandWord {
         /** 切断 */
         public static final String CUT = "cut";
     }
+
+    /* 管理コマンド群 */
+    /** データ加工方法 */
+    public static class Method {
+        /** 追加 */
+        public static final String ADD = "add";
+        /** 編集 */
+        public static final String MODIFY = "mod";
+        /** 照会 */
+        public static final String INFO = "info";
+        /*
+        削除 DELETE
+         */
+    }
+
+    /** 対象データ */
+    public static class Target {
+        /** 空港 */
+        public static final String AIRPORT = "airport";
+        /** 管制圏 */
+        public static final String AREA = "area";
+    }
+
+    /** 空港の詳細情報キー */
+    public static class AirportMeta {
+        /** 名称 日本語可 */
+        public static final String NAME = "name";
+
+        public static final String ATC_Name = "ATC_name";
+
+        public static final String TWR_FREQ = "TWR_freq";
+
+        public static final String CTL_FREQ = "CTL_freq";
+    }
+
+    /** 管制圏の詳細情報キー */
+    public static class AreaMeta {
+
+        public static final String FREQ = "freq";
+
+        public static final String POS = "pos";
+
+        public static final String RADIUS = "r";
+    }
+
 }
