@@ -46,6 +46,7 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
         }
         lcChannel = AirportTrafficController.getLcApi().getChannel(channelName);
         lcChannel.addMember(new LunaChatDummyMember());
+        setLcChannelConfig();
     }
 
     private void setLcChannelConfig(){
