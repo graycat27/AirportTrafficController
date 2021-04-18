@@ -1,6 +1,7 @@
 package com.github.graycat27.atc.handler.command;
 
 import com.github.graycat27.atc.consts.CommandWord;
+import com.github.graycat27.atc.defines.atc.LunaChatChannelFrequency;
 import com.github.graycat27.atc.handler.command.action.CommandAirport;
 import com.github.graycat27.atc.handler.command.action.CommandArea;
 import com.github.graycat27.atc.handler.command.action.CommandFreq;
@@ -132,6 +133,17 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                 }
                 return true;
             }
+        }
+
+        if("test".equals(args[0])){
+            if("create".equals(args[1])){
+
+                LunaChatChannelFrequency ch = new LunaChatChannelFrequency(args[2]);
+                sendMessage(sender, ch.toString());
+                return true;
+            }
+
+
         }
 
         this.sendMessageUnknownCommand(sender);
