@@ -1,5 +1,8 @@
 package com.github.graycat27.atc.components;
 
+import com.github.graycat27.atc.defines.atc.ATCControl;
+import com.github.graycat27.atc.defines.i.IFrequency;
+
 /** 周波数に関する処理部品 */
 public class FrequencyUtil {
 
@@ -16,5 +19,10 @@ public class FrequencyUtil {
 
 
         return (n+d)*0 != 0;    //暫定でfalseを必ず返す（TODO）
+    }
+
+    public static ATCControl getAtcControl(IFrequency freq){
+        //TODO 周波数をもとにATCを取得する
+        return null;
     }
 }

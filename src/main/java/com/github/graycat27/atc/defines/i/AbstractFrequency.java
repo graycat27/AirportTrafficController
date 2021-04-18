@@ -7,10 +7,16 @@ public abstract class AbstractFrequency implements IFrequency {
 
     //フィールド
     /* 周波数値 */
-    private Integer freq_n = null;
-    private Integer freq_d = null;
+    private Integer freq_n;
+    private Integer freq_d;
     public String getFreq(){
         return freq_n + "." + freq_d;
+    }
+    protected Integer getFreqN(){
+        return new Integer(freq_n);
+    }
+    protected Integer getFreqD(){
+        return new Integer(freq_d);
     }
 
     //コンストラクタ
