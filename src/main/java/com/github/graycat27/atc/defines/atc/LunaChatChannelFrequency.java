@@ -19,12 +19,12 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
     private Channel lcChannel;
 
     /* コンストラクタ */
-    LunaChatChannelFrequency(int n, int d){
+    public LunaChatChannelFrequency(int n, int d){
         super(n,d);
         channelName = LcConst.ATC_CHANNEL_NAME_PREFIX + getFreqN() + LcConst.ATC_CHANNEL_FREQ_CHAR + getFreqD();
         createLcChannelIfNonExists();
     }
-    LunaChatChannelFrequency(String freq){
+    public LunaChatChannelFrequency(String freq){
         super(freq);
         channelName = LcConst.ATC_CHANNEL_NAME_PREFIX + getFreqN() + LcConst.ATC_CHANNEL_FREQ_CHAR + getFreqD();
         createLcChannelIfNonExists();
