@@ -17,7 +17,7 @@ import java.util.List;
 public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
     // フィールド
-    Plugin plugin;
+    private static Plugin plugin;
 
     // コンストラクタ
     public AtcCommandHandler(Plugin plugin){
@@ -75,7 +75,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
      * @param sender コマンドの発行者
      * @param message 表示させるメッセージ文。本処理内で冒頭に<code>[ATC] </code>を付与する
      */
-    public void sendMessage(final CommandSender sender, String message){
+    public static void sendMessage(final CommandSender sender, String message){
         String msg = "[ATC] " + message;
         if(sender instanceof Player){
             Player p = (Player) sender;
