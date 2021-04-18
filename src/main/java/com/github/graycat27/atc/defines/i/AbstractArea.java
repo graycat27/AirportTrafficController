@@ -26,14 +26,14 @@ public abstract class AbstractArea implements IArea {
         int y2 = pos2.getY();
         int z2 = pos2.getZ();
         IPoint minP = new ConcretePoint(
-                (x1<x2)?x1:x2,
-                (y1<y2)?y1:y2,
-                (z1<z2)?z1:z2
+                Math.min(x1, x2),
+                Math.min(y1, y2),
+                Math.min(z1, z2)
         );
         IPoint maxP = new ConcretePoint(
-                (x1<x2)?x2:x1,
-                (y1<y2)?y2:y1,
-                (z1<z2)?z2:z1
+                Math.max(x1, x2),
+                Math.max(y1, y2),
+                Math.max(z1, z2)
         );
         this.minPoint = minP;
         this.maxPoint = maxP;
@@ -42,10 +42,15 @@ public abstract class AbstractArea implements IArea {
     // メソッド
     @Override
     public boolean isIn(final IPoint point){
-        //TODO make this
+        int pointX = point.getX();
+        int pointY = point.getY();
+        int pointZ = point.getZ();
 
-
-        return false;
+        return (
+                minPoint.getX() <= pointX && pointX <= maxPoint.getX() &&
+                minPoint.getY() <= pointY && pointY <= maxPoint.getY() &&
+                minPoint.getZ() <= pointZ && pointZ <= maxPoint.getZ()
+        );
     }
 
     @Override
