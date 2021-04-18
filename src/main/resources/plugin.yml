@@ -1,6 +1,13 @@
 name: AirportTraficController
 version: @version@
-main: com.github.graycat27.airporttraficcontroller.AirportTraficController
+main: com.github.graycat27.atc.AirportTrafficController
 api-version: 1.16
 authors: [graycat27]
-description: 空港周辺の管制チャットもどきを実装します
+description: AirTrafficControl plugin with LunaChat
+depend:
+  - LunaChat
+commands:
+  airtrafficcontroller:
+    description: ATC base command
+  atc:
+    description: ATC base command

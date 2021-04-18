@@ -4,6 +4,7 @@ package com.github.graycat27.atc.consts;
 public final class CommandWord {
 
     /**  */
+    public static final String ATC_full = "AirTrafficController";
     public static final String ATC = "atc";
 
     /** ヘルプ */
