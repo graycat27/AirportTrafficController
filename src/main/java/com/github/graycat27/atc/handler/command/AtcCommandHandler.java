@@ -59,6 +59,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             if(CommandWord.Freq.CUT.equalsIgnoreCase(args[1])){
                 String targetChannel = (args.length >= 3) ? args[2] : null;
                 CommandFreq.runCutCommand(sender, targetChannel);
+                return true;
             }
         }
 
