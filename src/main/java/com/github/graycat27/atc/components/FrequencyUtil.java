@@ -1,7 +1,9 @@
 package com.github.graycat27.atc.components;
 
+import com.github.graycat27.atc.consts.LcConst;
 import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.i.IFrequency;
+import org.jetbrains.annotations.NotNull;
 
 /** 周波数に関する処理部品 */
 public class FrequencyUtil {
@@ -24,5 +26,10 @@ public class FrequencyUtil {
     public static ATCControl getAtcControl(IFrequency freq){
         //TODO 周波数をもとにATCを取得する
         return null;
+    }
+
+    public static String getChannelName(@NotNull String freq){
+        String underFreq = freq.replaceAll("\\.", LcConst.ATC_CHANNEL_FREQ_CHAR);
+        return LcConst.ATC_CHANNEL_NAME_PREFIX + underFreq;
     }
 }
