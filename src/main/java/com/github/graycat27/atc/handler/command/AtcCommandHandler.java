@@ -1,6 +1,9 @@
 package com.github.graycat27.atc.handler.command;
 
 import com.github.graycat27.atc.consts.CommandWord;
+import com.github.graycat27.atc.handler.command.action.CommandAirport;
+import com.github.graycat27.atc.handler.command.action.CommandArea;
+import com.github.graycat27.atc.handler.command.action.CommandFreq;
 import com.github.graycat27.atc.handler.command.action.CommandHelp;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -42,15 +45,94 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
         }
         /* /atc freq xxx */
         if(CommandWord.Freq.FREQ.equalsIgnoreCase(args[0])){
-
+            if(args.length < 2){
+                sendMessage(sender, "less parameter for command [/atc freq]");
+                this.sendMessageUnknownCommand(sender);
+                return true;
+            }
             //args[1] で処理分岐
+            if(CommandWord.Freq.TUNING.equalsIgnoreCase(args[1])){
+                String targetChannel = (args.length >= 3) ? args[2] : null;
+                CommandFreq.runTuningCommand(sender, targetChannel);
+                return true;
+            }
+            if(CommandWord.Freq.CUT.equalsIgnoreCase(args[1])){
+                String targetChannel = (args.length >= 3) ? args[2] : null;
+                CommandFreq.runCutCommand(sender, targetChannel);
+            }
         }
 
-        this.showMessageUnknownCommand(sender);
+        /* /atc add xxx */
+        if(CommandWord.Method.ADD.equalsIgnoreCase(args[0])){
+            if(args.length < 2){
+                sendMessage(sender, "less parameter for command [/atc add]");
+                this.sendMessageUnknownCommand(sender);
+                return true;
+            }
+            switch(args[1]){
+                case CommandWord.Target.AIRPORT:
+                    String name = (args.length >= 3) ? args[2] : null;
+                    CommandAirport.add(name);
+                    break;
+                case CommandWord.Target.AREA:
+                    String freq = (args.length >= 3) ? args[2] : null;
+                    CommandArea.add(freq);
+                    break;
+                default:
+                    sendMessage(sender, "unknown param for command [/atc add]");
+                    this.sendMessageUnknownCommand(sender);
+            }
+            return true;
+        }
+
+        /* /atc mod xxx */
+        if(CommandWord.Method.MODIFY.equalsIgnoreCase(args[0])){
+            if(args.length < 2){
+                sendMessage(sender, "less parameter for command [/atc mod]");
+                this.sendMessageUnknownCommand(sender);
+                return true;
+            }
+            switch(args[1]){
+                case CommandWord.Target.AIRPORT:
+                    CommandAirport.mod(args);
+                    break;
+                case CommandWord.Target.AREA:
+                    CommandArea.mod(args);
+                    break;
+                default:
+                    sendMessage(sender, "unknown param for command [/atc mod]");
+                    this.sendMessageUnknownCommand(sender);
+            }
+            return true;
+        }
+
+        /* /atc info xxx */
+        if(CommandWord.Method.INFO.equalsIgnoreCase(args[0])){
+            if(args.length < 2){
+                sendMessage(sender, "less parameter for command [/atc info]");
+                this.sendMessageUnknownCommand(sender);
+                return true;
+            }
+            String param = (args.length >= 3) ? args[2] : null;
+            switch (args[1]){
+                case CommandWord.Target.AIRPORT:
+                    CommandAirport.info(param);
+                    break;
+                case CommandWord.Target.AREA:
+                    CommandArea.info(param);
+                    break;
+                default:
+                    sendMessage(sender, "unknown param for command [/atc add]");
+                    this.sendMessageUnknownCommand(sender);
+            }
+            return true;
+        }
+
+        this.sendMessageUnknownCommand(sender);
         return true;
     }
 
-    private void showMessageUnknownCommand(CommandSender sender){
+    private void sendMessageUnknownCommand(CommandSender sender){
         sendMessage(sender, "wrong command. use [/atc help]");
     }
 
