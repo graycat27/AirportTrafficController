@@ -1,7 +1,8 @@
 package com.github.graycat27.atc.handler.command.action;
 
-import com.github.graycat27.atc.handler.command.AtcCommandHandler;
 import org.bukkit.command.CommandSender;
+
+import static com.github.graycat27.atc.handler.command.AtcCommandHandler.sendMessage;
 
 public class CommandFreq {
 
@@ -12,7 +13,7 @@ public class CommandFreq {
 
     public static void runCutCommand(CommandSender sender, String targetParam){
         //TODO make this
-        AtcCommandHandler.sendMessage(sender, "cut command is unavailable");
+        sendMessage(sender, "cut command is unavailable");
     }
 
 }
