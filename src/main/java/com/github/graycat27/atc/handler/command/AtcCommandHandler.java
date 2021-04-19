@@ -63,70 +63,73 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             }
         }
 
-        /* /atc add xxx */
-        if(CommandWord.Method.ADD.equalsIgnoreCase(args[0])){
-            if(args.length < 2){
-                sendMessage(sender, "less parameter for command [/atc add]");
-                this.sendMessageUnknownCommand(sender);
+        /* /atc manage xxx */
+        if (CommandWord.Manage.MANAGE.equalsIgnoreCase(args[0])){
+            /* /atc manage add xxx */
+            if (CommandWord.Manage.ADD.equalsIgnoreCase(args[1])) {
+                if (args.length < 3) {
+                    sendMessage(sender, "less parameter for command [/atc manage add]");
+                    this.sendMessageUnknownCommand(sender);
+                    return true;
+                }
+                switch (args[2]) {
+                    case CommandWord.Target.AIRPORT:
+                        String name = (args.length >= 4) ? args[3] : null;
+                        CommandAirport.add(name);
+                        break;
+                    case CommandWord.Target.AREA:
+                        String freq = (args.length >= 4) ? args[3] : null;
+                        CommandArea.add(freq);
+                        break;
+                    default:
+                        sendMessage(sender, "unknown param for command [/atc manage add]");
+                        this.sendMessageUnknownCommand(sender);
+                }
                 return true;
             }
-            switch(args[1]){
-                case CommandWord.Target.AIRPORT:
-                    String name = (args.length >= 3) ? args[2] : null;
-                    CommandAirport.add(name);
-                    break;
-                case CommandWord.Target.AREA:
-                    String freq = (args.length >= 3) ? args[2] : null;
-                    CommandArea.add(freq);
-                    break;
-                default:
-                    sendMessage(sender, "unknown param for command [/atc add]");
-                    this.sendMessageUnknownCommand(sender);
-            }
-            return true;
-        }
 
-        /* /atc mod xxx */
-        if(CommandWord.Method.MODIFY.equalsIgnoreCase(args[0])){
-            if(args.length < 2){
-                sendMessage(sender, "less parameter for command [/atc mod]");
-                this.sendMessageUnknownCommand(sender);
+            /* /atc manage mod xxx */
+            if (CommandWord.Manage.MODIFY.equalsIgnoreCase(args[1])) {
+                if (args.length < 3) {
+                    sendMessage(sender, "less parameter for command [/atc manage mod]");
+                    this.sendMessageUnknownCommand(sender);
+                    return true;
+                }
+                switch (args[2]) {
+                    case CommandWord.Target.AIRPORT:
+                        CommandAirport.mod(args);
+                        break;
+                    case CommandWord.Target.AREA:
+                        CommandArea.mod(args);
+                        break;
+                    default:
+                        sendMessage(sender, "unknown param for command [/atc manage mod]");
+                        this.sendMessageUnknownCommand(sender);
+                }
                 return true;
             }
-            switch(args[1]){
-                case CommandWord.Target.AIRPORT:
-                    CommandAirport.mod(args);
-                    break;
-                case CommandWord.Target.AREA:
-                    CommandArea.mod(args);
-                    break;
-                default:
-                    sendMessage(sender, "unknown param for command [/atc mod]");
-                    this.sendMessageUnknownCommand(sender);
-            }
-            return true;
-        }
 
-        /* /atc info xxx */
-        if(CommandWord.Method.INFO.equalsIgnoreCase(args[0])){
-            if(args.length < 2){
-                sendMessage(sender, "less parameter for command [/atc info]");
-                this.sendMessageUnknownCommand(sender);
+            /* /atc manage info xxx */
+            if (CommandWord.Manage.INFO.equalsIgnoreCase(args[1])) {
+                if (args.length < 3) {
+                    sendMessage(sender, "less parameter for command [/atc manage info]");
+                    this.sendMessageUnknownCommand(sender);
+                    return true;
+                }
+                String param = (args.length >= 4) ? args[3] : null;
+                switch (args[2]) {
+                    case CommandWord.Target.AIRPORT:
+                        CommandAirport.info(param);
+                        break;
+                    case CommandWord.Target.AREA:
+                        CommandArea.info(param);
+                        break;
+                    default:
+                        sendMessage(sender, "unknown param for command [/atc manage info]");
+                        this.sendMessageUnknownCommand(sender);
+                }
                 return true;
             }
-            String param = (args.length >= 3) ? args[2] : null;
-            switch (args[1]){
-                case CommandWord.Target.AIRPORT:
-                    CommandAirport.info(param);
-                    break;
-                case CommandWord.Target.AREA:
-                    CommandArea.info(param);
-                    break;
-                default:
-                    sendMessage(sender, "unknown param for command [/atc add]");
-                    this.sendMessageUnknownCommand(sender);
-            }
-            return true;
         }
 
         this.sendMessageUnknownCommand(sender);

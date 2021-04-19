@@ -20,8 +20,9 @@ public final class CommandWord {
     }
 
     /* 管理コマンド群 */
-    /** データ加工方法 */
-    public static class Method {
+    /** データ管理系 */
+    public static class Manage {
+        public static final String MANAGE = "manage";
         /** 追加 */
         public static final String ADD = "add";
         /** 編集 */
