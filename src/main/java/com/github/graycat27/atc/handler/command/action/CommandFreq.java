@@ -13,14 +13,14 @@ import static com.github.graycat27.atc.handler.command.AtcCommandHandler.sendMes
 
 public class CommandFreq {
 
-    public static void runTuningCommand(CommandSender sender, String targetParam){
+    public static void runMonitorCommand(CommandSender sender, String targetParam){
         if(!(sender instanceof Player)){
             sendMessage(sender, "this command is only allowed for in-game player");
             return;
         }
 
         if(targetParam == null || targetParam.length() == 0){
-            sendMessage(sender, "you need to input frequency value to tuning in");
+            sendMessage(sender, "you need to input frequency value to monitor");
             return;
         }
 

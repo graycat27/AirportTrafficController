@@ -52,9 +52,9 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                 return true;
             }
             //args[1] で処理分岐
-            if(CommandWord.Freq.TUNING.equalsIgnoreCase(args[1])){
+            if(CommandWord.Freq.MONITOR.equalsIgnoreCase(args[1])){
                 String targetChannel = (args.length >= 3) ? args[2] : null;
-                CommandFreq.runTuningCommand(sender, targetChannel);
+                CommandFreq.runMonitorCommand(sender, targetChannel);
                 return true;
             }
             if(CommandWord.Freq.CUT.equalsIgnoreCase(args[1])){
@@ -177,7 +177,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
         // /atc freq xxx
         if (args[0].equals(CommandWord.Freq.FREQ)) {
             List<String> freqCmdList = new ArrayList<>();
-            freqCmdList.add(CommandWord.Freq.TUNING);
+            freqCmdList.add(CommandWord.Freq.MONITOR);
             freqCmdList.add(CommandWord.Freq.CUT);
             if(args.length == 1) {
                 // /atc freq [tab]
