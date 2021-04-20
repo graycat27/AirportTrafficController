@@ -193,12 +193,15 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                 }
                 return resultList;
             }
-            // 接続(可能な|中の)周波数値を候補出せたらいいけど、
-            // 労力に見合わなさそう。
-            List<String> formatList = new ArrayList<>();
-            formatList.add("000.0");
-            formatList.add("999.9");
-            return formatList;
+            if(args.length == 3) {
+                // 接続(可能な|中の)周波数値を候補出せたらいいけど、
+                // 労力に見合わなさそう。
+                List<String> formatList = new ArrayList<>();
+                formatList.add("000.0");
+                formatList.add("999.9");
+                return formatList;
+            }
+            return new ArrayList<>();
         }
 
         // /atc manage xxx
