@@ -14,7 +14,7 @@ public final class CommandWord {
     public static class Freq {
         public static final String FREQ = "freq";
         /** チューニング（参加・切替） */
-        public static final String TUNING = "tuning";
+        public static final String MONITOR = "monitor";
         /** 切断 */
         public static final String CUT = "cut";
     }
