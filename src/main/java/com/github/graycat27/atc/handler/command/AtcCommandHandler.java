@@ -179,10 +179,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             List<String> freqCmdList = new ArrayList<>();
             freqCmdList.add(CommandWord.Freq.MONITOR);
             freqCmdList.add(CommandWord.Freq.CUT);
-            if(args.length == 1) {
-                // /atc freq [tab]
-                return freqCmdList;
-            }
             if(args.length == 2){
                 // /atc freq xx[tab]
                 List<String> resultList = new ArrayList<>();
@@ -210,10 +206,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             manageCmdList.add(CommandWord.Manage.ADD);
             manageCmdList.add(CommandWord.Manage.MODIFY);
             manageCmdList.add(CommandWord.Manage.INFO);
-            if(args.length == 1){
-                // /atc manage [tab]
-                return manageCmdList;
-            }
             if(args.length == 2){
                 // /atc manage xx[tab]
                 List<String> resultList = new ArrayList<>();
