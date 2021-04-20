@@ -25,7 +25,6 @@ public class CommandFreq {
         }
 
         String channelName = FrequencyUtil.getChannelName(targetParam);
-        sendMessage(sender,"[debug]channelName= "+ channelName);
         Channel channel = AirportTrafficController.getLcApi().getChannel(channelName);
 
         if(channel == null){
