@@ -11,6 +11,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +26,12 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
     // コンストラクタ
     public AtcCommandHandler(Plugin plugin){
-        this.plugin = plugin;
+        AtcCommandHandler.plugin = plugin;
     }
 
     // メソッド
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, Command command, @NotNull String label, String[] args) {
 
         //TODO コマンド文解析処理
         // 実際の処理動作はactionパッケージ配下に切り出して、可読性を確保すること
@@ -150,7 +151,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
      * @return 補完候補のList。<code>null</code>の場合あり
      */
     @Override
-    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, String alias, String[] args) {
         if (!(alias.equalsIgnoreCase(CommandWord.ATC) || alias.equalsIgnoreCase(CommandWord.ATC_full))) {
             return null;
         }
