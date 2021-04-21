@@ -22,8 +22,8 @@ public final class AirportTrafficController extends JavaPlugin {
         this.getCommand(CommandWord.ATC).setTabCompleter(new AtcCommandHandler(this));
 
         if ( getServer().getPluginManager().isPluginEnabled("LunaChat") ) {
-            LunaChatBukkit lunachat = (LunaChatBukkit) getServer().getPluginManager().getPlugin("LunaChat");
-            lcApi = lunachat.getLunaChatAPI();
+            LunaChatBukkit lunaChat = (LunaChatBukkit) getServer().getPluginManager().getPlugin("LunaChat");
+            lcApi = lunaChat.getLunaChatAPI();
         }
     }
 
