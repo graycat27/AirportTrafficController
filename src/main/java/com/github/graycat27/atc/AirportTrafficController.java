@@ -1,5 +1,7 @@
 package com.github.graycat27.atc;
 
+import com.github.graycat27.atc.components.data.common.IDataManager;
+import com.github.graycat27.atc.components.data.json.JsonDataManager;
 import com.github.graycat27.atc.consts.CommandWord;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;
 import com.github.ucchyocean.lc3.LunaChatAPI;
@@ -11,6 +13,11 @@ public final class AirportTrafficController extends JavaPlugin {
     private static LunaChatAPI lcApi;
     public static LunaChatAPI getLcApi(){
         return lcApi;
+    }
+
+    private static IDataManager dataManager;
+    public static IDataManager getDataManager(){
+        return dataManager;
     }
 
     /** Plugin startup logic */
@@ -25,6 +32,8 @@ public final class AirportTrafficController extends JavaPlugin {
             LunaChatBukkit lunachat = (LunaChatBukkit) getServer().getPluginManager().getPlugin("LunaChat");
             lcApi = lunachat.getLunaChatAPI();
         }
+
+        dataManager = new JsonDataManager();
     }
 
     /** Plugin shutdown logic */
