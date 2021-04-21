@@ -18,6 +18,7 @@ public class Airport {
     private List<Runway> runways;
 
     /** 誘導路 */
+    private List<Taxiway> taxiways;
 
     /** 駐機位置（スポット） */
     private List<Spot> spots;
