@@ -13,7 +13,7 @@ import java.util.List;
 public class Taxiway extends AbstractPath {
 
     // フィールド
-    private String name;
+    private final String name;
 
     // コンストラクタ
     public Taxiway(String name, List<IPoint> way){

@@ -7,8 +7,8 @@ import org.bukkit.event.HandlerList;
 @Deprecated
 public class PlayerAirportExitEvent {
     private static final HandlerList handlers = new HandlerList();
-    private Player player;
-    private Airport airport;
+    private final Player player;
+    private final Airport airport;
 
     public PlayerAirportExitEvent(Player player, Airport airport) {
         this.player = player;

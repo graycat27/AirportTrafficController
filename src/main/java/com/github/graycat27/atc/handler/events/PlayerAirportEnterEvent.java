@@ -9,8 +9,8 @@ import org.jetbrains.annotations.NotNull;
 @Deprecated
 public class PlayerAirportEnterEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private Player player;
-    private Airport airport;
+    private final Player player;
+    private final Airport airport;
 
     public PlayerAirportEnterEvent(Player player, Airport airport) {
         this.player = player;

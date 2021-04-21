@@ -6,9 +6,9 @@ public abstract class AbstractArea implements IArea {
     // フィールド
     /* 範囲の情報 */
     /** x,y,zが最小値の角 */
-    private IPoint minPoint;
+    private final IPoint minPoint;
     /** x,y,zが最大値の角 */
-    private IPoint maxPoint;
+    private final IPoint maxPoint;
 
     public IPoint getMinPoint(){
         return minPoint.clone();
