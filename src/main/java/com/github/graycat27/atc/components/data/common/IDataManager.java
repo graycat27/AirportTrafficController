@@ -10,5 +10,5 @@ public interface IDataManager {
 
     void save(IDataObject obj, DataCondition con);
 
-    IDataObject read(DataCondition con);
+    IDataObject read(IDataObject obj, DataCondition con);
 }

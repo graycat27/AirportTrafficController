@@ -23,7 +23,7 @@ public class SQLiteDataManager extends DataManager {
     }
 
     @Override
-    public IDataObject read(DataCondition con) {
+    public IDataObject read(IDataObject obj, DataCondition con) {
         throw new UnsupportedOperationException();
     }
 }

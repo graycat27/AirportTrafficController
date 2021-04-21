@@ -18,19 +18,20 @@ import java.nio.charset.StandardCharsets;
 public class JsonDataManager extends DataManager {
 
     /* フィールド */
-    private final String saveRootPath;
+    private final String saveFilePath;
     private final String saveFileName = "atcConfig.json";
 
     /* コンストラクタ */
     public JsonDataManager(){
         super(DataSourceType.JSON);
-        saveRootPath = AirportTrafficController.getPlugin(AirportTrafficController.class).getDataFolder().getPath();
+        saveFilePath = AirportTrafficController.getPlugin(AirportTrafficController.class).getDataFolder().getPath()
+                + File.pathSeparator + saveFileName;
     }
 
     /* メソッド */
     @Override
     public void save(IDataObject data, DataCondition con) {
-        File file = new File(saveRootPath + File.pathSeparator + saveFileName);
+        File file = new File(saveFilePath);
         try (Writer writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
             Gson gson = new GsonBuilder().create();
             gson.toJson(data, writer);
@@ -42,8 +43,15 @@ public class JsonDataManager extends DataManager {
     }
 
     @Override
-    public IDataObject read(DataCondition con) {
-        throw new UnsupportedOperationException();
+    public IDataObject read(IDataObject dataObject, DataCondition con) {
+        File file = new File(saveFilePath);
+        try (Reader reader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) {
+            Gson gson = new Gson();
+            return gson.fromJson(reader, dataObject.getClass());
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
 }
