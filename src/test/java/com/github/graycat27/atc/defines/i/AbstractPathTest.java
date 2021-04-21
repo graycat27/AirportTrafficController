@@ -18,27 +18,7 @@ class AbstractPathTest {
     static class P2_64 { static int x = 200; static int y = 64; static int z = 200; }
     static class P3_120 { static int x = 270; static int y = 120; static int z = 270; }
     static class P1n64 { static int x = -100; static int y = 64; static int z = -100; }
-
-    class ConcretePoint extends AbstractPoint {
-        public ConcretePoint(int posX, int posY, int posZ) {
-            super(posX, posY, posZ);
-        }
-        @Override
-        public ConcretePoint clone(){
-            return this;
-        }
-    }
-
-    class ConcretePath extends AbstractPath {
-        public ConcretePath(List<IPoint> wayPoints) {
-            super(wayPoints);
-        }
-        @Override
-        public ConcretePath clone(){
-            return this;
-        }
-    }
-
+    
     @Test
     void length() {
     }
@@ -311,8 +291,8 @@ class AbstractPathTest {
         AbstractPath path1 = new ConcretePath(plist1);
         AbstractPath path2 = new ConcretePath(plist2);
 
-        assertTrue(path1.equals(path2));
-        assertTrue(path2.equals(path1));
+        assertEquals(path1, path2);
+        assertEquals(path2, path1);
 
     }
 
@@ -333,8 +313,8 @@ class AbstractPathTest {
         AbstractPath path1 = new ConcretePath(plist1);
         AbstractPath path2 = new ConcretePath(plist2);
 
-        assertFalse(path1.equals(path2));
-        assertFalse(path2.equals(path1));
+        assertNotEquals(path1, path2);
+        assertNotEquals(path2, path1);
     }
 
     /** 準正常系 終点が不一致 */
@@ -354,8 +334,8 @@ class AbstractPathTest {
         AbstractPath path1 = new ConcretePath(plist1);
         AbstractPath path2 = new ConcretePath(plist2);
 
-        assertFalse(path1.equals(path2));
-        assertFalse(path2.equals(path1));
+        assertNotEquals(path1, path2);
+        assertNotEquals(path2, path1);
     }
 
     /** 正常系 始終点が逆順一致 */
@@ -374,8 +354,8 @@ class AbstractPathTest {
         AbstractPath path1 = new ConcretePath(plist1);
         AbstractPath path2 = new ConcretePath(plist2);
 
-        assertTrue(path1.equals(path2));
-        assertTrue(path2.equals(path1));
+        assertEquals(path1, path2);
+        assertEquals(path2, path1);
 
     }
 
@@ -398,8 +378,8 @@ class AbstractPathTest {
         AbstractPath path1 = new ConcretePath(plist1);
         AbstractPath path2 = new ConcretePath(plist2);
 
-        assertTrue(path1.equals(path2));
-        assertTrue(path2.equals(path1));
+        assertEquals(path1, path2);
+        assertEquals(path2, path1);
     }
 
     /** 準正常系 始終点が一致、経由点(1つ)は不一致 */
@@ -422,8 +402,8 @@ class AbstractPathTest {
         AbstractPath path1 = new ConcretePath(plist1);
         AbstractPath path2 = new ConcretePath(plist2);
 
-        assertFalse(path1.equals(path2));
-        assertFalse(path2.equals(path1));
+        assertNotEquals(path1, path2);
+        assertNotEquals(path2, path1);
     }
 
     /** 正常系 始終点が逆順一致、経由点(1つ)が一致 */
@@ -445,8 +425,8 @@ class AbstractPathTest {
         AbstractPath path1 = new ConcretePath(plist1);
         AbstractPath path2 = new ConcretePath(plist2);
 
-        assertTrue(path1.equals(path2));
-        assertTrue(path2.equals(path1));
+        assertEquals(path1, path2);
+        assertEquals(path2, path1);
     }
 
     /** 正常系 始終点、経由点(複数) 完全一致 */
@@ -471,8 +451,8 @@ class AbstractPathTest {
         AbstractPath path1 = new ConcretePath(plist1);
         AbstractPath path2 = new ConcretePath(plist2);
 
-        assertTrue(path1.equals(path2));
-        assertTrue(path2.equals(path1));
+        assertEquals(path1, path2);
+        assertEquals(path2, path1);
     }
 
     /** 正常系 始終点、経由点(複数) 逆順一致 */
@@ -497,8 +477,8 @@ class AbstractPathTest {
         AbstractPath path1 = new ConcretePath(plist1);
         AbstractPath path2 = new ConcretePath(plist2);
 
-        assertTrue(path1.equals(path2));
-        assertTrue(path2.equals(path1));
+        assertEquals(path1, path2);
+        assertEquals(path2, path1);
     }
 
 //    /**
