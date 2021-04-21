@@ -1,10 +1,16 @@
 package com.github.graycat27.atc.components.data.json;
 
+import com.github.graycat27.atc.AirportTrafficController;
 import com.github.graycat27.atc.components.data.common.DataManager;
 import com.github.graycat27.atc.components.data.defines.DataCondition;
 import com.github.graycat27.atc.components.data.defines.IDataObject;
 import com.github.graycat27.atc.consts.DataSourceType;
-import com.google.gson.Gson;
+
+import com.github.ucchyocean.lc.lib.com.google.gson.GsonBuilder;
+import com.github.ucchyocean.lc.lib.com.google.gson.Gson;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 /**
  * JSON形式でのデータの保存と読み出しを実装します
@@ -12,23 +18,27 @@ import com.google.gson.Gson;
 public class JsonDataManager extends DataManager {
 
     /* フィールド */
-    //FIXME 保存先パス。設定ファイルから取得？plugins\atc\とか固定パス？
-    private final String saveRootPath = null;
-
-
+    private final String saveRootPath;
+    private final String saveFileName = "atcConfig.json";
 
     /* コンストラクタ */
-    JsonDataManager(){
+    public JsonDataManager(){
         super(DataSourceType.JSON);
+        saveRootPath = AirportTrafficController.getPlugin(AirportTrafficController.class).getDataFolder().getPath();
     }
 
     /* メソッド */
     @Override
     public void save(IDataObject data, DataCondition con) {
-        Gson gson = new Gson();
-        String jsonSrt = gson.toJson(data);
-
-        throw new UnsupportedOperationException();
+        File file = new File(saveRootPath + File.pathSeparator + saveFileName);
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
+            Gson gson = new GsonBuilder().create();
+            gson.toJson(data, writer);
+            //FIXME たぶん上書きとか変な挙動する
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
