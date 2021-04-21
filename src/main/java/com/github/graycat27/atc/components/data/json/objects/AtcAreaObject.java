@@ -1,10 +1,10 @@
 package com.github.graycat27.atc.components.data.json.objects;
 
-import com.github.graycat27.atc.components.data.defines.IDataObject;
+import com.github.graycat27.atc.components.data.json.IJsonDataObject;
 import com.github.graycat27.atc.defines.i.IPoint;
 import com.github.graycat27.atc.defines.sky.ATCArea;
 
-public class AtcAreaObject implements IDataObject {
+public class AtcAreaObject implements IJsonDataObject {
 
     private IPoint minPoint;
 

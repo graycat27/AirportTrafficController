@@ -1,12 +1,12 @@
 package com.github.graycat27.atc.components.data.json.objects;
 
-import com.github.graycat27.atc.components.data.defines.IDataObject;
+import com.github.graycat27.atc.components.data.json.IJsonDataObject;
 import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.atc.ATCControl;
 
 import java.util.List;
 
-public class AirportObject implements IDataObject {
+public class AirportObject implements IJsonDataObject {
 
     private String name;
 
