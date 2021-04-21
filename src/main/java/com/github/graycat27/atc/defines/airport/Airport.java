@@ -1,7 +1,9 @@
 package com.github.graycat27.atc.defines.airport;
 
+import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.sky.ATCArea;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,6 +14,9 @@ public class Airport {
     //定義情報
     /** 空港名 */
     private String name = "";
+    public String getName(){
+        return name;
+    }
 
     //施設系
     /** 滑走路 */
@@ -27,7 +32,10 @@ public class Airport {
 
     //管制系
     /** 管制空域 */
-    private List<ATCArea> areas;
+    private List<ATCControl> areas;
+    public List<ATCControl> getAtcArea(){
+        return new ArrayList<>(areas);
+    }
 
 
 

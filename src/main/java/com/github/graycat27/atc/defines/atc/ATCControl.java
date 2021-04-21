@@ -23,7 +23,7 @@ public class ATCControl {
     }
 
     private ATCArea area;
-    public IArea getArea(){
+    public ATCArea getArea(){
         return area;
     }
 
