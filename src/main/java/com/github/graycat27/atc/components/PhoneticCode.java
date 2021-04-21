@@ -67,7 +67,7 @@ public class PhoneticCode {
 
     //TODO number(int/double) to phoneticCode
 
-    private class Alphabets{
+    private static class Alphabets{
         private static final String A = "Alpha";
         private static final String B = "Bravo";
         private static final String C = "Charlie";
@@ -96,7 +96,7 @@ public class PhoneticCode {
         private static final String Z = "Zulu";
     }
 
-    private class Numbers{
+    private static class Numbers{
         private static final String ZERO0 = "Ze-ro";
         private static final String ONE1 = "One";
         private static final String TWO2 = "Two";
