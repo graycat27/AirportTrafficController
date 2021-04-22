@@ -8,6 +8,8 @@ import com.github.graycat27.atc.consts.DataSourceType;
 
 import com.github.ucchyocean.lc.lib.com.google.gson.GsonBuilder;
 import com.github.ucchyocean.lc.lib.com.google.gson.Gson;
+import com.github.ucchyocean.lc.lib.com.google.gson.JsonElement;
+import com.github.ucchyocean.lc.lib.com.google.gson.stream.JsonWriter;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -25,18 +27,28 @@ public class JsonDataManager extends DataManager {
     public JsonDataManager(){
         super(DataSourceType.JSON);
         saveFilePath = AirportTrafficController.getPlugin(AirportTrafficController.class).getDataFolder().getPath()
-                + File.pathSeparator + saveFileName;
+                + File.separator + saveFileName;
+        File file = new File(saveFilePath);
+        if(!file.exists()){
+            try {
+                file.getParentFile().mkdirs();
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     /* メソッド */
     @Override
     public void save(IDataObject data, DataCondition con) {
-        File file = new File(saveFilePath);
-        try (Writer writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
+        try(JsonWriter writer = new JsonWriter(new FileWriter(saveFilePath))){
             Gson gson = new GsonBuilder().create();
-            gson.toJson(data, writer);
-            //FIXME たぶん上書きとか変な挙動する
-        } catch (IOException e) {
+            writer.setIndent("   ");    // 3spaces
+            JsonElement jsonEl = gson.toJsonTree(data);
+            gson.toJson(jsonEl, writer);
+        }catch(IOException e){
             e.printStackTrace();
             throw new RuntimeException(e);
         }

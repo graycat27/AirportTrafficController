@@ -16,7 +16,7 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
 
     //LunaChatのチャンネル情報
     private String channelName;
-    private Channel lcChannel;
+    private transient Channel lcChannel;
 
     /* コンストラクタ */
     public LunaChatChannelFrequency(int n, int d){
