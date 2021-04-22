@@ -5,6 +5,7 @@ import java.util.List;
 
 /** Pathの具象クラス
  * @deprecated AbstractPathを継承して具体的な線形クラスを作成してください */
+@Deprecated
 public class ConcretePath extends AbstractPath {
 
     public ConcretePath(List<IPoint> way){
