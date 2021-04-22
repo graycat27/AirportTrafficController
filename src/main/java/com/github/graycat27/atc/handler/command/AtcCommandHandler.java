@@ -1,6 +1,14 @@
 package com.github.graycat27.atc.handler.command;
 
+import com.github.graycat27.atc.AirportTrafficController;
+import com.github.graycat27.atc.components.data.defines.DataCondition;
+import com.github.graycat27.atc.components.data.defines.IDataObject;
+import com.github.graycat27.atc.components.data.json.JsonDataManager;
+import com.github.graycat27.atc.components.data.json.objects.AirportObject;
+import com.github.graycat27.atc.components.data.json.objects.AtcControlObject;
 import com.github.graycat27.atc.consts.CommandWord;
+import com.github.graycat27.atc.defines.airport.Airport;
+import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.atc.LunaChatChannelFrequency;
 import com.github.graycat27.atc.handler.command.action.CommandAirport;
 import com.github.graycat27.atc.handler.command.action.CommandArea;
@@ -136,10 +144,10 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
         }
 
         if("test".equals(args[0])){
-            if("create".equals(args[1])){
+            if("save".equals(args[1])){
 
-                LunaChatChannelFrequency ch = new LunaChatChannelFrequency(args[2]);
-                sendMessage(sender, ch.toString());
+                IDataObject obj = new AtcControlObject(new ATCControl(){});
+                AirportTrafficController.getDataManager().save(obj, new DataCondition());
                 return true;
             }
 
