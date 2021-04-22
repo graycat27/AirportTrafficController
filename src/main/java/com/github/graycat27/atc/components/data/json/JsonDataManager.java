@@ -25,7 +25,7 @@ public class JsonDataManager extends DataManager {
     public JsonDataManager(){
         super(DataSourceType.JSON);
         saveFilePath = AirportTrafficController.getPlugin(AirportTrafficController.class).getDataFolder().getPath()
-                + File.pathSeparator + saveFileName;
+                + File.separator + saveFileName;
     }
 
     /* メソッド */
