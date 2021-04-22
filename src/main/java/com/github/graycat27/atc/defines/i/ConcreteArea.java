@@ -2,6 +2,7 @@ package com.github.graycat27.atc.defines.i;
 
 /** Areaの具象クラス
  * @deprecated AbstractAreaを継承して具体的な領域クラスを作成してください */
+@Deprecated
 public class ConcreteArea extends AbstractArea {
 
     public ConcreteArea(IPoint pos1, IPoint pos2){
