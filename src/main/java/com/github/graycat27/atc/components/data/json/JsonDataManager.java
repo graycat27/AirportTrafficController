@@ -2,7 +2,6 @@ package com.github.graycat27.atc.components.data.json;
 
 import com.github.graycat27.atc.AirportTrafficController;
 import com.github.graycat27.atc.components.data.common.DataManager;
-import com.github.graycat27.atc.components.data.defines.DataCondition;
 import com.github.graycat27.atc.components.data.defines.IDataObject;
 import com.github.graycat27.atc.consts.DataSourceType;
 
@@ -42,7 +41,7 @@ public class JsonDataManager extends DataManager {
 
     /* メソッド */
     @Override
-    public void save(IDataObject data, DataCondition con) {
+    public void save(IDataObject data) {
         IJsonDataObject jsonData = (IJsonDataObject) data;
         saveJson(jsonData);
     }
@@ -60,7 +59,7 @@ public class JsonDataManager extends DataManager {
     }
 
     @Override
-    public IDataObject read(IDataObject dataObject, DataCondition con) {
+    public IDataObject read(IDataObject dataObject) {
         IJsonDataObject jsonDataObject = (IJsonDataObject) dataObject;
         return readJson(jsonDataObject);
     }
