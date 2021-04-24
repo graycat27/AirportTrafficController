@@ -1,10 +1,7 @@
 package com.github.graycat27.atc.components.data.json.objects;
 
 import com.github.graycat27.atc.components.data.json.IJsonDataObject;
-import com.github.graycat27.atc.defines.i.AbstractPoint;
-import com.github.graycat27.atc.defines.i.IPoint;
 import com.github.graycat27.atc.defines.sky.ATCArea;
-import com.github.ucchyocean.lc.lib.com.google.gson.Gson;
 
 public class AtcAreaObject implements IJsonDataObject {
 
@@ -13,8 +10,8 @@ public class AtcAreaObject implements IJsonDataObject {
     private final PointObject maxPoint;
 
     public AtcAreaObject(ATCArea original){
-        minPoint = new PointObject(original.getMinPoint());
-        maxPoint = new PointObject(original.getMaxPoint());
+        minPoint = (original == null) ? null : new PointObject(original.getMinPoint());
+        maxPoint = (original == null) ? null : new PointObject(original.getMaxPoint());
     }
 
     @Override
