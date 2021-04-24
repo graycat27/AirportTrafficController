@@ -10,16 +10,10 @@ public class PointObject implements IJsonDataObject {
     private final Integer posY;
     private final Integer posZ;
 
-    public PointObject(IPoint original){
-        this.posX = original.getX();
-        this.posY = original.getY();
-        this.posZ = original.getZ();
-    }
-
-    private PointObject(){
-        posX = null;
-        posY = null;
-        posZ = null;
+    public PointObject(final IPoint original){
+        this.posX = (original == null) ? null : original.getX();
+        this.posY = (original == null) ? null : original.getY();
+        this.posZ = (original == null) ? null : original.getZ();
     }
 
     @Override

@@ -13,7 +13,7 @@ public class AtcControlObject implements IJsonDataObject {
 
     private final AtcAreaObject atcArea;
 
-    public AtcControlObject(ATCControl original){
+    public AtcControlObject(final ATCControl original){
         control = original.getControl();
         frequency = new FrequencyObject(original.getFrequency());
         atcArea = new AtcAreaObject(original.getArea());

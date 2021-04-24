@@ -9,7 +9,7 @@ public class AtcAreaObject implements IJsonDataObject {
 
     private final PointObject maxPoint;
 
-    public AtcAreaObject(ATCArea original){
+    public AtcAreaObject(final ATCArea original){
         minPoint = (original == null) ? null : new PointObject(original.getMinPoint());
         maxPoint = (original == null) ? null : new PointObject(original.getMaxPoint());
     }

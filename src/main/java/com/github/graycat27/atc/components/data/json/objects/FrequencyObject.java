@@ -9,7 +9,7 @@ public class FrequencyObject implements IJsonDataObject {
     private final Integer freq_n;
     private final Integer freq_d;
 
-    public FrequencyObject(IFrequency original){
+    public FrequencyObject(final IFrequency original){
         AbstractFrequency concreteFreq = (AbstractFrequency) original;
         freq_n = (concreteFreq == null) ? null : concreteFreq.getFreqN();
         freq_d = (concreteFreq == null) ? null :concreteFreq.getFreqD();
