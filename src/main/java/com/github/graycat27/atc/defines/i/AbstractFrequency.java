@@ -9,6 +9,7 @@ public abstract class AbstractFrequency implements IFrequency {
     /* 周波数値 */
     private Integer freq_n;
     private Integer freq_d;
+    @Override
     public String getFreq(){
         return freq_n + "." + freq_d;
     }
