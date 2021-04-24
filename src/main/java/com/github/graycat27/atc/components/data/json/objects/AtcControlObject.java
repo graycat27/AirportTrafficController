@@ -27,7 +27,6 @@ public class AtcControlObject implements IJsonDataObject {
 
     @Override
     public String toString(){
-        Gson gson = new Gson();
-        return gson.toJson(this);
+        return toJsonString();
     }
 }

@@ -2,6 +2,7 @@ package com.github.graycat27.atc.components.data.json.objects;
 
 import com.github.graycat27.atc.components.data.json.IJsonDataObject;
 import com.github.graycat27.atc.defines.i.IPoint;
+import com.github.ucchyocean.lc.lib.com.google.gson.Gson;
 
 public class PointObject implements IJsonDataObject {
 
@@ -19,5 +20,10 @@ public class PointObject implements IJsonDataObject {
         posX = null;
         posY = null;
         posZ = null;
+    }
+
+    @Override
+    public String toString(){
+        return toJsonString();
     }
 }

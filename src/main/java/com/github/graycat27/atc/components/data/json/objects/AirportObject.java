@@ -20,8 +20,7 @@ public class AirportObject implements IJsonDataObject {
 
     @Override
     public String toString(){
-        Gson gson = new Gson();
-        return gson.toJson(this);
+        return toJsonString();
     }
 
 }
