@@ -8,9 +8,9 @@ import com.github.ucchyocean.lc.lib.com.google.gson.Gson;
 
 public class AtcAreaObject implements IJsonDataObject {
 
-    private PointObject minPoint;
+    private final PointObject minPoint;
 
-    private PointObject maxPoint;
+    private final PointObject maxPoint;
 
     public AtcAreaObject(ATCArea original){
         minPoint = new PointObject(original.getMinPoint());
