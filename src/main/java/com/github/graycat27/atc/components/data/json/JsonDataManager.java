@@ -4,6 +4,7 @@ import com.github.graycat27.atc.AirportTrafficController;
 import com.github.graycat27.atc.components.data.common.DataManager;
 import com.github.graycat27.atc.components.data.defines.DataCondition;
 import com.github.graycat27.atc.components.data.defines.IDataObject;
+import com.github.graycat27.atc.components.data.json.objects.AtcControlObject;
 import com.github.graycat27.atc.consts.DataSourceType;
 
 import com.github.ucchyocean.lc.lib.com.google.gson.GsonBuilder;
@@ -58,7 +59,7 @@ public class JsonDataManager extends DataManager {
     public IDataObject read(IDataObject dataObject, DataCondition con) {
         File file = new File(saveFilePath);
         try (Reader reader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) {
-            Gson gson = new Gson();
+            Gson gson = new GsonBuilder().create();
             return gson.fromJson(reader, dataObject.getClass());
         } catch (IOException e) {
             e.printStackTrace();
