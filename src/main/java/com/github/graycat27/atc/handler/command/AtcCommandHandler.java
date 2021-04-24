@@ -146,8 +146,15 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
         if("test".equals(args[0])){
             if("save".equals(args[1])){
 
-                IDataObject obj = new AtcControlObject(new ATCControl(){});
+                IDataObject obj = new AtcControlObject(new ATCControl());
                 AirportTrafficController.getDataManager().save(obj, new DataCondition());
+                return true;
+            }
+
+            if("read".equals(args[1])){
+                AtcControlObject obj = new AtcControlObject();
+                obj = (AtcControlObject) AirportTrafficController.getDataManager().read(obj, new DataCondition());
+                sendMessage(sender, obj.toString());
                 return true;
             }
 
@@ -155,7 +162,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
         }
 
         this.sendMessageUnknownCommand(sender);
-        return true;
+        return false;
     }
 
     private void sendMessageUnknownCommand(CommandSender sender){
