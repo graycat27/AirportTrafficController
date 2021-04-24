@@ -13,11 +13,11 @@ public abstract class AbstractFrequency implements IFrequency {
     public String getFreq(){
         return freq_n + "." + freq_d;
     }
-    protected Integer getFreqN(){
-        return new Integer(freq_n);
+    public Integer getFreqN(){
+        return Integer.valueOf(freq_n);
     }
-    protected Integer getFreqD(){
-        return new Integer(freq_d);
+    public Integer getFreqD(){
+        return Integer.valueOf(freq_d);
     }
 
     //コンストラクタ
