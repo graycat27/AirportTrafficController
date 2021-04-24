@@ -43,6 +43,11 @@ public class JsonDataManager extends DataManager {
     /* メソッド */
     @Override
     public void save(IDataObject data, DataCondition con) {
+        IJsonDataObject jsonData = (IJsonDataObject) data;
+        saveJson(jsonData);
+    }
+
+    private void saveJson(IJsonDataObject data){
         try(JsonWriter writer = new JsonWriter(new FileWriter(saveFilePath))){
             Gson gson = new GsonBuilder().create();
             writer.setIndent("   ");    // 3spaces
@@ -56,6 +61,11 @@ public class JsonDataManager extends DataManager {
 
     @Override
     public IDataObject read(IDataObject dataObject, DataCondition con) {
+        IJsonDataObject jsonDataObject = (IJsonDataObject) dataObject;
+        return readJson(jsonDataObject);
+    }
+
+    private IJsonDataObject readJson(IJsonDataObject dataObject){
         File file = new File(saveFilePath);
         try (Reader reader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) {
             Gson gson = new GsonBuilder().create();
