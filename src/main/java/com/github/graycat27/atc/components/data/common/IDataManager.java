@@ -1,6 +1,5 @@
 package com.github.graycat27.atc.components.data.common;
 
-import com.github.graycat27.atc.components.data.defines.DataCondition;
 import com.github.graycat27.atc.components.data.defines.IDataObject;
 
 /**
@@ -8,7 +7,7 @@ import com.github.graycat27.atc.components.data.defines.IDataObject;
  */
 public interface IDataManager {
 
-    void save(IDataObject obj, DataCondition con);
+    void save(IDataObject obj);
 
-    IDataObject read(DataCondition con);
+    IDataObject read(IDataObject obj);
 }
