@@ -1,8 +1,8 @@
 package com.github.graycat27.atc.components.data.json.objects;
 
 import com.github.graycat27.atc.components.data.json.IJsonDataObject;
+import com.github.graycat27.atc.defines.i.ConcretePoint;
 import com.github.graycat27.atc.defines.i.IPoint;
-import com.github.ucchyocean.lc.lib.com.google.gson.Gson;
 
 public class PointObject implements IJsonDataObject {
 
@@ -19,5 +19,10 @@ public class PointObject implements IJsonDataObject {
     @Override
     public String toString(){
         return toJsonString();
+    }
+
+    @Override
+    public IPoint getOriginal() {
+        return new ConcretePoint(posX, posY, posZ);
     }
 }

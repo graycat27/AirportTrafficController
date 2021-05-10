@@ -2,6 +2,7 @@ package com.github.graycat27.atc.components.data.json.objects;
 
 import com.github.graycat27.atc.components.data.json.IJsonDataObject;
 import com.github.graycat27.atc.defines.i.AbstractFrequency;
+import com.github.graycat27.atc.defines.i.ConcreteFrequency;
 import com.github.graycat27.atc.defines.i.IFrequency;
 
 public class FrequencyObject implements IJsonDataObject {
@@ -18,5 +19,10 @@ public class FrequencyObject implements IJsonDataObject {
     @Override
     public String toString(){
         return toJsonString();
+    }
+
+    @Override
+    public IFrequency getOriginal() {
+        return new ConcreteFrequency(freq_n, freq_d);
     }
 }

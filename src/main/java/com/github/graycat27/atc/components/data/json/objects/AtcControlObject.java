@@ -3,7 +3,6 @@ package com.github.graycat27.atc.components.data.json.objects;
 import com.github.graycat27.atc.components.data.json.IJsonDataObject;
 import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.atc.ATCControl;
-import com.github.ucchyocean.lc.lib.com.google.gson.Gson;
 
 public class AtcControlObject implements IJsonDataObject {
 
@@ -28,5 +27,10 @@ public class AtcControlObject implements IJsonDataObject {
     @Override
     public String toString(){
         return toJsonString();
+    }
+
+    @Override
+    public ATCControl getOriginal() {
+        return new ATCControl(control, frequency.getOriginal(), atcArea.getOriginal());
     }
 }

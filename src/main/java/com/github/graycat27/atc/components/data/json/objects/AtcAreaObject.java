@@ -19,4 +19,8 @@ public class AtcAreaObject implements IJsonDataObject {
         return toJsonString();
     }
 
+    @Override
+    public ATCArea getOriginal() {
+        return new ATCArea(minPoint.getOriginal(), maxPoint.getOriginal());
+    }
 }
