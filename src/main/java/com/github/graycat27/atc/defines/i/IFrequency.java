@@ -3,7 +3,7 @@ package com.github.graycat27.atc.defines.i;
 import com.github.graycat27.atc.utils.ICloneable;
 
 /** 周波数インターフェース */
-public interface IFrequency extends ICloneable {
+public interface IFrequency extends IMaster {
 
     //定数値
     /* 周波数値 100.0～999.9の範囲を許容する */

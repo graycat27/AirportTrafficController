@@ -6,7 +6,7 @@ import org.bukkit.Location;
 /**
  * 地点情報
  */
-public interface IPoint extends ICloneable {
+public interface IPoint extends IMaster {
 
     Location getLocation();
     int getX();
