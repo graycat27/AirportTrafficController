@@ -20,32 +20,32 @@ public class Airport implements IMaster {
 
     /* 施設系 */
     /** 滑走路 */
-    private List<Runway> runways;
+    private List<Runway> runways = new ArrayList<>();
     public List<Runway> getRunways(){
         return new ArrayList<>(runways);
     }
 
     /** 誘導路 */
-    private List<Taxiway> taxiways;
+    private List<Taxiway> taxiways = new ArrayList<>();
     public List<Taxiway> getTaxiways(){
         return new ArrayList<>(taxiways);
     }
 
     /** 駐機位置（スポット） */
-    private List<Spot> spots;
+    private List<Spot> spots = new ArrayList<>();;
     public List<Spot> getSpots(){
         return new ArrayList<>(spots);
     }
 
     /** 管制塔 */
-    private Tower tower;
+    private Tower tower = null;
     public Tower getTower(){
         return tower.clone();
     }
 
     /* 管制系 */
     /** 管制空域 */
-    private List<ATCControl> areas;
+    private List<ATCControl> areas = new ArrayList<>();;
     public List<ATCControl> getAtcArea(){
         return new ArrayList<>(areas);
     }
