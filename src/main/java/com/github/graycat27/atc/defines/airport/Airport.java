@@ -18,7 +18,7 @@ public class Airport implements IMaster {
         return name;
     }
 
-    //施設系
+    /* 施設系 */
     /** 滑走路 */
     private List<Runway> runways;
     public List<Runway> getRunways(){
@@ -43,7 +43,7 @@ public class Airport implements IMaster {
         return tower.clone();
     }
 
-    //管制系
+    /* 管制系 */
     /** 管制空域 */
     private List<ATCControl> areas;
     public List<ATCControl> getAtcArea(){
