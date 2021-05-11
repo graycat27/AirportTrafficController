@@ -17,8 +17,8 @@ public final class AirportTrafficController extends JavaPlugin {
     }
 
     private static IDataManager dataManager;
-    public static IDataManager getDataManager(){
-        return dataManager;
+    public static DataManager getDataManager(){
+        return (DataManager) dataManager;
     }
 
     /** Plugin startup logic */

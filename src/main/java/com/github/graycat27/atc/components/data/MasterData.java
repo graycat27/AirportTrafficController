@@ -2,28 +2,38 @@ package com.github.graycat27.atc.components.data;
 
 import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.i.IMaster;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 
+/** DataUtilを介して使用すること */
 public class MasterData implements IMaster {
 
     //フィールド
-    List<Airport> airportList;
+    private Hashtable<String, Airport> airportList;
+    Hashtable<String, Airport> getAirportList(){
+        return new Hashtable<>(airportList);
+    }
 
     //コンストラクタ
-    private MasterData(List<Airport> apList){
+    private MasterData(Hashtable<String, Airport> apList){
         this.airportList = apList;
     }
 
     public MasterData(){
-        airportList = new ArrayList<>();
+        airportList = new Hashtable<>();
     }
 
     //メソッド
+    void addAirport(@NotNull Airport newOne){
+        airportList.put(newOne.getName(), newOne);
+    }
+
 
     @Override
     public MasterData clone() {
-        return new MasterData(new ArrayList<>(airportList));
+        return new MasterData(getAirportList());
     }
 }

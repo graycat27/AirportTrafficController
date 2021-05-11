@@ -1,6 +1,6 @@
 package com.github.graycat27.atc.components.data;
 
-import com.github.graycat27.atc.components.data.MasterData;
+import com.github.graycat27.atc.components.data.defines.IDataManager;
 import com.github.graycat27.atc.consts.DataSourceType;
 
 public abstract class DataManager implements IDataManager {
@@ -16,7 +16,7 @@ public abstract class DataManager implements IDataManager {
     }
 
     // メソッド
-    public MasterData getData(){
+    MasterData getData(){
         return data;
     }
 }
