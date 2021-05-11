@@ -1,4 +1,4 @@
-package com.github.graycat27.atc.components.data.common;
+package com.github.graycat27.atc.components.data.defines;
 
 import com.github.graycat27.atc.components.data.MasterData;
 import com.github.graycat27.atc.components.data.defines.IDataObject;
@@ -12,5 +12,4 @@ public interface IDataManager {
 
     IDataObject read(IDataObject obj);
 
-    MasterData getData();
 }

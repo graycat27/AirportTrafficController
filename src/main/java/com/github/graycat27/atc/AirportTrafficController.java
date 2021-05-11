@@ -1,6 +1,7 @@
 package com.github.graycat27.atc;
 
-import com.github.graycat27.atc.components.data.common.IDataManager;
+import com.github.graycat27.atc.components.data.DataManager;
+import com.github.graycat27.atc.components.data.defines.IDataManager;
 import com.github.graycat27.atc.components.data.json.JsonDataManager;
 import com.github.graycat27.atc.consts.CommandWord;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;

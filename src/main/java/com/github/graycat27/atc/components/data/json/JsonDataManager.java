@@ -1,7 +1,7 @@
 package com.github.graycat27.atc.components.data.json;
 
 import com.github.graycat27.atc.AirportTrafficController;
-import com.github.graycat27.atc.components.data.common.DataManager;
+import com.github.graycat27.atc.components.data.DataManager;
 import com.github.graycat27.atc.components.data.defines.IDataObject;
 import com.github.graycat27.atc.consts.DataSourceType;
 

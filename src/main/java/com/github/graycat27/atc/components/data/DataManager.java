@@ -1,4 +1,4 @@
-package com.github.graycat27.atc.components.data.common;
+package com.github.graycat27.atc.components.data;
 
 import com.github.graycat27.atc.components.data.MasterData;
 import com.github.graycat27.atc.consts.DataSourceType;
