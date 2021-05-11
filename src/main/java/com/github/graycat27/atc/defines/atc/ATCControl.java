@@ -19,12 +19,12 @@ public class ATCControl implements IMaster {
 
     private final IFrequency frequency;
     public IFrequency getFrequency(){
-        return frequency;
+        return frequency.clone();
     }
 
     private final ATCArea area;
     public ATCArea getArea(){
-        return area;
+        return area.clone();
     }
 
     //コンストラクタ
