@@ -13,7 +13,7 @@ public class Airport implements IMaster {
 
     //定義情報
     /** 空港名 */
-    private String name = "";
+    private final String name;
     public String getName(){
         return name;
     }
@@ -63,6 +63,9 @@ public class Airport implements IMaster {
         this.areas = control;
     }
 
+    public Airport(String name){
+        this.name = name;
+    }
 
     //メソッド
     @Override
