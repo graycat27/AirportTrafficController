@@ -1,5 +1,6 @@
 package com.github.graycat27.atc.components.data.common;
 
+import com.github.graycat27.atc.components.data.MasterData;
 import com.github.graycat27.atc.components.data.defines.IDataObject;
 
 /**
@@ -10,4 +11,6 @@ public interface IDataManager {
     void save(IDataObject obj);
 
     IDataObject read(IDataObject obj);
+
+    MasterData getData();
 }
