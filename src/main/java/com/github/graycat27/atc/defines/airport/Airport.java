@@ -54,13 +54,13 @@ public class Airport implements IMaster {
 
     //コンストラクタ
     private Airport(String name, List<Runway> runway, List<Taxiway> taxiway,
-                    List<Spot> spot, Tower tower, List<ATCControl> contol){
+                    List<Spot> spot, Tower tower, List<ATCControl> control){
         this.name = name;
         this.runways = runway;
         this.taxiways = taxiway;
         this.spots = spot;
         this.tower = tower;
-        this.areas = contol;
+        this.areas = control;
     }
 
 
