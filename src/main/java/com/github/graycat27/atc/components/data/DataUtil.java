@@ -25,6 +25,7 @@ public class DataUtil {
     }
 
     // API
+    /* Airport */
     public static List<String> getAirportNameList(){
         Enumeration<String> keys = data().getAirportList().keys();
         return new ArrayList<>((Collection<? extends String>) keys);
@@ -34,12 +35,12 @@ public class DataUtil {
         data().addAirport(newOne);
     }
 
-    public static boolean hasSameNameAirport(String name){
-        return data().getAirportList().containsKey(name);
+    public static boolean hasSameNameAirport(String airportName){
+        return data().getAirportList().containsKey(airportName);
     }
 
-    public static Airport getAirportByName(String name){
-        return data().getAirportList().get(name).clone();
+    public static Airport getAirportByName(String airportName){
+        return data().getAirportList().get(airportName).clone();
     }
 
 
