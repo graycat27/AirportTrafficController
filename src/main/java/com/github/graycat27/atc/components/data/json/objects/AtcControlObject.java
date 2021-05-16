@@ -6,12 +6,12 @@ import com.github.graycat27.atc.defines.atc.ATCControl;
 
 public class AtcControlObject implements IJsonDataObject {
 
+    // フィールド
     private final Control control;
-
     private final FrequencyObject frequency;
-
     private final AtcAreaObject atcArea;
 
+    // コンストラクタ
     public AtcControlObject(final ATCControl original){
         control = original.getControl();
         frequency = new FrequencyObject(original.getFrequency());
@@ -24,6 +24,7 @@ public class AtcControlObject implements IJsonDataObject {
         atcArea = null;
     }
 
+    // メソッド
     @Override
     public String toString(){
         return toJsonString();

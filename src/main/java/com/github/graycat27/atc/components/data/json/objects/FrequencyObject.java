@@ -7,15 +7,18 @@ import com.github.graycat27.atc.defines.i.IFrequency;
 
 public class FrequencyObject implements IJsonDataObject {
 
+    // フィールド
     private final Integer freq_n;
     private final Integer freq_d;
 
+    // コンストラクタ
     public FrequencyObject(final IFrequency original){
         AbstractFrequency concreteFreq = (AbstractFrequency) original;
         freq_n = (concreteFreq == null) ? null : concreteFreq.getFreqN();
         freq_d = (concreteFreq == null) ? null :concreteFreq.getFreqD();
     }
 
+    // メソッド
     @Override
     public String toString(){
         return toJsonString();

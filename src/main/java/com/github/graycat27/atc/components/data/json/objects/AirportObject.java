@@ -8,15 +8,18 @@ import java.util.List;
 
 public class AirportObject implements IJsonDataObject {
 
+    // フィールド
     private String name;
 
     private List<ATCControl> areaList;
 
+    // コンストラクタ
     public AirportObject(final Airport airport){
         name = airport.getName();
         areaList = airport.getAtcArea();
     }
 
+    // メソッド
     @Override
     public String toString(){
         return toJsonString();
