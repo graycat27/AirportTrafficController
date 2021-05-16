@@ -35,12 +35,13 @@ public final class AirportTrafficController extends JavaPlugin {
         }
 
         dataManager = new JsonDataManager();
+        dataManager.read();
     }
 
     /** Plugin shutdown logic */
     @Override
     public void onDisable() {
-
+        dataManager.save();
         lcApi = null;
     }
 }
