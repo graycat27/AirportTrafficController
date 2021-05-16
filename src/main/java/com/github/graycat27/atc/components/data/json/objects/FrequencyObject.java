@@ -4,6 +4,7 @@ import com.github.graycat27.atc.components.data.json.IJsonDataObject;
 import com.github.graycat27.atc.defines.i.AbstractFrequency;
 import com.github.graycat27.atc.defines.i.ConcreteFrequency;
 import com.github.graycat27.atc.defines.i.IFrequency;
+import com.github.graycat27.atc.defines.i.IMaster;
 
 public class FrequencyObject implements IJsonDataObject {
 
@@ -27,5 +28,13 @@ public class FrequencyObject implements IJsonDataObject {
     @Override
     public IFrequency getOriginal() {
         return new ConcreteFrequency(freq_n, freq_d);
+    }
+
+    @Override
+    public FrequencyObject convertFromOriginal(IMaster original) {
+        if(!(original instanceof IFrequency)){
+            throw new IllegalArgumentException();
+        }
+        return new FrequencyObject((IFrequency) original);
     }
 }

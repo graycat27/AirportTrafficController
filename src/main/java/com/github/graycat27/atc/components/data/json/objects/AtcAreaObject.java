@@ -1,6 +1,7 @@
 package com.github.graycat27.atc.components.data.json.objects;
 
 import com.github.graycat27.atc.components.data.json.IJsonDataObject;
+import com.github.graycat27.atc.defines.i.IMaster;
 import com.github.graycat27.atc.defines.sky.ATCArea;
 
 public class AtcAreaObject implements IJsonDataObject {
@@ -24,5 +25,13 @@ public class AtcAreaObject implements IJsonDataObject {
     @Override
     public ATCArea getOriginal() {
         return new ATCArea(minPoint.getOriginal(), maxPoint.getOriginal());
+    }
+
+    @Override
+    public AtcAreaObject convertFromOriginal(IMaster original) {
+        if(!(original instanceof ATCArea)){
+            throw new IllegalArgumentException();
+        }
+        return new AtcAreaObject((ATCArea) original);
     }
 }

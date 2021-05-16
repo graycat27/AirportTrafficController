@@ -1,10 +1,11 @@
 package com.github.graycat27.atc.components.data.defines;
 
+import com.github.graycat27.atc.defines.i.IMaster;
+
 /**
- * プラグインの永続データとして保存を必要とするものであることを示すインターフェース<br>
- * 各種設定や情報を持つクラスで<code>implements</code>し、<code>DataManager</code>で
- * 保存や読み出しをできるようにする
+ * 永続データとして保存する形式のデータオブジェクトとしてマークするインタフェース
  */
 public interface IDataObject {
-    /* マーク用のため、処理は無い */
+
+    IDataObject convertFromOriginal(IMaster original);
 }

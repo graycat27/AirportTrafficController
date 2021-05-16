@@ -3,6 +3,7 @@ package com.github.graycat27.atc.components.data.json.objects;
 import com.github.graycat27.atc.components.data.json.IJsonDataObject;
 import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.atc.ATCControl;
+import com.github.graycat27.atc.defines.i.IMaster;
 
 import java.util.List;
 
@@ -29,5 +30,13 @@ public class AirportObject implements IJsonDataObject {
     public Airport getOriginal(){
         //FIXME
         return new Airport(name);
+    }
+
+    @Override
+    public AirportObject convertFromOriginal(IMaster original) {
+        if(!(original instanceof Airport)){
+            throw new IllegalArgumentException();
+        }
+        return new AirportObject((Airport) original);
     }
 }

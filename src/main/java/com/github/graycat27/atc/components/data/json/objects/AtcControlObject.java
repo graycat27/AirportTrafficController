@@ -3,6 +3,7 @@ package com.github.graycat27.atc.components.data.json.objects;
 import com.github.graycat27.atc.components.data.json.IJsonDataObject;
 import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.atc.ATCControl;
+import com.github.graycat27.atc.defines.i.IMaster;
 
 public class AtcControlObject implements IJsonDataObject {
 
@@ -33,5 +34,13 @@ public class AtcControlObject implements IJsonDataObject {
     @Override
     public ATCControl getOriginal() {
         return new ATCControl(control, frequency.getOriginal(), atcArea.getOriginal());
+    }
+
+    @Override
+    public AtcControlObject convertFromOriginal(IMaster original) {
+        if(!(original instanceof ATCControl)){
+            throw new IllegalArgumentException();
+        }
+        return new AtcControlObject((ATCControl) original);
     }
 }
