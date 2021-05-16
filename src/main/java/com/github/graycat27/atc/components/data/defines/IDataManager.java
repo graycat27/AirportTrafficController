@@ -8,8 +8,8 @@ import com.github.graycat27.atc.components.data.defines.IDataObject;
  */
 public interface IDataManager {
 
-    void save(IDataObject obj);
+    void save();
 
-    IDataObject read(IDataObject obj);
+    IDataObject read();
 
 }

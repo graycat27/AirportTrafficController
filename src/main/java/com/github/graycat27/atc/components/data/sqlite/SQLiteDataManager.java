@@ -17,12 +17,12 @@ public class SQLiteDataManager extends DataManager {
 
     /* メソッド */
     @Override
-    public void save(IDataObject obj) {
+    public void save() {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public IDataObject read(IDataObject obj) {
+    public IDataObject read() {
         throw new UnsupportedOperationException();
     }
 }

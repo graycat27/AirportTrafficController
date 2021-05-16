@@ -8,7 +8,7 @@ public abstract class DataManager implements IDataManager {
     // フィールド
     private DataSourceType dataSourceType;
 
-    private MasterData data;
+    protected MasterData data;
 
     // コンストラクタ
     protected DataManager(DataSourceType type){
