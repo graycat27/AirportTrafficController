@@ -1,6 +1,7 @@
 package com.github.graycat27.atc;
 
-import com.github.graycat27.atc.components.data.common.IDataManager;
+import com.github.graycat27.atc.components.data.DataManager;
+import com.github.graycat27.atc.components.data.defines.IDataManager;
 import com.github.graycat27.atc.components.data.json.JsonDataManager;
 import com.github.graycat27.atc.consts.CommandWord;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;
@@ -16,8 +17,8 @@ public final class AirportTrafficController extends JavaPlugin {
     }
 
     private static IDataManager dataManager;
-    public static IDataManager getDataManager(){
-        return dataManager;
+    public static DataManager getDataManager(){
+        return (DataManager) dataManager;
     }
 
     /** Plugin startup logic */
@@ -34,12 +35,13 @@ public final class AirportTrafficController extends JavaPlugin {
         }
 
         dataManager = new JsonDataManager();
+        dataManager.read();
     }
 
     /** Plugin shutdown logic */
     @Override
     public void onDisable() {
-
+        dataManager.save();
         lcApi = null;
     }
 }
