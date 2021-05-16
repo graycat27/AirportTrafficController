@@ -13,7 +13,7 @@ public class MasterData implements IMaster {
 
     //フィールド
     private Hashtable<String, Airport> airportList;
-    Hashtable<String, Airport> getAirportList(){
+    public Hashtable<String, Airport> getAirportList(){
         return new Hashtable<>(airportList);
     }
 
