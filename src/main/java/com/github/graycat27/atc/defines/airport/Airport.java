@@ -111,6 +111,7 @@ public class Airport implements IMaster {
                     List<Spot> spot, Tower tower, List<ATCControl> control){
         // not null check はしない。
         // privateコンストラクタとして適正値であることが担保されているため。
+
         this.name = name;
         this.runways = runway;
         this.taxiways = taxiway;
