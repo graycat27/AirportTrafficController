@@ -1,67 +1,169 @@
 package com.github.graycat27.atc.defines.airport;
 
 import com.github.graycat27.atc.defines.atc.ATCControl;
+import com.github.graycat27.atc.defines.i.IMaster;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 空港が持つ情報を定義します
  */
-public class Airport {
+public class Airport implements IMaster {
 
     //定義情報
     /** 空港名 */
-    private String name;
+    private final String name;
     public String getName(){
         return name;
     }
 
-    //施設系
+    /* 施設系 */
     /** 滑走路 */
-    private List<Runway> runways;
+    private List<Runway> runways = new ArrayList<>();
     public List<Runway> getRunways(){
         return new ArrayList<>(runways);
     }
+    public void addRunway(Runway newOne){
+        try{
+            Objects.requireNonNull(newOne);
+        }catch(NullPointerException e){
+            throw new IllegalArgumentException(e);
+        }
+        if(hasSameRunway(newOne)) {
+            throw new IllegalArgumentException("already has same runway");
+        }
+        runways.add(newOne);
+    }
 
     /** 誘導路 */
-    private List<Taxiway> taxiways;
+    private List<Taxiway> taxiways = new ArrayList<>();
     public List<Taxiway> getTaxiways(){
         return new ArrayList<>(taxiways);
     }
+    public void addTaxiway(Taxiway newOne){
+        try{
+            Objects.requireNonNull(newOne);
+        }catch(NullPointerException e){
+            throw new IllegalArgumentException(e);
+        }
+        if(hasSameTaxiway(newOne)) {
+            throw new IllegalArgumentException("already has same taxiway");
+        }
+        taxiways.add(newOne);
+    }
 
     /** 駐機位置（スポット） */
-    private List<Spot> spots;
+    private List<Spot> spots = new ArrayList<>();;
     public List<Spot> getSpots(){
         return new ArrayList<>(spots);
     }
+    public void addSpot(Spot newOne){
+        try{
+            Objects.requireNonNull(newOne);
+        }catch(NullPointerException e){
+            throw new IllegalArgumentException(e);
+        }
+        if(hasSameSpot(newOne)) {
+            throw new IllegalArgumentException("already has same spot");
+        }
+        spots.add(newOne);
+    }
 
     /** 管制塔 */
-    private Tower tower;
+    private Tower tower = null;
     public Tower getTower(){
         return tower.clone();
     }
+    public void setTower(Tower newOne){
+        if(tower != null){
+            throw new IllegalStateException("already not null");
+        }
+        try{
+            Objects.requireNonNull(newOne);
+        }catch(NullPointerException e){
+            throw new IllegalArgumentException(e);
+        }
+        tower = newOne;
+    }
 
-    //管制系
+    /* 管制系 */
     /** 管制空域 */
-    private List<ATCControl> areas;
+    private List<ATCControl> areas = new ArrayList<>();;
     public List<ATCControl> getAtcArea(){
         return new ArrayList<>(areas);
     }
-
-
+    public void addControl(ATCControl newOne){
+        try{
+            Objects.requireNonNull(newOne);
+        }catch(NullPointerException e){
+            throw new IllegalArgumentException(e);
+        }
+        if(hasSameControlType(newOne)) {
+            throw new IllegalArgumentException("already has same control");
+        }
+        areas.add(newOne);
+    }
 
     //コンストラクタ
     private Airport(String name, List<Runway> runway, List<Taxiway> taxiway,
-                    List<Spot> spot, Tower tower, List<ATCControl> contol){
+                    List<Spot> spot, Tower tower, List<ATCControl> control){
+        // not null check はしない。
+        // privateコンストラクタとして適正値であることが担保されているため。
+
         this.name = name;
         this.runways = runway;
         this.taxiways = taxiway;
         this.spots = spot;
         this.tower = tower;
-        this.areas = contol;
+        this.areas = control;
     }
 
+    public Airport(String name){
+        this.name = name;
+    }
 
     //メソッド
+    public boolean hasSameRunway(Runway runway){
+        for(Runway r : runways){
+            if(r.equals(runway)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasSameTaxiway(Taxiway taxiway){
+        for(Taxiway t : taxiways){
+            if(t.equals(taxiway)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasSameSpot(Spot spot){
+        for(Spot s : spots){
+            if(s.equals(spot)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasSameControlType(ATCControl control){
+        for(ATCControl c : areas){
+            if(c.getControl().equals(control.getControl())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public Airport clone(){
+        return new Airport(getName(), getRunways(), getTaxiways(),
+                getSpots(), getTower(), getAtcArea() );
+    }
 }

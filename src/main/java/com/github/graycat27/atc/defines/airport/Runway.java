@@ -11,6 +11,7 @@ public class Runway extends AbstractPath {
     /* フィールド */
     /** 滑走路番号
      * <code>18-36</code>, <code>09R-27L</code> など */
+    //TODO 番号のフォーマット制限
     private final String rwyNumber;
 
 

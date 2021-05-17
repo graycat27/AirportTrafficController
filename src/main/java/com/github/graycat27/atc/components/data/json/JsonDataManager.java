@@ -1,8 +1,9 @@
 package com.github.graycat27.atc.components.data.json;
 
 import com.github.graycat27.atc.AirportTrafficController;
-import com.github.graycat27.atc.components.data.common.DataManager;
+import com.github.graycat27.atc.components.data.DataManager;
 import com.github.graycat27.atc.components.data.defines.IDataObject;
+import com.github.graycat27.atc.components.data.json.objects.MasterDataObject;
 import com.github.graycat27.atc.consts.DataSourceType;
 
 import com.github.ucchyocean.lc.lib.com.google.gson.GsonBuilder;
@@ -41,8 +42,8 @@ public class JsonDataManager extends DataManager {
 
     /* メソッド */
     @Override
-    public void save(IDataObject data) {
-        IJsonDataObject jsonData = (IJsonDataObject) data;
+    public void save() {
+        IJsonDataObject jsonData = MasterDataObject.convertFromOriginal(this.data);
         saveJson(jsonData);
     }
 
@@ -59,16 +60,18 @@ public class JsonDataManager extends DataManager {
     }
 
     @Override
-    public IDataObject read(IDataObject dataObject) {
-        IJsonDataObject jsonDataObject = (IJsonDataObject) dataObject;
-        return readJson(jsonDataObject);
+    public IDataObject read() {
+        MasterDataObject dataObject = (MasterDataObject) readJson();
+        this.data = dataObject.getOriginal();
+        return dataObject;
     }
 
-    private IJsonDataObject readJson(IJsonDataObject dataObject){
+    private IJsonDataObject readJson(){
         File file = new File(saveFilePath);
         try (Reader reader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) {
             Gson gson = new GsonBuilder().create();
-            return gson.fromJson(reader, dataObject.getClass());
+            MasterDataObject result = gson.fromJson(reader, MasterDataObject.class);
+            return result == null ? new MasterDataObject() : result;
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
