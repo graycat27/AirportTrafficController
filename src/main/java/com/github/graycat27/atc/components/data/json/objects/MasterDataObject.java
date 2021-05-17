@@ -32,6 +32,10 @@ public class MasterDataObject implements IJsonDataObject {
         if(!(original instanceof MasterData)){
             throw new IllegalArgumentException();
         }
-        return new MasterDataObject((MasterData) original);
+        return MasterDataObject.convertFromOriginal((MasterData) original);
+    }
+
+    public static MasterDataObject convertFromOriginal(MasterData original){
+        return new MasterDataObject(original);
     }
 }

@@ -43,9 +43,7 @@ public class JsonDataManager extends DataManager {
     /* メソッド */
     @Override
     public void save() {
-        //FIXME static呼出しにする
-        MasterDataObject dataObject = new MasterDataObject();
-        IJsonDataObject jsonData = dataObject.convertFromOriginal(this.data);
+        IJsonDataObject jsonData = MasterDataObject.convertFromOriginal(this.data);
         saveJson(jsonData);
     }
 
