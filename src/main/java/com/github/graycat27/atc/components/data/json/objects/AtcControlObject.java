@@ -41,6 +41,10 @@ public class AtcControlObject implements IJsonDataObject {
         if(!(original instanceof ATCControl)){
             throw new IllegalArgumentException();
         }
-        return new AtcControlObject((ATCControl) original);
+        return AtcControlObject.convertFromOriginal((ATCControl) original);
+    }
+
+    public static AtcControlObject convertFromOriginal(ATCControl original){
+        return new AtcControlObject(original);
     }
 }

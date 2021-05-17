@@ -32,6 +32,10 @@ public class AtcAreaObject implements IJsonDataObject {
         if(!(original instanceof ATCArea)){
             throw new IllegalArgumentException();
         }
-        return new AtcAreaObject((ATCArea) original);
+        return AtcAreaObject.convertFromOriginal((ATCArea) original);
+    }
+
+    public static AtcAreaObject convertFromOriginal(ATCArea original){
+        return new AtcAreaObject(original);
     }
 }

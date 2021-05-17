@@ -35,6 +35,10 @@ public class FrequencyObject implements IJsonDataObject {
         if(!(original instanceof IFrequency)){
             throw new IllegalArgumentException();
         }
-        return new FrequencyObject((IFrequency) original);
+        return FrequencyObject.convertFromOriginal((IFrequency) original);
+    }
+
+    public static FrequencyObject convertFromOriginal(IFrequency original){
+        return new FrequencyObject(original);
     }
 }

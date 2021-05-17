@@ -36,6 +36,10 @@ public class PointObject implements IJsonDataObject {
         if(!(original instanceof AbstractPoint)){
             throw new IllegalArgumentException();
         }
-        return new PointObject((IPoint) original);
+        return PointObject.convertFromOriginal((AbstractPoint) original);
+    }
+
+    public static PointObject convertFromOriginal(AbstractPoint original){
+        return new PointObject(original);
     }
 }

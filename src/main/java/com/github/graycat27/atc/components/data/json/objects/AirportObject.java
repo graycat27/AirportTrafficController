@@ -37,6 +37,10 @@ public class AirportObject implements IJsonDataObject {
         if(!(original instanceof Airport)){
             throw new IllegalArgumentException();
         }
-        return new AirportObject((Airport) original);
+        return AirportObject.convertFromOriginal((Airport) original);
+    }
+
+    public static AirportObject convertFromOriginal(Airport original){
+        return new AirportObject(original);
     }
 }
