@@ -52,6 +52,15 @@ public final class DataUtil {
         return ap.clone();
     }
 
+    public static Airport getAirportByAtcName(String atcName){
+        for(Airport ap : data().getAirportList().values()){
+            if(atcName.equals(ap.getAtcName())){
+                return ap.clone();
+            }
+        }
+        throw new IllegalArgumentException("there is no such atc-name airport");
+    }
+
     public static void addRunwayToAirport(String airportName, Runway newOne){
         data().getAirportList().get(airportName).addRunway(newOne);
     }
