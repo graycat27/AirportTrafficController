@@ -130,12 +130,12 @@ public class Airport implements IMaster {
     }
 
     //コンストラクタ
-    private Airport(String name, List<Runway> runway, List<Taxiway> taxiway,
+    private Airport(String name, String atcName, List<Runway> runway, List<Taxiway> taxiway,
                     List<Spot> spot, Tower tower, List<ATCControl> control){
         // not null check はしない。
         // privateコンストラクタとして適正値であることが担保されているため。
-
         this.name = name;
+        this.atcName = atcName;
         this.runways = runway;
         this.taxiways = taxiway;
         this.spots = spot;
@@ -186,7 +186,7 @@ public class Airport implements IMaster {
 
     @Override
     public Airport clone(){
-        return new Airport(getName(), getRunways(), getTaxiways(),
+        return new Airport(getName(), getAtcName(), getRunways(), getTaxiways(),
                 getSpots(), getTower(), getAtcArea() );
     }
 
@@ -194,6 +194,7 @@ public class Airport implements IMaster {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("Name: ").append(getName()).append(System.lineSeparator());
+        sb.append("AtcName: ").append(getAtcName()).append(System.lineSeparator());
         sb.append("Tower: ");
         if(tower == null){
             sb.append("unset");
