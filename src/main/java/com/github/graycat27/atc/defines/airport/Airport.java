@@ -1,6 +1,8 @@
 package com.github.graycat27.atc.defines.airport;
 
+import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.atc.ATCControl;
+import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.graycat27.atc.defines.i.IMaster;
 
 import java.util.ArrayList;
@@ -104,6 +106,13 @@ public class Airport implements IMaster {
             throw new IllegalArgumentException("already has same control");
         }
         areas.add(newOne);
+    }
+    public void setFreqToAtcControl(Control keyControl, IFrequency frequency){
+        for(ATCControl control : areas){
+            if(control.getControl().equals(keyControl)){
+                control.setFrequency(frequency);
+            }
+        }
     }
 
     //コンストラクタ

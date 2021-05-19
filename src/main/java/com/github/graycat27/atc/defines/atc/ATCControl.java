@@ -17,9 +17,15 @@ public class ATCControl implements IMaster {
         return control;
     }
 
-    private final IFrequency frequency;
+    private IFrequency frequency;
     public IFrequency getFrequency(){
         return frequency.clone();
+    }
+    public void setFrequency(IFrequency frequency){
+        if(this.frequency != null){
+            throw new IllegalStateException("frequency is already set");
+        }
+        this.frequency = frequency;
     }
 
     private final ATCArea area;

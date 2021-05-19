@@ -101,16 +101,20 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                     this.sendMessageUnknownCommand(sender);
                     return true;
                 }
-                switch (args[2]) {
-                    case CommandWord.Target.AIRPORT:
-                        CommandAirport.mod(args);
-                        break;
-                    case CommandWord.Target.AREA:
-                        CommandArea.mod(args);
-                        break;
-                    default:
-                        sendMessage(sender, "unknown param for command [/atc manage mod]");
-                        this.sendMessageUnknownCommand(sender);
+                try {
+                    switch (args[2]) {
+                        case CommandWord.Target.AIRPORT:
+                            CommandAirport.mod(args);
+                            break;
+                        case CommandWord.Target.AREA:
+                            CommandArea.mod(args);
+                            break;
+                        default:
+                            sendMessage(sender, "unknown param for command [/atc manage mod]");
+                            this.sendMessageUnknownCommand(sender);
+                    }
+                }catch(IllegalArgumentException|IllegalStateException e){
+                    sendMessage(sender, e.getMessage());
                 }
                 return true;
             }
