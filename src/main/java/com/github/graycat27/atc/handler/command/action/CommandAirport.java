@@ -9,7 +9,10 @@ import org.bukkit.command.CommandSender;
 import java.util.List;
 
 public class CommandAirport{
-    public static void add(String name) {
+    public static void add(String name) throws IllegalArgumentException {
+        if(DataUtil.hasSameNameAirport(name)){
+            throw new IllegalArgumentException("there are same name airport already");
+        }
         Airport newOne = new Airport(name);
         DataUtil.addAirport(newOne);
         AirportTrafficController.getDataManager().save();
