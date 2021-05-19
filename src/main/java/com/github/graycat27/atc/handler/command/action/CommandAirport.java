@@ -47,14 +47,17 @@ public class CommandAirport{
 
         if(CommandWord.AirportMeta.ATC_Name.equalsIgnoreCase(subCommand)){
             setAtcNameForAirport(airportName, commandParam);
+            AirportTrafficController.getDataManager().save();
             return;
         }
         if(CommandWord.AirportMeta.TWR_FREQ.equalsIgnoreCase(subCommand)){
             setTowerFreqForAirport(airportName, commandParam);
+            AirportTrafficController.getDataManager().save();
             return;
         }
         if(CommandWord.AirportMeta.CTL_FREQ.equalsIgnoreCase(subCommand)){
             setControlFreqForAirport(airportName, commandParam);
+            AirportTrafficController.getDataManager().save();
             return;
         }
         throw new IllegalArgumentException("unknown param for command [/atc manage mod airport]");
