@@ -42,10 +42,10 @@ public class ATCControl implements IMaster {
 
     @Override
     public String toString(){
-        StringBuilder sb = new StringBuilder("AtcControl : {");
-        sb.append("Control : ").append(control.toString()).append(",");
-        sb.append("Frequency : ").append(frequency.getFreq()).append(",");
-        sb.append("Area : ").append(area.toString());
+        StringBuilder sb = new StringBuilder("AtcControl: {");
+        sb.append("Control: ").append(control.toString()).append(", ");
+        sb.append("Frequency: ").append(frequency == null ? "unset" : frequency.getFreq()).append(", ");
+        sb.append("Area: ").append(area == null ? "unset" : area.toString());
         sb.append("}");
         return sb.toString();
     }

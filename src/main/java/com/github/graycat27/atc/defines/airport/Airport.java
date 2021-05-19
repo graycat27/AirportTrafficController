@@ -179,7 +179,7 @@ public class Airport implements IMaster {
                     .append(", ").append(tower.getZ()).append("}");
         }
         sb.append(System.lineSeparator());
-        sb.append("ControlArea : ");
+        sb.append("ControlArea: ");
         if(areas == null || areas.size() == 0){
             sb.append("unset");
         }else{
@@ -191,7 +191,7 @@ public class Airport implements IMaster {
             sb.append("]");
         }
         sb.append(System.lineSeparator());
-        sb.append("Runways : ");
+        sb.append("Runways: ");
         if(runways == null || runways.size() == 0){
             sb.append("unset");
         }else{
@@ -203,7 +203,7 @@ public class Airport implements IMaster {
             sb.append("]");
         }
         sb.append(System.lineSeparator());
-        sb.append("Taxiways : ");
+        sb.append("Taxiways: ");
         if(taxiways == null || taxiways.size() == 0){
             sb.append("unset");
         }else{
@@ -215,7 +215,7 @@ public class Airport implements IMaster {
             sb.append("]");
         }
         sb.append(System.lineSeparator());
-        sb.append("Spots : ");
+        sb.append("Spots: ");
         if(spots == null || spots.size() == 0){
             sb.append("unset");
         }else{
