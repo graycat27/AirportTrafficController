@@ -1,14 +1,15 @@
 package com.github.graycat27.atc.components.data;
 
 import com.github.graycat27.atc.AirportTrafficController;
+import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.airport.Runway;
 import com.github.graycat27.atc.defines.airport.Spot;
 import com.github.graycat27.atc.defines.airport.Taxiway;
 import com.github.graycat27.atc.defines.atc.ATCControl;
+import com.github.graycat27.atc.defines.i.IFrequency;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public final class DataUtil {
     /* Airport */
     public static List<String> getAirportNameList(){
         Enumeration<String> keys = data().getAirportList().keys();
-        return new ArrayList<>((Collection<? extends String>) keys);
+        return Collections.list(keys);
     }
 
     public static void addAirport(Airport newOne){
@@ -44,7 +45,20 @@ public final class DataUtil {
     }
 
     public static Airport getAirportByName(String airportName){
-        return data().getAirportList().get(airportName).clone();
+        Airport ap = data().getAirportList().get(airportName);
+        if(ap == null){
+            throw new IllegalArgumentException("there is no such name airport");
+        }
+        return ap.clone();
+    }
+
+    public static Airport getAirportByAtcName(String atcName){
+        for(Airport ap : data().getAirportList().values()){
+            if(atcName.equals(ap.getAtcName())){
+                return ap.clone();
+            }
+        }
+        throw new IllegalArgumentException("there is no such atc-name airport");
     }
 
     public static void addRunwayToAirport(String airportName, Runway newOne){
@@ -59,10 +73,24 @@ public final class DataUtil {
         data().getAirportList().get(airportName).addSpot(newOne);
     }
 
-    public static void addControlToAirport(String airportName, ATCControl newOne){
-        data().getAirportList().get(airportName).addControl(newOne);
+    public static void setAtcFreqToAirport(String airportName, Control control, IFrequency freq){
+        data().getAirportList().get(airportName).setFreqToAtcControl(control, freq);
     }
 
+    public static void setAtcNameToAirport(String airportName, String atcName){
+        data().getAirportList().get(airportName).setAtcName(atcName);
+    }
 
+    public static boolean hasSameAtcNameAirport(String atcName){
+        if(atcName == null || atcName.length() == 0){
+            return false;
+        }
+        for(Airport ap : data().getAirportList().values()){
+            if(atcName.equals(ap.getAtcName())){
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

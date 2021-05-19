@@ -14,6 +14,9 @@ public class Taxiway extends AbstractPath {
 
     // フィールド
     private final String name;
+    public String getName(){
+        return name;
+    }
 
     // コンストラクタ
     public Taxiway(String name, List<IPoint> way){
@@ -32,5 +35,24 @@ public class Taxiway extends AbstractPath {
         }
         way.add(this.getEnd());
         return new Taxiway(this.name, way);
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder("Taxiway:{");
+        sb.append("Name:").append(getName()).append(",");
+        sb.append("Start:{").append(getStart().toString()).append("},");
+        sb.append("way:[");
+        int waySize = getWayCount();
+        for(int i=0; i<waySize; i++){
+            sb.append(getWayPoint(i).toString());
+            if(i < waySize-1){
+                sb.append(",");
+            }
+        }
+        sb.append("],");
+        sb.append("End:{").append(getEnd().toString()).append("}");
+        sb.append("}");
+        return sb.toString();
     }
 }

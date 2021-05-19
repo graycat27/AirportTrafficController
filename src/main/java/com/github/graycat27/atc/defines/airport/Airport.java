@@ -1,6 +1,9 @@
 package com.github.graycat27.atc.defines.airport;
 
+import com.github.graycat27.atc.components.data.DataUtil;
+import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.atc.ATCControl;
+import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.graycat27.atc.defines.i.IMaster;
 
 import java.util.ArrayList;
@@ -17,6 +20,22 @@ public class Airport implements IMaster {
     private final String name;
     public String getName(){
         return name;
+    }
+
+    /** ATC用名称 */
+    private String atcName;
+    public void setAtcName(String newName){
+        if(newName.matches("[0-9a-zA-Z]+")){
+            if(DataUtil.hasSameAtcNameAirport(newName)){
+                throw new IllegalArgumentException("there are same atc name airport already");
+            }
+            this.atcName = newName;
+        }else{
+            throw new IllegalArgumentException("AtcNames character must only alphabets and numbers");
+        }
+    }
+    public String getAtcName(){
+        return atcName;
     }
 
     /* 施設系 */
@@ -55,7 +74,7 @@ public class Airport implements IMaster {
     }
 
     /** 駐機位置（スポット） */
-    private List<Spot> spots = new ArrayList<>();;
+    private List<Spot> spots = new ArrayList<>();
     public List<Spot> getSpots(){
         return new ArrayList<>(spots);
     }
@@ -74,7 +93,7 @@ public class Airport implements IMaster {
     /** 管制塔 */
     private Tower tower = null;
     public Tower getTower(){
-        return tower.clone();
+        return tower == null ? null : tower.clone();
     }
     public void setTower(Tower newOne){
         if(tower != null){
@@ -90,7 +109,7 @@ public class Airport implements IMaster {
 
     /* 管制系 */
     /** 管制空域 */
-    private List<ATCControl> areas = new ArrayList<>();;
+    private List<ATCControl> areas = new ArrayList<>();
     public List<ATCControl> getAtcArea(){
         return new ArrayList<>(areas);
     }
@@ -105,14 +124,21 @@ public class Airport implements IMaster {
         }
         areas.add(newOne);
     }
+    public void setFreqToAtcControl(Control keyControl, IFrequency frequency){
+        for(ATCControl control : areas){
+            if(control.getControl().equals(keyControl)){
+                control.setFrequency(frequency);
+            }
+        }
+    }
 
     //コンストラクタ
-    private Airport(String name, List<Runway> runway, List<Taxiway> taxiway,
+    private Airport(String name, String atcName, List<Runway> runway, List<Taxiway> taxiway,
                     List<Spot> spot, Tower tower, List<ATCControl> control){
         // not null check はしない。
         // privateコンストラクタとして適正値であることが担保されているため。
-
         this.name = name;
+        this.atcName = atcName;
         this.runways = runway;
         this.taxiways = taxiway;
         this.spots = spot;
@@ -163,7 +189,71 @@ public class Airport implements IMaster {
 
     @Override
     public Airport clone(){
-        return new Airport(getName(), getRunways(), getTaxiways(),
+        return new Airport(getName(), getAtcName(), getRunways(), getTaxiways(),
                 getSpots(), getTower(), getAtcArea() );
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: ").append(getName()).append(System.lineSeparator());
+        sb.append("AtcName: ").append(getAtcName()).append(System.lineSeparator());
+        sb.append("Tower: ");
+        if(tower == null){
+            sb.append("unset");
+        }else {
+            sb.append("at{").append(tower.getX()).append(", ").append(tower.getY())
+                    .append(", ").append(tower.getZ()).append("}");
+        }
+        sb.append(System.lineSeparator());
+        sb.append("ControlArea: ");
+        if(areas == null || areas.size() == 0){
+            sb.append("unset");
+        }else{
+            sb.append("[");
+            for(ATCControl c : areas){
+                sb.append(c.toString()).append(",");
+            }
+            sb.deleteCharAt(sb.length()-1);
+            sb.append("]");
+        }
+        sb.append(System.lineSeparator());
+        sb.append("Runways: ");
+        if(runways == null || runways.size() == 0){
+            sb.append("unset");
+        }else{
+            sb.append("[");
+            for(Runway r : runways){
+                sb.append(r.toString()).append(",");
+            }
+            sb.deleteCharAt(sb.length()-1);
+            sb.append("]");
+        }
+        sb.append(System.lineSeparator());
+        sb.append("Taxiways: ");
+        if(taxiways == null || taxiways.size() == 0){
+            sb.append("unset");
+        }else{
+            sb.append("[");
+            for(Taxiway t : taxiways){
+                sb.append(t.toString()).append(",");
+            }
+            sb.deleteCharAt(sb.length()-1);
+            sb.append("]");
+        }
+        sb.append(System.lineSeparator());
+        sb.append("Spots: ");
+        if(spots == null || spots.size() == 0){
+            sb.append("unset");
+        }else{
+            sb.append("[");
+            for(Spot s : spots){
+                sb.append(s.toString()).append(",");
+            }
+            sb.deleteCharAt(sb.length()-1);
+            sb.append("]");
+        }
+
+        return sb.toString();
     }
 }

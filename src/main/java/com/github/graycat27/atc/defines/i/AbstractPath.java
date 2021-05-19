@@ -243,7 +243,7 @@ public abstract class AbstractPath implements IPath {
     public String toString() {
         StringBuilder sb = new StringBuilder("Path:{");
         sb.append("start:{").append(start.toString()).append("},");
-        sb.append("way:{[");
+        sb.append("way:[");
         int waySize = way.size();
         for(int i=0; i<waySize; i++){
             sb.append(way.get(i).toString());

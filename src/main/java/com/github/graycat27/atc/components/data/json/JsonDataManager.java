@@ -6,6 +6,7 @@ import com.github.graycat27.atc.components.data.defines.IDataObject;
 import com.github.graycat27.atc.components.data.json.objects.MasterDataObject;
 import com.github.graycat27.atc.consts.DataSourceType;
 
+import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.ucchyocean.lc.lib.com.google.gson.GsonBuilder;
 import com.github.ucchyocean.lc.lib.com.google.gson.Gson;
 import com.github.ucchyocean.lc.lib.com.google.gson.JsonElement;
@@ -49,7 +50,9 @@ public class JsonDataManager extends DataManager {
 
     private void saveJson(IJsonDataObject data){
         try(JsonWriter writer = new JsonWriter(new FileWriter(saveFilePath))){
-            Gson gson = new GsonBuilder().create();
+            GsonBuilder builder = new GsonBuilder();
+            builder.registerTypeAdapter(IFrequency.class, new InterfaceAdapter());
+            Gson gson = builder.create();
             writer.setIndent("   ");    // 3spaces
             JsonElement jsonEl = gson.toJsonTree(data);
             gson.toJson(jsonEl, writer);
@@ -69,7 +72,9 @@ public class JsonDataManager extends DataManager {
     private IJsonDataObject readJson(){
         File file = new File(saveFilePath);
         try (Reader reader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) {
-            Gson gson = new GsonBuilder().create();
+            GsonBuilder builder = new GsonBuilder();
+            builder.registerTypeAdapter(IFrequency.class, new InterfaceAdapter());
+            Gson gson = builder.create();
             MasterDataObject result = gson.fromJson(reader, MasterDataObject.class);
             return result == null ? new MasterDataObject() : result;
         } catch (IOException e) {

@@ -13,6 +13,9 @@ public class Runway extends AbstractPath {
      * <code>18-36</code>, <code>09R-27L</code> など */
     //TODO 番号のフォーマット制限
     private final String rwyNumber;
+    public String getRwyNum(){
+        return rwyNumber;
+    }
 
 
     /* コンストラクタ */
@@ -35,6 +38,16 @@ public class Runway extends AbstractPath {
         startEndPoint.add(this.getStart());
         startEndPoint.add(this.getEnd());
         return new Runway(this.rwyNumber, startEndPoint);
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder("Runway:{");
+        sb.append("Name:").append(getRwyNum()).append(",");
+        sb.append("Start:{").append(getStart().toString()).append("},");
+        sb.append("End:{").append(getEnd().toString()).append("}");
+        sb.append("}");
+        return sb.toString();
     }
 
 

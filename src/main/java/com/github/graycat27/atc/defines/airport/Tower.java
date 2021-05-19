@@ -18,4 +18,9 @@ public class Tower extends AbstractPoint {
     public Tower clone(){
         return new Tower(getX(), getY(), getZ());
     }
+
+    @Override
+    public String toString(){
+        return "Tower:{Location:{"+ getX() +", "+ getY() +", "+ getZ() +"}}";
+    }
 }
