@@ -13,6 +13,9 @@ public class Runway extends AbstractPath {
      * <code>18-36</code>, <code>09R-27L</code> など */
     //TODO 番号のフォーマット制限
     private final String rwyNumber;
+    public String getRwyNum(){
+        return rwyNumber;
+    }
 
 
     /* コンストラクタ */
