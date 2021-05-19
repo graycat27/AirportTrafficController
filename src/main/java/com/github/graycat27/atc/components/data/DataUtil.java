@@ -52,6 +52,15 @@ public final class DataUtil {
         return ap.clone();
     }
 
+    public static Airport getAirportByAtcName(String atcName){
+        for(Airport ap : data().getAirportList().values()){
+            if(atcName.equals(ap.getAtcName())){
+                return ap.clone();
+            }
+        }
+        throw new IllegalArgumentException("there is no such atc-name airport");
+    }
+
     public static void addRunwayToAirport(String airportName, Runway newOne){
         data().getAirportList().get(airportName).addRunway(newOne);
     }
@@ -68,6 +77,20 @@ public final class DataUtil {
         data().getAirportList().get(airportName).setFreqToAtcControl(control, freq);
     }
 
+    public static void setAtcNameToAirport(String airportName, String atcName){
+        data().getAirportList().get(airportName).setAtcName(atcName);
+    }
 
+    public static boolean hasSameAtcNameAirport(String atcName){
+        if(atcName == null || atcName.length() == 0){
+            return false;
+        }
+        for(Airport ap : data().getAirportList().values()){
+            if(atcName.equals(ap.getAtcName())){
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

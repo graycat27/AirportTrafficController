@@ -1,5 +1,6 @@
 package com.github.graycat27.atc.defines.airport;
 
+import com.github.graycat27.atc.components.data.DataUtil;
 import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.i.IFrequency;
@@ -19,6 +20,22 @@ public class Airport implements IMaster {
     private final String name;
     public String getName(){
         return name;
+    }
+
+    /** ATC用名称 */
+    private String atcName;
+    public void setAtcName(String newName){
+        if(newName.matches("[0-9a-zA-Z]+")){
+            if(DataUtil.hasSameAtcNameAirport(newName)){
+                throw new IllegalArgumentException("there are same atc name airport already");
+            }
+            this.atcName = newName;
+        }else{
+            throw new IllegalArgumentException("AtcNames character must only alphabets and numbers");
+        }
+    }
+    public String getAtcName(){
+        return atcName;
     }
 
     /* 施設系 */
@@ -116,12 +133,12 @@ public class Airport implements IMaster {
     }
 
     //コンストラクタ
-    private Airport(String name, List<Runway> runway, List<Taxiway> taxiway,
+    private Airport(String name, String atcName, List<Runway> runway, List<Taxiway> taxiway,
                     List<Spot> spot, Tower tower, List<ATCControl> control){
         // not null check はしない。
         // privateコンストラクタとして適正値であることが担保されているため。
-
         this.name = name;
+        this.atcName = atcName;
         this.runways = runway;
         this.taxiways = taxiway;
         this.spots = spot;
@@ -172,7 +189,7 @@ public class Airport implements IMaster {
 
     @Override
     public Airport clone(){
-        return new Airport(getName(), getRunways(), getTaxiways(),
+        return new Airport(getName(), getAtcName(), getRunways(), getTaxiways(),
                 getSpots(), getTower(), getAtcArea() );
     }
 
@@ -180,6 +197,7 @@ public class Airport implements IMaster {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("Name: ").append(getName()).append(System.lineSeparator());
+        sb.append("AtcName: ").append(getAtcName()).append(System.lineSeparator());
         sb.append("Tower: ");
         if(tower == null){
             sb.append("unset");
