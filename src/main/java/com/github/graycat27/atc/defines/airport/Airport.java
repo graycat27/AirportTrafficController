@@ -226,7 +226,6 @@ public class Airport implements IMaster {
             sb.deleteCharAt(sb.length()-1);
             sb.append("]");
         }
-        sb.append(System.lineSeparator());
 
         return sb.toString();
     }
