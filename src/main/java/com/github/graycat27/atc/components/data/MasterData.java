@@ -18,12 +18,8 @@ public class MasterData implements IMaster {
     }
 
     //コンストラクタ
-    private MasterData(Hashtable<String, Airport> apList){
+    public MasterData(Hashtable<String, Airport> apList){
         this.airportList = apList;
-    }
-
-    public MasterData(){
-        airportList = new Hashtable<>();
     }
 
     //メソッド

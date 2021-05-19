@@ -10,7 +10,7 @@ import java.util.Hashtable;
 public class MasterDataObject implements IJsonDataObject {
 
     //フィールド
-    private Hashtable<String, Airport> airportList;
+    private final Hashtable<String, Airport> airportList;
 
     //コンストラクタ
     public MasterDataObject(){
@@ -24,8 +24,7 @@ public class MasterDataObject implements IJsonDataObject {
     //メソッド
     @Override
     public MasterData getOriginal() {
-        //FIXME
-        return new MasterData();
+        return new MasterData(airportList);
     }
 
     @Override
