@@ -173,7 +173,7 @@ public class Airport implements IMaster {
         sb.append("Name: ").append(getName()).append(System.lineSeparator());
         sb.append("Tower: ");
         if(tower == null){
-            sb.append("is unset (null)");
+            sb.append("unset");
         }else {
             sb.append("at{").append(tower.getX()).append(", ").append(tower.getY())
                     .append(", ").append(tower.getZ()).append("}");
