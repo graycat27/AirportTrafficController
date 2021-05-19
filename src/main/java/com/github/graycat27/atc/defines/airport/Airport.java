@@ -74,7 +74,7 @@ public class Airport implements IMaster {
     /** 管制塔 */
     private Tower tower = null;
     public Tower getTower(){
-        return tower.clone();
+        return tower == null ? null : tower.clone();
     }
     public void setTower(Tower newOne){
         if(tower != null){
