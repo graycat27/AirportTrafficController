@@ -4,9 +4,7 @@ import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.i.IMaster;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.List;
 
 /** DataUtilを介して使用すること */
 public class MasterData implements IMaster {
