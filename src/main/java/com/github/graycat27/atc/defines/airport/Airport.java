@@ -55,7 +55,7 @@ public class Airport implements IMaster {
     }
 
     /** 駐機位置（スポット） */
-    private List<Spot> spots = new ArrayList<>();;
+    private List<Spot> spots = new ArrayList<>();
     public List<Spot> getSpots(){
         return new ArrayList<>(spots);
     }
@@ -90,7 +90,7 @@ public class Airport implements IMaster {
 
     /* 管制系 */
     /** 管制空域 */
-    private List<ATCControl> areas = new ArrayList<>();;
+    private List<ATCControl> areas = new ArrayList<>();
     public List<ATCControl> getAtcArea(){
         return new ArrayList<>(areas);
     }
