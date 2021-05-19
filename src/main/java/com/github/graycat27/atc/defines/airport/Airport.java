@@ -166,4 +166,68 @@ public class Airport implements IMaster {
         return new Airport(getName(), getRunways(), getTaxiways(),
                 getSpots(), getTower(), getAtcArea() );
     }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: ").append(getName()).append(System.lineSeparator());
+        sb.append("Tower: ");
+        if(tower == null){
+            sb.append("is unset (null)");
+        }else {
+            sb.append("at{").append(tower.getX()).append(", ").append(tower.getY())
+                    .append(", ").append(tower.getZ()).append("}");
+        }
+        sb.append(System.lineSeparator());
+        sb.append("ControlArea : ");
+        if(areas == null || areas.size() == 0){
+            sb.append("unset");
+        }else{
+            sb.append("[");
+            for(ATCControl c : areas){
+                sb.append(c.toString()).append(",");
+            }
+            sb.deleteCharAt(sb.length()-1);
+            sb.append("]");
+        }
+        sb.append(System.lineSeparator());
+        sb.append("Runways : ");
+        if(runways == null || runways.size() == 0){
+            sb.append("unset");
+        }else{
+            sb.append("[");
+            for(Runway r : runways){
+                sb.append(r.toString()).append(",");
+            }
+            sb.deleteCharAt(sb.length()-1);
+            sb.append("]");
+        }
+        sb.append(System.lineSeparator());
+        sb.append("Taxiways : ");
+        if(taxiways == null || taxiways.size() == 0){
+            sb.append("unset");
+        }else{
+            sb.append("[");
+            for(Taxiway t : taxiways){
+                sb.append(t.toString()).append(",");
+            }
+            sb.deleteCharAt(sb.length()-1);
+            sb.append("]");
+        }
+        sb.append(System.lineSeparator());
+        sb.append("Spots : ");
+        if(spots == null || spots.size() == 0){
+            sb.append("unset");
+        }else{
+            sb.append("[");
+            for(Spot s : spots){
+                sb.append(s.toString()).append(",");
+            }
+            sb.deleteCharAt(sb.length()-1);
+            sb.append("]");
+        }
+        sb.append(System.lineSeparator());
+
+        return sb.toString();
+    }
 }

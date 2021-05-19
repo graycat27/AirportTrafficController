@@ -40,5 +40,15 @@ public class Runway extends AbstractPath {
         return new Runway(this.rwyNumber, startEndPoint);
     }
 
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder("Runway:{");
+        sb.append("Name:").append(getRwyNum()).append(",");
+        sb.append("Start:{").append(getStart().toString()).append("},");
+        sb.append("End:{").append(getEnd().toString()).append("}");
+        sb.append("}");
+        return sb.toString();
+    }
+
 
 }
