@@ -1,11 +1,13 @@
 package com.github.graycat27.atc.components.data;
 
 import com.github.graycat27.atc.AirportTrafficController;
+import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.airport.Runway;
 import com.github.graycat27.atc.defines.airport.Spot;
 import com.github.graycat27.atc.defines.airport.Taxiway;
 import com.github.graycat27.atc.defines.atc.ATCControl;
+import com.github.graycat27.atc.defines.i.IFrequency;
 
 import java.util.Collections;
 import java.util.Enumeration;
@@ -43,7 +45,11 @@ public final class DataUtil {
     }
 
     public static Airport getAirportByName(String airportName){
-        return data().getAirportList().get(airportName).clone();
+        Airport ap = data().getAirportList().get(airportName);
+        if(ap == null){
+            throw new IllegalArgumentException("there is no such name airport");
+        }
+        return ap.clone();
     }
 
     public static void addRunwayToAirport(String airportName, Runway newOne){
@@ -58,8 +64,8 @@ public final class DataUtil {
         data().getAirportList().get(airportName).addSpot(newOne);
     }
 
-    public static void addControlToAirport(String airportName, ATCControl newOne){
-        data().getAirportList().get(airportName).addControl(newOne);
+    public static void setAtcFreqToAirport(String airportName, Control control, IFrequency freq){
+        data().getAirportList().get(airportName).setFreqToAtcControl(control, freq);
     }
 
 
