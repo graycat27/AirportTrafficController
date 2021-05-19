@@ -68,6 +68,9 @@ public final class DataUtil {
         data().getAirportList().get(airportName).setFreqToAtcControl(control, freq);
     }
 
+    public static void setAtcNameToAirport(String airportName, String atcName){
+        data().getAirportList().get(airportName).setAtcName(atcName);
+    }
 
     public static boolean hasSameAtcNameAirport(String atcName){
         if(atcName == null || atcName.length() == 0){

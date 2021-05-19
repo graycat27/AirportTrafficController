@@ -73,7 +73,7 @@ public class CommandAirport{
     //private method
     /* mod */
     private static void setAtcNameForAirport(String airportName, String atcName){
-        //TODO make this
+        DataUtil.setAtcNameToAirport(airportName, atcName);
     }
 
     private static void setTowerFreqForAirport(String airportName, String freq){
