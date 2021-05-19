@@ -21,6 +21,20 @@ public class Airport implements IMaster {
         return name;
     }
 
+    /** ATC用名称 */
+    private String atcName;
+    public void setAtcName(String newName){
+        if(newName.matches("[0-9a-zA-Z]+")){
+            //TODO checkNonUsed
+            this.atcName = newName;
+        }else{
+            throw new IllegalArgumentException("AtcNames character must only alphabets and numbers");
+        }
+    }
+    public String getAtcName(){
+        return atcName;
+    }
+
     /* 施設系 */
     /** 滑走路 */
     private List<Runway> runways = new ArrayList<>();
