@@ -24,6 +24,7 @@ public class MasterDataObject implements IJsonDataObject {
     //メソッド
     @Override
     public MasterData getOriginal() {
+        //FIXME
         return new MasterData();
     }
 
