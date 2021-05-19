@@ -39,4 +39,14 @@ public class ATCControl implements IMaster {
     public ATCControl clone(){
         return new ATCControl(this.getControl(), this.getFrequency(), this.getArea());
     }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder("AtcControl : {");
+        sb.append("Control : ").append(control.toString()).append(",");
+        sb.append("Frequency : ").append(frequency.getFreq()).append(",");
+        sb.append("Area : ").append(area.toString());
+        sb.append("}");
+        return sb.toString();
+    }
 }
