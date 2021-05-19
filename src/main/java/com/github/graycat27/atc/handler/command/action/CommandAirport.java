@@ -3,6 +3,9 @@ package com.github.graycat27.atc.handler.command.action;
 import com.github.graycat27.atc.AirportTrafficController;
 import com.github.graycat27.atc.components.data.DataUtil;
 import com.github.graycat27.atc.defines.airport.Airport;
+import com.github.graycat27.atc.defines.atc.ATCControl;
+import com.github.graycat27.atc.defines.atc.LunaChatChannelFrequency;
+import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;
 import org.bukkit.command.CommandSender;
 
@@ -14,6 +17,8 @@ public class CommandAirport{
             throw new IllegalArgumentException("there are same name airport already");
         }
         Airport newOne = new Airport(name);
+        newOne.addControl(new ATCControl(Control.TWR, null, null));
+        newOne.addControl(new ATCControl(Control.CTL, null, null));
         DataUtil.addAirport(newOne);
         AirportTrafficController.getDataManager().save();
     }
