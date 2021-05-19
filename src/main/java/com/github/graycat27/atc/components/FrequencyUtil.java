@@ -1,5 +1,6 @@
 package com.github.graycat27.atc.components;
 
+import com.github.graycat27.atc.AirportTrafficController;
 import com.github.graycat27.atc.consts.LcConst;
 import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.i.IFrequency;
@@ -16,11 +17,12 @@ public class FrequencyUtil {
      * @return 引数で指定の周波数が使用済みの場合<code>true</code>, 未使用の場合<code>false</code>
      */
     public static boolean isFreqUsed(int n, int d){
+        String freq = String.format("%d.%d", n, d);
+        return isFreqUsed(freq);
+    }
 
-        //TODO 本プラグインで定義された各種周波数の一覧取得と、検証
-
-
-        return (n+d)*0 != 0;    //暫定でfalseを必ず返す（TODO）
+    public static boolean isFreqUsed(String freq){
+        return (AirportTrafficController.getLcApi().getChannel(getChannelName(freq)) != null);
     }
 
     public static ATCControl getAtcControl(IFrequency freq){
