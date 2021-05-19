@@ -121,7 +121,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                 String param = (args.length >= 4) ? args[3] : null;
                 switch (args[2]) {
                     case CommandWord.Target.AIRPORT:
-                        CommandAirport.info(param);
+                        CommandAirport.info(sender, param);
                         break;
                     case CommandWord.Target.AREA:
                         CommandArea.info(param);
