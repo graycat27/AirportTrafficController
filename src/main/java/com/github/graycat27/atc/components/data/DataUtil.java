@@ -7,8 +7,7 @@ import com.github.graycat27.atc.defines.airport.Spot;
 import com.github.graycat27.atc.defines.airport.Taxiway;
 import com.github.graycat27.atc.defines.atc.ATCControl;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -32,7 +31,7 @@ public final class DataUtil {
     /* Airport */
     public static List<String> getAirportNameList(){
         Enumeration<String> keys = data().getAirportList().keys();
-        return new ArrayList<>((Collection<? extends String>) keys);
+        return Collections.list(keys);
     }
 
     public static void addAirport(Airport newOne){
