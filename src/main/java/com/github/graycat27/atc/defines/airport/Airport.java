@@ -1,5 +1,6 @@
 package com.github.graycat27.atc.defines.airport;
 
+import com.github.graycat27.atc.components.data.DataUtil;
 import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.i.IFrequency;
@@ -25,7 +26,9 @@ public class Airport implements IMaster {
     private String atcName;
     public void setAtcName(String newName){
         if(newName.matches("[0-9a-zA-Z]+")){
-            //TODO checkNonUsed
+            if(DataUtil.hasSameAtcNameAirport(newName)){
+                throw new IllegalArgumentException("there are same atc name airport already");
+            }
             this.atcName = newName;
         }else{
             throw new IllegalArgumentException("AtcNames character must only alphabets and numbers");

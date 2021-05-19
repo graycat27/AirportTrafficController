@@ -69,5 +69,16 @@ public final class DataUtil {
     }
 
 
+    public static boolean hasSameAtcNameAirport(String atcName){
+        if(atcName == null || atcName.length() == 0){
+            return false;
+        }
+        for(Airport ap : data().getAirportList().values()){
+            if(atcName.equals(ap.getAtcName())){
+                return true;
+            }
+        }
+        return false;
+    }
 
 }
