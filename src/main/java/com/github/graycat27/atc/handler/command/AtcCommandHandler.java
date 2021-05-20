@@ -207,6 +207,11 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             return resultList;
         }
 
+        // /atc help x
+        if(args[0].equals(CommandWord.HELP)){
+            return Collections.emptyList();
+        }
+
         // /atc freq xxx
         if (args[0].equals(CommandWord.Freq.FREQ)) {
             List<String> freqCmdList = new ArrayList<>();
@@ -274,10 +279,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                 }
                 return resultList;
             }
-        }
-
-        if(args[0].equals(CommandWord.HELP)){
-            return Collections.emptyList();
         }
 
         return Collections.emptyList();
