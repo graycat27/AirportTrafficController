@@ -5,6 +5,7 @@ import com.github.graycat27.atc.components.data.defines.IDataManager;
 import com.github.graycat27.atc.components.data.json.JsonDataManager;
 import com.github.graycat27.atc.consts.CommandWord;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;
+import com.github.graycat27.atc.handler.command.AtcTabCompleteHandler;
 import com.github.ucchyocean.lc3.LunaChatAPI;
 import com.github.ucchyocean.lc3.LunaChatBukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,9 +26,9 @@ public final class AirportTrafficController extends JavaPlugin {
     @Override
     public void onEnable() {
         this.getCommand(CommandWord.ATC_full).setExecutor(new AtcCommandHandler(this));
-        this.getCommand(CommandWord.ATC_full).setTabCompleter(new AtcCommandHandler(this));
+        this.getCommand(CommandWord.ATC_full).setTabCompleter(new AtcTabCompleteHandler(this));
         this.getCommand(CommandWord.ATC).setExecutor(new AtcCommandHandler(this));
-        this.getCommand(CommandWord.ATC).setTabCompleter(new AtcCommandHandler(this));
+        this.getCommand(CommandWord.ATC).setTabCompleter(new AtcTabCompleteHandler(this));
 
         if ( getServer().getPluginManager().isPluginEnabled("LunaChat") ) {
             LunaChatBukkit lunaChat = (LunaChatBukkit) getServer().getPluginManager().getPlugin("LunaChat");
