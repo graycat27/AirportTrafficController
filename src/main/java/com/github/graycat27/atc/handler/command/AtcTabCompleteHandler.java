@@ -1,7 +1,6 @@
 package com.github.graycat27.atc.handler.command;
 
 import com.github.graycat27.atc.consts.CommandWord;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
