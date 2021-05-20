@@ -1,10 +1,12 @@
 package com.github.graycat27.atc.handler.command;
 
 import com.github.graycat27.atc.consts.CommandWord;
+import com.github.graycat27.atc.consts.PermissionNode;
 import com.github.graycat27.atc.handler.command.action.CommandAirport;
 import com.github.graycat27.atc.handler.command.action.CommandArea;
 import com.github.graycat27.atc.handler.command.action.CommandFreq;
 import com.github.graycat27.atc.handler.command.action.CommandHelp;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -24,6 +26,8 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
     // フィールド
     private static Plugin plugin;
 
+    private final String permissionErrorMsg = ChatColor.RED + "you don`t have permission";
+
     // コンストラクタ
     public AtcCommandHandler(Plugin plugin){
         AtcCommandHandler.plugin = plugin;
@@ -41,12 +45,20 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             return false;
         }
         if(args.length == 0 || CommandWord.HELP.equalsIgnoreCase(args[0])){
-            // /atc のみの場合
+            // /atc のみの場合・helpコマンドの場合
+            if(!sender.hasPermission(PermissionNode.ATC_HELP)){
+                sendMessageNoPermission(sender);
+                return true;
+            }
             CommandHelp.showHelp(sender);
             return true;
         }
         /* /atc freq xxx */
         if(CommandWord.Freq.FREQ.equalsIgnoreCase(args[0])){
+            if(!sender.hasPermission(PermissionNode.ATC_FREQ)){
+                sendMessageNoPermission(sender);
+                return true;
+            }
             if(args.length < 2){
                 sendMessage(sender, "less parameter for command [/atc freq]");
                 this.sendMessageUnknownCommand(sender);
@@ -69,6 +81,10 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
         if (CommandWord.Manage.MANAGE.equalsIgnoreCase(args[0])){
             /* /atc manage add xxx */
             if (CommandWord.Manage.ADD.equalsIgnoreCase(args[1])) {
+                if(!sender.hasPermission(PermissionNode.ATC_MANAGE_CHANGE)){
+                    sendMessageNoPermission(sender);
+                    return true;
+                }
                 if (args.length < 3) {
                     sendMessage(sender, "less parameter for command [/atc manage add]");
                     this.sendMessageUnknownCommand(sender);
@@ -96,6 +112,10 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
             /* /atc manage mod xxx */
             if (CommandWord.Manage.MODIFY.equalsIgnoreCase(args[1])) {
+                if(!sender.hasPermission(PermissionNode.ATC_MANAGE_CHANGE)){
+                    sendMessageNoPermission(sender);
+                    return true;
+                }
                 if (args.length < 3) {
                     sendMessage(sender, "less parameter for command [/atc manage mod]");
                     this.sendMessageUnknownCommand(sender);
@@ -121,6 +141,10 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
             /* /atc manage info xxx */
             if (CommandWord.Manage.INFO.equalsIgnoreCase(args[1])) {
+                if(!sender.hasPermission(PermissionNode.ATC_MANAGE_INFO)){
+                    sendMessageNoPermission(sender);
+                    return true;
+                }
                 if (args.length < 3) {
                     sendMessage(sender, "less parameter for command [/atc manage info]");
                     this.sendMessageUnknownCommand(sender);
@@ -148,6 +172,10 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
     private void sendMessageUnknownCommand(CommandSender sender){
         sendMessage(sender, "wrong command. use [/atc help]");
+    }
+
+    private void sendMessageNoPermission(CommandSender sender){
+        sendMessage(sender, permissionErrorMsg);
     }
 
     /**
