@@ -280,7 +280,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             return Collections.emptyList();
         }
 
-        return null;
+        return Collections.emptyList();
     }
 
     /**
