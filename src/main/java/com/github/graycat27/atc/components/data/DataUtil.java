@@ -42,7 +42,7 @@ public final class DataUtil {
 
     public static boolean hasSameNameAirport(String airportName){
         if(airportName == null || airportName.length() == 0){
-            throw new IllegalArgumentException("name param is null");
+            throw new IllegalArgumentException("name param is empty");
         }
         return data().getAirportList().containsKey(airportName);
     }
