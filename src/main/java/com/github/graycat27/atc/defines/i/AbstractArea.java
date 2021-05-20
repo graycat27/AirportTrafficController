@@ -39,6 +39,16 @@ public abstract class AbstractArea implements IArea {
         this.maxPoint = maxP;
     }
 
+    public AbstractArea(final IPoint centerPos, final int radius){
+        int centerX = centerPos.getX();
+        int centerY = centerPos.getY();
+        int centerZ = centerPos.getZ();
+        int validMinCenterY = Math.max(0, centerY - radius);
+        int validMaxCenterY = Math.min(centerY + radius, 255);
+        this.minPoint = new ConcretePoint(centerX - radius, validMinCenterY, centerZ - radius);
+        this.maxPoint = new ConcretePoint(centerX + radius, validMaxCenterY, centerZ + radius);
+    }
+
     // メソッド
     @Override
     public boolean isIn(final IPoint point){
