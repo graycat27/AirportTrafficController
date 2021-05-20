@@ -1,5 +1,6 @@
 package com.github.graycat27.atc.handler.command.action;
 
+import com.github.graycat27.atc.AirportTrafficController;
 import com.github.graycat27.atc.components.data.DataUtil;
 import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.airport.Airport;
@@ -67,6 +68,7 @@ public class CommandArea {
         area = new ATCArea(centerPos, radius);
 
         DataUtil.setAtcAreaToAirport(airportName, controlType, area);
+        AirportTrafficController.getDataManager().save();
     }
 
     public static void info(String param){
