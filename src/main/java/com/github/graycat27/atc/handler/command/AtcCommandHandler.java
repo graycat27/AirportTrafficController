@@ -62,7 +62,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             }
             if(args.length < 2){
                 sendMessage(sender, "less parameter for command [/atc freq]");
-                this.sendMessageUnknownCommand(sender);
                 return true;
             }
             //args[1] で処理分岐
@@ -80,6 +79,11 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
         /* /atc manage xxx */
         if (CommandWord.Manage.MANAGE.equalsIgnoreCase(args[0])){
+            String lessParamMsg = ChatColor.RED + "less parameter" + ChatColor.WHITE + " for command [/atc manage]";
+            if(args.length < 2){
+                sendMessage(sender, lessParamMsg);
+                return true;
+            }
             /* /atc manage add xxx */
             if (CommandWord.Manage.ADD.equalsIgnoreCase(args[1])) {
                 if(!sender.hasPermission(PermissionNode.ATC_MANAGE_CHANGE)){
@@ -87,8 +91,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                     return true;
                 }
                 if (args.length < 3) {
-                    sendMessage(sender, "less parameter for command [/atc manage add]");
-                    this.sendMessageUnknownCommand(sender);
+                    sendMessage(sender, lessParamMsg);
                     return true;
                 }
                 try {
@@ -103,7 +106,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                             break;
                         default:
                             sendMessage(sender, "unknown param for command [/atc manage add]");
-                            this.sendMessageUnknownCommand(sender);
                     }
                 }catch(IllegalArgumentException e){
                     sendMessage(sender, e.getMessage());
@@ -119,7 +121,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                 }
                 if (args.length < 3) {
                     sendMessage(sender, "less parameter for command [/atc manage mod]");
-                    this.sendMessageUnknownCommand(sender);
                     return true;
                 }
                 try {
@@ -132,7 +133,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                             break;
                         default:
                             sendMessage(sender, "unknown param for command [/atc manage mod]");
-                            this.sendMessageUnknownCommand(sender);
                     }
                 }catch(IllegalArgumentException|IllegalStateException e){
                     sendMessage(sender, e.getMessage());
@@ -148,7 +148,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                 }
                 if (args.length < 3) {
                     sendMessage(sender, "less parameter for command [/atc manage info]");
-                    this.sendMessageUnknownCommand(sender);
                     return true;
                 }
                 String param = (args.length >= 4) ? args[3] : null;
@@ -161,7 +160,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                         break;
                     default:
                         sendMessage(sender, "unknown param for command [/atc manage info]");
-                        this.sendMessageUnknownCommand(sender);
                 }
                 return true;
             }
