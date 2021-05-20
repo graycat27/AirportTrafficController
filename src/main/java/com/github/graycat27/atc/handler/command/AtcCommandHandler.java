@@ -5,6 +5,7 @@ import com.github.graycat27.atc.handler.command.action.CommandAirport;
 import com.github.graycat27.atc.handler.command.action.CommandArea;
 import com.github.graycat27.atc.handler.command.action.CommandFreq;
 import com.github.graycat27.atc.handler.command.action.CommandHelp;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,6 +24,8 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
     // フィールド
     private static Plugin plugin;
+
+    private final String wrongCommandMsg = ChatColor.RED + "wrong command." + ChatColor.WHITE + " use [/atc help]";
 
     // コンストラクタ
     public AtcCommandHandler(Plugin plugin){
@@ -146,7 +149,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
     }
 
     private void sendMessageUnknownCommand(CommandSender sender){
-        sendMessage(sender, "wrong command. use [/atc help]");
+        sendMessage(sender, wrongCommandMsg);
     }
 
     /**
