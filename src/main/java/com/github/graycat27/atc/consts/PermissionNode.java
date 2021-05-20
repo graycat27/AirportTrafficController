@@ -16,4 +16,7 @@ public class PermissionNode {
     /** permission for join or leave ATC channel */
     public static final String ATC_FREQ = "atc.freq";
 
+    /** permission for help command */
+    public static final String ATC_HELP = "atc.help";
+
 }

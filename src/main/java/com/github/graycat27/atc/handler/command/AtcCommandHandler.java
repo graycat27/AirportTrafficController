@@ -45,7 +45,10 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             return false;
         }
         if(args.length == 0 || CommandWord.HELP.equalsIgnoreCase(args[0])){
-            // /atc のみの場合
+            // /atc のみの場合・helpコマンドの場合
+            if(!sender.hasPermission(PermissionNode.ATC_HELP)){
+                sendMessageNoPermission(sender);
+            }
             CommandHelp.showHelp(sender);
             return true;
         }
