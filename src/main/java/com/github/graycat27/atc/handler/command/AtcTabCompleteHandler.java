@@ -130,6 +130,13 @@ public class AtcTabCompleteHandler implements TabCompleter {
                 return resultList;
             }
 
+            if( CommandWord.Manage.ADD.equalsIgnoreCase(args[1]) &&
+                CommandWord.Target.AIRPORT.equalsIgnoreCase(args[2])){
+                List<String> hint = new ArrayList<>();
+                hint.add("new airport name");
+                return hint;
+            }
+
             if( CommandWord.Manage.MODIFY.equalsIgnoreCase(args[1]) &&
                 CommandWord.Target.AIRPORT.equalsIgnoreCase(args[2])){
                 // /atc manage mod airport <name> <meta> <value>
