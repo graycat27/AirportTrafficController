@@ -54,14 +54,4 @@ public final class CommandWord {
         public static final String CTL_FREQ = "CTL_freq";
     }
 
-    /** 管制圏の詳細情報キー */
-    public static class AreaMeta {
-
-        public static final String FREQ = "freq";
-
-        public static final String POS = "pos";
-
-        public static final String RADIUS = "r";
-    }
-
 }
