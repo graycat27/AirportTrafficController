@@ -33,7 +33,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, Command command, @NotNull String label, String[] args) {
 
-        //TODO コマンド文解析処理
         // 実際の処理動作はactionパッケージ配下に切り出して、可読性を確保すること
 
         /* /atc */
