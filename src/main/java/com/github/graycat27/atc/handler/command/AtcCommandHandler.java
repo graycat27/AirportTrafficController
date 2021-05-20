@@ -194,6 +194,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
         List<String> firstCommandList = new ArrayList<>();    //atc xxx
         firstCommandList.add(CommandWord.Freq.FREQ);
         firstCommandList.add(CommandWord.Manage.MANAGE);
+        firstCommandList.add(CommandWord.HELP);
 
         if(args.length == 0 || args[0].equals("")){
             //全候補提供
