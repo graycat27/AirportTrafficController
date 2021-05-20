@@ -16,6 +16,7 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -275,6 +276,10 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                 }
                 return resultList;
             }
+        }
+
+        if(args[0].equals(CommandWord.HELP)){
+            return Collections.emptyList();
         }
 
         return null;
