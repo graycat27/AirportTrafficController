@@ -15,8 +15,6 @@ public class CommandArea {
     }
 
     public static void mod(String[] args) throws IllegalArgumentException {
-        //TODO make this
-
         // /atc manage mod area <airportName:Sample> <controlType:TWR> <pos:100,64,200> <r:200>
         String airportName;
         Control controlType;
