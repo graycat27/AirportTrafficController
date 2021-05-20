@@ -56,4 +56,18 @@ public abstract class AbstractArea implements IArea {
     @Override
     abstract public AbstractArea clone();
 
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder("Area: {");
+        sb.append(System.lineSeparator());
+        sb.append("Points: [");
+        sb.append("{").append(getMinPoint().getX()).append(",");
+        sb.append(getMinPoint().getY()).append(",").append(getMinPoint().getZ()).append("},");
+        sb.append("{").append(getMaxPoint().getX()).append(",");
+        sb.append(getMaxPoint().getY()).append(",").append(getMaxPoint().getZ()).append("}]");
+        sb.append(System.lineSeparator());
+        sb.append("}");
+        return sb.toString();
+    }
+
 }

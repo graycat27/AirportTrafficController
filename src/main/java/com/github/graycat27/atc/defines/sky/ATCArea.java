@@ -21,4 +21,8 @@ public class ATCArea extends AbstractArea {
         return new ATCArea(getMinPoint(), getMaxPoint());
     }
 
+    @Override
+    public String toString(){
+        return super.toString();
+    }
 }
