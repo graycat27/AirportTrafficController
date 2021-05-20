@@ -48,6 +48,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             // /atc のみの場合・helpコマンドの場合
             if(!sender.hasPermission(PermissionNode.ATC_HELP)){
                 sendMessageNoPermission(sender);
+                return true;
             }
             CommandHelp.showHelp(sender);
             return true;
@@ -56,6 +57,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
         if(CommandWord.Freq.FREQ.equalsIgnoreCase(args[0])){
             if(!sender.hasPermission(PermissionNode.ATC_FREQ)){
                 sendMessageNoPermission(sender);
+                return true;
             }
             if(args.length < 2){
                 sendMessage(sender, "less parameter for command [/atc freq]");
@@ -81,6 +83,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             if (CommandWord.Manage.ADD.equalsIgnoreCase(args[1])) {
                 if(!sender.hasPermission(PermissionNode.ATC_MANAGE_CHANGE)){
                     sendMessageNoPermission(sender);
+                    return true;
                 }
                 if (args.length < 3) {
                     sendMessage(sender, "less parameter for command [/atc manage add]");
@@ -111,6 +114,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             if (CommandWord.Manage.MODIFY.equalsIgnoreCase(args[1])) {
                 if(!sender.hasPermission(PermissionNode.ATC_MANAGE_CHANGE)){
                     sendMessageNoPermission(sender);
+                    return true;
                 }
                 if (args.length < 3) {
                     sendMessage(sender, "less parameter for command [/atc manage mod]");
@@ -139,6 +143,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
             if (CommandWord.Manage.INFO.equalsIgnoreCase(args[1])) {
                 if(!sender.hasPermission(PermissionNode.ATC_MANAGE_INFO)){
                     sendMessageNoPermission(sender);
+                    return true;
                 }
                 if (args.length < 3) {
                     sendMessage(sender, "less parameter for command [/atc manage info]");
