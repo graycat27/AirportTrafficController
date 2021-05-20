@@ -4,7 +4,6 @@ import com.github.graycat27.atc.components.data.DataUtil;
 import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.i.ConcretePoint;
-import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.graycat27.atc.defines.i.IPoint;
 import com.github.graycat27.atc.defines.sky.ATCArea;
 
