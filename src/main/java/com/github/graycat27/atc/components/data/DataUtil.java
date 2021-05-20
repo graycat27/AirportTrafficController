@@ -6,8 +6,8 @@ import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.airport.Runway;
 import com.github.graycat27.atc.defines.airport.Spot;
 import com.github.graycat27.atc.defines.airport.Taxiway;
-import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.i.IFrequency;
+import com.github.graycat27.atc.defines.sky.ATCArea;
 
 import java.util.Collections;
 import java.util.Enumeration;
@@ -78,6 +78,10 @@ public final class DataUtil {
 
     public static void setAtcFreqToAirport(String airportName, Control control, IFrequency freq){
         data().getAirportList().get(airportName).setFreqToAtcControl(control, freq);
+    }
+
+    public static void setAtcAreaToAirport(String airportName, Control control, ATCArea area){
+        data().getAirportList().get(airportName).setAreaToAtcControl(control, area);
     }
 
     public static void setAtcNameToAirport(String airportName, String atcName){

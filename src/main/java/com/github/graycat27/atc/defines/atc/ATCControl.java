@@ -28,9 +28,15 @@ public class ATCControl implements IMaster {
         this.frequency = frequency;
     }
 
-    private final ATCArea area;
+    private ATCArea area;
     public ATCArea getArea(){
         return area.clone();
+    }
+    public void setArea(ATCArea area){
+        if(this.area != null){
+            throw new IllegalStateException("area is already set");
+        }
+        this.area = area;
     }
 
     //コンストラクタ
