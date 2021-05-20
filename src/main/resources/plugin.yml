@@ -11,3 +11,16 @@ commands:
     description: ATC base command
   atc:
     description: ATC base command
+permissions:
+  atc.manage.change:
+    default: op
+    description: allows to change airport settings
+  atc.manage.info:
+    default: op
+    description: allows to view airport information
+  atc.freq:
+    default: true
+    description: allows to join or leave from ATC channel
+  atc.help:
+    default: true
+    description: allows to use help subcommand
