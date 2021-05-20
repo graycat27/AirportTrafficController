@@ -16,6 +16,7 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -194,6 +195,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
         List<String> firstCommandList = new ArrayList<>();    //atc xxx
         firstCommandList.add(CommandWord.Freq.FREQ);
         firstCommandList.add(CommandWord.Manage.MANAGE);
+        firstCommandList.add(CommandWord.HELP);
 
         if(args.length == 0 || args[0].equals("")){
             //全候補提供
@@ -274,6 +276,10 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                 }
                 return resultList;
             }
+        }
+
+        if(args[0].equals(CommandWord.HELP)){
+            return Collections.emptyList();
         }
 
         return null;
