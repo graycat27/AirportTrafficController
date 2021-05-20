@@ -279,6 +279,45 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                 }
                 return resultList;
             }
+
+            if( CommandWord.Manage.MODIFY.equalsIgnoreCase(args[1]) &&
+                CommandWord.Target.AIRPORT.equalsIgnoreCase(args[2])){
+                // /atc manage mod airport <name> <meta> <value>
+                if(args.length == 4){
+                    List<String> hint = new ArrayList<>();
+                    hint.add("airport name");
+                    return hint;
+                }
+                if(args.length == 5){
+                    List<String> result = new ArrayList<>();
+                    List<String> meta = new ArrayList<>();
+                    meta.add(CommandWord.AirportMeta.ATC_Name);
+                    meta.add(CommandWord.AirportMeta.CTL_FREQ);
+                    meta.add(CommandWord.AirportMeta.TWR_FREQ);
+                    for(String maybe : meta){
+                        if(maybe.toLowerCase().startsWith(args[4].toLowerCase())) {
+                            result.add(maybe);
+                        }
+                    }
+                    return result;
+                }
+                if(args.length == 6){
+                    if(CommandWord.AirportMeta.ATC_Name.equalsIgnoreCase(args[4])){
+                        List<String> hint = new ArrayList<>();
+                        hint.add("atc name only with alphabets and numbers");
+                        return hint;
+                    }
+                    if( CommandWord.AirportMeta.TWR_FREQ.equalsIgnoreCase(args[4]) ||
+                        CommandWord.AirportMeta.CTL_FREQ.equalsIgnoreCase(args[4])){
+                        List<String> hint = new ArrayList<>();
+                        hint.add("000.0");
+                        hint.add("999.9");
+                        return hint;
+                    }
+
+                }
+            }
+
         }
 
         return Collections.emptyList();
