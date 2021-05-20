@@ -1,6 +1,6 @@
 package com.github.graycat27.atc.consts;
 
-public class PermissionNode {
+public final class PermissionNode {
 
     private PermissionNode(){
         /* not to be instance */
