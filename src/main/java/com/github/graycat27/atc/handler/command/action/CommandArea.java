@@ -10,10 +10,6 @@ import com.github.graycat27.atc.defines.sky.ATCArea;
 
 public class CommandArea {
 
-    public static void add(String freq){
-        //TODO make this
-    }
-
     public static void mod(String[] args) throws IllegalArgumentException {
         // /atc manage mod area <airportName:Sample> <controlType:TWR> <pos:100,64,200> <r:200>
         String airportName;

@@ -100,10 +100,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                             String name = (args.length >= 4) ? args[3] : null;
                             CommandAirport.add(name);
                             break;
-                        case CommandWord.Target.AREA:
-                            String freq = (args.length >= 4) ? args[3] : null;
-                            CommandArea.add(freq);
-                            break;
                         default:
                             sendMessage(sender, "unknown param for command [/atc manage add]");
                     }
@@ -259,7 +255,11 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
             List<String> targetList = new ArrayList<>();
             targetList.add(CommandWord.Target.AIRPORT);
-            targetList.add(CommandWord.Target.AREA);
+            if(CommandWord.Manage.MODIFY.equalsIgnoreCase(args[1]) ||
+               CommandWord.Manage.INFO.equalsIgnoreCase(args[1]) ) {
+                // addのとき表示しない
+                targetList.add(CommandWord.Target.AREA);
+            }
             if(args.length == 2){
                 // /atc manage add|mod|info [tab]
                 return targetList;
