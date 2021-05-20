@@ -134,7 +134,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
             /* /atc manage info xxx */
             if (CommandWord.Manage.INFO.equalsIgnoreCase(args[1])) {
-                if(!sender.hasPermission(PermissionNode.ATC_FREQ)){
+                if(!sender.hasPermission(PermissionNode.ATC_MANAGE_INFO)){
                     sendMessageNoPermission(sender);
                 }
                 if (args.length < 3) {
