@@ -1,7 +1,6 @@
 package com.github.graycat27.atc.utils;
 
 import com.github.graycat27.atc.components.PropertyUtil;
-import com.github.graycat27.atc.consts.Property;
 import com.github.ucchyocean.lc3.member.ChannelMember;
 import net.md_5.bungee.api.chat.BaseComponent;
 
