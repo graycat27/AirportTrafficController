@@ -19,7 +19,7 @@ public class ATCControl implements IMaster {
 
     private IFrequency frequency;
     public IFrequency getFrequency(){
-        return frequency.clone();
+        return (frequency == null) ? null : frequency.clone();
     }
     public void setFrequency(IFrequency frequency){
         if(this.frequency != null){
@@ -30,7 +30,7 @@ public class ATCControl implements IMaster {
 
     private ATCArea area;
     public ATCArea getArea(){
-        return area.clone();
+        return (area == null) ? null : area.clone();
     }
     public void setArea(ATCArea area){
         if(this.area != null){
