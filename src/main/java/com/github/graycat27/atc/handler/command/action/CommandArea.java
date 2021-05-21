@@ -110,8 +110,6 @@ public class CommandArea {
     }
 
     private static void showAllAreasInfo(ConsoleCommandSender sender){
-        //todo make this
-
         List<String> airportNameList = DataUtil.getAirportNameList();
         sendMessage(sender, "===== Airport and their control area =====");
         for(String apNm : airportNameList){
