@@ -2,6 +2,7 @@ package com.github.graycat27.atc.handler.command;
 
 import com.github.graycat27.atc.components.data.DataUtil;
 import com.github.graycat27.atc.consts.CommandWord;
+import com.github.graycat27.atc.consts.Control;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
@@ -177,6 +178,45 @@ public class AtcTabCompleteHandler implements TabCompleter {
                         return hint;
                     }
 
+                }
+            }
+
+            if( CommandWord.Manage.MODIFY.equalsIgnoreCase(args[1]) &&
+                CommandWord.Target.AREA.equalsIgnoreCase(args[2])){
+                // /atc manage mod area <apName> <control> <centerPos> <radius>
+                if(args.length == 4){
+                    List<String> result = new ArrayList<>();
+                    List<String> apNameList = DataUtil.getAirportNameList();
+                    for(String maybe : apNameList){
+                        if(maybe.startsWith(args[3])){
+                            result.add(maybe);
+                        }
+                    }
+                    return result;
+                }
+                if(args.length == 5) {
+                    List<String> result = new ArrayList<>();
+                    Control[] controls = Control.values();
+                    for(Control maybe : controls){
+                        if(maybe.toString().startsWith(args[4])){
+                            result.add(maybe.toString());
+                        }
+                    }
+                    return result;
+                }
+                if(args.length == 6){
+                    String format = "center location like 100,70,200 or 100,200";
+                    String guid = "if pattern x,z then y will be 64 for sea level";
+                    List<String> hint = new ArrayList<>();
+                    hint.add(format);
+                    hint.add(guid);
+                    return hint;
+                }
+                if(args.length == 7){
+                    String guid = "radius from the center location";
+                    List<String> hint = new ArrayList<>();
+                    hint.add(guid);
+                    return hint;
                 }
             }
 
