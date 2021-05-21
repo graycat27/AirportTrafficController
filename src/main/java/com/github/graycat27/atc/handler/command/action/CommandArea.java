@@ -101,12 +101,26 @@ public class CommandArea {
     /* private */
 
     private static void showAreasInfoByLocation(Player sender){
-        //todo make this
-
         IPoint position = IPoint.getByLocation(sender.getLocation());
-
-
-
+        List<String> airportNameList = DataUtil.getAirportNameList();
+        sendMessage(sender, "===== Control area where you are in =====");
+        for(String apNm : airportNameList){
+            Airport ap = DataUtil.getAirportByName(apNm);
+            List<ATCControl> controls = ap.getAtcArea();
+            for(ATCControl control : controls){
+                ATCArea area = control.getArea();
+                if(area == null){
+                    continue;
+                }
+                if(area.isIn(position)){
+                    String freq = (control.getFrequency() == null) ? "" : "{"+ control.getFrequency().getFreq() +"}";
+                    String ctrl = (control.getControl() == null) ? "" : "{"+ control.getControl().toString() +"}";
+                    sendMessage(sender, apNm + ctrl + freq);
+                    sendMessage(sender, "   "+ getSimpleAreaString(control.getArea()));
+                }
+            }
+        }
+        sendMessage(sender, "===== ============================= =====");
     }
 
     private static void showAllAreasInfo(ConsoleCommandSender sender){
