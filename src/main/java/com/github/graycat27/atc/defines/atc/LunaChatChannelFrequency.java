@@ -48,6 +48,7 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
             lcChannel.addMember(new LunaChatDummyMember());
         }
         setLcChannelConfig();
+        lcChannel.save();
     }
 
     private void setLcChannelConfig(){
