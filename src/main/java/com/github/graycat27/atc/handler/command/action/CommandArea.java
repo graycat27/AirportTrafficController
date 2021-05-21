@@ -142,6 +142,7 @@ public class CommandArea {
                 sendMessage(sender, ctlResult.toString());
             }
         }
+        sendMessage(sender, "===== ============================== =====");
     }
 
     private static String getSimpleAreaString(IArea area){
