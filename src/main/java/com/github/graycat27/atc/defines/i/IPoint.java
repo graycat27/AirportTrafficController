@@ -22,4 +22,8 @@ public interface IPoint extends IMaster {
 
     @Override
     IPoint clone();
+
+    static IPoint getByLocation(Location location){
+        return new ConcretePoint(location.getBlockX(), location.getBlockY(), location.getBlockZ());
+    }
 }

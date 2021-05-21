@@ -4,9 +4,18 @@ import com.github.graycat27.atc.AirportTrafficController;
 import com.github.graycat27.atc.components.data.DataUtil;
 import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.airport.Airport;
+import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.i.ConcretePoint;
+import com.github.graycat27.atc.defines.i.IArea;
 import com.github.graycat27.atc.defines.i.IPoint;
 import com.github.graycat27.atc.defines.sky.ATCArea;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
+
+import java.util.List;
+
+import static com.github.graycat27.atc.handler.command.AtcCommandHandler.sendMessage;
 
 public class CommandArea {
 
@@ -71,7 +80,88 @@ public class CommandArea {
         AirportTrafficController.getDataManager().save();
     }
 
-    public static void info(String param){
-        //TODO make this
+    /**
+     * areaの情報を表示します<br>
+     * <p>引数が無い場合、コマンド実行場所（in-game player）または全て（console）の管制情報を表示します</p>
+     * <p>引数が指定されている場合、指定の周波数値の管制空港情報を表示します</p>
+     */
+    public static void info(CommandSender sender, String param){
+        // /atc manage info area xxx
+        if(param == null || param.length() == 0){
+            if(sender instanceof Player){
+                showAreasInfoByLocation((Player) sender);
+            }else{
+                showAllAreasInfo((ConsoleCommandSender) sender);
+            }
+        }else{
+            showAreaInfoByFreq(sender, param);
+        }
     }
+
+    /* private */
+
+    private static void showAreasInfoByLocation(Player sender){
+        //todo make this
+
+        IPoint position = IPoint.getByLocation(sender.getLocation());
+
+
+
+    }
+
+    private static void showAllAreasInfo(ConsoleCommandSender sender){
+        //todo make this
+
+        List<String> airportNameList = DataUtil.getAirportNameList();
+        sendMessage(sender, "===== Airport and their control area =====");
+        for(String apNm : airportNameList){
+            Airport ap = DataUtil.getAirportByName(apNm);
+            List<ATCControl> controls = ap.getAtcArea();
+            ATCControl twr = null, ctl = null;
+            for(ATCControl control : controls){
+                if(control.getControl().equals(Control.TWR)){
+                    twr = control;
+                }
+                if(control.getControl().equals(Control.CTL)){
+                    ctl = control;
+                }
+            }
+            sendMessage(sender, "Airport: " + apNm);
+            if(twr != null) {
+                StringBuilder twrResult = new StringBuilder("  ").append(Control.TWR);
+                if(twr.getFrequency() != null){
+                    twrResult.append("(").append(twr.getFrequency().getFreq()).append(")");
+                }
+                twrResult.append(":").append(getSimpleAreaString(twr.getArea()));
+                sendMessage(sender, twrResult.toString());
+            }
+            if(ctl != null) {
+                StringBuilder ctlResult = new StringBuilder("  ").append(Control.CTL);
+                if(ctl.getFrequency() != null){
+                    ctlResult.append("(").append(ctl.getFrequency().getFreq()).append(")");
+                }
+                ctlResult.append(":").append(getSimpleAreaString(ctl.getArea()));
+                sendMessage(sender, ctlResult.toString());
+            }
+        }
+    }
+
+    private static String getSimpleAreaString(IArea area){
+        if(area == null){
+            return "unset";
+        }
+        StringBuilder sb = new StringBuilder("[{");
+        IPoint minP = area.getMinPoint();
+        sb.append(minP.getX()).append(",").append(minP.getY()).append(",").append(minP.getZ()).append("},");
+        IPoint maxP = area.getMaxPoint();
+        sb.append(maxP.getX()).append(",").append(maxP.getY()).append(",").append(maxP.getZ()).append("}]");
+        return sb.toString();
+    }
+
+    private static void showAreaInfoByFreq(CommandSender sender, String inputFreq){
+        //TODO make this
+
+
+    }
+
 }

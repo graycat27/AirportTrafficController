@@ -152,7 +152,7 @@ public class AtcCommandHandler implements CommandExecutor {
                         CommandAirport.info(sender, param);
                         break;
                     case CommandWord.Target.AREA:
-                        CommandArea.info(param);
+                        CommandArea.info(sender, param);
                         break;
                     default:
                         sendMessage(sender, "unknown param for command [/atc manage info]");
