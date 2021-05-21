@@ -39,12 +39,14 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
 
     /** LunaChatのチャンネルを作成する */
     private void createLcChannelIfNonExists(){
-
-        if(!AirportTrafficController.getLcApi().isExistChannel(channelName)){
+        boolean isAlreadyExist = AirportTrafficController.getLcApi().isExistChannel(channelName);
+        if(!isAlreadyExist){
             AirportTrafficController.getLcApi().createChannel(channelName);
         }
         lcChannel = AirportTrafficController.getLcApi().getChannel(channelName);
-        lcChannel.addMember(new LunaChatDummyMember());
+        if(!isAlreadyExist) {
+            lcChannel.addMember(new LunaChatDummyMember());
+        }
         setLcChannelConfig();
     }
 
