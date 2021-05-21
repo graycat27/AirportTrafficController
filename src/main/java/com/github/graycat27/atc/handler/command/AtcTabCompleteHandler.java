@@ -134,7 +134,7 @@ public class AtcTabCompleteHandler implements TabCompleter {
             if( CommandWord.Manage.ADD.equalsIgnoreCase(args[1]) &&
                 CommandWord.Target.AIRPORT.equalsIgnoreCase(args[2])){
                 List<String> hint = new ArrayList<>();
-                hint.add("new airport name");
+                hint.add("newAirportName");
                 return hint;
             }
 
