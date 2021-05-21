@@ -151,7 +151,7 @@ public class CommandArea {
         }
         StringBuilder sb = new StringBuilder("[{");
         IPoint minP = area.getMinPoint();
-        sb.append(minP.getX()).append(",").append(minP.getY()).append(",").append(minP.getZ()).append("},");
+        sb.append(minP.getX()).append(",").append(minP.getY()).append(",").append(minP.getZ()).append("},{");
         IPoint maxP = area.getMaxPoint();
         sb.append(maxP.getX()).append(",").append(maxP.getY()).append(",").append(maxP.getZ()).append("}]");
         return sb.toString();
