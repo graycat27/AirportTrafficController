@@ -5,9 +5,7 @@ import com.github.graycat27.atc.components.data.DataUtil;
 import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.atc.ATCControl;
-import com.github.graycat27.atc.defines.i.ConcretePoint;
-import com.github.graycat27.atc.defines.i.IArea;
-import com.github.graycat27.atc.defines.i.IPoint;
+import com.github.graycat27.atc.defines.i.*;
 import com.github.graycat27.atc.defines.sky.ATCArea;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
@@ -172,9 +170,33 @@ public class CommandArea {
     }
 
     private static void showAreaInfoByFreq(CommandSender sender, String inputFreq){
-        //TODO make this
-
-
+        IFrequency freqObj;
+        try {
+            freqObj = new ConcreteFrequency(inputFreq);
+        }catch(IllegalArgumentException e){
+            sendMessage(sender, "wrong frequency value format");
+            return;
+        }
+        String freq = freqObj.getFreq();
+        List<String> airportNameList = DataUtil.getAirportNameList();
+        sendMessage(sender, "===== Airport and its control area =====");
+        for(String apNm : airportNameList) {
+            Airport ap = DataUtil.getAirportByName(apNm);
+            List<ATCControl> controls = ap.getAtcArea();
+            for (ATCControl control : controls) {
+                IFrequency ctrlFreq = control.getFrequency();
+                if(ctrlFreq == null){
+                    continue;
+                }
+                if (freq.equals(ctrlFreq.getFreq())) {
+                    sendMessage(sender, "frequency "+ freq);
+                    sendMessage(sender, "  airport name: "+ apNm);
+                    sendMessage(sender, "  control type: "+ control.getControl());
+                    sendMessage(sender, "  manage area: "+ getSimpleAreaString(control.getArea()));
+                }
+            }
+        }
+        sendMessage(sender, "===== ============================ =====");
     }
 
 }
