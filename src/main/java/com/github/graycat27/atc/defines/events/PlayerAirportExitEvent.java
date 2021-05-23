@@ -1,4 +1,4 @@
-package com.github.graycat27.atc.handler.events;
+package com.github.graycat27.atc.defines.events;
 
 import com.github.graycat27.atc.defines.airport.Airport;
 import org.bukkit.entity.Player;
