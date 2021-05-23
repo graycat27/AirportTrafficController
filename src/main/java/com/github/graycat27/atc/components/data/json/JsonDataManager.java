@@ -6,12 +6,14 @@ import com.github.graycat27.atc.components.data.defines.IDataObject;
 import com.github.graycat27.atc.components.data.json.objects.MasterDataObject;
 import com.github.graycat27.atc.consts.DataSourceType;
 
+import com.github.graycat27.atc.defines.events.AtcDataUpdateEvent;
 import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.graycat27.atc.defines.i.IPoint;
 import com.github.ucchyocean.lc.lib.com.google.gson.GsonBuilder;
 import com.github.ucchyocean.lc.lib.com.google.gson.Gson;
 import com.github.ucchyocean.lc.lib.com.google.gson.JsonElement;
 import com.github.ucchyocean.lc.lib.com.google.gson.stream.JsonWriter;
+import org.bukkit.Bukkit;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -47,6 +49,7 @@ public class JsonDataManager extends DataManager {
     public void save() {
         IJsonDataObject jsonData = MasterDataObject.convertFromOriginal(this.data);
         saveJson(jsonData);
+        Bukkit.getServer().getPluginManager().callEvent(new AtcDataUpdateEvent());
     }
 
     private void saveJson(IJsonDataObject data){
@@ -68,6 +71,7 @@ public class JsonDataManager extends DataManager {
     public IDataObject read() {
         MasterDataObject dataObject = (MasterDataObject) readJson();
         this.data = dataObject.getOriginal();
+        Bukkit.getServer().getPluginManager().callEvent(new AtcDataUpdateEvent());
         return dataObject;
     }
 
