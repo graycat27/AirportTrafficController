@@ -5,6 +5,7 @@ import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.graycat27.atc.defines.i.IMaster;
+import com.github.graycat27.atc.defines.sky.ATCArea;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,6 +129,13 @@ public class Airport implements IMaster {
         for(ATCControl control : areas){
             if(control.getControl().equals(keyControl)){
                 control.setFrequency(frequency);
+            }
+        }
+    }
+    public void setAreaToAtcControl(Control keyControl, ATCArea area){
+        for(ATCControl control : areas){
+            if(control.getControl().equals(keyControl)){
+                control.setArea(area);
             }
         }
     }

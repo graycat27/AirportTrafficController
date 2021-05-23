@@ -10,9 +10,12 @@ public class ATCArea extends AbstractArea {
 
 
     // コンストラクタ
-    public ATCArea(IPoint pos1, IPoint pos2){
+    public ATCArea(final IPoint pos1, final IPoint pos2){
         super(pos1, pos2);
-        //FIXME
+    }
+
+    public ATCArea(final IPoint centerPos, final int radius){
+        super(centerPos, radius);
     }
 
     // メソッド
@@ -21,4 +24,8 @@ public class ATCArea extends AbstractArea {
         return new ATCArea(getMinPoint(), getMaxPoint());
     }
 
+    @Override
+    public String toString(){
+        return super.toString();
+    }
 }
