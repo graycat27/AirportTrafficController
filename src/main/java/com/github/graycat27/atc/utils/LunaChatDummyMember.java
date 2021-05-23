@@ -1,11 +1,13 @@
 package com.github.graycat27.atc.utils;
 
 import com.github.graycat27.atc.components.PropertyUtil;
-import com.github.graycat27.atc.consts.Property;
 import com.github.ucchyocean.lc3.member.ChannelMember;
 import net.md_5.bungee.api.chat.BaseComponent;
 
 public class LunaChatDummyMember extends ChannelMember {
+
+    private final String NAME = "[ATC]admin";
+
     @Override
     public boolean isOnline() {
         return true;
@@ -13,7 +15,7 @@ public class LunaChatDummyMember extends ChannelMember {
 
     @Override
     public String getName() {
-        return "[ATC]admin";
+        return NAME;
     }
 
     @Override
@@ -23,12 +25,12 @@ public class LunaChatDummyMember extends ChannelMember {
 
     @Override
     public String getPrefix() {
-        return null;
+        return "";
     }
 
     @Override
     public String getSuffix() {
-        return null;
+        return "";
     }
 
     @Override
@@ -61,7 +63,7 @@ public class LunaChatDummyMember extends ChannelMember {
 
     @Override
     public String toString() {
-        return "LunaChatDummyMember{name:[ATC]admin}";
+        return NAME;
     }
 
     @Override

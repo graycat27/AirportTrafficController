@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * コマンドの受理部品
  */
-public class AtcCommandHandler implements CommandExecutor, TabCompleter {
+public class AtcCommandHandler implements CommandExecutor {
 
     // フィールド
     private static Plugin plugin;
@@ -100,10 +100,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                             String name = (args.length >= 4) ? args[3] : null;
                             CommandAirport.add(name);
                             break;
-                        case CommandWord.Target.AREA:
-                            String freq = (args.length >= 4) ? args[3] : null;
-                            CommandArea.add(freq);
-                            break;
                         default:
                             sendMessage(sender, "unknown param for command [/atc manage add]");
                     }
@@ -156,7 +152,7 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
                         CommandAirport.info(sender, param);
                         break;
                     case CommandWord.Target.AREA:
-                        CommandArea.info(param);
+                        CommandArea.info(sender, param);
                         break;
                     default:
                         sendMessage(sender, "unknown param for command [/atc manage info]");
@@ -175,112 +171,6 @@ public class AtcCommandHandler implements CommandExecutor, TabCompleter {
 
     private void sendMessageNoPermission(CommandSender sender){
         sendMessage(sender, permissionErrorMsg);
-    }
-
-    /**
-     * Tab補完支援
-     * @param sender コマンド入力者
-     * @param command コマンド(<code>atc</code>のはず)
-     * @param alias 使用された別名(<code>atc</code>のはず)
-     * @param args コマンドの引数部分<br>プレイヤー入力値「/atc freq tuning」の<br>freq, tuning が配列の[0][1]にそれぞれ順に格納される
-     * @return 補完候補のList。<code>null</code>の場合あり
-     */
-    @Override
-    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, String alias, String[] args) {
-        if (!(alias.equalsIgnoreCase(CommandWord.ATC) || alias.equalsIgnoreCase(CommandWord.ATC_full))) {
-            return null;
-        }
-        List<String> firstCommandList = new ArrayList<>();    //atc xxx
-        firstCommandList.add(CommandWord.Freq.FREQ);
-        firstCommandList.add(CommandWord.Manage.MANAGE);
-        firstCommandList.add(CommandWord.HELP);
-
-        if(args.length == 0 || args[0].equals("")){
-            //全候補提供
-            return firstCommandList;
-        }
-
-        if(args.length == 1){
-            // /atc xx」状態
-            List<String> resultList = new ArrayList<>();
-            for(String maybe : firstCommandList){
-                if(maybe.toLowerCase().startsWith(args[0].toLowerCase())){
-                    resultList.add(maybe);
-                }
-            }
-            return resultList;
-        }
-
-        // /atc freq xxx
-        if (args[0].equals(CommandWord.Freq.FREQ)) {
-            List<String> freqCmdList = new ArrayList<>();
-            freqCmdList.add(CommandWord.Freq.MONITOR);
-            freqCmdList.add(CommandWord.Freq.CUT);
-            if(args.length == 2){
-                // /atc freq xx[tab]
-                List<String> resultList = new ArrayList<>();
-                for(String maybe : freqCmdList){
-                    if(maybe.toLowerCase().startsWith(args[1].toLowerCase())){
-                        resultList.add(maybe);
-                    }
-                }
-                return resultList;
-            }
-            if(args.length == 3) {
-                // 接続(可能な|中の)周波数値を候補出せたらいいけど、
-                // 労力に見合わなさそう。
-                List<String> formatList = new ArrayList<>();
-                formatList.add("000.0");
-                formatList.add("999.9");
-                return formatList;
-            }
-            return new ArrayList<>();
-        }
-
-        // /atc manage xxx
-        if (args[0].equals(CommandWord.Manage.MANAGE)) {
-            List<String> manageCmdList = new ArrayList<>();
-            manageCmdList.add(CommandWord.Manage.ADD);
-            manageCmdList.add(CommandWord.Manage.MODIFY);
-            manageCmdList.add(CommandWord.Manage.INFO);
-            if(args.length == 2){
-                // /atc manage xx[tab]
-                List<String> resultList = new ArrayList<>();
-                for(String maybe : manageCmdList){
-                    if(maybe.toLowerCase().startsWith(args[1].toLowerCase())){
-                        resultList.add(maybe);
-                    }
-                }
-                if(!(resultList.size() == 1 && resultList.get(0).equalsIgnoreCase(args[1]))){
-                    return resultList;
-                }   // length==2 で入力補完済みの場合、次の補完へ。
-
-            }
-
-            List<String> targetList = new ArrayList<>();
-            targetList.add(CommandWord.Target.AIRPORT);
-            targetList.add(CommandWord.Target.AREA);
-            if(args.length == 2){
-                // /atc manage add|mod|info [tab]
-                return targetList;
-            }
-            if(args.length == 3){
-                // /atc manage add|mod|info xx[tab]
-                List<String> resultList = new ArrayList<>();
-                for(String maybe : targetList){
-                    if(maybe.toLowerCase().startsWith(args[2].toLowerCase())){
-                        resultList.add(maybe);
-                    }
-                }
-                return resultList;
-            }
-        }
-
-        if(args[0].equals(CommandWord.HELP)){
-            return Collections.emptyList();
-        }
-
-        return null;
     }
 
     /**

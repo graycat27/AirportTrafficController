@@ -46,22 +46,12 @@ public final class CommandWord {
     public static class AirportMeta {
         /** 名称 日本語可 */
         public static final String NAME = "name";
-
+        /** atc name 英数字のみ */
         public static final String ATC_Name = "ATC_name";
-
+        /** TWR管制の周波数 */
         public static final String TWR_FREQ = "TWR_freq";
-
+        /** CTL管制の周波数 */
         public static final String CTL_FREQ = "CTL_freq";
-    }
-
-    /** 管制圏の詳細情報キー */
-    public static class AreaMeta {
-
-        public static final String FREQ = "freq";
-
-        public static final String POS = "pos";
-
-        public static final String RADIUS = "r";
     }
 
 }

@@ -7,6 +7,7 @@ import com.github.graycat27.atc.components.data.json.objects.MasterDataObject;
 import com.github.graycat27.atc.consts.DataSourceType;
 
 import com.github.graycat27.atc.defines.i.IFrequency;
+import com.github.graycat27.atc.defines.i.IPoint;
 import com.github.ucchyocean.lc.lib.com.google.gson.GsonBuilder;
 import com.github.ucchyocean.lc.lib.com.google.gson.Gson;
 import com.github.ucchyocean.lc.lib.com.google.gson.JsonElement;
@@ -52,6 +53,7 @@ public class JsonDataManager extends DataManager {
         try(JsonWriter writer = new JsonWriter(new FileWriter(saveFilePath))){
             GsonBuilder builder = new GsonBuilder();
             builder.registerTypeAdapter(IFrequency.class, new InterfaceAdapter());
+            builder.registerTypeAdapter(IPoint.class, new InterfaceAdapter());
             Gson gson = builder.create();
             writer.setIndent("   ");    // 3spaces
             JsonElement jsonEl = gson.toJsonTree(data);
@@ -74,6 +76,7 @@ public class JsonDataManager extends DataManager {
         try (Reader reader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) {
             GsonBuilder builder = new GsonBuilder();
             builder.registerTypeAdapter(IFrequency.class, new InterfaceAdapter());
+            builder.registerTypeAdapter(IPoint.class, new InterfaceAdapter());
             Gson gson = builder.create();
             MasterDataObject result = gson.fromJson(reader, MasterDataObject.class);
             return result == null ? new MasterDataObject() : result;
