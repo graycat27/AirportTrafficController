@@ -220,6 +220,18 @@ public class AtcTabCompleteHandler implements TabCompleter {
                 }
             }
 
+            if( CommandWord.Manage.INFO.equalsIgnoreCase(args[1]) &&
+                    CommandWord.Target.AIRPORT.equalsIgnoreCase(args[2])){
+                List<String> result = new ArrayList<>();
+                List<String> apNameList = DataUtil.getAirportNameList();
+                apNameList.add(" "); //for all AP info
+                for(String maybe : apNameList){
+                    if(maybe.startsWith(args[3])){
+                        result.add(maybe);
+                    }
+                }
+                return result;
+            }
         }
 
         return Collections.emptyList();
