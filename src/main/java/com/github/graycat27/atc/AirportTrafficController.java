@@ -12,7 +12,6 @@ import com.github.graycat27.atc.handler.event.PlayerMoveHandler;
 import com.github.ucchyocean.lc3.LunaChatAPI;
 import com.github.ucchyocean.lc3.LunaChatBukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitScheduler;
 
 public final class AirportTrafficController extends JavaPlugin {
 
