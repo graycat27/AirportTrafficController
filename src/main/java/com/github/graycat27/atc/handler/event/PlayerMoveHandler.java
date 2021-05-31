@@ -24,6 +24,7 @@ public class PlayerMoveHandler extends TimerTask implements Listener {
 
     /* key is "freq" like "222.2"  */
     HashMap<String, IArea> areaMap = new HashMap<>();
+    String[] areaKeys = new String[0];
 
     @EventHandler
     public void onDataUpdated(AtcDataUpdateEvent event){
@@ -38,18 +39,16 @@ public class PlayerMoveHandler extends TimerTask implements Listener {
                 }
             }
         }
+        areaKeys = areaMap.keySet().toArray(new String[]{});
     }
 
     public void run(){
-        System.out.println("task is running!");
-
-        String[] freqSet = areaMap.keySet().toArray(new String[]{});
         for(Player player : Bukkit.getOnlinePlayers()) {
             IPoint playerLocation = IPoint.getByLocation(player.getLocation());
-            for(int idx=0; idx < freqSet.length; idx++){
-                IArea area = areaMap.get(freqSet[idx]);
+            for(int idx=0; idx < areaKeys.length; idx++){
+                IArea area = areaMap.get(areaKeys[idx]);
                 if (area != null && area.isIn(playerLocation)) {
-                    forceJoinChannel(freqSet[idx], player);
+                    forceJoinChannel(areaKeys[idx], player);
                 }
             }
         }
