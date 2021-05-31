@@ -27,6 +27,8 @@ public final class AirportTrafficController extends JavaPlugin {
     /** Plugin startup logic */
     @Override
     public void onEnable() {
+        super.onEnable();
+
         this.getCommand(CommandWord.ATC_full).setExecutor(new AtcCommandHandler(this));
         this.getCommand(CommandWord.ATC_full).setTabCompleter(new AtcTabCompleteHandler(this));
         this.getCommand(CommandWord.ATC).setExecutor(new AtcCommandHandler(this));
@@ -48,6 +50,8 @@ public final class AirportTrafficController extends JavaPlugin {
     /** Plugin shutdown logic */
     @Override
     public void onDisable() {
+        super.onDisable();
+
         dataManager.save();
         lcApi = null;
     }
