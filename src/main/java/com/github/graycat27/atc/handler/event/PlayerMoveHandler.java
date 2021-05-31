@@ -60,7 +60,7 @@ public class PlayerMoveHandler extends TimerTask implements Listener {
         System.out.println("forced>> "+ freq);
 
         Channel ch = AirportTrafficController.getLcApi().getChannel(FrequencyUtil.getChannelName(freq));
-        ch.addMember(ChannelMember.getChannelMember(player.getUniqueId().toString()));
+        ch.addMember(ChannelMember.getChannelMember("$"+player.getUniqueId()));
         //NOTE: 既にメンバーの場合、addMember内でスルーされるため、こちらでチェックはしない
     }
 }
