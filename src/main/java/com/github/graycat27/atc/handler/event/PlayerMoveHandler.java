@@ -42,13 +42,14 @@ public class PlayerMoveHandler extends TimerTask implements Listener {
 
     public void run(){
         System.out.println("task is running!");
+
+        String[] freqSet = areaMap.keySet().toArray(new String[]{});
         for(Player player : Bukkit.getOnlinePlayers()) {
             IPoint playerLocation = IPoint.getByLocation(player.getLocation());
-
-            for (String areaKey : areaMap.keySet()) {
-                IArea area = areaMap.get(areaKey);
+            for(int idx=0; idx < freqSet.length; idx++){
+                IArea area = areaMap.get(freqSet[idx]);
                 if (area != null && area.isIn(playerLocation)) {
-                    forceJoinChannel(areaKey, player);
+                    forceJoinChannel(freqSet[idx], player);
                 }
             }
         }
