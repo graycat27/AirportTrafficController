@@ -55,9 +55,6 @@ public class PlayerMoveHandler extends TimerTask implements Listener {
     }
 
     private void forceJoinChannel(String freq, Player player){
-
-        System.out.println("forced>> "+ freq);
-
         Channel ch = AirportTrafficController.getLcApi().getChannel(FrequencyUtil.getChannelName(freq));
         ch.addMember(ChannelMember.getChannelMember("$"+player.getUniqueId()));
         //NOTE: 既にメンバーの場合、addMember内でスルーされるため、こちらでチェックはしない
