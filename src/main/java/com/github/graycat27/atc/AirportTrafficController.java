@@ -34,6 +34,7 @@ public final class AirportTrafficController extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new AtcDataUpdateHandler(), this);
         getServer().getPluginManager().registerEvents(new LcChatHandler(), this);
+        getServer().getPluginManager().registerEvents(new PlayerMoveHandler(), this);
 
         if ( getServer().getPluginManager().isPluginEnabled("LunaChat") ) {
             LunaChatBukkit lunaChat = (LunaChatBukkit) getServer().getPluginManager().getPlugin("LunaChat");
