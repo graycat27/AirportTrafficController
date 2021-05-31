@@ -8,9 +8,11 @@ import com.github.graycat27.atc.handler.command.AtcCommandHandler;
 import com.github.graycat27.atc.handler.command.AtcTabCompleteHandler;
 import com.github.graycat27.atc.handler.event.AtcDataUpdateHandler;
 import com.github.graycat27.atc.handler.event.LcChatHandler;
+import com.github.graycat27.atc.handler.event.PlayerMoveHandler;
 import com.github.ucchyocean.lc3.LunaChatAPI;
 import com.github.ucchyocean.lc3.LunaChatBukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitScheduler;
 
 public final class AirportTrafficController extends JavaPlugin {
 
@@ -29,6 +31,12 @@ public final class AirportTrafficController extends JavaPlugin {
     public void onEnable() {
         super.onEnable();
 
+        int second = 2; //プレイヤー検知レーダーの照射頻度秒数
+        PlayerMoveHandler playerMoveHandler = new PlayerMoveHandler();
+
+        BukkitScheduler scheduler = getServer().getScheduler();
+        scheduler.scheduleSyncRepeatingTask(this, playerMoveHandler, 0, second * 20);
+
         this.getCommand(CommandWord.ATC_full).setExecutor(new AtcCommandHandler(this));
         this.getCommand(CommandWord.ATC_full).setTabCompleter(new AtcTabCompleteHandler(this));
         this.getCommand(CommandWord.ATC).setExecutor(new AtcCommandHandler(this));
@@ -36,7 +44,7 @@ public final class AirportTrafficController extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new AtcDataUpdateHandler(), this);
         getServer().getPluginManager().registerEvents(new LcChatHandler(), this);
-        getServer().getPluginManager().registerEvents(new PlayerMoveHandler(), this);
+        getServer().getPluginManager().registerEvents(playerMoveHandler, this);
 
         if ( getServer().getPluginManager().isPluginEnabled("LunaChat") ) {
             LunaChatBukkit lunaChat = (LunaChatBukkit) getServer().getPluginManager().getPlugin("LunaChat");

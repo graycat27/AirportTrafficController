@@ -11,15 +11,16 @@ import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.graycat27.atc.defines.i.IPoint;
 import com.github.ucchyocean.lc3.channel.Channel;
 import com.github.ucchyocean.lc3.member.ChannelMember;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerMoveEvent;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.TimerTask;
 
-public class PlayerMoveHandler implements Listener {
+public class PlayerMoveHandler extends TimerTask implements Listener {
 
     /* key is "freq" like "222.2"  */
     HashMap<String, IArea> areaMap = new HashMap<>();
@@ -39,14 +40,16 @@ public class PlayerMoveHandler implements Listener {
         }
     }
 
-    @EventHandler
-    public void onPlayerMove(PlayerMoveEvent event){
-        IPoint playerLocation = IPoint.getByLocation(event.getPlayer().getLocation());
+    public void run(){
+        System.out.println("task is running!");
+        for(Player player : Bukkit.getOnlinePlayers()) {
+            IPoint playerLocation = IPoint.getByLocation(player.getLocation());
 
-        for(String areaKey : areaMap.keySet()){
-            IArea area = areaMap.get(areaKey);
-            if(area != null && area.isIn(playerLocation)){
-                forceJoinChannel(areaKey, event.getPlayer());
+            for (String areaKey : areaMap.keySet()) {
+                IArea area = areaMap.get(areaKey);
+                if (area != null && area.isIn(playerLocation)) {
+                    forceJoinChannel(areaKey, player);
+                }
             }
         }
     }
