@@ -63,4 +63,13 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
                 + "&f%msg #2A2A2A%username";
         lcChannel.setFormat(FORMAT);
     }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder(getClass().getName()).append(": {");
+        sb.append("freq: ").append(getFreq()).append(", ");
+        sb.append("channelName: ").append(channelName);
+        sb.append("}");
+        return sb.toString();
+    }
 }
