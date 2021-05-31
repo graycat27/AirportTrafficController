@@ -31,19 +31,25 @@ public final class AirportTrafficController extends JavaPlugin {
     public void onEnable() {
         super.onEnable();
 
-        int second = 2; //プレイヤー検知レーダーの照射頻度秒数
+        /* command handlers */
+        AtcCommandHandler atcCommandHandler = new AtcCommandHandler(this);
+        AtcTabCompleteHandler atcTabCompleteHandler = new AtcTabCompleteHandler(this);
+
+        /* event handlers */
+        AtcDataUpdateHandler atcDataUpdateHandler = new AtcDataUpdateHandler();
+        LcChatHandler lcChatHandler = new LcChatHandler();
         PlayerMoveHandler playerMoveHandler = new PlayerMoveHandler();
 
-        BukkitScheduler scheduler = getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(this, playerMoveHandler, 0, second * 20);
+        int second = 2; //プレイヤー検知レーダーの照射頻度秒数    //TODO プロパティに外だし
+        getServer().getScheduler().scheduleSyncRepeatingTask(this, playerMoveHandler, 0, second * 20);
 
-        this.getCommand(CommandWord.ATC_full).setExecutor(new AtcCommandHandler(this));
-        this.getCommand(CommandWord.ATC_full).setTabCompleter(new AtcTabCompleteHandler(this));
-        this.getCommand(CommandWord.ATC).setExecutor(new AtcCommandHandler(this));
-        this.getCommand(CommandWord.ATC).setTabCompleter(new AtcTabCompleteHandler(this));
+        this.getCommand(CommandWord.ATC_full).setExecutor(atcCommandHandler);
+        this.getCommand(CommandWord.ATC_full).setTabCompleter(atcTabCompleteHandler);
+        this.getCommand(CommandWord.ATC).setExecutor(atcCommandHandler);
+        this.getCommand(CommandWord.ATC).setTabCompleter(atcTabCompleteHandler);
 
-        getServer().getPluginManager().registerEvents(new AtcDataUpdateHandler(), this);
-        getServer().getPluginManager().registerEvents(new LcChatHandler(), this);
+        getServer().getPluginManager().registerEvents(atcDataUpdateHandler, this);
+        getServer().getPluginManager().registerEvents(lcChatHandler, this);
         getServer().getPluginManager().registerEvents(playerMoveHandler, this);
 
         if ( getServer().getPluginManager().isPluginEnabled("LunaChat") ) {
