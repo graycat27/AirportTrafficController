@@ -1,16 +1,12 @@
 package com.github.graycat27.atc.utils;
 
-import com.github.graycat27.atc.AirportTrafficController;
-import com.github.graycat27.atc.consts.Property;
-
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Properties;
+
+import com.github.graycat27.atc.consts.Property;
 
 public class AtcDictionary {
 
@@ -19,7 +15,7 @@ public class AtcDictionary {
     private static Properties dic;
 
     public static String get(final String key){
-        return dic.getProperty(key, key);
+        return dic.getProperty(key.toUpperCase(), key);
     }
 
     public static void updateDictionary(){

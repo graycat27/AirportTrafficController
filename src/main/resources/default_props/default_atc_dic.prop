@@ -1,2 +1,2221 @@
-### this file is created by gray27 ( https://github.com/graycat27 )
+﻿### this file is created by gray27
 ### version 0.0.8
+
+### based on AIS japan Document GEN2.2-1 ABBREVIATION USED IN AIS PUBLICATIONS
+
+#電波発射( 変調及び伝送) の型式
+A2A = Designation of emission
+#電波発射( 変調及び伝送) の型式
+A2X = Designation of emission
+#電波発射( 変調及び伝送) の型式
+A3E = Designation of emission
+#電波発射( 変調及び伝送) の型式
+AXX = Designation of emission
+#修正気象報
+AAA = Amended meteorological message
+#修正気象報
+AAB = Amended meteorological message
+#修正気象報
+AAC = Amended meteorological message
+#空対空
+A/A = Air-to-air
+#指定高度逸脱量
+AAD = Assigned altitude deviation
+#飛行場面上
+AAL = Above aerodrome level
+#空軍基地
+AB = Airbase
+#事前境界情報
+ABI = Advance boundary information
+#真横
+ABM = Abeam
+#飛行場灯台
+ABN = Aerodrome beacon
+#約
+ABT = About
+#…… より以上
+ABV = Above
+#高積雲
+AC = Altocumulus
+#航空機衝突防止装置
+ACAS = Airborne collision avoidance system
+#航空機空地データ通信システム
+ACARS = Aircraft communication addressing and reporting system
+#航空交通管制部又は地区管制
+ACC = Area control centre or area control
+#航空機の事故に関する通知
+ACCID = Notification of an aircraft accident
+#航空機
+ACFT = Aircraft
+#受領した
+ACK = Acknowledge
+#高度計規正点
+ACL = Altimeter check location
+#航空機の舗装に与える影響値
+ACN = Aircraft classification number
+#受諾通報
+ACP = Acceptance
+#受諾する又は受諾した
+ACPT = Accept or accepted
+#活動中， 使用中
+ACT = Active or activated or activity
+#飛行場
+AD = Aerodrome
+#アドバイザリー区域
+ADA = Advisory area
+#飛行場図
+ADC = Aerodrome chart
+#追加又は追加の
+ADDN = Addition or additional
+#自動方向探知機
+ADF = Automatic direction-finding equipment
+#防空識別圏
+ADIZ = Air defense identification zone
+#隣接した
+ADJ = Adjacent
+#飛行場事務所
+ADO = Aerodrome office
+#アドバイザリールート
+ADR = Advisory route
+#自動従属監視
+ADS = Automatic dependent surveillance
+#自動従属監視機関
+ADSU = Automatic dependent surveillance unit
+#アドバイザリー・サービス
+ADVS = Advisory service
+#助言する
+ADZ = Advise
+#航空地球局
+AES = Aircraft earth station
+#飛行中に提出した飛行計画
+AFIL = Flight plan filed in the air
+#空港飛行情報業務
+AFIS = Aerodrome flight information service
+#そのとおり
+AFM = Yes or affirm or affirmative or that is correct
+#航空固定業務
+AFS = Aeronautical fixed service
+#後又はあと( 時間又は場所)
+AFT = After...(time or place)
+#国際航空固定通信網
+AFTN = Aeronautical fixed telecommunication network
+#空対地
+A/G = Air-to-ground
+#飛行場， 空路及び地上施設
+AGA = Aerodromes, air routes and ground aids
+#地上高
+AGL = Above ground level
+#進入路指示灯
+AGL = Approach guidance lights
+#再び
+AGN = Again
+#航空情報サーキュラー
+AIC = Aeronautical information circular
+#管制機関間データ通信
+AIDC = Air traffic services interfacility data communication
+#航空情報管理
+AIM = Aeronautical information management
+#航空路誌
+AIP = Aeronautical information publication
+#エアラック
+AIRAC = Aeronautical information regulation and control
+#航空機上観測報告
+AIREP = Air-report
+#エアメット（低高度の航空機の運航の安全に影響を与える航路上の気象現象に関する情報）
+AIRMET = Information concerning en-route weather phenomena which may affect the safety of low-level aircraft operations
+#航空情報業務
+AIS = Aeronautical information Service
+#着陸( 着水) 区域
+ALA = Alighting area
+#進入灯台
+ALB = Approach light beacon
+#警戒の段階
+ALERFA = Alert phase
+#警急通報
+ALR = Alerting
+#警急業務
+ALRS = Alerting service
+#進入灯（標準式を含む)
+ALS = Approach lighting system
+#高度
+ALT = Altitude
+#代替空港 代替の又は交光( 灯火の色)
+ALTN = Alternate
+#空域最低高度
+AMA = Area minimum altitude
+#修正又は修正済( 修正気象報の表示に使用される)
+AMD = Amend or amended(used to indicate amended meteorological message; message type designator)
+#改訂または修正（航空路誌改訂版）
+AMDT = Amendment
+#国際航空交通情報通信システム
+AMHS = ATS message handling system
+#航空移動業務
+AMS = Aeronautical mobile service
+#平均海面高
+AMSL = Above mean sea level
+#航空衛星通信
+AMSS = Aeronautical mobile satellite service
+#航空図 1:500 000
+ANC = Aeronautical chart 1:500 000
+#小縮尺航空航法図
+ANCS = Aeronautical Navigation Chart Small Scale
+#応答する
+ANS = Answer
+#アンテナ
+ANT = Antenna
+#航空機運航者
+AO = Aircraft operator
+#飛行場障害物図
+AOC = Aerodrome obstacle chart
+#空港
+AP = Airport
+#簡易式進入角指示灯
+APAPI = Abbreviated precision approach path indicator
+#進入
+APCH = Approach
+#航空機駐機図
+APDC = Aircraft parking/docking chart
+#エプロン
+APN = Apron
+#進入管制所又は進入管制又は進入管制業務
+APP = Approach control office or approach control or approach control service
+#四月
+APR = April
+#おおよそ又は概略
+APRX = Approximate or approximately
+#通過後
+APSG = After passing
+#補助動力装置
+APU = Auxiliary power unit
+#垂直方向ガイダンス付進入方式
+APV = Approach procedure with vertical guidance
+#エリア図
+ARC = Area chart
+#調整する
+ARNG = Arrange
+#フライトプランを受理する機関
+ARO = Air traffic services reporting office
+#飛行場標点
+ARP = Aerodrome reference point
+#定常機上観測通報
+ARP = Air-report(message type designator)
+#自動誤びゅう訂正
+ARQ = Automatic error correction
+#到着する， 到着又は着報
+ARR = Arrive or arrival or arrival message(message type designator)
+#特別機上観測報告通報
+ARS = Special airreport(message type designator)
+#航空路監視レーダー
+ARSR = Air route surveillance radar
+#アレスティング装置
+ARST = Arresting [Specify(part of) aircraft arresting equipment]
+#ターミナルレーダー情報 処理システム
+ARTS = Automated radar terminal system
+#高層雲
+AS = Altostratus
+#できる限り速やかに
+ASAP = As soon as possible
+#上昇又は上昇中
+ASC = Ascend to or ascending to
+#有効加速停止距離
+ASDA = Accelerate-stop distance available
+#空港面探知レーダー
+ASDE = Airport surface detection equipment
+#高度計システム誤差
+ASE = Altimetry system error
+#アシュタム
+ASHTAM = Special series NOTAM notifying, by means of a specific format, change in activity of a volcano, a volcanic eruption and/or volcanic ash cloud that is of significance to aircraft operations
+#スポット番号表示灯
+ASIS = Signification Aircraft stand identification sign(s)
+#アスファルト
+ASPH = Asphalt
+#空港監視レーダー
+ASR = Airport surveillance radar
+#… で
+AT... = At
+#実際到着時刻
+ATA = Actual time of arrival
+#航空管制（一般）
+ATC = Air traffic control
+#実際出発時刻
+ATD = Actual time of departure
+#航空交通流管理
+ATFM = Air traffic flow management
+#飛行場情報放送業務
+ATIS = Automatic terminal information service
+#航空交通管理
+ATM = Air traffic management
+#航空通信網
+ATN = Aeronautical telecommunication network
+#… において（時間又は場所）
+ATP = At...(time or place)
+#航空交通業務
+ATS = Air traffic services
+#注意
+ATTN = Attention
+#飛行場周辺飛行区域
+ATZ = Aerodrome traffic zone
+#8 月
+AUG = August
+#認可された又は認可
+AUTH = Authorized or authorization
+#自動
+AUTO = Automatic
+#全備重量
+AUW = All up weight
+#補助の
+AUX = Auxiliary
+#利用可能の
+AVBL = Available
+#平均
+AVG = Average
+#航空用ガソリン
+AVGAS = Aviation gasoline
+#航空気象台（気象庁）
+AWS = Aviation weather service
+#可能な時点でアドバイスしてください
+AWTA = Advise at what time able
+#航空路
+AWY = Airway
+#方位
+AZM = Azimuth
+#青色
+B = Blue
+#制動効果
+BA = Braking action
+#気圧高度を用いた垂直航法（RNAV 進入方式）
+BARO-VNAV = Barometric vertical navigation
+#雲底
+BASE = Cloud base
+#散在している霧
+BCFG = Fog patches
+#航空灯台
+BCN = Beacon(aeronautical ground light)
+#放送
+BCST = Broadcast
+#境界
+BDRY = Boundary
+#～の前に
+BFR = Before
+#～以遠
+BEY = Beyond
+#雲量5/8 以上8/8 未満
+BKN = Broken
+#高い…
+BL… = Blowing
+#建物
+BLDG = Building
+#雲の下
+BLO = Below clouds
+#未満
+BLW = Below
+#…… 行， …… 向
+BND = ...Bound
+#爆弾投下
+BOMB = Bombing
+#航空自衛隊飛行場勤務隊
+BOPS =
+#もや
+BR = Mist
+#短い（要求された又は指示された進入方式を示す場合に使用する）
+BRF = Short(used to indicate the type of approach desired or required)
+#方位
+BRG = Bearing
+#制動
+BRKG = Braking
+#民間放送局
+BS = Commercial broadcasting station
+#層の間
+BTL = Between layers
+#…… の間
+BTN = Between
+#二進形式汎用気象通報式
+BUFR = Binary universal form for the representation of meteorological data
+#中央（滑走路識別）
+C = Center
+#セ氏度（温度）
+C = Degrees Celsius
+#国土交通省航空局
+CAB = Civil Aviation Bureau, Ministry of Land, Infrastructure, Transport and Tourism
+#航空大学校
+CAC = Civil Aviation College
+#晴天乱気流
+CAT = Clear air turbulence
+#カテゴリー
+CAT = Category
+#視程・雲， 天気は指定された値及び条件より良好
+CAVOK = Visibility, cloud and present weather better than prescribed values or conditions
+#積乱雲
+CB = Cumulonimbus
+#巻積雲
+CC = Cirrocumulus
+#訂正気象報
+CCA = Corrected meteorological message
+#訂正気象報
+CCB = Corrected meteorological message
+#訂正気象報
+CCC = Corrected meteorological message
+#カンデラ
+CD = Candela
+#調整通報
+CDN = Co-ordination(message type designator)
+#継続下降方式
+CDO = Continuous descent operations
+#調整経路
+CDR = Conditional route
+#雲高
+CEIL = Ceiling
+#～に周波数を変更する
+CF = Change frequency to...
+#確認する
+CFM = Confirm or l confirm
+#旋回灯
+CGL = Circling guidance light(s)
+#チャネル
+CH = Channel
+#これは， このチャンネルで受信した通報のチャンネル 通過番号のそちらの記録を照合するためのチャンネル維持チェック送信です
+CH = This is a channel continuity check transmission to permit comparison of your record of channel sequence numbers of message received on the channel
+#化学物質
+CHEM = Chemical
+#変更する
+CHG = Change
+#変更通報
+CHG = Modification
+#巻雲
+CI = Cirrus
+#共通ICAO データ交換網
+CIDIN = Common ICAO data interchange network
+#民間の
+CIV = Civil
+#チェックする
+CK = Check
+#回線
+CKT = Circuit
+#中心線
+CL = Centre line
+#透明着氷
+CLA = Clear type of ice formation
+#校正・目盛り
+CLBR = Calibration
+#雲
+CLD = Cloud
+#呼出し
+CLG = Calling
+#許可する， 許可された又は許可
+CLR = Clear(s) or cleared to...or clearance
+#閉鎖する， 閉鎖された又は閉鎖
+CLSD = Close or closed or closing
+#センチメートル
+CM = Centimetre
+#コンマ， 句点
+CMA = Comma
+#上昇する
+CMB = Climb
+#完了， 完了した又は完了する
+CMPL = Completion or completed or complete
+#解除， 取消し又は飛行計画取消報
+CNL = Cancel or cancelled or flight plan cancellation
+#通信
+COM = Communications
+#コンクリート
+CONC = Concrete
+#状態， 条件
+COND = Condition
+#連続した
+CONS = Continuous
+#工事
+CONST = Construction or constructed
+#継続する又は持続した
+CONT = Continue or continued
+#プロペラ式
+CONV = Conventional(type of acft)
+#調整する又は調整
+COOR = Coordinate or coordination
+#座標
+COORD = Coordinates
+#チェンジオーバーポイント
+COP = Change-over point
+#訂正する， 訂正済又は訂正( 訂正気象報の表示に使用される)
+COR = Correct or corrected or correction(used to indicate corrected meteorological message; message type designator)
+#沿岸で
+COT = At the coast
+#おおう， おおった又はおおっている
+COV = Cover or covered or covering
+#管制官パイロット間データ通信
+CPDLC = Controller-pilot data link communications
+#現行飛行計画通報
+CPL = Current flight plan
+#同期的余剰確認
+CRC = Cyclic redundancy check
+#義務位置通報点
+CRP = Compulsory reporting point
+#コース， 航路
+CRS = Course
+#巡航する
+CRZ = Cruise
+#巻層雲
+CS = Cirrostratus
+#呼出符号
+CS = Call sign
+#管制区
+CTA = Control area
+#… に上昇して… を維持せよ
+CTAM = Climb to and maintain
+#通信連絡又は視認
+CTC = Contact
+#管制
+CTL = Control
+#警告
+CTN = Caution
+#管制圏
+CTR = Control zone
+#管制圏
+CTZ = Control zone
+#積雲
+CU = Cumulus
+#積雲型の
+CUF = Cumuliform
+#税関
+CUST = Customs
+#経路指定視認進入
+CVA = Charted Visual Approach
+#操縦室用音声記録装置
+CVR = Cockpit voice recorder
+#連続波
+CW = Continuous wave
+#クリアウェイ
+CWY = Clearway
+#危険区域（以下識別が続く)
+D... = Danger area
+#デーエムイー（距離測定装置） 距離（以下数値が続く）
+D... = DME Distance
+#降下向にある
+D = Downward
+#決心高度
+DA = Decision altitude
+#データリンク飛行場情報放送業務
+D-ATIS = Data link automatic terminal information service
+#二重復信
+DCD = Double channel duplex
+#連接
+DCKG = Docking
+#管制官パイロット間直接通信
+DCPC = Direct controller-pilot communications
+#二重単信
+DCS = Double channel simplex
+#直行の， 直接の（飛行計画クリアランス又は進入方式)
+DCT = Direct
+#から（通信で他局を呼出すとき， 自局のコールサインに前置する)
+DE = From
+#12 月
+DEC = December
+#度( 方位， 角度， 温度)
+DEG = Degrees
+#出発， 又は出発報
+DEP = Depart or departure or departure
+#堆積
+DEPO = Deposition
+#滑走路離陸末端
+DER = Departure end of the runway
+#降下又は…… に降下中
+DES = Descend or descending to
+#目的地
+DEST = Destination
+#遭難の段階
+DETRESFA = Distress phase
+#逸脱又は逸脱する
+DEV = Deviation or deviating
+#方向探知（局)
+DF = Direction finding(station)
+#飛行記録装置
+DFDR = Digital flight data recorder
+#接地表示からの距離
+DFTI = Distance from touchdown indicator
+#決心高
+DH = Decision height
+#ぼんやりしている
+DIF = Diffuse
+#距離
+DIST = Distance
+#それる又はそれ又は目的地変更
+DIV = Divert or diverting
+#遅延報又は遅延
+DLA = Delay or delay or delayed
+#データリンク開始能力
+DLIC = Data link initiation capability
+#削除する
+DLT = Delete
+#毎日
+DLY = Daily
+#デーエムイー（距離測定装置)
+DME = Distance measuring equipment
+#滑走路距離灯
+DML = Runway distance marker lights
+#危険又は危険な
+DNG = Danger or dangerous
+#飛行年月日
+DOF = Date of flight
+#国内の
+DOM = Domestic
+#露点
+DP = Dew point temperature
+#深さ
+DPT = Depth
+#低い…
+DR... = Low drifting
+#推測航法
+DR = Dead reckoning
+#… の間
+DRG = During
+#砂じん嵐
+DS = Duststorm
+#両側帯波
+DSB = Double sideband
+#… に降下して… を維続せよ
+DTAM = Descend to and maintain
+#日・時群
+DTG = Day-time-group
+#移設滑走路末端
+DTHR = Displaced runway threshold
+#悪化， 悪化している
+DTRT = Deteriorate or deteriorating
+#複々車輪
+DTW = Dual tandem wheels
+#じん
+DU = Dust
+#厚い上層の雲
+DUC = Dense upper cloud
+#この通報は重複しています
+DUPE = This is duplicate message
+#期間
+DUR = Duration
+#ドップラーVOR
+DVOR = Doppler VOR
+#データリンクボルメット
+D-VOLMET = Data link VOLMET
+#複車輪
+DW = Dual wheels
+#霧雨
+DZ = Drizzle
+#予想進入時刻
+EAT = Expected approach time
+#東行
+EB = Eastbound
+#長時間進出運航
+EDTO = Extended diversion time operations
+#誤り
+EEE = Error
+#（特定の地点までの) 所要時間
+EET = Estimated elapsed time
+#予定追加管制承認
+EFC = Expect further clearance
+#有効な
+EFF = Effective
+#電子飛行計器システム
+EFIS = Electronic flight instrument system
+#ミリメートル波（30,000 から300,000MHz まで）
+EHF = Extremely high frequency
+#標高
+ELEV = Elevation
+#超長距離
+ELR = Extra long range
+#航空機用救命無線機
+ELT = Emergency locator transmitter
+#発射（電波の)
+EM = Emission
+#雲層中の中に埋っている
+EMBD = Embedded in a layer
+#緊急事態
+EMERG = Emergency
+#停止帯(RVR 関連)
+END = Stop-end(related to RVR)
+#東北東( の)
+ENE = East north east
+#エンジン
+ENG = Engine
+#航路上
+ENR = En-route
+#エンルートチャート
+ENRC = Enroute chart
+#移動開始時刻
+EOBT = Estimated off-block time
+#装置
+EQPT = Equipment
+#東南東( の)
+ESE = East south east
+#予定する予定された又は予定通報
+EST = Estimate or estimated or estimate
+#到着予定時刻又は到着予定
+ETA = Estimated time of arrival or estimating arrival
+#出発予定時刻又は出発予定
+ETD = Estimated time of departure or estimating departure
+#予定飛行時間
+ETE = Estimated time en-route
+#特定地点通過予定時刻
+ETO = Estimated time over significant point
+#RODEX ヨーロッパ地域運航用気象(OPMET) 情報交換
+EUR = RODEX European regional OPMET data exchange
+#…… 毎の
+EV = Every
+#…… を除いて
+EXC = Except
+#練習、練習している又は練習する
+EXER = Exercises or exercising or to exercise
+#予想する、予想された又は予想
+EXP = Expect or expected or expecting
+#延長する、延長又は延長した
+EXTD = Extend or extending or Extended
+#固定の
+F = Fixed
+#カ氏度( 温度)
+F = Degree Fahrenheit
+#施設
+FAC = Facilities
+#最終進入フィックス
+FAF = Final approach fix
+#国際航空の簡易化（税関出入国検疫各業務)
+FAL = Facilitation of international air transport
+#最終進入点
+FAP = Final approach point
+#最終進入／離陸区域
+FATO = Final approach and take-off area
+#ファクシミリ電送
+FAX = Facsimile transmission
+#弱い（ 着水、 乱気流、 混信又は空電の強さを示す場合に使用する)
+FBL = Light(used to quallify icing, turbulence,interference or static reports)
+#ろうと雲
+FC = Funnel cloud
+#予報
+FCST = Forecast
+#摩擦係数
+FCT = Friction coefficient
+#飛行計画情報処理システム
+FDPS = Flight data processing system
+#2 月
+FEB = February
+#雲量1/8 から2/8 まで
+FEW = Few
+#霧
+FG = Fog
+#飛行情報センター
+FIC = Flight information centre
+#飛行情報区
+FIR = Flight information region
+#飛行情報区境界
+FIRB = Flight information region boundary
+#飛行情報業務
+FIS = Flight information service
+#自動飛行情報業務
+FISA = Automated flight information service
+#フライトレベル
+FL = Flight level
+#飛行場面
+FLD = Field
+#閃光
+FLG = Flashing
+#エプロン照明灯
+FLO = Apron flood lights
+#火炎
+FLR = Flares
+#飛行
+FLT = Flight
+#フライトチェック
+FLTCK = Flight check
+#変動している、 変動又は変動した
+FLUC = Fluctuating or fluctuation or fluctuated
+#続く又は続いている
+FLW = Follow(s) or following
+#飛行する又は飛行している
+FLY = Fly or flying
+#… から
+FM... = From
+#… から
+FM = From
+#飛行管理コンピューター
+FMC = Flight management computer
+#フライトマネジメントシステム
+FMS = Flight management system
+#飛行管理機関
+FMU = Flight management unit
+#最終進入
+FNA = Final approach
+#燃料搭載量
+FOB = Fuel on board
+#飛行計画又は飛行計画報
+FPL = Flight plan
+#… フィート毎分
+FPM = Feet per minute
+#飛行計画経路
+FPR = Flight plan route
+#残存燃料
+FR = Fuel remaining
+#周波数
+FREQ = Frequency
+#金曜日
+FRI = Friday
+#射撃
+FRNG = Firing
+#前線（気象に関係して)
+FRONT = Front(relating to weather)
+#頻繁な
+FRQ = Frequent
+#飛行援助センター
+FSC = Flight Service Center
+#フルストップランディング
+FSL = Full stop landing
+#飛行情報局
+FSS = Flight service station
+#最初の
+FST = First
+#フィート（長さ、単位)
+FT = Feet(dimensional unit)
+#煙
+FU = Smoke
+#凍っている
+FZ = Freezing
+#着氷性の霧雨
+FZDZ = Freezing drizzle
+#着氷性の霧
+FZFG = Freezing fog
+#着氷性の雨
+FZRA = Freezing rain
+#緑
+G = Green
+#ゼネラルアビエーション
+GA = General aviation
+#地対空
+G/A = Ground-to-air
+#地対空及び空対地
+G/A/G = Ground-to-air and air-to-ground
+#対気速度もしくは向かい風の増加
+GAIN = Airspeed or headwind gain
+#ガロン（容積単位)
+GAL = Gallons
+#ガメット（低高度飛行用の地域予報）
+GAMET = Area forecast for lowlevel flights
+#大圏航路
+GC = Great circle course
+#ジーシーエー又は着陸誘導管制業務
+GCA = Ground controlled approach system or ground Controlled approach
+#総則、一般
+GEN = General
+#地理上の又は真方位
+GEO = Geographic or true
+#航空衛星地球局
+GES = Ground earth station
+#地対地
+G/G = Ground to ground
+#グライダー
+GLD = Glider
+#全地球的航法衛星システム
+GLONASS = Global orbiting navigation satellite system
+#地上移動図
+GMC = Ground movement chart
+#地上
+GND = Ground
+#グランドチェック
+GNDCK = Ground check
+#全地球的航法衛星システム
+GNSS = Global navigation satellite system
+#政府
+GOV = Government
+#グライドパス
+GP = Glide path
+#全地球的測位システム
+GPS = Global positioning system
+#地上動力装置
+GPU = Ground power unit
+#対地接近警報装置
+GPWS = Ground proximity warning system
+#雪あられ又はひょう
+GR = Hail or soft hail
+#漸次の又は漸次
+GRADU = Gradual or gradually
+#草地着陸区域
+GRASS = Grass landing area
+#バイナリー形式による格止点データ交換用のWMO コード
+GRIB = Processed meteorological data in the form of grid point values expressed in binary form
+#砂利
+GRVL = Gravel
+#対地速度
+GS = Ground speed
+#氷あられ／雪あられ
+GS = Small hail and/or snow Pellets
+#地球体起伏
+GUND = Geoid undulation
+#24 時間運用
+H24 = Continuous day and night service
+#ヘリコプター用進入角指示灯
+HAPI = Helicopter approach path indicator
+#危険航空灯台
+HBN = Hazard beacon
+#Ｈ Ｆ 方向探知局
+HDF = High frequency direction-finding station
+#針路
+HDG = Heading
+#ヘリコプター
+HEL = Helicopter
+#短波（3,000 から30,000kHz まで)
+HF = High frequency
+#格納庫
+HGR = Hangar
+#高さ又は…… 上高さ
+HGT = Height or height above
+#高光度式滑走路灯
+HIRL = High intensity runway edge lights
+#高光度式滑走路末端灯
+HIRTHL = High intensity runway threshold lights
+#昼間（日出から日没まで)
+HJ = Sunrise to sunset
+#待機
+HLDG = Holding
+#ヘリポート
+HLP = Heliport
+#ヘリコプター着陸区域
+HLS = Helicopter landing site
+#夜間（日没から日出まで)
+HN = Sunset to sunrise
+#運用要件に基づき利用可能
+HO = Service available to meet operational requirements
+#休日
+HOL = Holiday
+#患者輸送機
+HOSP = Hospital aircraft
+#ヘクトパスカル
+HPA = Hectopascal
+#時間
+HR = Hours
+#定時運用時間中利用可能の時間
+HS = Service available during hours of scheduled operations
+#ハリケーン
+HURCN = Hurricane
+#HF ・VHF 方向探知局( 同一地点)
+HVDF = High and very high frequency direction-finding station(at the same location)
+#重い
+HVY = Heavy
+#強い
+HVY = Heavy
+#不定時運用時間
+HX = No specific working hours
+#～より高い
+HYR = Higher
+#煙霧
+HZ = haze
+#ヘルツ
+HZ = Hertz
+#日本標準時(JST)
+I = Japan standard time(JST)
+#計器進入方式図
+IAC = Instrument approach chart
+#初期進入フィックス
+IAF = Initial approach fix
+#雲中になったり雲外になったり
+IAO = In and out of clouds
+#計器進入方式
+IAP = Instrument approach procedure
+#エアルート交点
+IAR = Intersection of air routes
+#指示対気速度
+IAS = Indicated air speed
+#補助飛行場灯台
+IBN = Identification beacon
+#国際民間航空機関
+ICAO = International Civil Aviation Organization
+#着氷
+ICE = Icing
+#標識、識別又は識別する
+ID = Identifier or Identification or identify
+#識別
+IDENT = Identification
+#中間進入フィックス
+IF = Intermediate approach fix
+#敵・味方判別装置
+IFF = Identification friend/foe
+#計器飛行方式
+IFR = Instrument flight rules
+#国際一般航空
+IGA = International general Aviation
+#アイエルエス（計器着陸用施設)
+ILS = Instrument landing system
+#内側マーカー
+IM = Inner marker
+#計器気象状態
+IMC = Instrument meteorological conditions
+#入国
+IMG = Immigration
+#疑問符
+IMI = Interrogation sign
+#改善する又は改善している
+IMPR = Improve or improving
+#即時又は直ちに
+IMT = Immediate or immediately
+#初期進入
+INA = Initial approach
+#入航・インバンド
+INBD = Inbound
+#雲中
+INC = In cloud
+#不確実な段階（SAR)
+INCERFA = Uncertainty phase
+#組み入れる（取り込む）
+INCORP = Incorporated
+#情報
+INFO = Information
+#休止
+INOP = Inoperative
+#…… するを得ない時は
+INP = If not possible
+#進行中
+INPR = In progress
+#インチ( 長さの単位)
+INS = Inches
+#慣性航法装置
+INS = Inertial navigation system
+#計器
+INST = Instrument
+#設備、設備する又は設備された
+INSTL = Install or installed or Installation
+#計器
+INSTR = Instrument
+#交点
+INT = Intersection
+#断続的
+INTER = Intermittent
+#国際の
+INTL = International
+#質問器
+INTRG = Interrogator
+#中断する、中断又は中断された
+INTRP = Interrupt or interruption or interrupted
+#強化する又は強化
+INTSF = Intensify or intensifying
+#輝度
+INTST = Intensity
+#滑走路着氷
+IR = Ice on runway
+#慣性基準装置
+IRS = Inertial reference system
+#国際標準大気
+ISA = International standard atmosphere
+#単側波帯
+ISB = Independent sideband
+#島
+ISL = Island
+#孤立した
+ISOL = Isolated
+#電波発射（変調及び伝送) の型式
+J3E = designation of emission
+#日本の、日本語
+JA = Japan, Japanese
+#1 月
+JAN = January
+#ジェット機滑走路用防柵( 網)
+JBAR = Jet runway barrier
+#海上保安庁
+JCG = Japan Coast Guard
+#防衛省飛行情報出版物( 防衛省部内用)
+JFLIP = JSDF flight information publication
+#気象庁
+JMA = Japan Meteorological Agency
+#防衛省
+JSDF = Japan Self Defense Force
+#航空自衛隊
+JSDF-A = Japan Air Self Defense Force
+#陸上自衛隊
+JSDF-G = Japan Ground Self Defense Force
+#海上自衛隊
+JSDF-M = Japan Maritime Self Defense Force
+#日本標準時
+JST = Japan standard time
+#ジェット気流
+JTST = Jet stream
+#7 月
+JUL = July
+#6 月
+JUN = June
+#キログラム
+KG = Kilogrammes
+#キロヘルツ
+KHZ = Kilohertz
+#指示対気速度・ノット
+KIAS = Knots indicated airspeed
+#キロメートル
+KM = Kilometres
+#キロメートル毎時
+KMH = Kilometres per hour
+#キロパスカル
+KPA = Kilopascal
+#ノット
+KT = Knots
+#キロワット
+KW = Kilowatts
+#左( 滑走路識別)
+L = Left
+#ロケーター( 中間、外側の項参照)
+L = Locator(see LM,LO)
+#リットル（単位）
+L = Litre
+#着陸区域照明灯
+LAFL = Landing area flood lights
+#確認応答通報
+LAM = Logical acknowledgement
+#内陸の
+LAN = Inland
+#緯度
+LAT = Latitude
+#ポンド( 重量)
+LB = Pounds(weight)
+#地標航空灯台
+LBN = Land mark beacon
+#着陸図
+LC = Landing chart
+#位置の、位置的に、位置、又は位置する
+LCA = Local or Locally or Location or Located
+#有効着陸距離
+LDA = Landing distance available
+#ローカライザー型方向援助施設
+LDA = Localizer type directional aids
+#有効着陸距離、ヘリコプター
+LDAH = Landing distance available,helicopter
+#有線データ回線
+LDD = Landline data circuit
+#着陸
+LDG = Landing
+#着陸方向指示器
+LDI = Landing direction indicator
+#長さ
+LEN = Length
+#長波（30 から300kHz)
+LF = Low frequency(30 to 300kHz)
+#灯火又は照明
+LGT = Light or lighting
+#照明された
+LGTD = Lighted
+#高光度灯火
+LIH = Light intensity high
+#低光度灯火
+LIL = Light intensity low
+#中光度灯火
+LIM = Light intensity medium
+#低光度式滑走路灯
+LIRL = Low intensity runway edge lights
+#低光度式滑走路末端灯
+LIRTHL = Low intensity runway threshold lights
+#中間ロケーター
+LM = Locator, middle
+#ロケーター・中間マーカー( 同一地点)
+LMM = Compass locator at middle marker ILS
+#現地標準時
+LMT = Local mean time
+#水平方向のガイダンスを利用するRNAV進入方式
+LNAV = Lateral navigation
+#長い（ 要求された又は指示された進入方式を示す場合に使用する)
+LNG = Long(used to indicate the type of approach desired or required)
+#外側ロケーター
+LO = Locator, outer
+#ローカライザー
+LOC = Localizer
+#位置の、位置的に、位置又は設置する
+LOC = Local or locally or location or located
+#ロケーター・外側マーカー( 同一地点)
+LOM = Compass locator at outer marker ILS
+#経度
+LONG = Longitude
+#ロラン( 長距離航空航法装置)
+LORAN = LORAN
+#対気速度もしくは向かい風の減少
+LOSS = Airspeed or headwind loss
+#長距離
+LRG = Long range
+#制限付
+LTD = Limited
+#弱く変動している（風に関して)
+LV = Light and variable
+#離れる又は離脱
+LVE = Leave or leaving
+#レベル
+LVL = Level
+#層又は層状の
+LYR = Layer or layered
+#最高承認高度
+MAA = Maximum authorized altitude
+#磁方位
+MAG = Magnetic
+#進入復行待機フィックス
+MAHF = Missed approach holding fix
+#補修
+MAINT = Maintenance
+#航空地図及び航空図
+MAP = Aeronautical maps and charts
+#進入復行点
+MAP = Missed approach point
+#進入復行点
+MAPT = Missed approach point
+#3 月
+MAR = March
+#海上で
+MAR = At sea
+#進入復行旋回フィックス
+MATF = Missed approach turning fix
+#最大、最高
+MAX = Maximum
+#5 月
+MAY = May
+#マイクロバースト
+MBST = Microburst
+#ミリバール
+MB = Millibars
+#最低通過高度
+MCA = Minimum crossing altitude
+#米海兵隊航空基地
+MCAS = Marine Corps Air Station
+#変調持続波
+MCW = Modulated continuous wave
+#最低降下高度
+MDA = Minimum descent altitude
+#MF 方向探知局
+MDF = Medium frequency direction-finding station
+#最低降下高
+MDH = Minimum descent height
+#最低経路高度
+MEA = Minimum en - route altitude
+#医療搬送飛行
+MEDEVAC = Medical evacuation flight
+#滑走路末端上における最低の目の高さ( 進入角指示灯に用いる)
+MEHT = Minimum eye height over threshold
+#気象
+MET = Meteorological or meteorology
+#定時飛行場実況気象通報式
+METAR = Aerodrome routine meteorological report
+#中波（300 から3,000kHz)
+MF = Medium frequency [300kHz to 3,000kHz]
+#最低待機高度
+MHA = Minimum holding altitude
+#MF ・HF 方向探知局（併置)
+MHDF = Medium and high frequency direction-finding stations
+#MF ・HF ・VHF 方向探知局（併置)
+MHVDF = Medium,high and very high frequency directionfinding stations
+#メガヘルツ
+MHZ = Megahertz
+#中間点(RVR 関連)
+MID = Mid-point
+#地霧
+MIFG = Shallow fog
+#軍用
+MIL = Military
+#分
+MIN = Minutes
+#失う
+MIS = Missing ...
+#マーカービーコン( 無線標識)
+MKR = Marker radio beacon
+#陸マイル
+ML = Statue miles
+#国土交通省
+MLIT = Ministry of Land, Infrastructure, Transport and Tourism
+#マイクロ波自動着陸装置
+MLS = Microwave landing system
+#中間マーカー
+MM = Middle marker
+#最少、最低の
+MNM = Minimum
+#最低航行性能限界
+MNPS = Minimum navigation performance specifications
+#監視、監視される又は監視された
+MNT = Monitor or monitoring or Monitored
+#維持する、保持する
+MNTN = Maintain
+#軍事活動区域
+MOA = Military operating area
+#最低必要障害物間隔
+MOC = Minimum obstacle clearance
+#最低障害物間隔高度
+MOCA = Minimum obstacle clearance altitude
+#並（着氷、乱気流の強度を示す場合に使用する)
+MOD = Moderate
+#山岳上
+MON = Above mountains
+#月曜日
+MON = Monday
+#最低運用性能基準
+MOPS = Minimum operational performance standards
+#移動する、移動又は移動した
+MOV = Move or moving or movement
+#保守のための運用休止時間
+MP = Maintenance period
+#陸マイル毎時
+MPH = Statute miles per hour
+#メートル毎秒
+MPS = Metres per second
+#最低受信可能高度
+MRA = Minimum reception altitude
+#中距離
+MRG = Medium range
+#ATS/MET 位置通報点
+MRP = ATS/MET reporting point
+#マイナス
+MS = Minus
+#最低扇形別高度
+MSA = Minimum sector altitude
+#みちびき衛星航法補強サービス
+MSAS = Michibiki Satellite-based Augmentation Service
+#通報
+MSG = Message
+#平均海面上
+MSL = Mean sea level
+#通報…( 番号) は、経由通信路を誤っています
+MSR = Message ...
+#モノパルス二次監視レーダー
+MSSR = Monopulse secondary surveillance radar
+#山岳
+MT = Mountain
+#レーダー移動目標指示器
+MTI = Moving target indicator
+#最大離陸重量
+MTOM = Maximum take-off mass
+#メートル法単位
+MTU = Metric units
+#山岳波
+MTW = Mountain waves
+#MF ・VHF 方向探知局( 併置)
+MVDF = Medium and very high frequency directionfinding stations
+#気象監視機関
+MWO = Meteorological watch office
+#霧氷と雨氷の共存
+MX = Mixed type of ice formation
+#成田国際空港株式会社
+NAA = Narita International Airport Corporation
+#国のAIS システムセンター
+NASC = National AIS system centre
+#米海軍航空基地
+NAS = Naval air station(U.S.)
+#北大西洋地区
+NAT = North atlantic
+#航法
+NAV = Navigation
+#航空保安無線施設
+NAVAID = Navigation aid
+#北行
+NB = Northbound
+#～の前でない
+NBFR = Not before
+#変更なし
+NC = No change
+#雲が検知されていない　( 自動観測のMETAR及びSPECI で用いられる)
+NCD = No cloud detected
+#非義務位置通報点
+NCREP = Non-compulsory reporting point
+#無指向性無線標識
+NDB = Non directional radio beacon
+#方向視程の観測はない　( 自動観測のMETAR 及びSPECI で用いられる）
+NDV = No directional variations available
+#北東の
+NE = North-east
+#北東行
+NEB = North-eastbound
+#無し、否定、不許可又は正しくない
+NEG = No or negative or permission not granted or that is not correct
+#夜間
+NGT = Night
+#無し
+NIL = None or I have nothing to send to you.
+#海里
+NM = Nautical miles
+#正常
+NML = Normal
+#名前なし
+NN = No name, unnamed
+#北北東
+NNE = North north east
+#北北西
+NNW = North north west
+#国際航空情報機関（国際ノータム事務所)
+NOF = International NOTAM Office
+#北太平洋地区
+NOPAC = North pacific
+#顕著な変化なし
+NOSIG = No significant change(used in trend-type landing forecasts)
+#航空情報・ノータム
+NOTAM = A notice distributed by means of telecommunication containing information
+#既に発行してあるノータムを取り消すノータム
+NOTAMC = Cancelling NOTAM
+#新しい情報を含んだノータム
+NOTAMN = New NOTAM
+#既に発行してあるノータムを変更するノータム
+NOTAMR = Replacing NOTAM
+#11 月
+NOV = November
+#通常運用区域
+NOZ = Normal operating zone
+#非精密進入
+NPA = Non precision approach
+#番号
+NR = Number
+#応答なし
+NRH = No reply heard
+#乱層雲
+NS = Nimbostratus
+#特記すべき雲はない
+NSC = Nil significant cloud
+#運航に影響を及ぼす悪天がない
+NSW = Nil significant weather
+#国の
+NTL = National
+#逸脱禁止ゾーン
+NTZ = No transgression zone
+#北西（の)
+NW = North-west
+#北西行
+NWB = North-westbound
+#次の
+NXT = Next
+#洋上管制本部
+OAC = Oceanic area control centre
+#障害物査定表面
+OAS = Obstacle assessment surface
+#航空障害灯
+OBL = Obstruction light(s)
+#観測する、観測した又は観測
+OBS = Observe or observed or observation
+#掩蔽する、掩蔽した又は掩蔽している
+OBSC = Obscure or obscured or obscuring
+#障害物
+OBST = Obstacle
+#洋上管制区
+OCA = Oceanic control area
+#障害物間隔高度／高
+OCA/H = Obstacle clearance altitude/height
+#明滅（灯火)
+OCC = Occulting(light)
+#時々又は時々の
+OCNL = Occasional or occasionally
+#無障害物表面
+OCS = Obstacle clearance surface
+#10 月
+OCT = October
+#オクタン価・燃料級別数
+OCT = Octane
+#無障害物ゾーン
+OFZ = Obstacle free zone
+#直上
+OHD = Overhead
+#障害物識別表面
+OIS = Obstacle identification surface
+#オンラインデータ交換
+OLDI = On line data interchange
+#外側マーカー
+OM = Outer marker
+#不透明凍結又は霧氷
+OPA = Opaque, white type of ice formation
+#運航管理
+OPC = The control indicated is Operational control
+#運航気象情報
+OPMET = Operational meteorological
+#開く、開くこと又は開いた
+OPN = Open or opening or opened
+#運航者
+OPR = Operator or operate or operative or operating or operational
+#運航又は運用
+OPS = Operations
+#要請による
+O/R = On request
+#指示の表示
+ORD = Indication of an order
+#過走帯灯
+ORL = Overrun area edge light(s)
+#洋上航空路監視レーダー
+ORSR = Oceanic route surveillance radar
+#洋上定点観測船
+OSV = Ocean station vessel
+#時間外の
+O/T = Other time(than specified period)
+#雲上
+OTP = On top
+#洋上転移径路
+OTR = Oceanic transition routes
+#障害中である
+OTS = Out of service
+#編成経路システム
+OTS = Organized track system
+#出圏
+OUBD = Outbound
+#雲量8/8
+OVC = Overcast
+#過走帯
+OVR = Overrun
+#太平洋地区
+PAC = Pacific region
+#標準式進入灯（カテゴリー明記)
+PALS = Precision approach lighting system
+#航空業務方式
+PANS = Procedures for air navigation services
+#進入角指示灯
+PAPI = Precision approach path Indicator
+#精測進入用レーダー
+PAR = Precision approach radar
+#精密進入地形図
+PATC = Precision approach terrain chart
+#平行
+PARL = Parallel
+#乗客
+PAX = Passenger(s)
+#性能準拠通信
+PBC = Performance-based communication
+#性能準拠監視
+PBS = Performance-based surveillance
+#進行する又は進行
+PCD = Proceed or proceeding
+#特別管制区
+PCA = Positive control area
+#パイロット制御照明
+PCL = Pilot controlled lighting
+#数値で表わした舗装の許容支持力
+PCN = Pavement classification number
+#パーセント（単位）
+PCT = Per cent
+#ピリオド、終止点
+PD = Period
+#出発前管制承認
+PDC = Pre-departure clearance
+#計画勾配手続
+PDG = Procedure design gradient
+#性能
+PER = Performance
+#永久の
+PERM = Permanent
+#軍用移動気象予報業務
+PFSV = Pilot forecaster service
+#飛行前情報ブリテン
+PIB = Pre-flight information bulletin
+#機長報告
+PIREP = Pilot report
+#落下傘降下訓練
+PJE = Parachute jumping exercise
+#凍雨
+PL = Ice pellets
+#進入・着陸訓練
+PLA = Practice low approach
+#現在レベル
+PLVL = Present level
+#午後
+PM = Post-meridian
+#事前通報を要する
+PN = Prior notice required
+#引返し不能地点
+PNR = Point of no turn/return
+#じん旋風
+PO = Dust devils
+#搭乗員総数
+POB = Persons on board
+#可能な
+POSS = Possible
+#ピーピーアイ( 監視レーダー用標示装置)
+PPI = Plan position indicator
+#事前承認を要する
+PPR = Prior permission required
+#現在位置
+PPSN = Present position
+#霧により部分的におおわれた飛行場
+PRFG = Aerodrome partially covered by fog
+#主の（第一の)
+PRI = Primary
+#駐機
+PRKG = Parking
+#確率
+PROB = Probability
+#方式
+PROC = Procedure
+#禁止された又は禁止する
+PROH = Prohibited or prohibit
+#プロペラ
+PROP = Propeller
+#暫定的
+PROV = Provisional
+#ポイントインスペース基準点
+PRP = Point-in-space reference point
+#プラス、正
+PS = Plus
+#通過
+PSG = Passing
+#位置
+PSN = Position
+#鉄製マット
+PSP = Pierced steel plank
+#主監視レーダー
+PSR = Primary surveillance radar
+#地点
+PT = Point
+#方式旋回
+PTN = Procedure turn
+#極圏経路構成
+PTS = Polar track structure
+#出力
+PWR = Power
+#磁針路
+QDM = Magnetic heading
+#磁方位
+QDR = Magnetic bearing
+#飛行場標高での大気圧（又は滑走路末端)
+QFE = Atmospheric pressure at aerodrome elevation(or at runway threshold)
+#磁方位による滑走路方位又は番号
+QFU = Magnetic orientation of runway
+#平均海面上大気圧による高度計規正値
+QNH = Altimeter sub-scale setting to obtain elevation when on the ground
+#真方位
+QTE = True bearing
+#象限
+QUAD = Quadrant
+#受けた( 受取の承認)
+R = Received
+#雨
+RA = Rain
+#航空規則及び航空交通業務
+RAC = Rules of the air and air traffic services
+#地域空域予報中枢
+RAFC = Regional area forecast centre
+#ほつれている
+RAG = Ragged
+#滑走路制動索
+RAG = Runway arresting gear
+#リモート空港対空通信施設
+RAG = Remote air-ground facilities
+#進入路指示灯( 直線進入用)
+RAI = Runway alignment indicator
+#受信機自立型完全性モニター
+RAIM = Receiver autonomous integrity monitoring
+#レーダー進入管制所・ラプコン
+RAPCON = Radar approach control
+#迅速又は迅速に
+RAPID = Rapid or rapidly
+#地域AIS システムセンター
+RASC = Regional AIS system centre
+#照合してください
+RB = Read back
+#巡航高度に到達して下さい
+RCA = Reach cruising altitude
+#遠隔対空通信施設
+RCAG = Remote center air - ground communication
+#捜索救難調整本部
+RCC = Rescue co-ordination centre
+#無線通信障害通報
+RCF = Radio communication failure message
+#到達する又は到達
+RCH = Reach or reaching
+#滑走路中心線
+RCL = Runway centre line
+#滑走路中心線灯
+RCLL = Runway centreline light(s)
+#再許可
+RCLR = Recleared
+#滑走路末端におけるグライドパス高
+RDH = Reference datum height
+#ラディアル
+RDL = Radial
+#無線
+RDO = Radio
+#前１ 時間の( 天気略語)
+RE… = Recent
+#受信又は受信機
+REC = Receive or receiver
+#滑走路灯
+REDL = Runway edge light(s)
+#… に関する、又は… を参照
+REF = Reference to... or refer to
+#国籍記号及び登録記号
+REG = ...
+#滑走路終端灯
+RENL = Runway end light(s)
+#位置通報点
+REP = Reporting point
+#要請
+REQ = Request or requested
+#ルート変更
+RERTE = Reroute
+#滑走路端安全区域
+RESA = Runway end safety area
+#固定半径旋回
+RF = Constant radius arc to a fix
+#消火救難業務
+RFFS = Rescue and fire fighting services
+#境界誘導灯
+RG = Range
+#有効回路
+RHC = Right-hand circuit
+#再承任
+RIF = Reclearance in flight
+#離脱の通報
+RL = Report leaving
+#中継する
+RLA = Relay to
+#航路上の高度変更要求
+RLCE = Request level change en route
+#進入路指示灯( 周回進入用)
+RLLS = Runway lead-in lighting system
+#要求高度利用不可
+RLNA = Request level not available
+#備考
+RMK = Remark
+#広域航法
+RNAV = Area navigation
+#AN 式指向性無線標識
+RNG = Radio range
+#航法性能要件
+RNP = Required navigation performance
+#運用再開
+R/N = Resumed Normal
+#地域航空気象通報交換（組織)
+ROBEX = Regional OPMET bulletin exchange
+#上昇率
+ROC = Rate of climb
+#降下率
+ROD = Rate of descent
+#受信のみ
+RON = Receiving only
+#レーダー位置標識
+RPI = Radar position indicator
+#反復飛行計画
+RPL = Repetitive flight plan
+#置き換える
+RPLC = Replace or replaced
+#レーダー位置記号
+RPS = Radar position symbol
+#繰返し
+RPT = Repeat
+#要件
+RQMNTS = Requirements
+#飛行計画要求通報
+RQP = Request flight plan
+#補足飛行計画要求通報
+RQS = Request supplementary Flight plan(message type Designator)
+#到達の通報
+RR = Report reaching
+#遅延気象報
+RRA = Delayed meteorological message
+#救難副調整局
+RSC = Rescue sub-centre
+#滑走路面状況
+RSCD = Runway surface condition
+#地域特別気象センター
+RSMC = Regional/specialized meteorological centre
+#監視要件
+RSP = Required surveillance performance
+#航空路監視レーダー
+RSR = En-route surveillance radar
+#制限された又は制限する
+RSTD = Restricted or restrict
+#遅延通報（遅延気象報の表示に使用される)
+RTD = Delayed
+#ルート
+RTE = Route
+#無線電話
+RTF = Radiotelephone
+#無線電信
+RTG = Radiotelegraph
+#滑走路末端灯
+RTHL = Runway threshold light(s)
+#復帰する、復帰済又は復旧
+RTN = Return or returned or returning
+#有効離陸中断距離
+RTODAH = Reject take-off distance available, helicopter
+#業務を復旧する
+RTS = Return to service
+#無線テレタイプ
+RTT = Radioteletypewriter
+#接地帯灯
+RTZL = Runway touchdown zone light(s)
+#地区航路用標準周波数
+RUT = Standard regional route transmitting frequencies
+#救難船
+RV = Rescue vessel
+#レーダー誘導区域
+RVA = Radar vectoring area
+#滑走路視距離
+RVR = Runway visual range
+#滑走路
+RWY = Runway
+#滑走路末端識別灯
+RWYTIL = Runway threshold identification lights
+#砂
+SA = Sand
+#簡易式進入灯
+SALS = Simple approach lighting system
+#検疫
+SAN = Sanitary
+#捜索救難
+SAR = Search and rescue
+#標準及び勧告方式(ICAO)
+SARPS = Standards and Recommended Practices
+#土曜日
+SAT = Saturday
+#衛星通信
+SATCOM = Satellite communication
+#衛星電話
+SATVOICE = Satellite voice communication
+#南行
+SB = Southbound
+#静止衛星型衛星航法補強システム
+SBAS = Satellite-Based Augmentation System
+#層積雲
+SC = Stratocumulus
+#雲量3/8 から4/8 まで
+SCT = Scattered
+#待機する
+SDBY = Stand by
+#ステップダウンフィックス
+SDF = Step down fix
+#南東
+SE = South east
+#南東行
+SEB = South-eastbound
+#秒
+SEC = Seconds
+#セクター， 象限
+SECT = Sector
+#選択呼出装置
+SELCAL = Selective calling system
+#9 月
+SEP = September
+#業務
+SER = Service or servicing or served
+#激しい（着氷， 乱気流の強度を示す場合に使用する)
+SEV = Severe(used e.g.to qualify icing and turbulence reports)
+#地表面又は水面
+SFC = Surface
+#連鎖式閃光灯
+SFL = Sequenced flashing light(s)
+#光度制御式の連鎖式閃光灯
+SFL-V = sequenced flashing light(s) variable light intensity
+#霧雪
+SG = Snow grains
+#信号
+SGL = Signal
+#しゅう雨
+SH… = Showers
+#極短波
+SHF = Super high frequency
+#雪氷
+S/I = Snow and lce
+#標準計器出発方式
+SID = Standard instrument departure
+#選択性識別装置
+SIF = Selective identification feature
+#シグメット情報
+SIGMET = Information concerning en-route weather 
+#悪天
+SIGWX = Significant weather
+#同時又は同時に
+SIMUL = Simultaneous or simultaneously
+#単車輪荷重
+SIWL = Single isolated wheel load
+#快晴
+SKC = Sky clear
+#定期（の)
+SKED = Schedule or scheduled
+#速度制限点
+SLP = Speed limiting point
+#ゆっくり
+SLW = Slow
+#地上移動管制
+SMC = Surface movement control
+#空港面探知レーダー
+SMR = Surface movement radar
+#雪
+SN = Snow
+#スノータム
+SNOWTAM = A special series NOTAM notifying the presence due to snow
+#特別飛行場実況気象通報式
+SPECI = Aerodrome special meteorological report
+#特別観測報告
+SPECIAL = Special meteorological report(in abbreviated plain language)
+#補足飛行計画通報
+SPL = Supplementary flight plan
+#捜索救難連絡点
+SPOC = SAR point of contact
+#地点風向風速
+SPOT = Spot wind
+#スコール
+SQ = Squall
+#スコールライン
+SQL = Squall line
+#日出
+SR = Sunrise
+#捜索レーダー進入
+SRA = Surveillance radar approach
+#精密進入レーダーシステムの捜索レーダー部分
+SRE = Surveillance radar element of precision approach radar system
+#短距離
+SRG = Short range
+#捜索救難区
+SRR = Search and rescue region
+#副の（第2 の)
+SRY = Secondary
+#日没
+SS = Sunset
+#砂じん嵐
+SS = Sandstorm
+#単側帯波
+SSB = Single sideband
+#南南東
+SSE = South south east
+#2 次監視レーダー
+SSR = Secondary surveillance radar
+#超音速輸送
+SST = Supersonic transport
+#南南西
+SSW = South south west
+#層雲
+ST = Stratus
+#直線進入
+STA = Straight in approach
+#標準計器到着方式
+STAR = Standard instrument arrival
+#標準
+STD = Standard
+#層雲型
+STF = Stratiform
+#局
+STN = Station
+#定常的
+STNR = Stationary
+#短距離離着陸
+STOL = Short take-off and landing
+#状態
+STS = Status
+#縦複車輪
+STW = Single tandem wheels
+#ストップウェイ灯
+STWL = Stopway light(s)
+#～を条件に
+SUBJ = Subject to
+#日曜日
+SUN = Sunday
+#補足（航空路誌補足版）
+SUP = Supplement
+#地区補足方式
+SUPPS = Regional supplementary procedures
+#業務報
+SVC = Service
+#運用している
+SVCBL = Serviceable
+#南西（の)
+SW = South-west
+#単車輪
+SW = Single wheel
+#南西行
+SWB = South-westbound
+#ストップウェイ
+SWY = Stopway
+#転移高度
+TA = Transition altitude
+#トラフィックアドバイザリー
+TA = Traffic advisory
+#ターミナル地域図
+TAC = Terminal area chart
+#タカン〔UHF( 方位・距離) 航空保安無線施設〕
+TACAN = UHF tactical air navigation aid
+#飛行場予報( 略語形式)
+TAF = Aerodrome forecast
+#追風
+TAIL = Tail wind
+#ターミナル地域監視レーダー
+TAR = Terminal area surveillance radar
+#真対気速度
+TAS = True airspeed
+#走行中又は走行する
+TAX = Taxiing or taxi
+#熱帯低気圧
+TC = Tropical cyclone
+#ターミナル・コントロール・エリア
+TCA = Terminal control area
+#積雲－塔状
+TCU = Towering cumulus
+#竜巻（陸上)
+TDO = Tornado
+#接地帯
+TDZ = Touchdown zone
+#技術的理由
+TECR = Technical reason
+#電話
+TEL = Telephone
+#仮の、一時的な
+TEMPO = Temporary or temporarily
+#交通
+TFC = Traffic
+#タッチアンドゴー
+TGL = Touch-and-go landing
+#誘導案内システム
+TGS = Taxiing guidance system
+#末端、進入端
+THR = Threshold
+#…… を通して
+THRU = Through
+#木曜日
+THU = Thursday
+#航空機による交通情報放送
+TIBA = Traffic information broadcast by aircraft
+#…… まで
+TIL = Until
+#… （場所) を通過するまで
+TIP = Until past...(place)
+#離陸
+TKOF = Take off
+#… まで
+TL... = Till
+#着地／浮上区域
+TLOF = Touchdown and lift-off area
+#ターミナル管制区
+TMA = Terminal control area
+#旋回高度
+TNA = Turn altitude
+#旋回高
+TNH = Turn height
+#…( 場所) へ
+TO = To...(place)
+#上昇上限
+TOC = Top of climb
+#有効離陸距離
+TODA = Take-off distance available
+#有効離陸距離、ヘリコプター
+TODAH = Take-off distance available,helicopter
+#雲頂
+TOP = Cloud top
+#有効離陸滑走距離
+TORA = Take-off run available
+#有害
+TOX = Toxic
+#分岐点
+TP = Turning point
+#転回灯
+TPIL = Turning point indicator light(s)
+#トラック
+TR = Track
+#一時的空域留保
+TRA = Temporary reserved airspace
+#送信又は送信機
+TRANS = Transmits or transmitter
+#トラブル
+TRBL = Trouble
+#訓練
+TRG = Training
+#転移レベル
+TRL = Transition level
+#訓練
+TRNG = Training
+#圏界面
+TROP = Tropopause
+#雷電
+TS... = Thunderstorm
+#雷電
+TS = Thunderstorm
+#テレタイプライター
+TT = Teletypewriter
+#火曜日
+TUE = Tuesday
+#乱気流
+TURB = Turbulence
+#ターミナルVOR
+TVOR = Terminal VOR
+#飛行場管制業務( 塔)
+TWR = Aerodrome control tower or aerodrome control
+#誘導路
+TWY = Taxiway
+#誘導案内灯
+TXGS = Taxiing guidance sign(s)
+#走行経路
+TXL = Taxilane
+#航空機の型式
+TYP = Type of aircraft
+#台風
+TYPH = Typhoon
+#無人航空機
+UA = Unmanned aircraft
+#… より承認されるまで
+UAB = Until advised by...
+#高々度管制本部
+UAC = Upper area control centre
+#高々度飛行経路
+UAR = Upper air route
+#無人航空機システム
+UAS = Unmanned aircraft system
+#UHF 方向探知局
+UDF = UHF direction-finding,station
+#次に通報するまで
+UFN = Until further notice
+#より高い高度への上昇はトラフィックのため承認できません
+UHDT = Unable higher due to traffic
+#極超短波（300 から3,000MHz)
+UHF = Ultra high frequency(300 to 3000MHz)
+#高々度情報本部
+UIC = Upper information centre
+#高々度飛行情報地区
+UIR = Upper flight information region
+#超軽量航空機
+ULM = Ultra light motorized aircraft
+#極超長距離
+ULR = Ultra long range
+#できません
+UNA = Unable
+#承認できません
+UNAP = Unable to approve
+#無制限
+UNL = Unlimited
+#信頼できない
+UNREL = Unreliable
+#種類が不明な降水（自動観測のMETAR 及び SPECI で用いられる）
+UP = Unidentified precipitation
+#上側波帯
+USB = Upper single sideband
+#運用不能
+U/S = Unserviceable
+#米国空軍
+USAF = United States Air Force
+#米国海兵隊
+USMC = United States Marine Corps
+#米国海軍
+USN = United States Navy
+#高々度管制区
+UTA = Upper control area
+#協定世界時
+UTC = Coordinated Universal Time
+#電波発射( 変調及び伝送) の型式
+V1D = Designation of emission
+#火山灰
+VA = Volcanic ash
+#航空路火山灰情報センター
+VAAC = Volcanic ash advisory centre
+#目視進入図
+VAC = Visual approach chart
+#谷で
+VAL = In valleys
+#滑走路警戒車
+VAN = Runway control van
+#可視－可聴無線標識
+VAR = Visual-aural radio range
+#地磁気偏差
+VAR = Magnetic variation
+#進入角指示燈
+VASIS = Visual approach slope indicator system
+#飛行場の境界から約8km 以内の現象
+VC = Vicinity of the aerodrome
+#付近
+VCY = Vicinity
+#VHF 方向探知局
+VDF = Very high frequency direction-finding station
+#目視降下点
+VDP = Visual descent point
+#垂直の
+VER = Vertical
+#有視界飛行方式
+VFR = Visual flight rules
+#超短波(30 から300MHz )
+VHF = Very high frequency(30 to 300MHz)
+#要人
+VIP = Very important person
+#視程
+VIS = Visibility
+#極長波(3 から30kHz まで)
+VLF = Very low frequency(3 to 30kHz)
+#長距離
+VLR = Very long range
+#有視界気象状態
+VMC = Visual meteorological conditions
+#巻（助数詞）
+VOL = Volume
+#ボルメット気象放送
+VOLMET = Meteorological information for aircraft in flight
+#VHF 全方向レンジ
+VOR = VHF omnidirectional radio range
+#ボルタック（VOR とTACAN の併置)
+VORTAC = VOR and TACAN combination
+#VOR 受信機試験設備
+VOT = VOR airborne equipment test facility
+#垂直方向パス角
+VPA = Vertical path angle
+#可変の， 変動する
+VRB = Variable
+#失速速度
+Vso = Stalling speed
+#地表を視認する
+VSA = By visual reference to the ground
+#垂直速度
+VSP = Vertical speed
+#垂直離着陸
+VTOL = Vertical take-off and landing
+#電波発射（変調及び伝送） の型式
+VXX = Designation of emission
+#国際民間航空図（100 万分の1）
+WAC = World Aeronautical Chart ICAO1:1,000,000
+#世界空域予報中枢
+WAFC = World area forecast centre
+#世界空域予報組織
+WAFS = World area forecast system
+#西行
+WB = Westbound
+#滑走路末端補助灯
+WBAR = Wing bar light(s)
+#風向指示器
+WDI = Wind direction indicator
+#風向灯
+WDIL = Wind direction indicator light(s)
+#広く広がった
+WDSPR = Widespread
+#水曜日
+WED = Wednesday
+#…… から有効
+WEF = With effect from...or effective from...
+#世界測位システム-84
+WGS-84 = World geodetic system - 1984
+#～の中に， ～以内
+WI = Within
+#幅
+WID = Width or wide
+#即時有効
+WIE = With immediate effect or effective immediately
+#了解， これに従います
+WILCO = Will comply
+#作業中
+WIP = Work in progress
+#弱まる又は弱まっている
+WKN = Weaken or weakening
+#世界気象機関
+WMO = World Meteorological Organization
+#西北西
+WNW = West north west
+#～なし
+WO = without
+#武器
+WPN = Weapon
+#中間地点
+WPT = Way point
+#警告
+WRNG = Warning
+#ウインドシアー
+WS = Wind shear
+#西南西
+WSW = West south west
+#重量
+WT = Weight
+#竜巻（水上）
+WTSPT = Waterspout
+#気象
+WX = Weather
+#気象レーダー
+WXR = Weather radar
+#横断する
+X = Cross
+#クロスバー（進入灯の）
+XBAR = Crossbar
+#送信， 発出
+XMIT = Transmit
+#横断
+XNG = Crossing
+#空電
+XS = Atmospherics
+#黄色注意帯（滑走路灯）
+YCZ = Yellow caution zone
+#ヤード（長さ）
+YD = Yards
+#あなたの
+YR = your
+#Z マーカービーコン
+ZM = Z marker
