@@ -1,12 +1,15 @@
 package com.github.graycat27.atc.components.bot;
 
+import com.github.graycat27.atc.defines.events.AtcRadioSpeakEvent;
 import com.github.graycat27.atc.utils.AtcDictionary;
+import org.bukkit.Bukkit;
 
 public class ChatChecker {
 
     public static String getMessage(String original){
-        //TODO make this
-        return wordConverter(original);
+        String convertMsg = wordConverter(original);
+        Bukkit.getServer().getPluginManager().callEvent(new AtcRadioSpeakEvent(convertMsg));
+        return convertMsg;
     }
 
     private static String wordConverter(String original){

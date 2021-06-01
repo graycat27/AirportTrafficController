@@ -4,6 +4,7 @@ import com.github.graycat27.atc.components.PropertyUtil;
 import com.github.graycat27.atc.components.data.DataManager;
 import com.github.graycat27.atc.components.data.defines.IDataManager;
 import com.github.graycat27.atc.components.data.json.JsonDataManager;
+import com.github.graycat27.atc.handler.event.AtcRadioListenHandler;
 import com.github.graycat27.atc.utils.AtcDictionary;
 import com.github.graycat27.atc.consts.CommandWord;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;
@@ -38,6 +39,7 @@ public final class AirportTrafficController extends JavaPlugin {
 
         /* event handlers */
         AtcDataUpdateHandler atcDataUpdateHandler = new AtcDataUpdateHandler();
+        AtcRadioListenHandler atcRadioListenHandler = new AtcRadioListenHandler();
         LcChatHandler lcChatHandler = new LcChatHandler();
         PlayerMoveHandler playerMoveHandler = new PlayerMoveHandler();
 
@@ -50,6 +52,7 @@ public final class AirportTrafficController extends JavaPlugin {
         this.getCommand(CommandWord.ATC).setTabCompleter(atcTabCompleteHandler);
 
         getServer().getPluginManager().registerEvents(atcDataUpdateHandler, this);
+        getServer().getPluginManager().registerEvents(atcRadioListenHandler, this);
         getServer().getPluginManager().registerEvents(lcChatHandler, this);
         getServer().getPluginManager().registerEvents(playerMoveHandler, this);
 
