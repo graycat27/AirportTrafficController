@@ -1,5 +1,6 @@
 package com.github.graycat27.atc;
 
+import com.github.graycat27.atc.components.PropertyUtil;
 import com.github.graycat27.atc.components.data.DataManager;
 import com.github.graycat27.atc.components.data.defines.IDataManager;
 import com.github.graycat27.atc.components.data.json.JsonDataManager;
@@ -56,6 +57,8 @@ public final class AirportTrafficController extends JavaPlugin {
             LunaChatBukkit lunaChat = (LunaChatBukkit) getServer().getPluginManager().getPlugin("LunaChat");
             lcApi = lunaChat.getLunaChatAPI();
         }
+
+        PropertyUtil.deployPropFile();
 
         dataManager = new JsonDataManager();
         dataManager.read();
