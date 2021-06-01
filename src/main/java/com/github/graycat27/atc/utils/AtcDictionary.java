@@ -23,24 +23,10 @@ public class AtcDictionary {
     }
 
     public static void updateDictionary(){
-        Path path = Paths.get(
-                AirportTrafficController.getPlugin(AirportTrafficController.class).getDataFolder().getPath(),
-                Property.FILE_PATH_DICTIONARY);
-
+        Path dicFilePath = Path.of(Property.FILE_PATH_DIR, Property.FILE_NAME_DICTIONARY);
         dic = new Properties();
         try {
-            dic.load(Files.newBufferedReader(path, StandardCharsets.UTF_8));
-        } catch (NoSuchFileException e){
-            File file = new File(path.toString());
-            if(!file.exists()){
-                try {
-                    file.getParentFile().mkdirs();
-                    file.createNewFile();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                    throw new RuntimeException(ex);
-                }
-            }
+            dic.load(Files.newBufferedReader(dicFilePath, StandardCharsets.UTF_8));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
