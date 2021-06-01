@@ -1,4 +1,5 @@
 import org.apache.tools.ant.filters.ReplaceTokens
+import org.apache.tools.ant.filters.EscapeUnicode
 
 apply plugin: 'java'
 
@@ -39,6 +40,7 @@ dependencies {
 }
 
 processResources {
+    filter(EscapeUnicode)
     from(sourceSets.main.resources.srcDirs) {
         filter ReplaceTokens, tokens: [version: version]
     }
