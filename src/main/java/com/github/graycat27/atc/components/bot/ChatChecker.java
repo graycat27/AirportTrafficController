@@ -6,9 +6,9 @@ import org.bukkit.Bukkit;
 
 public class ChatChecker {
 
-    public static String getMessage(String original){
+    public static String getMessage(String freq, String original){
         String convertMsg = wordConverter(original);
-        Bukkit.getServer().getPluginManager().callEvent(new AtcRadioSpeakEvent(convertMsg));
+        Bukkit.getServer().getPluginManager().callEvent(new AtcRadioSpeakEvent(freq, convertMsg));
         return convertMsg;
     }
 

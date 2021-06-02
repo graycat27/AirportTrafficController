@@ -1,16 +1,26 @@
 package com.github.graycat27.atc.defines.atc;
 
+import com.github.graycat27.atc.defines.i.IFrequency;
+
 /**
  * ATC bot が応答するために解析した、受信メッセージ情報
  * */
 public class AtcMessageData {
 
+    private String frequency;
     private String sender;
     private String receiver;
     private boolean needResponse = false;
     private String msgBody;
     private String responseBody;
 
+    public void setFrequency(final String frequency){
+        if(this.frequency == null){
+            this.frequency = frequency;
+        }else{
+            throw new IllegalStateException("frequency is already set");
+        }
+    }
     public void setSender(final String sender){
         if(this.sender == null) {
             this.sender = sender;
@@ -41,6 +51,9 @@ public class AtcMessageData {
         }
     }
 
+    public String getFrequency(){
+        return frequency;
+    }
     public String getSender(){
         return sender;
     }

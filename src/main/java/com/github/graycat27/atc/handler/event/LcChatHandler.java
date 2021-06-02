@@ -1,5 +1,6 @@
 package com.github.graycat27.atc.handler.event;
 
+import com.github.graycat27.atc.components.FrequencyUtil;
 import com.github.graycat27.atc.components.LunaChatUtil;
 import com.github.graycat27.atc.components.bot.ChatChecker;
 import com.github.ucchyocean.lc3.bukkit.event.LunaChatBukkitChannelChatEvent;
@@ -12,7 +13,8 @@ public class LcChatHandler implements Listener {
     public void onChat(LunaChatBukkitChannelChatEvent event){
         //TODO make this
         if(LunaChatUtil.isAtcChannel(event.getChannel())){
-            event.setNgMaskedMessage(ChatChecker.getMessage(event.getNgMaskedMessage()));
+            String freq = FrequencyUtil.getFreqFromChannelName(event.getChannel().getName());
+            event.setNgMaskedMessage(ChatChecker.getMessage(freq, event.getNgMaskedMessage()));
         }
 
     }

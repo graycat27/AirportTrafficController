@@ -1,5 +1,6 @@
 package com.github.graycat27.atc.handler.event;
 
+import com.github.graycat27.atc.AirportTrafficController;
 import com.github.graycat27.atc.defines.atc.AtcMessageData;
 import com.github.graycat27.atc.defines.events.AtcRadioSpeakEvent;
 import org.bukkit.event.EventHandler;
@@ -9,15 +10,15 @@ public class AtcRadioListenHandler implements Listener {
 
     @EventHandler
     public void onAtcRadioListen(AtcRadioSpeakEvent event){
-
-        //TODO make this
-        System.out.println("radio listened as: " + event.getMessage());
-
+        AirportTrafficController.pushAtcResponseTask(analyzeMessage(event.getFreq(), event.getMessage()));
     }
 
-    private AtcMessageData analyzeMessage(String receivedMsg){
+    private AtcMessageData analyzeMessage(String freq, String receivedMsg){
 
         AtcMessageData msg = new AtcMessageData();
+
+        //基本データの設定
+        msg.setFrequency(freq);
 
         //発話者・宛先の解読
         String[] phrases = receivedMsg.split("[.,?!。、｡､]");    //句読点で区切る
@@ -31,6 +32,9 @@ public class AtcRadioListenHandler implements Listener {
                 body.append(phrases[bodyIdx].trim()).append(". ");
             }
             msg.setMsgBody(body.toString());
+        }else{
+            //FIXME 解読パターンの追加
+            msg.setMsgBody(receivedMsg);
         }
 
         //本文の読解と返答の設定

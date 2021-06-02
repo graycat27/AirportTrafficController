@@ -17,12 +17,17 @@ public class AtcRadioSpeakEvent extends Event {
     }
 
     private final String message;
+    private final String freq;
 
-    public AtcRadioSpeakEvent(String message){
+    public AtcRadioSpeakEvent(String freq, String message){
         super(true);
+        this.freq = freq;
         this.message = message;
     }
 
+    public String getFreq(){
+        return freq;
+    }
     public String getMessage(){
         return message;
     }
