@@ -18,7 +18,7 @@ public class AtcRadioListenHandler implements Listener {
         AirportTrafficController.pushAtcResponseTask(analyzeMessage(event.getFreq(), event.getMessage()));
     }
 
-    private AtcMessageData analyzeMessage(String freq, String receivedMsg){
+    protected AtcMessageData analyzeMessage(String freq, String receivedMsg){
 
         AtcMessageData msg = new AtcMessageData();
 
