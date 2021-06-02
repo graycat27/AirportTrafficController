@@ -14,15 +14,21 @@ class AtcRadioListenHandlerTest {
     private AtcMessageData analyzeMessageTester(String message) {
         AtcMessageData result;
         try {
-            Method method = AtcRadioListenHandler.class.getDeclaredMethod("analyzeMessage", String.class);
+            Method method = AtcRadioListenHandler.class.getDeclaredMethod("analyzeMessage", String.class, String.class);
             method.setAccessible(true);
 
             AtcRadioListenHandler targetClass = new AtcRadioListenHandler();
-            result = (AtcMessageData) method.invoke(targetClass, message);
+            result = (AtcMessageData) method.invoke(targetClass, "272.7", message);
         } catch (NoSuchMethodException|InvocationTargetException|IllegalAccessException e) {
             throw new RuntimeException(e);
         }
         return result;
+    }
+
+    @Test
+    public void testSimpleMessageFrequency(){
+        AtcMessageData result = analyzeMessageTester("all station, gray27. This is radio check. How do you read?");
+        assertEquals("272.7", result.getFrequency());
     }
 
     @Test
