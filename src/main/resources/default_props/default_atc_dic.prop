@@ -2,21 +2,8 @@
 ### version 0.0.8
 
 ### based on AIS japan Document GEN2.2-1 ABBREVIATION USED IN AIS PUBLICATIONS
+### some are modified by gray27
 
-#電波発射( 変調及び伝送) の型式
-A2A = Designation of emission
-#電波発射( 変調及び伝送) の型式
-A2X = Designation of emission
-#電波発射( 変調及び伝送) の型式
-A3E = Designation of emission
-#電波発射( 変調及び伝送) の型式
-AXX = Designation of emission
-#修正気象報
-AAA = Amended meteorological message
-#修正気象報
-AAB = Amended meteorological message
-#修正気象報
-AAC = Amended meteorological message
 #空対空
 A/A = Air-to-air
 #指定高度逸脱量
@@ -42,7 +29,7 @@ ACAS = Airborne collision avoidance system
 #航空機空地データ通信システム
 ACARS = Aircraft communication addressing and reporting system
 #航空交通管制部又は地区管制
-ACC = Area control centre or area control
+ACC = Area control
 #航空機の事故に関する通知
 ACCID = Notification of an aircraft accident
 #航空機
@@ -56,9 +43,9 @@ ACN = Aircraft classification number
 #受諾通報
 ACP = Acceptance
 #受諾する又は受諾した
-ACPT = Accept or accepted
+ACPT = Accept
 #活動中， 使用中
-ACT = Active or activated or activity
+ACT = Active
 #飛行場
 AD = Aerodrome
 #アドバイザリー区域
@@ -66,7 +53,7 @@ ADA = Advisory area
 #飛行場図
 ADC = Aerodrome chart
 #追加又は追加の
-ADDN = Addition or additional
+ADDN = Addition
 #自動方向探知機
 ADF = Automatic direction-finding equipment
 #防空識別圏
@@ -92,11 +79,11 @@ AFIL = Flight plan filed in the air
 #空港飛行情報業務
 AFIS = Aerodrome flight information service
 #そのとおり
-AFM = Yes or affirm or affirmative or that is correct
+AFM = affirm
 #航空固定業務
 AFS = Aeronautical fixed service
 #後又はあと( 時間又は場所)
-AFT = After...(time or place)
+AFT = After
 #国際航空固定通信網
 AFTN = Aeronautical fixed telecommunication network
 #空対地
@@ -105,8 +92,6 @@ A/G = Air-to-ground
 AGA = Aerodromes, air routes and ground aids
 #地上高
 AGL = Above ground level
-#進入路指示灯
-AGL = Approach guidance lights
 #再び
 AGN = Again
 #航空情報サーキュラー
@@ -144,7 +129,7 @@ ALTN = Alternate
 #空域最低高度
 AMA = Area minimum altitude
 #修正又は修正済( 修正気象報の表示に使用される)
-AMD = Amend or amended(used to indicate amended meteorological message; message type designator)
+AMD = Amend
 #改訂または修正（航空路誌改訂版）
 AMDT = Amendment
 #国際航空交通情報通信システム
@@ -197,18 +182,16 @@ ARNG = Arrange
 ARO = Air traffic services reporting office
 #飛行場標点
 ARP = Aerodrome reference point
-#定常機上観測通報
-ARP = Air-report(message type designator)
 #自動誤びゅう訂正
 ARQ = Automatic error correction
 #到着する， 到着又は着報
-ARR = Arrive or arrival or arrival message(message type designator)
+ARR = Arrive
 #特別機上観測報告通報
-ARS = Special airreport(message type designator)
+ARS = Special air report
 #航空路監視レーダー
 ARSR = Air route surveillance radar
 #アレスティング装置
-ARST = Arresting [Specify(part of) aircraft arresting equipment]
+ARST = Arresting
 #ターミナルレーダー情報 処理システム
 ARTS = Automated radar terminal system
 #高層雲
@@ -216,7 +199,7 @@ AS = Altostratus
 #できる限り速やかに
 ASAP = As soon as possible
 #上昇又は上昇中
-ASC = Ascend to or ascending to
+ASC = Ascend to
 #有効加速停止距離
 ASDA = Accelerate-stop distance available
 #空港面探知レーダー
@@ -224,7 +207,7 @@ ASDE = Airport surface detection equipment
 #高度計システム誤差
 ASE = Altimetry system error
 #アシュタム
-ASHTAM = Special series NOTAM notifying, by means of a specific format, change in activity of a volcano, a volcanic eruption and/or volcanic ash cloud that is of significance to aircraft operations
+ASHTAM = Special series NOTAM notifying that is of significance to aircraft operations
 #スポット番号表示灯
 ASIS = Signification Aircraft stand identification sign(s)
 #アスファルト
@@ -232,7 +215,7 @@ ASPH = Asphalt
 #空港監視レーダー
 ASR = Airport surveillance radar
 #… で
-AT... = At
+AT = At
 #実際到着時刻
 ATA = Actual time of arrival
 #航空管制（一般）
@@ -331,16 +314,10 @@ BTL = Between layers
 BTN = Between
 #二進形式汎用気象通報式
 BUFR = Binary universal form for the representation of meteorological data
-#中央（滑走路識別）
-C = Center
-#セ氏度（温度）
-C = Degrees Celsius
 #国土交通省航空局
 CAB = Civil Aviation Bureau, Ministry of Land, Infrastructure, Transport and Tourism
 #航空大学校
 CAC = Civil Aviation College
-#晴天乱気流
-CAT = Clear air turbulence
 #カテゴリー
 CAT = Category
 #視程・雲， 天気は指定された値及び条件より良好
@@ -349,12 +326,6 @@ CAVOK = Visibility, cloud and present weather better than prescribed values or c
 CB = Cumulonimbus
 #巻積雲
 CC = Cirrocumulus
-#訂正気象報
-CCA = Corrected meteorological message
-#訂正気象報
-CCB = Corrected meteorological message
-#訂正気象報
-CCC = Corrected meteorological message
 #カンデラ
 CD = Candela
 #調整通報
@@ -366,21 +337,17 @@ CDR = Conditional route
 #雲高
 CEIL = Ceiling
 #～に周波数を変更する
-CF = Change frequency to...
+CF = Change frequency to
 #確認する
 CFM = Confirm or l confirm
 #旋回灯
 CGL = Circling guidance light(s)
 #チャネル
 CH = Channel
-#これは， このチャンネルで受信した通報のチャンネル 通過番号のそちらの記録を照合するためのチャンネル維持チェック送信です
-CH = This is a channel continuity check transmission to permit comparison of your record of channel sequence numbers of message received on the channel
 #化学物質
 CHEM = Chemical
 #変更する
 CHG = Change
-#変更通報
-CHG = Modification
 #巻雲
 CI = Cirrus
 #共通ICAO データ交換網
@@ -402,9 +369,9 @@ CLD = Cloud
 #呼出し
 CLG = Calling
 #許可する， 許可された又は許可
-CLR = Clear(s) or cleared to...or clearance
+CLR = Clear
 #閉鎖する， 閉鎖された又は閉鎖
-CLSD = Close or closed or closing
+CLSD = Close
 #センチメートル
 CM = Centimetre
 #コンマ， 句点
@@ -412,9 +379,9 @@ CMA = Comma
 #上昇する
 CMB = Climb
 #完了， 完了した又は完了する
-CMPL = Completion or completed or complete
+CMPL = Completion
 #解除， 取消し又は飛行計画取消報
-CNL = Cancel or cancelled or flight plan cancellation
+CNL = Cancel
 #通信
 COM = Communications
 #コンクリート
@@ -428,7 +395,7 @@ CONST = Construction or constructed
 #継続する又は持続した
 CONT = Continue or continued
 #プロペラ式
-CONV = Conventional(type of acft)
+CONV = Conventional
 #調整する又は調整
 COOR = Coordinate or coordination
 #座標
@@ -436,11 +403,11 @@ COORD = Coordinates
 #チェンジオーバーポイント
 COP = Change-over point
 #訂正する， 訂正済又は訂正( 訂正気象報の表示に使用される)
-COR = Correct or corrected or correction(used to indicate corrected meteorological message; message type designator)
+COR = Correct
 #沿岸で
 COT = At the coast
 #おおう， おおった又はおおっている
-COV = Cover or covered or covering
+COV = Cover
 #管制官パイロット間データ通信
 CPDLC = Controller-pilot data link communications
 #現行飛行計画通報
@@ -453,8 +420,6 @@ CRP = Compulsory reporting point
 CRS = Course
 #巡航する
 CRZ = Cruise
-#巻層雲
-CS = Cirrostratus
 #呼出符号
 CS = Call sign
 #管制区
@@ -485,10 +450,6 @@ CVR = Cockpit voice recorder
 CW = Continuous wave
 #クリアウェイ
 CWY = Clearway
-#危険区域（以下識別が続く)
-D... = Danger area
-#デーエムイー（距離測定装置） 距離（以下数値が続く）
-D... = DME Distance
 #降下向にある
 D = Downward
 #決心高度
@@ -512,19 +473,19 @@ DEC = December
 #度( 方位， 角度， 温度)
 DEG = Degrees
 #出発， 又は出発報
-DEP = Depart or departure or departure
+DEP = Depart
 #堆積
 DEPO = Deposition
 #滑走路離陸末端
 DER = Departure end of the runway
 #降下又は…… に降下中
-DES = Descend or descending to
+DES = Descend
 #目的地
 DEST = Destination
 #遭難の段階
 DETRESFA = Distress phase
 #逸脱又は逸脱する
-DEV = Deviation or deviating
+DEV = Deviation
 #方向探知（局)
 DF = Direction finding(station)
 #飛行記録装置
@@ -552,7 +513,7 @@ DME = Distance measuring equipment
 #滑走路距離灯
 DML = Runway distance marker lights
 #危険又は危険な
-DNG = Danger or dangerous
+DNG = Danger
 #飛行年月日
 DOF = Date of flight
 #国内の
@@ -562,9 +523,7 @@ DP = Dew point temperature
 #深さ
 DPT = Depth
 #低い…
-DR... = Low drifting
-#推測航法
-DR = Dead reckoning
+DR = Low drifting
 #… の間
 DRG = During
 #砂じん嵐
@@ -667,8 +626,6 @@ EXP = Expect or expected or expecting
 EXTD = Extend or extending or Extended
 #固定の
 F = Fixed
-#カ氏度( 温度)
-F = Degree Fahrenheit
 #施設
 FAC = Facilities
 #最終進入フィックス
@@ -682,7 +639,7 @@ FATO = Final approach and take-off area
 #ファクシミリ電送
 FAX = Facsimile transmission
 #弱い（ 着水、 乱気流、 混信又は空電の強さを示す場合に使用する)
-FBL = Light(used to quallify icing, turbulence,interference or static reports)
+FBL = Light
 #ろうと雲
 FC = Funnel cloud
 #予報
@@ -727,8 +684,6 @@ FLUC = Fluctuating or fluctuation or fluctuated
 FLW = Follow(s) or following
 #飛行する又は飛行している
 FLY = Fly or flying
-#… から
-FM... = From
 #… から
 FM = From
 #飛行管理コンピューター
@@ -828,9 +783,9 @@ GPU = Ground power unit
 #対地接近警報装置
 GPWS = Ground proximity warning system
 #雪あられ又はひょう
-GR = Hail or soft hail
+GR = Hail
 #漸次の又は漸次
-GRADU = Gradual or gradually
+GRADU = Gradual
 #草地着陸区域
 GRASS = Grass landing area
 #バイナリー形式による格止点データ交換用のWMO コード
@@ -839,8 +794,6 @@ GRIB = Processed meteorological data in the form of grid point values expressed 
 GRVL = Gravel
 #対地速度
 GS = Ground speed
-#氷あられ／雪あられ
-GS = Small hail and/or snow Pellets
 #地球体起伏
 GUND = Geoid undulation
 #24 時間運用
@@ -860,7 +813,7 @@ HF = High frequency
 #格納庫
 HGR = Hangar
 #高さ又は…… 上高さ
-HGT = Height or height above
+HGT = Height
 #高光度式滑走路灯
 HIRL = High intensity runway edge lights
 #高光度式滑走路末端灯
@@ -893,14 +846,10 @@ HURCN = Hurricane
 HVDF = High and very high frequency direction-finding station(at the same location)
 #重い
 HVY = Heavy
-#強い
-HVY = Heavy
 #不定時運用時間
 HX = No specific working hours
 #～より高い
 HYR = Higher
-#煙霧
-HZ = haze
 #ヘルツ
 HZ = Hertz
 #日本標準時(JST)
@@ -969,8 +918,6 @@ INP = If not possible
 INPR = In progress
 #インチ( 長さの単位)
 INS = Inches
-#慣性航法装置
-INS = Inertial navigation system
 #計器
 INST = Instrument
 #設備、設備する又は設備された
@@ -1049,12 +996,6 @@ KPA = Kilopascal
 KT = Knots
 #キロワット
 KW = Kilowatts
-#左( 滑走路識別)
-L = Left
-#ロケーター( 中間、外側の項参照)
-L = Locator(see LM,LO)
-#リットル（単位）
-L = Litre
 #着陸区域照明灯
 LAFL = Landing area flood lights
 #確認応答通報
@@ -1073,8 +1014,6 @@ LC = Landing chart
 LCA = Local or Locally or Location or Located
 #有効着陸距離
 LDA = Landing distance available
-#ローカライザー型方向援助施設
-LDA = Localizer type directional aids
 #有効着陸距離、ヘリコプター
 LDAH = Landing distance available,helicopter
 #有線データ回線
@@ -1110,13 +1049,11 @@ LMT = Local mean time
 #水平方向のガイダンスを利用するRNAV進入方式
 LNAV = Lateral navigation
 #長い（ 要求された又は指示された進入方式を示す場合に使用する)
-LNG = Long(used to indicate the type of approach desired or required)
+LNG = Long
 #外側ロケーター
 LO = Locator, outer
-#ローカライザー
-LOC = Localizer
 #位置の、位置的に、位置又は設置する
-LOC = Local or locally or location or located
+LOC = Local
 #ロケーター・外側マーカー( 同一地点)
 LOM = Compass locator at outer marker ILS
 #経度
@@ -1132,11 +1069,11 @@ LTD = Limited
 #弱く変動している（風に関して)
 LV = Light and variable
 #離れる又は離脱
-LVE = Leave or leaving
+LVE = Leave
 #レベル
 LVL = Level
 #層又は層状の
-LYR = Layer or layered
+LYR = Layer
 #最高承認高度
 MAA = Maximum authorized altitude
 #磁方位
@@ -1145,16 +1082,10 @@ MAG = Magnetic
 MAHF = Missed approach holding fix
 #補修
 MAINT = Maintenance
-#航空地図及び航空図
-MAP = Aeronautical maps and charts
-#進入復行点
-MAP = Missed approach point
 #進入復行点
 MAPT = Missed approach point
 #3 月
 MAR = March
-#海上で
-MAR = At sea
 #進入復行旋回フィックス
 MATF = Missed approach turning fix
 #最大、最高
@@ -1233,14 +1164,12 @@ MOC = Minimum obstacle clearance
 MOCA = Minimum obstacle clearance altitude
 #並（着氷、乱気流の強度を示す場合に使用する)
 MOD = Moderate
-#山岳上
-MON = Above mountains
 #月曜日
 MON = Monday
 #最低運用性能基準
 MOPS = Minimum operational performance standards
 #移動する、移動又は移動した
-MOV = Move or moving or movement
+MOV = Move
 #保守のための運用休止時間
 MP = Maintenance period
 #陸マイル毎時
@@ -1263,8 +1192,6 @@ MSAS = Michibiki Satellite-based Augmentation Service
 MSG = Message
 #平均海面上
 MSL = Mean sea level
-#通報…( 番号) は、経由通信路を誤っています
-MSR = Message ...
 #モノパルス二次監視レーダー
 MSSR = Monopulse secondary surveillance radar
 #山岳
@@ -1393,8 +1320,6 @@ OCNL = Occasional or occasionally
 OCS = Obstacle clearance surface
 #10 月
 OCT = October
-#オクタン価・燃料級別数
-OCT = Octane
 #無障害物ゾーン
 OFZ = Obstacle free zone
 #直上
@@ -1435,8 +1360,6 @@ OTP = On top
 OTR = Oceanic transition routes
 #障害中である
 OTS = Out of service
-#編成経路システム
-OTS = Organized track system
 #出圏
 OUBD = Outbound
 #雲量8/8
@@ -1575,10 +1498,6 @@ RAC = Rules of the air and air traffic services
 RAFC = Regional area forecast centre
 #ほつれている
 RAG = Ragged
-#滑走路制動索
-RAG = Runway arresting gear
-#リモート空港対空通信施設
-RAG = Remote air-ground facilities
 #進入路指示灯( 直線進入用)
 RAI = Runway alignment indicator
 #受信機自立型完全性モニター
@@ -1851,8 +1770,6 @@ SRR = Search and rescue region
 SRY = Secondary
 #日没
 SS = Sunset
-#砂じん嵐
-SS = Sandstorm
 #単側帯波
 SSB = Single sideband
 #南南東
@@ -1899,16 +1816,12 @@ SVC = Service
 SVCBL = Serviceable
 #南西（の)
 SW = South-west
-#単車輪
-SW = Single wheel
 #南西行
 SWB = South-westbound
 #ストップウェイ
 SWY = Stopway
 #転移高度
 TA = Transition altitude
-#トラフィックアドバイザリー
-TA = Traffic advisory
 #ターミナル地域図
 TAC = Terminal area chart
 #タカン〔UHF( 方位・距離) 航空保安無線施設〕
@@ -2089,8 +2002,6 @@ VAC = Visual approach chart
 VAL = In valleys
 #滑走路警戒車
 VAN = Runway control van
-#可視－可聴無線標識
-VAR = Visual-aural radio range
 #地磁気偏差
 VAR = Magnetic variation
 #進入角指示燈
@@ -2108,7 +2019,7 @@ VER = Vertical
 #有視界飛行方式
 VFR = Visual flight rules
 #超短波(30 から300MHz )
-VHF = Very high frequency(30 to 300MHz)
+VHF = Very high frequency
 #要人
 VIP = Very important person
 #視程
