@@ -20,6 +20,9 @@ abstract public class AtcBot extends ChannelMember implements IAtcBot {
         apName = airportName;
     }
 
+    @Override
+    abstract public String analyzeMessage(String received);
+
     /* override from ChannelMember */
     @Override
     public String getName(){

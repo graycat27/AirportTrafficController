@@ -8,4 +8,10 @@ public class CtlBot extends AtcBot {
         super(Control.CTL.name());
     }
 
+    @Override
+    public String analyzeMessage(String received){
+        //TODO make this
+
+        return null;
+    }
 }
