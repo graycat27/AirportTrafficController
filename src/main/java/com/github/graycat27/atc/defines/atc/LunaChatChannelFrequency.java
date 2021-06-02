@@ -64,7 +64,8 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
         lcChannel.setJapanizeType(JapanizeType.NONE);
     }
 
-    public void updateLcChannelFormat(){
+    private void updateLcChannelFormat(){
+        //TODO airportNameもformatに入れる
         ATCControl atc = FrequencyUtil.getAtcControl(this);
         String FORMAT = "&a[ATC" + getFreq() +"]"
                 + ((atc == null) ? "" : "&6[" + atc.getControl() + "]")
