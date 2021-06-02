@@ -20,7 +20,7 @@ public class AtcRadioListenHandler implements Listener {
         AtcMessageData msg = new AtcMessageData();
 
         //発話者・宛先の解読
-        String[] phrases = receivedMsg.split("\\.|,|\\?|!");    //句読点で区切る
+        String[] phrases = receivedMsg.split("[.,?!。、｡､]");    //句読点で区切る
 
         if(phrases.length >= 3){
             msg.setReceiver(phrases[0].trim());
