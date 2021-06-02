@@ -67,4 +67,9 @@ public class FrequencyUtil {
         String underFreq = freq.replaceAll("\\.", LcConst.ATC_CHANNEL_FREQ_CHAR);
         return LcConst.ATC_CHANNEL_NAME_PREFIX + underFreq;
     }
+
+    public static String getFreqFromChannelName(@NotNull String channelName){
+        String underFreq = channelName.replaceAll(LcConst.ATC_CHANNEL_FREQ_CHAR, ".");
+        return underFreq.substring(LcConst.ATC_CHANNEL_NAME_PREFIX.length());
+    }
 }
