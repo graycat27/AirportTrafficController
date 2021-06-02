@@ -1,9 +1,11 @@
 package com.github.graycat27.atc;
 
 import com.github.graycat27.atc.components.PropertyUtil;
+import com.github.graycat27.atc.components.bot.AtcResponseTask;
 import com.github.graycat27.atc.components.data.DataManager;
 import com.github.graycat27.atc.components.data.defines.IDataManager;
 import com.github.graycat27.atc.components.data.json.JsonDataManager;
+import com.github.graycat27.atc.defines.atc.AtcMessageData;
 import com.github.graycat27.atc.handler.event.AtcRadioListenHandler;
 import com.github.graycat27.atc.utils.AtcDictionary;
 import com.github.graycat27.atc.consts.CommandWord;
@@ -28,6 +30,11 @@ public final class AirportTrafficController extends JavaPlugin {
         return (DataManager) dataManager;
     }
 
+    private static AtcResponseTask atcResponseTask = new AtcResponseTask();
+    public static void pushAtcResponseTask(AtcMessageData newResponse){
+        atcResponseTask.push(newResponse);
+    }
+
     /** Plugin startup logic */
     @Override
     public void onEnable() {
@@ -43,8 +50,11 @@ public final class AirportTrafficController extends JavaPlugin {
         LcChatHandler lcChatHandler = new LcChatHandler();
         PlayerMoveHandler playerMoveHandler = new PlayerMoveHandler();
 
-        int second = 2; //プレイヤー検知レーダーの照射頻度秒数    //TODO プロパティに外だし
-        getServer().getScheduler().scheduleSyncRepeatingTask(this, playerMoveHandler, 0, second * 20);
+        final int TPS = 20;
+        int radarSecond = 2; //プレイヤー検知レーダーの照射頻度秒数    //TODO プロパティに外だし
+        getServer().getScheduler().scheduleSyncRepeatingTask(this, playerMoveHandler, 0, radarSecond * TPS);
+        int radioSpeakSecond = 1;
+        getServer().getScheduler().scheduleSyncRepeatingTask(this, atcResponseTask, 0, radioSpeakSecond * TPS);
 
         this.getCommand(CommandWord.ATC_full).setExecutor(atcCommandHandler);
         this.getCommand(CommandWord.ATC_full).setTabCompleter(atcTabCompleteHandler);
