@@ -4,7 +4,7 @@ import com.github.graycat27.atc.consts.Control;
 
 public class TwrBot extends AtcBot {
 
-    TwrBot(){
+    public TwrBot(){
         super(Control.TWR.name());
     }
 }
