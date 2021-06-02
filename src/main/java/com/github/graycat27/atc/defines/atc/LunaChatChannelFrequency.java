@@ -29,12 +29,17 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
         channelName = LcConst.ATC_CHANNEL_NAME_PREFIX + getFreqN() + LcConst.ATC_CHANNEL_FREQ_CHAR + getFreqD();
         createLcChannelIfNonExists();
     }
+    private LunaChatChannelFrequency(LunaChatChannelFrequency original){
+        super(original.getFreq());
+        channelName = LcConst.ATC_CHANNEL_NAME_PREFIX + getFreqN() + LcConst.ATC_CHANNEL_FREQ_CHAR + getFreqD();
+        //createChannelしない
+    }
 
 
     /* メソッド */
     @Override
     public LunaChatChannelFrequency clone(){
-        return new LunaChatChannelFrequency(getFreq());
+        return new LunaChatChannelFrequency(this);
     }
 
     /** LunaChatのチャンネルを作成する */

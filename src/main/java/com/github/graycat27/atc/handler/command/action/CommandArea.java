@@ -1,6 +1,7 @@
 package com.github.graycat27.atc.handler.command.action;
 
 import com.github.graycat27.atc.AirportTrafficController;
+import com.github.graycat27.atc.components.FrequencyUtil;
 import com.github.graycat27.atc.components.data.DataUtil;
 import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.airport.Airport;
@@ -11,7 +12,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import static com.github.graycat27.atc.handler.command.AtcCommandHandler.sendMessage;
 
@@ -177,25 +180,16 @@ public class CommandArea {
             sendMessage(sender, "wrong frequency value format");
             return;
         }
-        String freq = freqObj.getFreq();
-        List<String> airportNameList = DataUtil.getAirportNameList();
+        HashMap<String, ATCControl> controls = FrequencyUtil.getAtcControlWithAirportName(freqObj);
+        Set<String> apNameSet = controls.keySet();
+        String apNm = apNameSet.iterator().next();
+        ATCControl control = controls.get(apNm);
+
         sendMessage(sender, "===== Airport and its control area =====");
-        for(String apNm : airportNameList) {
-            Airport ap = DataUtil.getAirportByName(apNm);
-            List<ATCControl> controls = ap.getAtcArea();
-            for (ATCControl control : controls) {
-                IFrequency ctrlFreq = control.getFrequency();
-                if(ctrlFreq == null){
-                    continue;
-                }
-                if (freq.equals(ctrlFreq.getFreq())) {
-                    sendMessage(sender, "frequency "+ freq);
-                    sendMessage(sender, "  airport name: "+ apNm);
-                    sendMessage(sender, "  control type: "+ control.getControl());
-                    sendMessage(sender, "  manage area: "+ getSimpleAreaString(control.getArea()));
-                }
-            }
-        }
+        sendMessage(sender, "frequency "+ freqObj.getFreq());
+        sendMessage(sender, "  airport name: "+ apNm);
+        sendMessage(sender, "  control type: "+ control.getControl());
+        sendMessage(sender, "  manage area: "+ getSimpleAreaString(control.getArea()));
         sendMessage(sender, "===== ============================ =====");
     }
 
