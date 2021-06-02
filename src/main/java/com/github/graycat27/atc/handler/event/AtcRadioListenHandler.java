@@ -1,8 +1,13 @@
 package com.github.graycat27.atc.handler.event;
 
 import com.github.graycat27.atc.AirportTrafficController;
+import com.github.graycat27.atc.components.FrequencyUtil;
+import com.github.graycat27.atc.components.LunaChatUtil;
+import com.github.graycat27.atc.components.bot.IAtcBot;
+import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.atc.AtcMessageData;
 import com.github.graycat27.atc.defines.events.AtcRadioSpeakEvent;
+import com.github.graycat27.atc.defines.i.ConcreteFrequency;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
@@ -38,11 +43,17 @@ public class AtcRadioListenHandler implements Listener {
         }
 
         //本文の読解と返答の設定
-        if(msg.getMessageBody().contains("radio check")){
-            msg.setResponseBody("loud and clear.");
+        IAtcBot atcBot = getBot(freq);
+        if(atcBot != null) {
+            msg.setResponseBody(atcBot.analyzeMessage(msg.getMessageBody()));
         }
 
         return msg;
+    }
+
+    protected IAtcBot getBot(String freq){
+        ATCControl control = FrequencyUtil.getAtcControl(new ConcreteFrequency(freq));
+        return LunaChatUtil.getChannelMember(control);
     }
 
 }
