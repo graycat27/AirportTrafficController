@@ -26,21 +26,5 @@ class FrequencyUtilTest {
         assertEquals("atc_freq___", FrequencyUtil.getChannelName(".."));
     }
 
-    @Test
-    public void getFreqFromChannelNameEmpty(){
-        assertEquals("", FrequencyUtil.getFreqFromChannelName("atc_freq_"));
-    }
-    @Test
-    public void getFreqFromChannelNameZero(){
-        assertEquals("0", FrequencyUtil.getFreqFromChannelName("atc_freq_0"));
-    }
-    @Test
-    public void getFreqFromChannelNameNormal(){
-        assertEquals("999.9", FrequencyUtil.getFreqFromChannelName("atc_freq_999_9"));
-    }
-    @Test
-    public void getFreqFromChannelNameAbnormal(){
-        assertEquals("..", FrequencyUtil.getFreqFromChannelName("atc_freq___"));
-    }
 
 }
