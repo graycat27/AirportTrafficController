@@ -11,8 +11,9 @@ public class CtlBot extends AtcBot {
     @Override
     public String analyzeMessage(String received){
         //TODO make this
+        String receivedBody = received.toLowerCase();
 
-        if(received.contains("radio check")){
+        if(receivedBody.contains("radio check")){
             return "loud and clear.";
         }
 

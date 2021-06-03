@@ -9,19 +9,23 @@ public class TwrBot extends AtcBot {
     }
 
     @Override
-    public String analyzeMessage(String received){
+    public String analyzeMessage(final String received){
         //TODO make this
+        String receivedBody = received.toLowerCase();
 
-        if(received.contains("radio check")){
+        if(receivedBody.contains("radio check")){
             return "loud and clear.";
         }
 
-        if(received.contains("request ")){
-            String requestedThing = received.substring(received.indexOf("request ")+ "request ".length());
-            return "cleared for "+ requestedThing +".";
+        if(receivedBody.contains("request ")){
+            String requestedThing = received.substring(receivedBody.indexOf("request ")+ "request ".length());
+            if(!requestedThing.endsWith(".")){
+                requestedThing += ".";
+            }
+            return "cleared for "+ requestedThing;
         }
 
-        if(received.contains("we will ")){
+        if(receivedBody.contains("we will ")){
             return "roger.";
         }
 
