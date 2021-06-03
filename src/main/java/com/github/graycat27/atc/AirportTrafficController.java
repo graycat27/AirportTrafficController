@@ -35,6 +35,11 @@ public final class AirportTrafficController extends JavaPlugin {
         atcResponseTask.push(newResponse);
     }
 
+    private static AtcRadioListenHandler radioListener = new AtcRadioListenHandler();
+    public static AtcRadioListenHandler getRadioListener(){
+        return radioListener;
+    }
+
     /** Plugin startup logic */
     @Override
     public void onEnable() {
@@ -46,7 +51,6 @@ public final class AirportTrafficController extends JavaPlugin {
 
         /* event handlers */
         AtcDataUpdateHandler atcDataUpdateHandler = new AtcDataUpdateHandler();
-        AtcRadioListenHandler atcRadioListenHandler = new AtcRadioListenHandler();
         LcChatHandler lcChatHandler = new LcChatHandler();
         PlayerMoveHandler playerMoveHandler = new PlayerMoveHandler();
 
@@ -62,7 +66,6 @@ public final class AirportTrafficController extends JavaPlugin {
         this.getCommand(CommandWord.ATC).setTabCompleter(atcTabCompleteHandler);
 
         getServer().getPluginManager().registerEvents(atcDataUpdateHandler, this);
-        getServer().getPluginManager().registerEvents(atcRadioListenHandler, this);
         getServer().getPluginManager().registerEvents(lcChatHandler, this);
         getServer().getPluginManager().registerEvents(playerMoveHandler, this);
 
