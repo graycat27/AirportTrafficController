@@ -16,4 +16,9 @@ public class ConcreteFrequency extends AbstractFrequency {
     public AbstractFrequency clone() {
         return new ConcreteFrequency(getFreq());
     }
+
+    @Override
+    public String toString(){
+        return super.toString();
+    }
 }
