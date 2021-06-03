@@ -3,9 +3,8 @@ package com.github.graycat27.atc.defines.i;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Pathの具象クラス
- * @deprecated AbstractPathを継承して具体的な線形クラスを作成してください */
-@Deprecated
+/** Pathの具象クラス<br>
+ * NOTE: {@link AbstractPath}を継承して具体的な線形クラスを作成してください */
 public class ConcretePath extends AbstractPath {
 
     public ConcretePath(List<IPoint> way){

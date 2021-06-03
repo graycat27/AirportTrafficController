@@ -1,8 +1,7 @@
 package com.github.graycat27.atc.defines.i;
 
-/** Frequencyの具象クラス
- * @deprecated AbstractFrequencyを継承して具体的な周波数クラスを作成してください */
-@Deprecated
+/** Frequencyの具象クラス<br>
+ * NOTE: {@link AbstractFrequency}を継承して具体的な周波数クラスを作成してください */
 public class ConcreteFrequency extends AbstractFrequency {
 
     public ConcreteFrequency(String freq){
