@@ -61,4 +61,17 @@ public class ATCControl implements IMaster {
         sb.append("}");
         return sb.toString();
     }
+
+    @Override
+    public boolean equals(Object another){
+        if(!(another instanceof ATCControl)){
+            return false;
+        }
+        final ATCControl anotherControl = (ATCControl) another;
+        return (
+                control.equals(anotherControl.control) &&
+                frequency.equals(anotherControl.frequency) &&
+                area.equals(anotherControl.area)
+        );
+    }
 }
