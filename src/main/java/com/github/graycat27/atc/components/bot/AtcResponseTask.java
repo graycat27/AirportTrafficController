@@ -38,9 +38,15 @@ public class AtcResponseTask extends TimerTask {
         ATCControl control = FrequencyUtil.getAtcControl(new ConcreteFrequency(target.getFrequency()));
 
         AtcBot cm = LunaChatUtil.getChannelMember(control);
-        String returnMessage = target.getSender() +", "+ cm.getName() +". "+ target.getResponseBody();
-        ch.chat(cm, returnMessage);
-
+        if(cm != null) {
+            String returnMessage = "";
+            if(target.getSender() == null){
+                returnMessage = "this is "+ cm.getName() +". "+ cm.nonIdentifiedSender();
+            }else {
+                returnMessage = target.getSender() +", "+ cm.getName() +". "+ target.getResponseBody();
+            }
+            ch.chat(cm, returnMessage);
+        }
         queue.removeFirst();
     }
 }

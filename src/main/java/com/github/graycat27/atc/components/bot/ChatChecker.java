@@ -1,14 +1,14 @@
 package com.github.graycat27.atc.components.bot;
 
+import com.github.graycat27.atc.AirportTrafficController;
 import com.github.graycat27.atc.defines.events.AtcRadioSpeakEvent;
 import com.github.graycat27.atc.utils.AtcDictionary;
-import org.bukkit.Bukkit;
 
 public class ChatChecker {
 
     public static String getMessage(String freq, String original){
         String convertMsg = wordConverter(original);
-        Bukkit.getServer().getPluginManager().callEvent(new AtcRadioSpeakEvent(freq, convertMsg));
+        AirportTrafficController.getRadioListener().onAtcRadioListen(new AtcRadioSpeakEvent(freq, convertMsg));
         return convertMsg;
     }
 

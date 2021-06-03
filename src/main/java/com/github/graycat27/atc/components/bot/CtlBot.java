@@ -11,11 +11,17 @@ public class CtlBot extends AtcBot {
     @Override
     public String analyzeMessage(String received){
         //TODO make this
+        String receivedBody = received.toLowerCase();
 
-        if(received.contains("radio check")){
+        if(receivedBody.contains("radio check")){
             return "loud and clear.";
         }
 
         return null;
+    }
+
+    @Override
+    public String nonIdentifiedSender() {
+        return "say your call sign please";
     }
 }

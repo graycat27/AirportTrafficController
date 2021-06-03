@@ -8,12 +8,9 @@ import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.atc.AtcMessageData;
 import com.github.graycat27.atc.defines.events.AtcRadioSpeakEvent;
 import com.github.graycat27.atc.defines.i.ConcreteFrequency;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 
-public class AtcRadioListenHandler implements Listener {
+public class AtcRadioListenHandler {
 
-    @EventHandler
     public void onAtcRadioListen(AtcRadioSpeakEvent event){
         AirportTrafficController.pushAtcResponseTask(analyzeMessage(event.getFreq(), event.getMessage()));
     }
