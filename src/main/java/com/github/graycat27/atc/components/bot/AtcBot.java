@@ -22,6 +22,8 @@ abstract public class AtcBot extends ChannelMember implements IAtcBot {
 
     @Override
     abstract public String analyzeMessage(String received);
+    @Override
+    abstract public String nonIdentifiedSender();
 
     /* override from ChannelMember */
     @Override
@@ -36,7 +38,7 @@ abstract public class AtcBot extends ChannelMember implements IAtcBot {
 
     @Override
     public String getDisplayName() {
-        return "[ATC]["+ getName() +"]";
+        return getName();
     }
 
     @Override
