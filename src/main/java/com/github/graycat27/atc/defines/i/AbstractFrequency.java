@@ -94,6 +94,14 @@ public abstract class AbstractFrequency implements IFrequency {
     @Override
     abstract public AbstractFrequency clone();
 
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder(getClass().getName()).append(": {");
+        sb.append("freq: ").append(getFreq());
+        sb.append("}");
+        return sb.toString();
+    }
+
     //private ...
 
 }
