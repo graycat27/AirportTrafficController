@@ -16,6 +16,15 @@ public class TwrBot extends AtcBot {
             return "loud and clear.";
         }
 
+        if(received.contains("request ")){
+            String requestedThing = received.substring(received.indexOf("request ")+ "request ".length());
+            return "cleared for "+ requestedThing +".";
+        }
+
+        if(received.contains("we will ")){
+            return "roger.";
+        }
+
         return null;
     }
 
