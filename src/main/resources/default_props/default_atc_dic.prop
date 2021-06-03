@@ -163,11 +163,11 @@ APDC = Aircraft parking/docking chart
 #エプロン
 APN = Apron
 #進入管制所又は進入管制又は進入管制業務
-APP = Approach control office or approach control or approach control service
+APP = approach
 #四月
 APR = April
 #おおよそ又は概略
-APRX = Approximate or approximately
+APRX = Approximate
 #通過後
 APSG = After passing
 #補助動力装置
@@ -231,7 +231,7 @@ ATM = Air traffic management
 #航空通信網
 ATN = Aeronautical telecommunication network
 #… において（時間又は場所）
-ATP = At...(time or place)
+ATP = At
 #航空交通業務
 ATS = Air traffic services
 #注意
@@ -241,7 +241,7 @@ ATZ = Aerodrome traffic zone
 #8 月
 AUG = August
 #認可された又は認可
-AUTH = Authorized or authorization
+AUTH = Authorized
 #自動
 AUTO = Automatic
 #全備重量
@@ -262,8 +262,6 @@ AWTA = Advise at what time able
 AWY = Airway
 #方位
 AZM = Azimuth
-#青色
-B = Blue
 #制動効果
 BA = Braking action
 #気圧高度を用いた垂直航法（RNAV 進入方式）
@@ -273,7 +271,7 @@ BASE = Cloud base
 #散在している霧
 BCFG = Fog patches
 #航空灯台
-BCN = Beacon(aeronautical ground light)
+BCN = Beacon
 #放送
 BCST = Broadcast
 #境界
@@ -285,7 +283,7 @@ BEY = Beyond
 #雲量5/8 以上8/8 未満
 BKN = Broken
 #高い…
-BL… = Blowing
+BL = Blowing
 #建物
 BLDG = Building
 #雲の下
@@ -301,7 +299,7 @@ BOPS =
 #もや
 BR = Mist
 #短い（要求された又は指示された進入方式を示す場合に使用する）
-BRF = Short(used to indicate the type of approach desired or required)
+BRF = Short
 #方位
 BRG = Bearing
 #制動
@@ -321,7 +319,7 @@ CAC = Civil Aviation College
 #カテゴリー
 CAT = Category
 #視程・雲， 天気は指定された値及び条件より良好
-CAVOK = Visibility, cloud and present weather better than prescribed values or conditions
+CAVOK = better than prescribed values
 #積乱雲
 CB = Cumulonimbus
 #巻積雲
@@ -339,7 +337,7 @@ CEIL = Ceiling
 #～に周波数を変更する
 CF = Change frequency to
 #確認する
-CFM = Confirm or l confirm
+CFM = Confirm
 #旋回灯
 CGL = Circling guidance light(s)
 #チャネル
@@ -391,13 +389,13 @@ COND = Condition
 #連続した
 CONS = Continuous
 #工事
-CONST = Construction or constructed
+CONST = Construction
 #継続する又は持続した
-CONT = Continue or continued
+CONT = Continue
 #プロペラ式
 CONV = Conventional
 #調整する又は調整
-COOR = Coordinate or coordination
+COOR = Coordinate
 #座標
 COORD = Coordinates
 #チェンジオーバーポイント
@@ -499,9 +497,9 @@ DIF = Diffuse
 #距離
 DIST = Distance
 #それる又はそれ又は目的地変更
-DIV = Divert or diverting
+DIV = Divert
 #遅延報又は遅延
-DLA = Delay or delay or delayed
+DLA = Delay
 #データリンク開始能力
 DLIC = Data link initiation capability
 #削除する
@@ -537,7 +535,7 @@ DTG = Day-time-group
 #移設滑走路末端
 DTHR = Displaced runway threshold
 #悪化， 悪化している
-DTRT = Deteriorate or deteriorating
+DTRT = Deteriorate
 #複々車輪
 DTW = Dual tandem wheels
 #じん
@@ -603,11 +601,11 @@ EQPT = Equipment
 #東南東( の)
 ESE = East south east
 #予定する予定された又は予定通報
-EST = Estimate or estimated or estimate
+EST = Estimate
 #到着予定時刻又は到着予定
-ETA = Estimated time of arrival or estimating arrival
+ETA = Estimated time of arrival
 #出発予定時刻又は出発予定
-ETD = Estimated time of departure or estimating departure
+ETD = Estimated time of departure
 #予定飛行時間
 ETE = Estimated time en-route
 #特定地点通過予定時刻
@@ -619,11 +617,11 @@ EV = Every
 #…… を除いて
 EXC = Except
 #練習、練習している又は練習する
-EXER = Exercises or exercising or to exercise
+EXER = Exercises
 #予想する、予想された又は予想
-EXP = Expect or expected or expecting
+EXP = Expect
 #延長する、延長又は延長した
-EXTD = Extend or extending or Extended
+EXTD = Extend
 #固定の
 F = Fixed
 #施設
@@ -679,11 +677,11 @@ FLT = Flight
 #フライトチェック
 FLTCK = Flight check
 #変動している、 変動又は変動した
-FLUC = Fluctuating or fluctuation or fluctuated
+FLUC = Fluctuating
 #続く又は続いている
-FLW = Follow(s) or following
+FLW = Follow
 #飛行する又は飛行している
-FLY = Fly or flying
+FLY = Fly
 #… から
 FM = From
 #飛行管理コンピューター
@@ -743,7 +741,7 @@ G/A = Ground-to-air
 #地対空及び空対地
 G/A/G = Ground-to-air and air-to-ground
 #対気速度もしくは向かい風の増加
-GAIN = Airspeed or headwind gain
+GAIN = Airspeed gain
 #ガロン（容積単位)
 GAL = Gallons
 #ガメット（低高度飛行用の地域予報）
@@ -873,7 +871,7 @@ ICAO = International Civil Aviation Organization
 #着氷
 ICE = Icing
 #標識、識別又は識別する
-ID = Identifier or Identification or identify
+ID = Identifier
 #識別
 IDENT = Identification
 #中間進入フィックス
@@ -895,9 +893,9 @@ IMG = Immigration
 #疑問符
 IMI = Interrogation sign
 #改善する又は改善している
-IMPR = Improve or improving
+IMPR = Improve
 #即時又は直ちに
-IMT = Immediate or immediately
+IMT = Immediate
 #初期進入
 INA = Initial approach
 #入航・インバンド
@@ -921,7 +919,7 @@ INS = Inches
 #計器
 INST = Instrument
 #設備、設備する又は設備された
-INSTL = Install or installed or Installation
+INSTL = Install
 #計器
 INSTR = Instrument
 #交点
@@ -933,9 +931,9 @@ INTL = International
 #質問器
 INTRG = Interrogator
 #中断する、中断又は中断された
-INTRP = Interrupt or interruption or interrupted
+INTRP = Interrupt
 #強化する又は強化
-INTSF = Intensify or intensifying
+INTSF = Intensify
 #輝度
 INTST = Intensity
 #滑走路着氷
@@ -1011,7 +1009,7 @@ LBN = Land mark beacon
 #着陸図
 LC = Landing chart
 #位置の、位置的に、位置、又は位置する
-LCA = Local or Locally or Location or Located
+LCA = Local
 #有効着陸距離
 LDA = Landing distance available
 #有効着陸距離、ヘリコプター
@@ -1027,7 +1025,7 @@ LEN = Length
 #長波（30 から300kHz)
 LF = Low frequency(30 to 300kHz)
 #灯火又は照明
-LGT = Light or lighting
+LGT = Light
 #照明された
 LGTD = Lighted
 #高光度灯火
@@ -1061,7 +1059,7 @@ LONG = Longitude
 #ロラン( 長距離航空航法装置)
 LORAN = LORAN
 #対気速度もしくは向かい風の減少
-LOSS = Airspeed or headwind loss
+LOSS = Airspeed loss
 #長距離
 LRG = Long range
 #制限付
@@ -1115,7 +1113,7 @@ MEDEVAC = Medical evacuation flight
 #滑走路末端上における最低の目の高さ( 進入角指示灯に用いる)
 MEHT = Minimum eye height over threshold
 #気象
-MET = Meteorological or meteorology
+MET = Meteorological
 #定時飛行場実況気象通報式
 METAR = Aerodrome routine meteorological report
 #中波（300 から3,000kHz)
@@ -1153,7 +1151,7 @@ MNM = Minimum
 #最低航行性能限界
 MNPS = Minimum navigation performance specifications
 #監視、監視される又は監視された
-MNT = Monitor or monitoring or Monitored
+MNT = Monitor
 #維持する、保持する
 MNTN = Maintain
 #軍事活動区域
@@ -1241,11 +1239,11 @@ NE = North-east
 #北東行
 NEB = North-eastbound
 #無し、否定、不許可又は正しくない
-NEG = No or negative or permission not granted or that is not correct
+NEG = Negative
 #夜間
 NGT = Night
 #無し
-NIL = None or I have nothing to send to you.
+NIL = None
 #海里
 NM = Nautical miles
 #正常
@@ -1303,9 +1301,9 @@ OAS = Obstacle assessment surface
 #航空障害灯
 OBL = Obstruction light(s)
 #観測する、観測した又は観測
-OBS = Observe or observed or observation
+OBS = Observe
 #掩蔽する、掩蔽した又は掩蔽している
-OBSC = Obscure or obscured or obscuring
+OBSC = Obscure
 #障害物
 OBST = Obstacle
 #洋上管制区
@@ -1315,7 +1313,7 @@ OCA/H = Obstacle clearance altitude/height
 #明滅（灯火)
 OCC = Occulting(light)
 #時々又は時々の
-OCNL = Occasional or occasionally
+OCNL = Occasional
 #無障害物表面
 OCS = Obstacle clearance surface
 #10 月
@@ -1337,9 +1335,9 @@ OPC = The control indicated is Operational control
 #運航気象情報
 OPMET = Operational meteorological
 #開く、開くこと又は開いた
-OPN = Open or opening or opened
+OPN = Open
 #運航者
-OPR = Operator or operate or operative or operating or operational
+OPR = Operator
 #運航又は運用
 OPS = Operations
 #要請による
@@ -1387,7 +1385,7 @@ PBC = Performance-based communication
 #性能準拠監視
 PBS = Performance-based surveillance
 #進行する又は進行
-PCD = Proceed or proceeding
+PCD = Proceed
 #特別管制区
 PCA = Positive control area
 #パイロット制御照明
@@ -1449,7 +1447,7 @@ PROB = Probability
 #方式
 PROC = Procedure
 #禁止された又は禁止する
-PROH = Prohibited or prohibit
+PROH = Prohibited
 #プロペラ
 PROP = Propeller
 #暫定的
@@ -1505,7 +1503,7 @@ RAIM = Receiver autonomous integrity monitoring
 #レーダー進入管制所・ラプコン
 RAPCON = Radar approach control
 #迅速又は迅速に
-RAPID = Rapid or rapidly
+RAPID = Rapid
 #地域AIS システムセンター
 RASC = Regional AIS system centre
 #照合してください
@@ -1519,7 +1517,7 @@ RCC = Rescue co-ordination centre
 #無線通信障害通報
 RCF = Radio communication failure message
 #到達する又は到達
-RCH = Reach or reaching
+RCH = Reach
 #滑走路中心線
 RCL = Runway centre line
 #滑走路中心線灯
@@ -1533,21 +1531,19 @@ RDL = Radial
 #無線
 RDO = Radio
 #前１ 時間の( 天気略語)
-RE… = Recent
+RE = Recent
 #受信又は受信機
-REC = Receive or receiver
+REC = Receive
 #滑走路灯
 REDL = Runway edge light(s)
 #… に関する、又は… を参照
-REF = Reference to... or refer to
-#国籍記号及び登録記号
-REG = ...
+REF = Reference to
 #滑走路終端灯
 RENL = Runway end light(s)
 #位置通報点
 REP = Reporting point
 #要請
-REQ = Request or requested
+REQ = Request
 #ルート変更
 RERTE = Reroute
 #滑走路端安全区域
@@ -1595,7 +1591,7 @@ RPI = Radar position indicator
 #反復飛行計画
 RPL = Repetitive flight plan
 #置き換える
-RPLC = Replace or replaced
+RPLC = Replace
 #レーダー位置記号
 RPS = Radar position symbol
 #繰返し
@@ -1621,7 +1617,7 @@ RSP = Required surveillance performance
 #航空路監視レーダー
 RSR = En-route surveillance radar
 #制限された又は制限する
-RSTD = Restricted or restrict
+RSTD = Restricted
 #遅延通報（遅延気象報の表示に使用される)
 RTD = Delayed
 #ルート
@@ -1633,7 +1629,7 @@ RTG = Radiotelegraph
 #滑走路末端灯
 RTHL = Runway threshold light(s)
 #復帰する、復帰済又は復旧
-RTN = Return or returned or returning
+RTN = Return
 #有効離陸中断距離
 RTODAH = Reject take-off distance available, helicopter
 #業務を復旧する
@@ -1695,7 +1691,7 @@ SELCAL = Selective calling system
 #9 月
 SEP = September
 #業務
-SER = Service or servicing or served
+SER = Service
 #激しい（着氷， 乱気流の強度を示す場合に使用する)
 SEV = Severe(used e.g.to qualify icing and turbulence reports)
 #地表面又は水面
@@ -1723,13 +1719,13 @@ SIGMET = Information concerning en-route weather
 #悪天
 SIGWX = Significant weather
 #同時又は同時に
-SIMUL = Simultaneous or simultaneously
+SIMUL = Simultaneous
 #単車輪荷重
 SIWL = Single isolated wheel load
 #快晴
 SKC = Sky clear
 #定期（の)
-SKED = Schedule or scheduled
+SKED = Scheduled
 #速度制限点
 SLP = Speed limiting point
 #ゆっくり
@@ -1835,7 +1831,7 @@ TAR = Terminal area surveillance radar
 #真対気速度
 TAS = True airspeed
 #走行中又は走行する
-TAX = Taxiing or taxi
+TAX = Taxiing
 #熱帯低気圧
 TC = Tropical cyclone
 #ターミナル・コントロール・エリア
@@ -1851,7 +1847,7 @@ TECR = Technical reason
 #電話
 TEL = Telephone
 #仮の、一時的な
-TEMPO = Temporary or temporarily
+TEMPO = Temporary
 #交通
 TFC = Traffic
 #タッチアンドゴー
@@ -1905,7 +1901,7 @@ TR = Track
 #一時的空域留保
 TRA = Temporary reserved airspace
 #送信又は送信機
-TRANS = Transmits or transmitter
+TRANS = Transmits
 #トラブル
 TRBL = Trouble
 #訓練
@@ -1929,7 +1925,7 @@ TURB = Turbulence
 #ターミナルVOR
 TVOR = Terminal VOR
 #飛行場管制業務( 塔)
-TWR = Aerodrome control tower or aerodrome control
+TWR = tower
 #誘導路
 TWY = Taxiway
 #誘導案内灯
@@ -1957,7 +1953,7 @@ UFN = Until further notice
 #より高い高度への上昇はトラフィックのため承認できません
 UHDT = Unable higher due to traffic
 #極超短波（300 から3,000MHz)
-UHF = Ultra high frequency(300 to 3000MHz)
+UHF = Ultra high frequency
 #高々度情報本部
 UIC = Upper information centre
 #高々度飛行情報地区
@@ -2073,21 +2069,21 @@ WDSPR = Widespread
 #水曜日
 WED = Wednesday
 #…… から有効
-WEF = With effect from...or effective from...
+WEF = effective from
 #世界測位システム-84
 WGS-84 = World geodetic system - 1984
 #～の中に， ～以内
 WI = Within
 #幅
-WID = Width or wide
+WID = Width
 #即時有効
-WIE = With immediate effect or effective immediately
+WIE = effective immediately
 #了解， これに従います
 WILCO = Will comply
 #作業中
 WIP = Work in progress
 #弱まる又は弱まっている
-WKN = Weaken or weakening
+WKN = Weaken
 #世界気象機関
 WMO = World Meteorological Organization
 #西北西
