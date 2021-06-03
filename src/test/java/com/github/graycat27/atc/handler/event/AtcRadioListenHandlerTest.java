@@ -14,12 +14,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AtcRadioListenHandlerTest {
 
+    /** class for Test AtcRadioListenHandler */
     private static class AtcRadioListenHandlerTester extends AtcRadioListenHandler{
 
-        public AtcMessageData analyzeMessage(String freq, String receivedMsg){
+        @Override
+        protected AtcMessageData analyzeMessage(String freq, String receivedMsg){
             return super.analyzeMessage(freq, receivedMsg);
         }
-
         @Override
         protected IAtcBot getBot(String freq){
             switch (freq){
@@ -32,13 +33,14 @@ class AtcRadioListenHandlerTest {
         }
     }
 
+    /** テスト対象がprotectedメソッドなので、リフレクションによる呼出しをする処理 */
     private AtcMessageData analyzeMessageTester(Control control, String message) {
         AtcMessageData result;
         try {
             Method method = AtcRadioListenHandlerTester.class.getDeclaredMethod("analyzeMessage", String.class, String.class);
             method.setAccessible(true);
 
-            String freq = control.name().equals(Control.CTL.name()) ? "272.7" : "222.2";
+            String freq = Control.CTL.equals(control) ? "272.7" : "222.2";
             AtcRadioListenHandlerTester targetClass = new AtcRadioListenHandlerTester();
             result = (AtcMessageData) method.invoke(targetClass, freq, message);
         } catch (NoSuchMethodException|InvocationTargetException|IllegalAccessException e) {
@@ -47,31 +49,33 @@ class AtcRadioListenHandlerTest {
         return result;
     }
 
+    private final String allStationRadioCheck = "all station, gray27. This is radio check. How do you read?";
+
     @Test
     public void testSimpleMessageFrequency(){
-        AtcMessageData result = analyzeMessageTester(Control.CTL,"all station, gray27. This is radio check. How do you read?");
+        AtcMessageData result = analyzeMessageTester(Control.CTL, allStationRadioCheck);
         assertEquals("272.7", result.getFrequency());
     }
 
     @Test
     public void testSimpleMessageSender(){
-        AtcMessageData result = analyzeMessageTester(Control.CTL,"all station, gray27. This is radio check. How do you read?");
+        AtcMessageData result = analyzeMessageTester(Control.CTL,allStationRadioCheck);
         assertEquals("gray27" ,result.getSender());
     }
     @Test
     public void testSimpleMessageReceiver(){
-        AtcMessageData result = analyzeMessageTester(Control.CTL,"all station, gray27. This is radio check. How do you read?");
+        AtcMessageData result = analyzeMessageTester(Control.CTL,allStationRadioCheck);
         assertEquals("all station" ,result.getReceiver());
     }
     @Test
     public void testSimpleMessageBody(){
-        AtcMessageData result = analyzeMessageTester(Control.CTL,"all station, gray27. This is radio check. How do you read?");
+        AtcMessageData result = analyzeMessageTester(Control.CTL,allStationRadioCheck);
         assertEquals("This is radio check. How do you read. " ,result.getMessageBody());
     }
 
     @Test
-    public void testRadioCheckResponse(){
-        AtcMessageData result = analyzeMessageTester(Control.CTL,"all station, gray27. This is radio check. How do you read?");
+    public void testRadioCheckResponseCtl(){
+        AtcMessageData result = analyzeMessageTester(Control.CTL,allStationRadioCheck);
         assertEquals("loud and clear." ,result.getResponseBody());
     }
     @Test
