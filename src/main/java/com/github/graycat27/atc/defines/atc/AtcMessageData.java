@@ -44,6 +44,9 @@ public class AtcMessageData {
     }
     public void setResponseBody(final String responseBody){
         if(this.responseBody == null){
+            if(responseBody == null){
+                return;
+            }
             this.responseBody = responseBody;
             this.needResponse = true;
         }else{
