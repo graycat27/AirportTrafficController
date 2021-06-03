@@ -84,4 +84,10 @@ class AtcRadioListenHandlerTest {
         assertTrue(result.isNeedResponse());
     }
 
+    @Test
+    public void testRadioCheckResponseTwr(){
+        AtcMessageData result = analyzeMessageTester(Control.TWR,"all station, gray27. This is radio check. How do you read?");
+        assertEquals("loud and clear." ,result.getResponseBody());
+    }
+
 }
