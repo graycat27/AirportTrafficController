@@ -34,13 +34,12 @@ class ChatCheckerTest {
             throw new RuntimeException(e);
         }
 
-        ChatChecker targetClass = new ChatChecker();
         String result;
         try {
             Method method = ChatChecker.class.getDeclaredMethod("wordConverter", String.class);
             method.setAccessible(true);
 
-            result = (String) method.invoke(targetClass, original);
+            result = (String) method.invoke(ChatChecker.class, original);
 
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);

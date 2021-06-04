@@ -6,6 +6,8 @@ import com.github.graycat27.atc.utils.AtcDictionary;
 
 public class ChatChecker {
 
+    private ChatChecker(){ /* インスタンス化防止 */ }
+
     public static String getMessage(String freq, String original){
         String convertMsg = wordConverter(original);
         AirportTrafficController.getRadioListener().onAtcRadioListen(new AtcRadioSpeakEvent(freq, convertMsg));
