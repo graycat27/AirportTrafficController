@@ -57,4 +57,10 @@ class ChatCheckerTest {
         assertEquals("Airport Airport", wordConverter("ap ap"));
     }
 
+    //test #25
+    @Test
+    void testWithComma(){
+        assertEquals("Airport.", wordConverter("ap."));
+    }
+
 }
