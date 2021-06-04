@@ -5,11 +5,11 @@ import com.github.graycat27.atc.AirportTrafficController;
 public class Property {
     private Property(){ /* インスタンス化防止 */ }
 
-    //プロパティファイルのディレクトリパス
+    /** プロパティファイルのディレクトリパス */
     public static final String FILE_PATH_DIR =
             AirportTrafficController.getPlugin(AirportTrafficController.class).getDataFolder().getPath();
 
-    //プロパティファイルのファイル名
+    /** 辞書ファイルのファイル名 */
     public static final String FILE_NAME_DICTIONARY = "atc_dic.prop";
 
 
