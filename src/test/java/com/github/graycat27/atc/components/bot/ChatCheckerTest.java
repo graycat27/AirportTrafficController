@@ -52,5 +52,9 @@ class ChatCheckerTest {
     void testSmall(){
         assertEquals("Airport", wordConverter("ap"));
     }
+    @Test
+    void testSmallSentence(){
+        assertEquals("Airport Airport", wordConverter("ap ap"));
+    }
 
 }
