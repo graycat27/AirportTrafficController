@@ -20,6 +20,7 @@ public class ChatChecker {
         for(int i = 0; i < len; i++){
             result.append(AtcDictionary.get(words[i])).append(" ");
         }
+        result.deleteCharAt(result.length()-1);
         return result.toString();
     }
 
