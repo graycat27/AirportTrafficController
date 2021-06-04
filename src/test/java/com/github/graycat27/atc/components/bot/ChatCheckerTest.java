@@ -60,7 +60,20 @@ class ChatCheckerTest {
     //test #25
     @Test
     void testWithComma(){
-        assertEquals("Airport.", wordConverter("ap."));
+        assertEquals("Airport Airport,", wordConverter("ap ap,"));
+    }
+    @Test
+    void testWithDot(){
+        assertEquals("Approach Approach.", wordConverter("apch apch."));
+    }
+
+    @Test
+    void testCapsSentence(){
+        assertEquals("Airport, Approach, Way point.", wordConverter("AP, APCH, WPT."));
+    }
+    @Test
+    void testNoSpace(){
+        assertEquals("ap,apch,wpt.", wordConverter("ap,apch,wpt."));
     }
 
 }
