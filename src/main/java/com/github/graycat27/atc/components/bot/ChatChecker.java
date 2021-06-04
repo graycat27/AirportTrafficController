@@ -6,6 +6,8 @@ import com.github.graycat27.atc.utils.AtcDictionary;
 
 public class ChatChecker {
 
+    private ChatChecker(){ /* インスタンス化防止 */ }
+
     public static String getMessage(String freq, String original){
         String convertMsg = wordConverter(original);
         AirportTrafficController.getRadioListener().onAtcRadioListen(new AtcRadioSpeakEvent(freq, convertMsg));
@@ -18,8 +20,11 @@ public class ChatChecker {
 
         int len = words.length;
         for(int i = 0; i < len; i++){
-            result.append(AtcDictionary.get(words[i])).append(" ");
+            String word = words[i];
+            String key = word.replaceAll("[,.?!、。､｡]","");
+            result.append(word.replace(key, AtcDictionary.get(key))).append(" ");
         }
+        result.deleteCharAt(result.length()-1);
         return result.toString();
     }
 
