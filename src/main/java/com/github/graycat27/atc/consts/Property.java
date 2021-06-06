@@ -10,7 +10,7 @@ public class Property {
             AirportTrafficController.getPlugin(AirportTrafficController.class).getDataFolder().getPath();
 
     /** 辞書ファイルのファイル名 */
-    public static final String FILE_NAME_DICTIONARY = "atc_dic.prop";
+    public static final String FILE_NAME_DICTIONARY = "atc_dic.property";
 
     /** プロパティファイルのファイル名 */
     public static final String FILE_NAME_PROPERTY = "atc_property.property";
