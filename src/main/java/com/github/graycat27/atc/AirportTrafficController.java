@@ -80,7 +80,7 @@ public final class AirportTrafficController extends JavaPlugin {
         final int TPS = 20;
         int radarSecond = PropertySettings.radarSeconds(); //プレイヤー検知レーダーの照射頻度秒数
         getServer().getScheduler().scheduleSyncRepeatingTask(this, playerMoveHandler, 0, radarSecond * TPS);
-        int radioSpeakSecond = 1;   //TODO プロパティに外だし
+        int radioSpeakSecond = PropertySettings.radioSpeakSeconds();    //管制botの応答発話周期
         getServer().getScheduler().scheduleSyncRepeatingTask(this, atcResponseTask, 0, radioSpeakSecond * TPS);
 
     }

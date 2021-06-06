@@ -6,3 +6,6 @@ world_name = world
 
 #check player location cycle (seconds)
 radar_seconds = 2
+
+#control bot speak cycle (seconds)
+radio_speak_seconds = 2

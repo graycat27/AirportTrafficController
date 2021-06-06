@@ -32,4 +32,8 @@ public class PropertySettings {
         return Integer.parseInt((String) props.get(Property.RADAR_SECONDS));
     }
 
+    public static int radioSpeakSeconds(){
+        return Integer.parseInt((String) props.get(Property.RADIO_SPEAK_SECONDS));
+    }
+
 }

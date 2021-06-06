@@ -22,4 +22,6 @@ public class Property {
     /** レーダーの照射秒 */
     public static final String RADAR_SECONDS = "radar_seconds";
 
+    /** 管制botの応答発話周期秒数 */
+    public static final String RADIO_SPEAK_SECONDS = "radio_speak_seconds";
 }
