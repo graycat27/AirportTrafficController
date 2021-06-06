@@ -17,7 +17,7 @@ import java.util.jar.JarFile;
 /** プロパティファイルの値を利用した判定処理等の部品 */
 public class PropertyUtil {
 
-    /* 実行jarからプロパティファイルを展開する */
+    /** 実行jarからプロパティファイルを展開する */
     public static void deployPropFile(){
         try {   /*  jarに同封されるresource配下のファイルを展開する
                     ref: https://hiroki-sawano.hatenablog.com/entry/copy-resource-dir-in-jar */
@@ -60,7 +60,7 @@ public class PropertyUtil {
     }
 
 
-    /* WorldName */
+    /** World */
     public static World getWorld(){
         String worldName = PropertySettings.worldName();
         World w = Bukkit.getWorld(worldName);

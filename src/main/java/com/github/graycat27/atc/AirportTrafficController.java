@@ -7,6 +7,7 @@ import com.github.graycat27.atc.components.data.defines.IDataManager;
 import com.github.graycat27.atc.components.data.json.JsonDataManager;
 import com.github.graycat27.atc.defines.atc.AtcMessageData;
 import com.github.graycat27.atc.handler.event.AtcRadioListenHandler;
+import com.github.graycat27.atc.setting.PropertySettings;
 import com.github.graycat27.atc.utils.AtcDictionary;
 import com.github.graycat27.atc.consts.CommandWord;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;
@@ -54,12 +55,6 @@ public final class AirportTrafficController extends JavaPlugin {
         LcChatHandler lcChatHandler = new LcChatHandler();
         PlayerMoveHandler playerMoveHandler = new PlayerMoveHandler();
 
-        final int TPS = 20;
-        int radarSecond = 2; //プレイヤー検知レーダーの照射頻度秒数    //TODO プロパティに外だし
-        getServer().getScheduler().scheduleSyncRepeatingTask(this, playerMoveHandler, 0, radarSecond * TPS);
-        int radioSpeakSecond = 1;
-        getServer().getScheduler().scheduleSyncRepeatingTask(this, atcResponseTask, 0, radioSpeakSecond * TPS);
-
         this.getCommand(CommandWord.ATC_full).setExecutor(atcCommandHandler);
         this.getCommand(CommandWord.ATC_full).setTabCompleter(atcTabCompleteHandler);
         this.getCommand(CommandWord.ATC).setExecutor(atcCommandHandler);
@@ -80,6 +75,14 @@ public final class AirportTrafficController extends JavaPlugin {
         dataManager.read();
 
         AtcDictionary.updateDictionary();
+        PropertySettings.readProps();
+
+        final int TPS = 20;
+        int radarSecond = PropertySettings.radarSeconds(); //プレイヤー検知レーダーの照射頻度秒数
+        getServer().getScheduler().scheduleSyncRepeatingTask(this, playerMoveHandler, 0, radarSecond * TPS);
+        int radioSpeakSecond = PropertySettings.radioSpeakSeconds();    //管制botの応答発話周期
+        getServer().getScheduler().scheduleSyncRepeatingTask(this, atcResponseTask, 0, radioSpeakSecond * TPS);
+
     }
 
     /** Plugin shutdown logic */
