@@ -6,8 +6,8 @@ apply plugin: 'java'
 group = 'com.github.graycat27'
 version = '0.1.0'
 
-sourceCompatibility = "11"
-targetCompatibility = "11"
+sourceCompatibility = "16"
+targetCompatibility = "16"
 
 repositories {
     mavenCentral()
@@ -42,7 +42,4 @@ dependencies {
 
 processResources {
     filter(EscapeUnicode)
-    from(sourceSets.main.resources.srcDirs) {
-        filter ReplaceTokens, tokens: [version: version]
-    }
 }
