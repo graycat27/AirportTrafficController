@@ -1,7 +1,7 @@
 name: AirportTraficController
-version: @version@
+version: 0.1.0
 main: com.github.graycat27.atc.AirportTrafficController
-api-version: 1.16
+api-version: 1.17
 authors: [graycat27]
 description: AirTrafficControl plugin with LunaChat
 depend:
