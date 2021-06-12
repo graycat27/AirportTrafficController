@@ -96,4 +96,13 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
         sb.append("}");
         return sb.toString();
     }
+
+    @Override
+    public boolean equals(Object another){
+        if(!(another instanceof LunaChatChannelFrequency)){
+            return false;
+        }
+        final LunaChatChannelFrequency anotherLcFreq = (LunaChatChannelFrequency) another;
+        return super.equals(anotherLcFreq); //privateの比較をしない
+    }
 }

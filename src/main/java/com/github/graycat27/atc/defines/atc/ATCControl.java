@@ -5,6 +5,8 @@ import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.graycat27.atc.defines.i.IMaster;
 import com.github.graycat27.atc.defines.sky.ATCArea;
 
+import java.util.Objects;
+
 public class ATCControl implements IMaster {
 
     //周波数と、空域の情報を持たせる
@@ -69,9 +71,9 @@ public class ATCControl implements IMaster {
         }
         final ATCControl anotherControl = (ATCControl) another;
         return (
-                control.equals(anotherControl.control) &&
-                frequency.equals(anotherControl.frequency) &&
-                area.equals(anotherControl.area)
+                Objects.equals(this.control, anotherControl.control) &&
+                Objects.equals(this.frequency, anotherControl.frequency) &&
+                Objects.equals(this.area, anotherControl.area)
         );
     }
 }

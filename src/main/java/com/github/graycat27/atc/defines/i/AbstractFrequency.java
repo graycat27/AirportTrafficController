@@ -102,6 +102,18 @@ public abstract class AbstractFrequency implements IFrequency {
         return sb.toString();
     }
 
+    @Override
+    public boolean equals(Object another){
+        if(!(another instanceof AbstractFrequency)){
+            return false;
+        }
+        final AbstractFrequency anotherFreq = (AbstractFrequency) another;
+        return (
+                Objects.equals(this.freq_n, anotherFreq.freq_n) &&
+                Objects.equals(this.freq_d, anotherFreq.freq_d)
+        );
+    }
+
     //private ...
 
 }
