@@ -80,16 +80,18 @@ public class CommandAirport{
     }
 
     private static void setTowerFreqForAirport(String airportName, String freq){
-        IFrequency freqCh = setupNewFrequency(freq);
+        LunaChatChannelFrequency freqCh = setupNewFrequency(freq);
         DataUtil.setAtcFreqToAirport(airportName, Control.TWR, freqCh);
+        freqCh.createLcChannelIfNonExists();
     }
 
     private static void setControlFreqForAirport(String airportName, String freq){
-        IFrequency freqCh = setupNewFrequency(freq);
+        LunaChatChannelFrequency freqCh = setupNewFrequency(freq);
         DataUtil.setAtcFreqToAirport(airportName, Control.CTL, freqCh);
+        freqCh.createLcChannelIfNonExists();
     }
 
-    private static IFrequency setupNewFrequency(String freq){
+    private static LunaChatChannelFrequency setupNewFrequency(String freq){
         if(FrequencyUtil.isFreqUsed(freq)){
             throw new IllegalArgumentException("that frequency is already used");
         }
