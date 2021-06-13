@@ -11,7 +11,6 @@ public class LcChatHandler implements Listener {
 
     @EventHandler
     public void onChat(LunaChatBukkitChannelChatEvent event){
-        //TODO make this
         if(LunaChatUtil.isAtcChannel(event.getChannel())){
             String freq = FrequencyUtil.getFreqFromChannelName(event.getChannel().getName());
             event.setNgMaskedMessage(ChatChecker.getMessage(freq, event.getNgMaskedMessage()));
