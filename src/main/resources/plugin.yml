@@ -1,5 +1,5 @@
 name: AirportTraficController
-version: 0.1.0
+version: 0.1.1
 main: com.github.graycat27.atc.AirportTrafficController
 api-version: 1.17
 authors: [graycat27]
