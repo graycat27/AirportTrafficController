@@ -184,8 +184,7 @@ public class AtcCommandHandler implements CommandExecutor {
      */
     public static void sendMessage(final CommandSender sender, String message){
         String msg = "[ATC] " + message;
-        if(sender instanceof Player){
-            Player p = (Player) sender;
+        if(sender instanceof Player p){
             p.sendMessage(msg);
         }else{
             plugin.getLogger().info(msg);
