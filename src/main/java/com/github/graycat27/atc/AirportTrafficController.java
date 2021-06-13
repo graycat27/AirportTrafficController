@@ -30,12 +30,12 @@ public final class AirportTrafficController extends JavaPlugin {
         return (DataManager) dataManager;
     }
 
-    private static AtcResponseTask atcResponseTask = new AtcResponseTask();
+    private static final AtcResponseTask atcResponseTask = new AtcResponseTask();
     public static void pushAtcResponseTask(AtcMessageData newResponse){
         atcResponseTask.push(newResponse);
     }
 
-    private static AtcRadioListenHandler radioListener = new AtcRadioListenHandler();
+    private static final AtcRadioListenHandler radioListener = new AtcRadioListenHandler();
     public static AtcRadioListenHandler getRadioListener(){
         return radioListener;
     }
