@@ -12,7 +12,6 @@ import com.github.graycat27.atc.utils.AtcDictionary;
 import com.github.graycat27.atc.consts.CommandWord;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;
 import com.github.graycat27.atc.handler.command.AtcTabCompleteHandler;
-import com.github.graycat27.atc.handler.event.AtcDataUpdateHandler;
 import com.github.graycat27.atc.handler.event.LcChatHandler;
 import com.github.graycat27.atc.handler.event.PlayerMoveHandler;
 import com.github.ucchyocean.lc3.LunaChatAPI;
@@ -51,7 +50,6 @@ public final class AirportTrafficController extends JavaPlugin {
         AtcTabCompleteHandler atcTabCompleteHandler = new AtcTabCompleteHandler(this);
 
         /* event handlers */
-        AtcDataUpdateHandler atcDataUpdateHandler = new AtcDataUpdateHandler();
         LcChatHandler lcChatHandler = new LcChatHandler();
         PlayerMoveHandler playerMoveHandler = new PlayerMoveHandler();
 
@@ -60,7 +58,6 @@ public final class AirportTrafficController extends JavaPlugin {
         this.getCommand(CommandWord.ATC).setExecutor(atcCommandHandler);
         this.getCommand(CommandWord.ATC).setTabCompleter(atcTabCompleteHandler);
 
-        getServer().getPluginManager().registerEvents(atcDataUpdateHandler, this);
         getServer().getPluginManager().registerEvents(lcChatHandler, this);
         getServer().getPluginManager().registerEvents(playerMoveHandler, this);
 
