@@ -8,7 +8,6 @@ import com.github.graycat27.atc.consts.Control;
 import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.atc.ATCControl;
 import com.github.graycat27.atc.defines.atc.LunaChatChannelFrequency;
-import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;
 import org.bukkit.command.CommandSender;
 

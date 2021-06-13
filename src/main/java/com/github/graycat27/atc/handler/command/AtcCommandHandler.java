@@ -6,18 +6,12 @@ import com.github.graycat27.atc.handler.command.action.CommandAirport;
 import com.github.graycat27.atc.handler.command.action.CommandArea;
 import com.github.graycat27.atc.handler.command.action.CommandFreq;
 import com.github.graycat27.atc.handler.command.action.CommandHelp;
+import com.github.graycat27.atc.setting.PropertySettings;
 import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
+import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * コマンドの受理部品
@@ -29,6 +23,7 @@ public class AtcCommandHandler implements CommandExecutor {
 
     private final String wrongCommandMsg = ChatColor.RED + "wrong command." + ChatColor.WHITE + " use [/atc help]";
     private final String permissionErrorMsg = ChatColor.RED + "you don`t have permission";
+    private final String denyWorldMsg = "only in world ["+ PropertySettings.worldName() +"] available";
 
     // コンストラクタ
     public AtcCommandHandler(Plugin plugin){
@@ -84,6 +79,14 @@ public class AtcCommandHandler implements CommandExecutor {
                 sendMessage(sender, lessParamMsg);
                 return true;
             }
+
+            if(sender instanceof Player p){
+                if(!PropertySettings.worldName().equals(p.getLocation().getWorld().getName())){
+                    sendMessage(sender, denyWorldMsg);
+                    return true;
+                }
+            }
+
             /* /atc manage add xxx */
             if (CommandWord.Manage.ADD.equalsIgnoreCase(args[1])) {
                 if(!sender.hasPermission(PermissionNode.ATC_MANAGE_CHANGE)){
@@ -181,8 +184,7 @@ public class AtcCommandHandler implements CommandExecutor {
      */
     public static void sendMessage(final CommandSender sender, String message){
         String msg = "[ATC] " + message;
-        if(sender instanceof Player){
-            Player p = (Player) sender;
+        if(sender instanceof Player p){
             p.sendMessage(msg);
         }else{
             plugin.getLogger().info(msg);
