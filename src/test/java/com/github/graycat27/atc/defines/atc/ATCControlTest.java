@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ATCControlTest {
 
-    private IPoint start = new ConcretePoint(0, 0, 0);
-    private IPoint end1 = new ConcretePoint(100, 100, 100);
-    private ATCArea area1 = new ATCArea(start, end1);
-    private IPoint end2 = new ConcretePoint(200, 200, 200);
-    private ATCArea area2 = new ATCArea(start, end2);
+    private final IPoint start = new ConcretePoint(0, 0, 0);
+    private final IPoint end1 = new ConcretePoint(100, 100, 100);
+    private final ATCArea area1 = new ATCArea(start, end1);
+    private final IPoint end2 = new ConcretePoint(200, 200, 200);
+    private final ATCArea area2 = new ATCArea(start, end2);
 
     @Test
     void testEquals() {
