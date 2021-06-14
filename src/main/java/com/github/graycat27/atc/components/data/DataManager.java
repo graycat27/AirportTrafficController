@@ -6,7 +6,7 @@ import com.github.graycat27.atc.consts.DataSourceType;
 public abstract class DataManager implements IDataManager {
 
     // フィールド
-    private DataSourceType dataSourceType;
+    private final DataSourceType dataSourceType;
 
     protected MasterData data;
 

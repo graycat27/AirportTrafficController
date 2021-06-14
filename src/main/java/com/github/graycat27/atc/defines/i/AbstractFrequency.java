@@ -14,10 +14,10 @@ public abstract class AbstractFrequency implements IFrequency {
         return freq_n + "." + freq_d;
     }
     public Integer getFreqN(){
-        return Integer.valueOf(freq_n);
+        return freq_n;
     }
     public Integer getFreqD(){
-        return Integer.valueOf(freq_d);
+        return freq_d;
     }
 
     //コンストラクタ
@@ -104,10 +104,9 @@ public abstract class AbstractFrequency implements IFrequency {
 
     @Override
     public boolean equals(Object another){
-        if(!(another instanceof AbstractFrequency)){
+        if(!(another instanceof final AbstractFrequency anotherFreq)){
             return false;
         }
-        final AbstractFrequency anotherFreq = (AbstractFrequency) another;
         return (
                 Objects.equals(this.freq_n, anotherFreq.freq_n) &&
                 Objects.equals(this.freq_d, anotherFreq.freq_d)

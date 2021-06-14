@@ -4,5 +4,7 @@ public interface IAtcBot {
 
     String analyzeMessage(String receivedMessage);
 
-    String nonIdentifiedSender();
+    default String nonIdentifiedSender() {
+        return "say your call-sign.";
+    }
 }

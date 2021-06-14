@@ -1,6 +1,5 @@
 package com.github.graycat27.atc.components;
 
-import com.github.ucchyocean.lc3.channel.BukkitChannel;
 import com.github.ucchyocean.lc3.channel.Channel;
 import com.github.ucchyocean.lc3.channel.StandaloneChannel;
 import org.junit.jupiter.api.Test;

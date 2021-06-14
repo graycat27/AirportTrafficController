@@ -20,7 +20,7 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
 
 
     //LunaChatのチャンネル情報
-    private String channelName;
+    private final String channelName;
     private transient Channel lcChannel;
 
     /* コンストラクタ */
@@ -97,10 +97,9 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
 
     @Override
     public boolean equals(Object another){
-        if(!(another instanceof LunaChatChannelFrequency)){
+        if(!(another instanceof final LunaChatChannelFrequency anotherLcFreq)){
             return false;
         }
-        final LunaChatChannelFrequency anotherLcFreq = (LunaChatChannelFrequency) another;
         return super.equals(anotherLcFreq); //privateの比較をしない
     }
 }

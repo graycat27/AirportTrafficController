@@ -22,8 +22,6 @@ abstract public class AtcBot extends ChannelMember implements IAtcBot {
 
     @Override
     abstract public String analyzeMessage(String received);
-    @Override
-    abstract public String nonIdentifiedSender();
 
     /* override from ChannelMember */
     @Override

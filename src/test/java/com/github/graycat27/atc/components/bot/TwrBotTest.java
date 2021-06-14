@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TwrBotTest {
 
-    private TwrBot bot = new TwrBot();
+    private final TwrBot bot = new TwrBot();
     @Test
     void analyzeMessageNon() {
         assertNull(bot.analyzeMessage(""));

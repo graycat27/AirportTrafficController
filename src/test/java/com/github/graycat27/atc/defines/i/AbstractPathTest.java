@@ -12,12 +12,12 @@ class AbstractPathTest {
     /*
      * class ConcretePath extends Path{ }
      */
-    static class Po_0  { static int x = 0; static int y = 0; static int z = 0; }
-    static class Po_64 { static int x = 0; static int y = 64; static int z = 0; }
-    static class P1_64 { static int x = 100; static int y = 64; static int z = 100; }
-    static class P2_64 { static int x = 200; static int y = 64; static int z = 200; }
-    static class P3_120 { static int x = 270; static int y = 120; static int z = 270; }
-    static class P1n64 { static int x = -100; static int y = 64; static int z = -100; }
+    static class Po_0  { static final int x = 0; static final int y = 0; static final int z = 0; }
+    static class Po_64 { static final int x = 0; static final int y = 64; static final int z = 0; }
+    static class P1_64 { static final int x = 100; static final int y = 64; static final int z = 100; }
+    static class P2_64 { static final int x = 200; static final int y = 64; static final int z = 200; }
+    static class P3_120 { static final int x = 270; static final int y = 120; static final int z = 270; }
+    static class P1n64 { static final int x = -100; static final int y = 64; static final int z = -100; }
     
     @Test
     void length() {

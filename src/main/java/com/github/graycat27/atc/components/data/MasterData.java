@@ -10,7 +10,7 @@ import java.util.Hashtable;
 public class MasterData implements IMaster {
 
     //フィールド
-    private Hashtable<String, Airport> airportList;
+    private final Hashtable<String, Airport> airportList;
     public Hashtable<String, Airport> getAirportList(){
         return new Hashtable<>(airportList);
     }

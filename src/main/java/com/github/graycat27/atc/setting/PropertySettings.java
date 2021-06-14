@@ -10,7 +10,7 @@ import java.util.Properties;
 /** プロパティから読み出した値を持つ */
 public class PropertySettings {
 
-    private static Properties props = new Properties();
+    private static final Properties props = new Properties();
 
     private PropertySettings() { /* インスタンス化防止 */ }
 

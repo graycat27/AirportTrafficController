@@ -10,9 +10,9 @@ import java.util.List;
 public class AirportObject implements IJsonDataObject {
 
     // フィールド
-    private String name;
+    private final String name;
 
-    private List<ATCControl> areaList;
+    private final List<ATCControl> areaList;
 
     // コンストラクタ
     public AirportObject(final Airport airport){

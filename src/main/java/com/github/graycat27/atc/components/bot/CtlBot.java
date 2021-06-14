@@ -20,8 +20,4 @@ public class CtlBot extends AtcBot {
         return null;
     }
 
-    @Override
-    public String nonIdentifiedSender() {
-        return "say your call sign please";
-    }
 }

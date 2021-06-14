@@ -1,7 +1,5 @@
 package com.github.graycat27.atc.defines.i;
 
-import com.github.graycat27.atc.utils.ICloneable;
-
 /** 周波数インターフェース */
 public interface IFrequency extends IMaster {
 

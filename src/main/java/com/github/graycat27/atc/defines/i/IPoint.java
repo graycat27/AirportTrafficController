@@ -1,6 +1,5 @@
 package com.github.graycat27.atc.defines.i;
 
-import com.github.graycat27.atc.utils.ICloneable;
 import org.bukkit.Location;
 
 /**

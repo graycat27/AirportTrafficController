@@ -2,7 +2,6 @@ package com.github.graycat27.atc.handler.command.action;
 
 import com.github.graycat27.atc.consts.CommandWord;
 import com.github.graycat27.atc.handler.command.AtcCommandHandler;
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
 public class CommandHelp {
