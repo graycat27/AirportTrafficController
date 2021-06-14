@@ -26,7 +26,7 @@ abstract public class AtcBot extends ChannelMember implements IAtcBot {
     /* override from ChannelMember */
     @Override
     public String getName(){
-        return apName +" "+ name;
+        return apName +"*"+ name;
     }
 
     @Override
