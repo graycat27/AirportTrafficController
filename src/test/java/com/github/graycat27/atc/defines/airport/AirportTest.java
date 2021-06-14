@@ -16,24 +16,24 @@ import static org.junit.jupiter.api.Assertions.*;
 class AirportTest {
 
     //フィールド
-    String name = "4irρ0rt";
-    List<IPoint> rwy18_36 = new ArrayList<>(){
+    final String name = "4irρ0rt";
+    final List<IPoint> rwy18_36 = new ArrayList<>(){
         {
             add(new ConcretePoint(100, 64, 100));
             add(new ConcretePoint(100, 64, 200));
         }
     };
-    List<IPoint> rwy09_27 = new ArrayList<>(){
+    final List<IPoint> rwy09_27 = new ArrayList<>(){
         {
             add(new ConcretePoint(150, 64, 100));
             add(new ConcretePoint(250, 64, 100));
         }
     };
-    ATCArea area = new ATCArea(
+    final ATCArea area = new ATCArea(
             new ConcretePoint(0, 0, 0),
             new ConcretePoint(200, 255, 200)
     );
-    ATCArea area2 = new ATCArea(
+    final ATCArea area2 = new ATCArea(
             new ConcretePoint(100, 64, 100),
             new ConcretePoint(250, 200, 250)
     );
