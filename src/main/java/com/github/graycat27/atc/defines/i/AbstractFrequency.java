@@ -104,10 +104,9 @@ public abstract class AbstractFrequency implements IFrequency {
 
     @Override
     public boolean equals(Object another){
-        if(!(another instanceof AbstractFrequency)){
+        if(!(another instanceof final AbstractFrequency anotherFreq)){
             return false;
         }
-        final AbstractFrequency anotherFreq = (AbstractFrequency) another;
         return (
                 Objects.equals(this.freq_n, anotherFreq.freq_n) &&
                 Objects.equals(this.freq_d, anotherFreq.freq_d)

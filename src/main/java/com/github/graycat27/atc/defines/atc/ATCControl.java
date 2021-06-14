@@ -66,10 +66,9 @@ public class ATCControl implements IMaster {
 
     @Override
     public boolean equals(Object another){
-        if(!(another instanceof ATCControl)){
+        if(!(another instanceof final ATCControl anotherControl)){
             return false;
         }
-        final ATCControl anotherControl = (ATCControl) another;
         return (
                 Objects.equals(this.control, anotherControl.control) &&
                 Objects.equals(this.frequency, anotherControl.frequency) &&

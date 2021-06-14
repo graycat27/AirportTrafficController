@@ -129,10 +129,9 @@ public abstract class AbstractPath implements IPath {
 
     @Override
     public boolean levelEquals(Object another){
-        if(!(another instanceof IPath)){
+        if(!(another instanceof final IPath anotherPath)){
             return false;
         }
-        final IPath anotherPath = (IPath) another;
         boolean isEqual;
         //順方向検査
         {
@@ -186,10 +185,9 @@ public abstract class AbstractPath implements IPath {
     /* override from Object */
     @Override
     public boolean equals(Object another) {
-        if(!(another instanceof IPath)){
+        if(!(another instanceof final IPath anotherPath)){
             return false;
         }
-        final IPath anotherPath = (IPath) another;
         boolean isEqual;
         //順方向検査
         {
