@@ -103,6 +103,8 @@ public class AtcCommandHandler implements CommandExecutor {
                             String name = (args.length >= 4) ? args[3] : null;
                             CommandAirport.add(name);
                             break;
+                        case CommandWord.Target.AREA:
+                            //goto default
                         default:
                             sendMessage(sender, "unknown param for command [/atc manage add]");
                     }
