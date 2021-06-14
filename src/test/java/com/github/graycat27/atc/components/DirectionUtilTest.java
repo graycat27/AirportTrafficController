@@ -3,7 +3,6 @@ package com.github.graycat27.atc.components;
 import com.github.graycat27.atc.defines.Direction;
 import com.github.graycat27.atc.defines.i.ConcretePoint;
 import com.github.graycat27.atc.defines.i.IPoint;
-import com.github.graycat27.atc.defines.i.AbstractPoint;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,7 +1,5 @@
 package com.github.graycat27.atc.defines.i;
 
-import com.github.graycat27.atc.utils.ICloneable;
-
 public interface IPath extends IMaster {
 
     IPoint getStart();

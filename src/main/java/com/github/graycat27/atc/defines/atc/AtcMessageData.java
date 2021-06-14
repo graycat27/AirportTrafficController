@@ -1,7 +1,5 @@
 package com.github.graycat27.atc.defines.atc;
 
-import com.github.graycat27.atc.defines.i.IFrequency;
-
 /**
  * ATC bot が応答するために解析した、受信メッセージ情報
  * */
