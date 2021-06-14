@@ -19,9 +19,8 @@ public class ChatChecker {
         StringBuilder result = new StringBuilder();
 
         int len = words.length;
-        for(int i = 0; i < len; i++){
-            String word = words[i];
-            String key = word.replaceAll("[,.?!、。､｡]","");
+        for (String word : words) {
+            String key = word.replaceAll("[,.?!、。､｡]", "");
             result.append(word.replace(key, AtcDictionary.get(key))).append(" ");
         }
         result.deleteCharAt(result.length()-1);

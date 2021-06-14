@@ -29,11 +29,11 @@ public class PlayerMoveHandler extends TimerTask implements Listener {
     @EventHandler
     public void onDataUpdated(AtcDataUpdateEvent event){
         List<String> names = DataUtil.getAirportNameList();
-        for(int idx = 0; idx < names.size(); idx++){
-            Airport ap = DataUtil.getAirportByName(names.get(idx));
-            for(ATCControl area : ap.getAtcArea()){
+        for (String name : names) {
+            Airport ap = DataUtil.getAirportByName(name);
+            for (ATCControl area : ap.getAtcArea()) {
                 IFrequency freq = area.getFrequency();
-                if(freq != null) {
+                if (freq != null) {
                     String key = freq.getFreq();
                     areaMap.put(key, area.getArea());
                 }
@@ -45,10 +45,10 @@ public class PlayerMoveHandler extends TimerTask implements Listener {
     public void run(){
         for(Player player : Bukkit.getOnlinePlayers()) {
             IPoint playerLocation = IPoint.getByLocation(player.getLocation());
-            for(int idx=0; idx < areaKeys.length; idx++){
-                IArea area = areaMap.get(areaKeys[idx]);
+            for (String areaKey : areaKeys) {
+                IArea area = areaMap.get(areaKey);
                 if (area != null && area.isIn(playerLocation)) {
-                    forceJoinChannel(areaKeys[idx], player);
+                    forceJoinChannel(areaKey, player);
                 }
             }
         }

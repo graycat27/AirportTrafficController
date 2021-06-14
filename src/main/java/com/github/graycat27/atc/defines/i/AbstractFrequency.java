@@ -14,10 +14,10 @@ public abstract class AbstractFrequency implements IFrequency {
         return freq_n + "." + freq_d;
     }
     public Integer getFreqN(){
-        return Integer.valueOf(freq_n);
+        return freq_n;
     }
     public Integer getFreqD(){
-        return Integer.valueOf(freq_d);
+        return freq_d;
     }
 
     //コンストラクタ

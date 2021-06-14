@@ -80,13 +80,13 @@ class AirportTest {
         Runway rw = new Runway("A", rwy18_36);
         ap.addRunway(rw);
         Runway rw2 = new Runway("B", rwy18_36);
-        assertThrows(IllegalArgumentException.class, ()->{ap.addRunway(rw2);});
+        assertThrows(IllegalArgumentException.class, ()-> ap.addRunway(rw2));
     }
 
     @Test
     void addRunway3(){
         Airport ap = new Airport(name);
-        assertThrows(IllegalArgumentException.class, ()->{ap.addRunway(null);});
+        assertThrows(IllegalArgumentException.class, ()-> ap.addRunway(null));
     }
 
     /* Taxiway */
@@ -130,13 +130,13 @@ class AirportTest {
         Taxiway twy = new Taxiway("A", rwy18_36);
         ap.addTaxiway(twy);
         Taxiway twy2 = new Taxiway("B", rwy18_36);
-        assertThrows(IllegalArgumentException.class, ()->{ap.addTaxiway(twy2);});
+        assertThrows(IllegalArgumentException.class, ()-> ap.addTaxiway(twy2));
     }
 
     @Test
     void addTaxiway3(){
         Airport ap = new Airport(name);
-        assertThrows(IllegalArgumentException.class, ()->{ap.addTaxiway(null);});
+        assertThrows(IllegalArgumentException.class, ()-> ap.addTaxiway(null));
     }
 
     /* Spot */
@@ -180,13 +180,13 @@ class AirportTest {
         Spot sp = new Spot("1", 75, 64, 75);
         ap.addSpot(sp);
         Spot sp2 = new Spot("2", 75, 64, 75);
-        assertThrows(IllegalArgumentException.class, ()->{ap.addSpot(sp2);});
+        assertThrows(IllegalArgumentException.class, ()-> ap.addSpot(sp2));
     }
 
     @Test
     void addSpot3(){
         Airport ap = new Airport(name);
-        assertThrows(IllegalArgumentException.class, ()->{ap.addSpot(null);});
+        assertThrows(IllegalArgumentException.class, ()-> ap.addSpot(null));
     }
 
     /* Tower */
@@ -203,13 +203,13 @@ class AirportTest {
         Airport ap = new Airport(name);
         Tower tw = new Tower(80, 100, 80);
         ap.setTower(tw);
-        assertThrows(IllegalStateException.class, ()->{ap.setTower(tw);});
+        assertThrows(IllegalStateException.class, ()-> ap.setTower(tw));
     }
 
     @Test
     void setTower3(){
         Airport ap = new Airport(name);
-        assertThrows(IllegalArgumentException.class, ()->{ap.setTower(null);});
+        assertThrows(IllegalArgumentException.class, ()-> ap.setTower(null));
     }
 
     /* Control */
