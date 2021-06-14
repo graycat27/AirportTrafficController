@@ -25,7 +25,7 @@ public class CommandArea {
         String airportName;
         Control controlType;
         IPoint centerPos;
-        Integer radius;
+        int radius;
         ATCArea area;
 
         String argApName = (args.length < 4) ? null : args[3];
