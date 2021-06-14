@@ -39,7 +39,7 @@ public class AtcResponseTask extends TimerTask {
 
         AtcBot cm = LunaChatUtil.getChannelMember(control);
         if(cm != null) {
-            String returnMessage = "";
+            String returnMessage;
             if(target.getSender() == null){
                 returnMessage = "this is "+ cm.getName() +". "+ cm.nonIdentifiedSender();
             }else {

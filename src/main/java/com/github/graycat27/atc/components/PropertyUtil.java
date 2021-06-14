@@ -45,7 +45,7 @@ public class PropertyUtil {
                         try (FileOutputStream out = new FileOutputStream(dest);
                              InputStream in = jar.getInputStream(entry)) {
                             byte[] buffer = new byte[8 * 1024];
-                            int s = 0;
+                            int s;
                             while ((s = in.read(buffer)) > 0) {
                                 out.write(buffer, 0, s);
                             }
