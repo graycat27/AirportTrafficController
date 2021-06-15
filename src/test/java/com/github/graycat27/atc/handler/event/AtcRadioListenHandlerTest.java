@@ -97,4 +97,18 @@ class AtcRadioListenHandlerTest {
         assertEquals("cleared for landing.", result.getResponseBody());
     }
 
+    @Test
+    public void testRequestResponseNoPeriodTwr(){
+        AtcMessageData result = analyzeMessageTester(Control.TWR,
+                "twr, gray27. we request landing");
+        assertEquals("cleared for landing.", result.getResponseBody());
+    }
+
+    @Test
+    public void testRequestResponseLongRequestTwr(){
+        AtcMessageData result = analyzeMessageTester(Control.TWR,
+                "twr, gray27. we request approach and fly over rwy");
+        assertEquals("cleared for approach and fly over rwy.", result.getResponseBody());
+    }
+
 }
