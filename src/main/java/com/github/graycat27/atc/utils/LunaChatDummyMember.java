@@ -6,7 +6,7 @@ import net.md_5.bungee.api.chat.BaseComponent;
 
 public class LunaChatDummyMember extends ChannelMember {
 
-    private final String NAME = "[ATC]admin";
+    private final String NAME = "ATC*admin";
 
     @Override
     public boolean isOnline() {

@@ -1,5 +1,6 @@
 package com.github.graycat27.atc;
 
+import com.github.graycat27.atc.components.LunaChatUtil;
 import com.github.graycat27.atc.components.PropertyUtil;
 import com.github.graycat27.atc.components.bot.AtcResponseTask;
 import com.github.graycat27.atc.components.data.DataManager;
@@ -73,6 +74,8 @@ public final class AirportTrafficController extends JavaPlugin {
 
         AtcDictionary.updateDictionary();
         PropertySettings.readProps();
+
+        LunaChatUtil.updateAllChannelInfo();
 
         final int TPS = 20;
         int radarSecond = PropertySettings.radarSeconds(); //プレイヤー検知レーダーの照射頻度秒数

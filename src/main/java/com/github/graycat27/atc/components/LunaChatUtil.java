@@ -3,11 +3,16 @@ package com.github.graycat27.atc.components;
 import com.github.graycat27.atc.components.bot.AtcBot;
 import com.github.graycat27.atc.components.bot.CtlBot;
 import com.github.graycat27.atc.components.bot.TwrBot;
+import com.github.graycat27.atc.components.data.DataUtil;
 import com.github.graycat27.atc.consts.LcConst;
+import com.github.graycat27.atc.defines.airport.Airport;
 import com.github.graycat27.atc.defines.atc.ATCControl;
+import com.github.graycat27.atc.defines.atc.LunaChatChannelFrequency;
+import com.github.graycat27.atc.defines.i.IFrequency;
 import com.github.ucchyocean.lc3.channel.Channel;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -52,6 +57,19 @@ public class LunaChatUtil {
                 return ctlBot;
             default:
                 return null;
+        }
+    }
+
+    public static void updateAllChannelInfo(){
+        List<String> apNames = DataUtil.getAirportNameList();
+        for(String apName : apNames){
+            Airport ap = DataUtil.getAirportByName(apName);
+            for(ATCControl control : ap.getAtcArea()){
+                IFrequency freq = control.getFrequency();
+                if(freq instanceof LunaChatChannelFrequency lcFreq){
+                    lcFreq.setLcChannelConfig();
+                }
+            }
         }
     }
 }
