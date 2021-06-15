@@ -27,14 +27,17 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
     public LunaChatChannelFrequency(int n, int d){
         super(n,d);
         channelName = LcConst.ATC_CHANNEL_NAME_PREFIX + getFreqN() + LcConst.ATC_CHANNEL_FREQ_CHAR + getFreqD();
+        lcChannel = AirportTrafficController.getLcApi().getChannel(channelName);
     }
     public LunaChatChannelFrequency(String freq){
         super(freq);
         channelName = LcConst.ATC_CHANNEL_NAME_PREFIX + getFreqN() + LcConst.ATC_CHANNEL_FREQ_CHAR + getFreqD();
+        lcChannel = AirportTrafficController.getLcApi().getChannel(channelName);
     }
     private LunaChatChannelFrequency(LunaChatChannelFrequency original){
         super(original.getFreq());
         channelName = LcConst.ATC_CHANNEL_NAME_PREFIX + getFreqN() + LcConst.ATC_CHANNEL_FREQ_CHAR + getFreqD();
+        lcChannel = AirportTrafficController.getLcApi().getChannel(channelName);
         //createChannelしない
     }
 
