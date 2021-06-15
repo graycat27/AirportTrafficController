@@ -19,6 +19,7 @@ public class TwrBot extends AtcBot {
 
         if(receivedBody.contains("request ")){
             String requestedThing = received.substring(receivedBody.indexOf("request ")+ "request ".length());
+            requestedThing = requestedThing.trim();
             if(!requestedThing.endsWith(".")){
                 requestedThing += ".";
             }
