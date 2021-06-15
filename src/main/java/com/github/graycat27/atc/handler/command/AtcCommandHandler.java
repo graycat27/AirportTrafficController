@@ -102,6 +102,7 @@ public class AtcCommandHandler implements CommandExecutor {
                         case CommandWord.Target.AIRPORT:
                             String name = (args.length >= 4) ? args[3] : null;
                             CommandAirport.add(name);
+                            sendMessage(sender, "successfully added the airport.");
                             break;
                         case CommandWord.Target.AREA:
                             //goto default
@@ -128,9 +129,11 @@ public class AtcCommandHandler implements CommandExecutor {
                     switch (args[2]) {
                         case CommandWord.Target.AIRPORT:
                             CommandAirport.mod(args);
+                            sendMessage(sender, "successfully modified the airport information.");
                             break;
                         case CommandWord.Target.AREA:
                             CommandArea.mod(args);
+                            sendMessage(sender, "successfully modified the area information.");
                             break;
                         default:
                             sendMessage(sender, "unknown param for command [/atc manage mod]");
