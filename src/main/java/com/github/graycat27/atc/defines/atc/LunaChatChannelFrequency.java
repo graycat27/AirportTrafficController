@@ -11,6 +11,7 @@ import com.github.ucchyocean.lc3.channel.Channel;
 import com.github.ucchyocean.lc3.japanize.JapanizeType;
 import com.github.ucchyocean.lc3.member.ChannelMember;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 /** LunaChatのチャンネルと連携する情報を保持する */
@@ -54,14 +55,14 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
             AirportTrafficController.getLcApi().createChannel(channelName);
         }
         lcChannel = AirportTrafficController.getLcApi().getChannel(channelName);
-        setChannelMember();
         setLcChannelConfig();
         lcChannel.save();
     }
 
-    private void setLcChannelConfig(){
+    public void setLcChannelConfig(){
         updateLcChannelFormat();
         lcChannel.setJapanizeType(JapanizeType.NONE);
+        setChannelMember();
     }
 
     private void updateLcChannelFormat(){
@@ -75,18 +76,29 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
 
     private void setChannelMember(){
         List<ChannelMember> moderatorList = lcChannel.getModerator();
-        for(ChannelMember cm : moderatorList){
-            lcChannel.removeMember(cm);
+        try {
+            String nameStr = lcChannel.getName();
+            Field name = Channel.class.getDeclaredField("name");
+            name.setAccessible(true);
+            name.set(lcChannel, nameStr + ">");
+
+            for(ChannelMember cm : moderatorList){
+                lcChannel.removeMember(cm);
+            }
+            LunaChatDummyMember dummyAdmin = new LunaChatDummyMember();
+            lcChannel.addMember(dummyAdmin);
+            lcChannel.addModerator(dummyAdmin);
+
+            ATCControl control = FrequencyUtil.getAtcControl(this);
+            AtcBot bot = LunaChatUtil.getChannelMember(control);
+            lcChannel.addMember(bot);
+            lcChannel.addModerator(bot);
+
+            name.set(lcChannel, nameStr);
+
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
         }
-        LunaChatDummyMember dummyAdmin = new LunaChatDummyMember();
-        lcChannel.addMember(dummyAdmin);
-        lcChannel.addModerator(dummyAdmin);
-
-        ATCControl control = FrequencyUtil.getAtcControl(this);
-        AtcBot bot = LunaChatUtil.getChannelMember(control);
-        lcChannel.addMember(bot);
-        lcChannel.addModerator(bot);
-
     }
 
     @Override
