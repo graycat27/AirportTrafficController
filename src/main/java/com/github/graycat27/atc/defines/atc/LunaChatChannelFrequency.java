@@ -75,15 +75,20 @@ public class LunaChatChannelFrequency extends AbstractFrequency {
     }
 
     private void setChannelMember(){
-        List<ChannelMember> moderatorList = lcChannel.getModerator();
+        List<ChannelMember> moderatorList;
         try {
             String nameStr = lcChannel.getName();
             Field name = Channel.class.getDeclaredField("name");
             name.setAccessible(true);
             name.set(lcChannel, nameStr + ">");
 
-            for(ChannelMember cm : moderatorList){
-                lcChannel.removeMember(cm);
+            moderatorList = lcChannel.getModerator();
+            while(moderatorList.size() > 0) {
+                int size = moderatorList.size();
+                for(int idx = size-1; 0 <= idx ; idx--){
+                    lcChannel.removeMember(moderatorList.get(idx));
+                }
+                moderatorList = lcChannel.getModerator();
             }
             LunaChatDummyMember dummyAdmin = new LunaChatDummyMember();
             lcChannel.addMember(dummyAdmin);
