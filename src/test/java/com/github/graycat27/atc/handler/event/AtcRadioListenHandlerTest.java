@@ -90,4 +90,11 @@ class AtcRadioListenHandlerTest {
         assertEquals("loud and clear." ,result.getResponseBody());
     }
 
+    @Test
+    public void testRequestResponseTwr(){
+        AtcMessageData result = analyzeMessageTester(Control.TWR,
+                "twr, gray27. we request landing.");
+        assertEquals("cleared for landing.", result.getResponseBody());
+    }
+
 }
